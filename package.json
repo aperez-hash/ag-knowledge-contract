@@ -22,7 +22,8 @@
     "./examples/modelo-721-monedas-virtuales.json": "./examples/modelo-721-monedas-virtuales.json",
     "./examples/residencia-fiscal-espana.json": "./examples/residencia-fiscal-espana.json",
     "./examples/convenios-doble-imposicion-cdi.json": "./examples/convenios-doble-imposicion-cdi.json",
-    "./examples/modelo-151-regimen-trabajadores-desplazados.json": "./examples/modelo-151-regimen-trabajadores-desplazados.json"
+    "./examples/modelo-151-regimen-trabajadores-desplazados.json": "./examples/modelo-151-regimen-trabajadores-desplazados.json",
+    "./examples/irnr-rendimientos-trabajo.json": "./examples/irnr-rendimientos-trabajo.json"
   },
   "scripts": {
     "generate": "node scripts/generate-types.mjs",
@@ -42,6 +43,8 @@
     "validate:story-kf-008b": "node scripts/validate-story-kf-008b.mjs",
     "build:story-kf-008c": "node scripts/build-story-kf-008c-artifacts.mjs",
     "validate:story-kf-008c": "node scripts/validate-story-kf-008c.mjs",
+    "build:story-kf-008d": "node scripts/build-story-kf-008d-artifacts.mjs",
+    "validate:story-kf-008d": "node scripts/validate-story-kf-008d.mjs",
     "test": "node --test tests/*.test.mjs",
     "check": "node scripts/check.mjs"
   },

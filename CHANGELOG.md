@@ -18,6 +18,7 @@
 - Derived checklist, FAQ and client response outputs plus focused automated coverage for `STORY-KF-008A`.
 - Derived checklist, FAQ and client response outputs plus focused automated coverage for `STORY-KF-008B`.
 - Derived checklist, FAQ and client response outputs plus focused automated coverage for `STORY-KF-008C`.
+- Derived checklist, FAQ and client response outputs plus focused automated coverage for `STORY-KF-008D`.
 - Official governance certification document for `Knowledge Factory v1.0`.
 
 ## 1.0.0 - 2026-07-18

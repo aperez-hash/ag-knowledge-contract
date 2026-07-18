@@ -1,0 +1,17 @@
+{
+  "story": "STORY-KF-008D",
+  "knowledgeObject": "IRNR - Rendimientos del Trabajo",
+  "research": "PASS",
+  "schemaValidation": "PASS",
+  "ruleEngine": "PASS",
+  "plannerView": "PASS",
+  "webView": "PASS",
+  "aiContext": "PASS",
+  "checklist": "PASS",
+  "faq": "PASS",
+  "clientResponse": "PASS",
+  "qualityGate": "PASS",
+  "structuralChangesRequired": "NO",
+  "generatedAt": "2026-07-18T22:53:55.691Z",
+  "incidentCount": 0
+}
