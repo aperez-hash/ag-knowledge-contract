@@ -1,0 +1,54 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_modelo714_impuesto_patrimonio_001",
+    "stableKey": "modelo-714-impuesto-patrimonio",
+    "version": "1.0.0"
+  },
+  "responseType": "derived_draft",
+  "humanReviewRequired": true,
+  "summary": "Evita errores al decidir si existe obligacion de presentar Patrimonio, al separar obligacion personal y real, al valorar activos con criterio operativo y al abrir correctamente la revision autonómica e ITSGF cuando procede.",
+  "nextSteps": [
+    "Relacion patrimonial completa a 31 de diciembre con identificacion de cada activo y pasivo relevante.",
+    "Soporte de valoracion de inmuebles, valores, participaciones, seguros y demas activos relevantes.",
+    "Documentacion de deudas deducibles y cargas reales vinculadas a los bienes declarables.",
+    "Soporte especifico de exenciones alegadas: vivienda habitual, actividad economica o participaciones exentas."
+  ],
+  "faqHighlights": [
+    {
+      "faqId": "faq714-001",
+      "question": "Si no me sale cuota a ingresar, ¿puedo dejar de presentar Patrimonio automaticamente?",
+      "answer": "No. Aunque no exista cuota a ingresar, puede haber obligacion de declarar si el valor de bienes o derechos supera 2.000.000 de euros en los terminos legales."
+    },
+    {
+      "faqId": "faq714-002",
+      "question": "¿La vivienda habitual siempre queda completamente fuera del impuesto?",
+      "answer": "No de forma absoluta. Existe exencion con limite legal y solo para quien cumpla las condiciones materiales de vivienda habitual y titularidad exigidas por la norma."
+    },
+    {
+      "faqId": "faq714-003",
+      "question": "¿Las acciones cotizadas y las participaciones en sociedades se valoran igual?",
+      "answer": "No. Los valores cotizados y las participaciones no cotizadas siguen reglas de valoracion diferentes, por lo que no deben tratarse como una sola categoria."
+    }
+  ],
+  "documentationHighlights": [
+    {
+      "documentId": "doc714-001",
+      "label": "Relacion patrimonial completa a 31 de diciembre con identificacion de cada activo y pasivo relevante.",
+      "required": true,
+      "notes": "Base minima para abrir el expediente de Patrimonio."
+    },
+    {
+      "documentId": "doc714-002",
+      "label": "Soporte de valoracion de inmuebles, valores, participaciones, seguros y demas activos relevantes.",
+      "required": true,
+      "notes": "Necesario para aplicar las reglas de valoracion legales de cada categoria."
+    },
+    {
+      "documentId": "doc714-003",
+      "label": "Documentacion de deudas deducibles y cargas reales vinculadas a los bienes declarables.",
+      "required": true,
+      "notes": "Imprescindible para determinar correctamente patrimonio neto y base imponible."
+    }
+  ],
+  "caution": "Borrador derivado para apoyo interno. No debe enviarse sin revision humana y sin contrastar la documentacion concreta del cliente."
+}

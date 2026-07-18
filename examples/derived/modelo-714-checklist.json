@@ -1,0 +1,50 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_modelo714_impuesto_patrimonio_001",
+    "stableKey": "modelo-714-impuesto-patrimonio",
+    "version": "1.0.0"
+  },
+  "title": "Modelo 714 - Impuesto sobre el Patrimonio - Checklist operativa",
+  "items": [
+    {
+      "itemId": "chk714-001",
+      "label": "Residencia fiscal y tipo de sujecion confirmados."
+    },
+    {
+      "itemId": "chk714-002",
+      "label": "Inventario patrimonial a 31 de diciembre levantado."
+    },
+    {
+      "itemId": "chk714-003",
+      "label": "Perimetro patrimonial delimitado entre obligacion personal o real."
+    },
+    {
+      "itemId": "chk714-004",
+      "label": "Reglas de valoracion aplicadas por tipo de activo."
+    },
+    {
+      "itemId": "chk714-005",
+      "label": "Exenciones revisadas con soporte suficiente."
+    },
+    {
+      "itemId": "chk714-006",
+      "label": "Base imponible y base liquidable determinadas."
+    },
+    {
+      "itemId": "chk714-007",
+      "label": "Normativa autonómica competente identificada."
+    },
+    {
+      "itemId": "chk714-008",
+      "label": "Cuota calculada y obligacion de declarar verificada por ambos umbrales."
+    },
+    {
+      "itemId": "chk714-009",
+      "label": "Necesidad de abrir ITSGF revisada expresamente."
+    },
+    {
+      "itemId": "chk714-010",
+      "label": "Decision final de presentar o no presentar documentada en el expediente."
+    }
+  ]
+}

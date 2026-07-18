@@ -1,0 +1,35 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_modelo714_impuesto_patrimonio_001",
+    "stableKey": "modelo-714-impuesto-patrimonio",
+    "version": "1.0.0"
+  },
+  "title": "Modelo 714 - Impuesto sobre el Patrimonio - FAQ derivada",
+  "items": [
+    {
+      "faqId": "faq714-001",
+      "question": "Si no me sale cuota a ingresar, ¿puedo dejar de presentar Patrimonio automaticamente?",
+      "answer": "No. Aunque no exista cuota a ingresar, puede haber obligacion de declarar si el valor de bienes o derechos supera 2.000.000 de euros en los terminos legales."
+    },
+    {
+      "faqId": "faq714-002",
+      "question": "¿La vivienda habitual siempre queda completamente fuera del impuesto?",
+      "answer": "No de forma absoluta. Existe exencion con limite legal y solo para quien cumpla las condiciones materiales de vivienda habitual y titularidad exigidas por la norma."
+    },
+    {
+      "faqId": "faq714-003",
+      "question": "¿Las acciones cotizadas y las participaciones en sociedades se valoran igual?",
+      "answer": "No. Los valores cotizados y las participaciones no cotizadas siguen reglas de valoracion diferentes, por lo que no deben tratarse como una sola categoria."
+    },
+    {
+      "faqId": "faq714-004",
+      "question": "¿La normativa de mi Comunidad Autónoma puede cambiar el resultado del impuesto?",
+      "answer": "Si. Puede alterar minimo exento, tarifa, deducciones y bonificaciones, aunque la estructura basica del impuesto siga siendo estatal."
+    },
+    {
+      "faqId": "faq714-005",
+      "question": "¿Si tengo mucho patrimonio basta con analizar Patrimonio o hay que mirar tambien ITSGF?",
+      "answer": "Primero se resuelve Patrimonio. Despues, si el volumen patrimonial o la cuota lo exigen, debe abrirse tambien el analisis complementario del ITSGF."
+    }
+  ]
+}
