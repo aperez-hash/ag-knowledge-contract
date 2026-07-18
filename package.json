@@ -20,7 +20,8 @@
     "./examples/modelo-720-bienes-extranjero.json": "./examples/modelo-720-bienes-extranjero.json",
     "./examples/modelo-714-impuesto-patrimonio.json": "./examples/modelo-714-impuesto-patrimonio.json",
     "./examples/modelo-721-monedas-virtuales.json": "./examples/modelo-721-monedas-virtuales.json",
-    "./examples/residencia-fiscal-espana.json": "./examples/residencia-fiscal-espana.json"
+    "./examples/residencia-fiscal-espana.json": "./examples/residencia-fiscal-espana.json",
+    "./examples/convenios-doble-imposicion-cdi.json": "./examples/convenios-doble-imposicion-cdi.json"
   },
   "scripts": {
     "generate": "node scripts/generate-types.mjs",
@@ -36,6 +37,8 @@
     "validate:story-kf-005c": "node scripts/validate-story-kf-005c.mjs",
     "build:story-kf-008a": "node scripts/build-story-kf-008a-artifacts.mjs",
     "validate:story-kf-008a": "node scripts/validate-story-kf-008a.mjs",
+    "build:story-kf-008b": "node scripts/build-story-kf-008b-artifacts.mjs",
+    "validate:story-kf-008b": "node scripts/validate-story-kf-008b.mjs",
     "test": "node --test tests/*.test.mjs",
     "check": "node scripts/check.mjs"
   },

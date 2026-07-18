@@ -1,0 +1,78 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_cdi_marco_general_001",
+    "stableKey": "convenios-doble-imposicion-cdi",
+    "title": "Convenios para Evitar la Doble Imposicion (CDI)",
+    "version": "1.0.0",
+    "status": "validado"
+  },
+  "criterionStatus": "vigente para uso interno validado",
+  "executiveSummary": "Este Knowledge Object fija el marco doctrinal general que debe seguir el despacho para determinar cuando un Convenio para Evitar la Doble Imposicion resulta aplicable y como debe usarse correctamente en un expediente con elemento internacional. Su funcion no es resolver un convenio pais por pais ni desarrollar todavia articulos materiales como dividendos, intereses o canones, sino ordenar el metodo comun: primero identificar si existe un elemento internacional real, despues comprobar si hay un CDI vigente entre Espana y el otro Estado, verificar el ambito subjetivo y objetivo, y solo entonces interpretar sus reglas de distribucion de potestad tributaria. El objeto deja claro que un CDI no crea por si solo una obligacion tributaria nueva, sino que limita, coordina o redistribuye la potestad respecto de la norma interna aplicable. Tambien fija que el Modelo OCDE y sus Comentarios cumplen una funcion interpretativa util, pero nunca sustituyen el texto del convenio concreto aplicable. Su utilidad practica es homogeneizar expedientes, reducir errores de aplicabilidad, reforzar la trazabilidad del analisis internacional y permitir derivaciones consistentes para Planner, Web, IA, checklist, FAQ y respuesta al cliente sin duplicar doctrina.",
+  "legalBasis": [
+    "Los Convenios para Evitar la Doble Imposicion forman parte del ordenamiento aplicable cuando Espana ha suscrito y tiene vigente un tratado con el otro Estado implicado. Su funcion no es crear por si sola una obligacion tributaria nueva, sino limitar, distribuir o coordinar potestades tributarias respecto de la norma interna aplicable. En la practica, el analisis parte de la ley interna relevante y solo despues verifica si el CDI desplaza, condiciona o matiza ese resultado. El Modelo de Convenio de la OCDE y sus Comentarios cumplen una funcion interpretativa importante para leer el lenguaje comun de muchos convenios, pero no sustituyen el texto del convenio concreto aplicable ni permiten ignorar su redaccion efectiva."
+  ],
+  "technicalDevelopment": [
+    "El analisis de CDI debe empezar siempre con un Decision Gateway de aplicabilidad y debe dejar expreso que un CDI no crea por si sola una obligacion tributaria nueva: existe elemento internacional, existe CDI vigente entre Espana y el otro Estado, el contribuyente entra en el ambito subjetivo y la renta o el patrimonio entran en el ambito objetivo. Solo si esas cuatro preguntas reciben una respuesta afirmativa procede aplicar las reglas generales del convenio. Esta fase de aplicabilidad debe separarse de la fase de interpretacion. La aplicabilidad decide si el convenio es relevante para el caso; la interpretacion decide como debe leerse una vez confirmada esa relevancia. En la fase interpretativa, el texto del convenio concreto aplicable es la referencia principal. El Modelo OCDE y sus Comentarios sirven como marco metodologico y apoyo interpretativo cuando su uso resulta reconocido y prudente, pero no sustituyen la literalidad del tratado aplicable. Cuando aparece una doble residencia, entra en juego el tie-breaker convencional para ordenar vivienda permanente, centro de intereses vitales, estancia habitual, nacionalidad y, en ultimo termino, acuerdo entre autoridades competentes. La distribucion de potestades tributarias debe entenderse en terminos generales, sin bajar todavia a categorias materiales concretas: algunos CDI atribuyen potestad exclusiva, otros permiten potestad compartida o limitada, y despues hay que conectar esa conclusion con el impuesto o modelo correspondiente. Los metodos para eliminar la doble imposicion se leen tambien en clave general, distinguiendo en especial exencion e imputacion. La vision de establecimiento permanente en este objeto es solo introductoria: ayuda a detectar el posible problema y a decidir si el expediente debe escalar a un objeto especifico de EP, pero no desarrolla aun sus tests materiales. Tambien se incluye una vision general del intercambio de informacion y del procedimiento amistoso como herramientas de coordinacion internacional, no como desarrollo procedimental profundo."
+  ],
+  "procedure": [
+    "Identificar si el expediente contiene un elemento internacional real relevante para la tributacion.",
+    "Comprobar si existe un CDI vigente entre Espana y el otro Estado implicado.",
+    "Verificar si el contribuyente o entidad encaja en el ambito subjetivo del convenio.",
+    "Verificar si la renta o el patrimonio encajan en el ambito objetivo del convenio.",
+    "Separar de forma expresa la fase de aplicabilidad de la fase de interpretacion del CDI.",
+    "Analizar residencia a efectos del convenio y, si procede, aplicar el tie-breaker general.",
+    "Determinar en terminos generales la regla de atribucion de potestad tributaria.",
+    "Identificar el metodo general para evitar la doble imposicion que resulte relevante.",
+    "Documentar el analisis, la fuente convencional y la evidencia probatoria utilizada.",
+    "Trasladar la conclusion al impuesto, modelo u objeto material correspondiente y archivar las evidencias."
+  ],
+  "risks": [
+    {
+      "riskId": "riskcdi-001",
+      "description": "Aplicar un convenio inexistente o no vigente",
+      "severity": "high",
+      "likelihood": "high",
+      "mitigation": "Verificar siempre existencia y vigencia del CDI antes de entrar en interpretacion."
+    },
+    {
+      "riskId": "riskcdi-002",
+      "description": "Confundir aplicabilidad con interpretacion",
+      "severity": "high",
+      "likelihood": "high",
+      "mitigation": "Usar siempre el Decision Gateway antes de interpretar."
+    },
+    {
+      "riskId": "riskcdi-003",
+      "description": "Aplicar incorrectamente el tie-breaker",
+      "severity": "high",
+      "likelihood": "high",
+      "mitigation": "Separar residencia interna, doble residencia real y secuencia de desempate."
+    },
+    {
+      "riskId": "riskcdi-004",
+      "description": "Identificar mal la categoria general de renta o patrimonio",
+      "severity": "medium",
+      "likelihood": "medium",
+      "mitigation": "Documentar con claridad la naturaleza economica del hecho imponible antes de bajar al objeto material."
+    },
+    {
+      "riskId": "riskcdi-005",
+      "description": "No conservar evidencia documental suficiente",
+      "severity": "medium",
+      "likelihood": "medium",
+      "mitigation": "Archivar texto o referencia del convenio, certificados, soporte de renta y resto de evidencias clave."
+    }
+  ],
+  "restrictions": [
+    "Canales bloqueados a nivel raiz: ninguno.",
+    "Canales solo derivables a nivel raiz: web, faq, checklist, client_response, tax_library.",
+    "No debe reutilizarse este objeto como texto directo de respuesta al cliente sin derivacion controlada y revision humana."
+  ],
+  "clientResponseAuthorization": {
+    "channelAccess": "derived_only",
+    "mayExposeCanonicalTextDirectly": false,
+    "mayProduceDerivedDraft": true,
+    "humanReviewRequired": true,
+    "instruction": "Solo se permiten borradores derivados y controlados; no debe reutilizarse texto bruto del objeto."
+  }
+}

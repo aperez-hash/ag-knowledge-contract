@@ -1,0 +1,176 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_cdi_marco_general_001",
+    "stableKey": "convenios-doble-imposicion-cdi",
+    "title": "Convenios para Evitar la Doble Imposicion (CDI)",
+    "slug": "convenios-doble-imposicion-cdi",
+    "version": "1.0.0"
+  },
+  "executiveSummary": {
+    "summary": "Este Knowledge Object fija el marco doctrinal general que debe seguir el despacho para determinar cuando un Convenio para Evitar la Doble Imposicion resulta aplicable y como debe usarse correctamente en un expediente con elemento internacional. Su funcion no es resolver un convenio pais por pais ni desarrollar todavia articulos materiales como dividendos, intereses o canones, sino ordenar el metodo comun: primero identificar si existe un elemento internacional real, despues comprobar si hay un CDI vigente entre Espana y el otro Estado, verificar el ambito subjetivo y objetivo, y solo entonces interpretar sus reglas de distribucion de potestad tributaria. El objeto deja claro que un CDI no crea por si solo una obligacion tributaria nueva, sino que limita, coordina o redistribuye la potestad respecto de la norma interna aplicable. Tambien fija que el Modelo OCDE y sus Comentarios cumplen una funcion interpretativa util, pero nunca sustituyen el texto del convenio concreto aplicable. Su utilidad practica es homogeneizar expedientes, reducir errores de aplicabilidad, reforzar la trazabilidad del analisis internacional y permitir derivaciones consistentes para Planner, Web, IA, checklist, FAQ y respuesta al cliente sin duplicar doctrina.",
+    "problemSolved": "Evita aplicar convenios de forma prematura o incorrecta, separando con claridad la fase de aplicabilidad de la fase de interpretacion y ordenando la distribucion general de potestades tributarias.",
+    "scope": "Marco doctrinal general de los CDI suscritos por Espana para expedientes con elemento internacional, sin analisis pais por pais ni desarrollo de categorias materiales concretas de renta o patrimonio.",
+    "practicalImpact": "Permite abrir, revisar y cerrar expedientes internacionales con un metodo unico antes de bajar al impuesto, modelo o categoria material concreta que corresponda."
+  },
+  "affectedTaxModels": [
+    {
+      "modelCode": "210",
+      "modelName": "Modelo 210 - IRNR",
+      "relationType": "secondary",
+      "notes": "El marco CDI condiciona la lectura internacional del IRNR y de las limitaciones convencionales."
+    },
+    {
+      "modelCode": "714",
+      "modelName": "Modelo 714 - Impuesto sobre el Patrimonio",
+      "relationType": "secondary",
+      "notes": "El marco CDI puede ser relevante en conflictos de residencia y en distribucion internacional de potestades."
+    },
+    {
+      "modelCode": "720",
+      "modelName": "Modelo 720 - Bienes y derechos situados en el extranjero",
+      "relationType": "informative",
+      "notes": "El marco CDI no sustituye la obligacion informativa, pero contextualiza conflictos internacionales relacionados."
+    },
+    {
+      "modelCode": "721",
+      "modelName": "Modelo 721 - Monedas virtuales situadas en el extranjero",
+      "relationType": "informative",
+      "notes": "El marco CDI contextualiza la capa internacional sin sustituir el analisis especifico del objeto material."
+    },
+    {
+      "modelCode": "151",
+      "modelName": "Modelo 151 - Regimen especial de trabajadores desplazados",
+      "relationType": "secondary",
+      "notes": "La aplicacion practica del objeto exige coordinar residencia, CDI y criterio material posterior."
+    }
+  ],
+  "affectedForms": [
+    {
+      "formCode": "210",
+      "formName": "Modelo 210",
+      "relationType": "informative",
+      "notes": "Formulario impactado indirectamente por la conclusion convencional."
+    },
+    {
+      "formCode": "714",
+      "formName": "Modelo 714",
+      "relationType": "informative",
+      "notes": "Formulario impactado indirectamente por conflictos de residencia y potestad tributaria."
+    },
+    {
+      "formCode": "720",
+      "formName": "Modelo 720",
+      "relationType": "informative",
+      "notes": "Formulario relacionado con expedientes internacionales que pueden requerir contexto CDI."
+    },
+    {
+      "formCode": "721",
+      "formName": "Modelo 721",
+      "relationType": "informative",
+      "notes": "Formulario relacionado con expedientes internacionales que pueden requerir contexto CDI."
+    },
+    {
+      "formCode": "151",
+      "formName": "Modelo 151",
+      "relationType": "informative",
+      "notes": "Formulario impactado indirectamente por la coordinacion entre residencia y convenio."
+    }
+  ],
+  "faq": [
+    {
+      "faqId": "faqcdi-001",
+      "question": "Que ocurre si existe CDI y la norma interna parece contradictoria?",
+      "answer": "El analisis parte de la norma interna aplicable, pero el CDI puede limitar, coordinar o redistribuir la potestad tributaria. No se trata de crear una obligacion nueva, sino de modular la ya nacida en la ley interna."
+    },
+    {
+      "faqId": "faqcdi-002",
+      "question": "Que significa tie-breaker?",
+      "answer": "Es la regla convencional que ayuda a resolver conflictos de doble residencia cuando dos Estados pueden considerar residente al mismo contribuyente al mismo tiempo."
+    },
+    {
+      "faqId": "faqcdi-003",
+      "question": "Como se determina la residencia a efectos del convenio?",
+      "answer": "Primero se analiza la residencia interna; si existe doble residencia real, se aplica la secuencia convencional de desempate prevista en el propio tratado."
+    },
+    {
+      "faqId": "faqcdi-004",
+      "question": "Que es un establecimiento permanente en este objeto?",
+      "answer": "Aqui solo se trata como un posible problema de aplicabilidad internacional que puede requerir derivacion a un objeto especializado; no se desarrollan aun sus tests materiales."
+    },
+    {
+      "faqId": "faqcdi-005",
+      "question": "Como se elimina la doble imposicion en terminos generales?",
+      "answer": "Los CDI suelen apoyarse en tecnicas generales como exencion o imputacion, que luego deben conectarse con la normativa interna y con el impuesto concreto."
+    }
+  ],
+  "requiredDocumentation": [
+    {
+      "documentId": "doccdi-001",
+      "label": "Certificado de residencia fiscal",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: residencia a efectos del convenio y conflictos de doble residencia."
+    },
+    {
+      "documentId": "doccdi-002",
+      "label": "Texto o referencia del CDI aplicable",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: comprobar vigencia, ambito y reglas generales del tratado."
+    },
+    {
+      "documentId": "doccdi-003",
+      "label": "Documentacion de la renta o patrimonio analizado",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: identificar el hecho economico sobre el que se proyecta el CDI."
+    },
+    {
+      "documentId": "doccdi-004",
+      "label": "Soporte de retenciones o imposicion soportada en el extranjero",
+      "required": false,
+      "notes": "Fuerza probatoria: alta. Uso habitual: analizar metodos para evitar la doble imposicion y evidencia de tributacion concurrente."
+    },
+    {
+      "documentId": "doccdi-005",
+      "label": "Indicios o pruebas de establecimiento permanente cuando exista riesgo",
+      "required": false,
+      "notes": "Fuerza probatoria: media. Uso habitual: deteccion temprana del posible problema y derivacion futura."
+    }
+  ],
+  "caseStudies": [
+    {
+      "caseId": "casecdi-001",
+      "scenario": "Una persona fisica podria ser considerada residente por Espana y por otro Estado en el mismo ejercicio.",
+      "resolution": "Primero se separa residencia interna de residencia convencional y, si la doble residencia es real, se activa el tie-breaker general del convenio.",
+      "notes": "Conflicto inicial de residencia entre dos Estados"
+    },
+    {
+      "caseId": "casecdi-002",
+      "scenario": "La norma interna parece atribuir potestad a Espana, pero el expediente incorpora un CDI vigente con el otro Estado.",
+      "resolution": "Se verifica aplicabilidad del convenio antes de interpretar su distribucion general de potestades.",
+      "notes": "Renta internacional con posible limitacion convencional"
+    },
+    {
+      "caseId": "casecdi-003",
+      "scenario": "Existe imposicion en el extranjero y debe decidirse si el sistema aplicable opera via exencion o imputacion.",
+      "resolution": "El objeto permite detectar el metodo general y remitir despues al impuesto material correspondiente.",
+      "notes": "Expediente con duda sobre metodo para evitar la doble imposicion"
+    },
+    {
+      "caseId": "casecdi-004",
+      "scenario": "La actividad internacional sugiere que puede existir presencia suficiente en otro Estado.",
+      "resolution": "El objeto no resuelve el test material de EP, pero obliga a registrar el riesgo y escalar el expediente.",
+      "notes": "Riesgo de establecimiento permanente detectado en fase temprana"
+    },
+    {
+      "caseId": "casecdi-005",
+      "scenario": "Se pretende usar el comentario OCDE como sustituto del texto real del tratado.",
+      "resolution": "El objeto fija que el Modelo OCDE y sus Comentarios cumplen funcion interpretativa, pero no desplazan la literalidad del convenio aplicable.",
+      "notes": "Contribuyente que invoca el Modelo OCDE por encima del convenio firmado"
+    }
+  ],
+  "excludedByPolicy": [
+    "internal_reference",
+    "risk",
+    "restricted visibility"
+  ],
+  "disclaimer": "Vista derivada para web. Excluye referencias internas, riesgos internos y cualquier contenido restringido o bloqueado para este canal."
+}

@@ -1,0 +1,35 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_cdi_marco_general_001",
+    "stableKey": "convenios-doble-imposicion-cdi",
+    "version": "1.0.0"
+  },
+  "title": "Convenios para Evitar la Doble Imposicion (CDI) - FAQ derivada",
+  "items": [
+    {
+      "faqId": "faqcdi-001",
+      "question": "Que ocurre si existe CDI y la norma interna parece contradictoria?",
+      "answer": "El analisis parte de la norma interna aplicable, pero el CDI puede limitar, coordinar o redistribuir la potestad tributaria. No se trata de crear una obligacion nueva, sino de modular la ya nacida en la ley interna."
+    },
+    {
+      "faqId": "faqcdi-002",
+      "question": "Que significa tie-breaker?",
+      "answer": "Es la regla convencional que ayuda a resolver conflictos de doble residencia cuando dos Estados pueden considerar residente al mismo contribuyente al mismo tiempo."
+    },
+    {
+      "faqId": "faqcdi-003",
+      "question": "Como se determina la residencia a efectos del convenio?",
+      "answer": "Primero se analiza la residencia interna; si existe doble residencia real, se aplica la secuencia convencional de desempate prevista en el propio tratado."
+    },
+    {
+      "faqId": "faqcdi-004",
+      "question": "Que es un establecimiento permanente en este objeto?",
+      "answer": "Aqui solo se trata como un posible problema de aplicabilidad internacional que puede requerir derivacion a un objeto especializado; no se desarrollan aun sus tests materiales."
+    },
+    {
+      "faqId": "faqcdi-005",
+      "question": "Como se elimina la doble imposicion en terminos generales?",
+      "answer": "Los CDI suelen apoyarse en tecnicas generales como exencion o imputacion, que luego deben conectarse con la normativa interna y con el impuesto concreto."
+    }
+  ]
+}
