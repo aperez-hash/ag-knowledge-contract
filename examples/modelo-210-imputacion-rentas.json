@@ -1,0 +1,314 @@
+{
+  "identity": {
+    "knowledgeObjectId": "ko_es_irnr_modelo210_arrendamiento_001",
+    "stableKey": "irnr-modelo-210-arrendamiento",
+    "title": "Criterio operativo para alquileres de no residentes en Modelo 210",
+    "slug": "criterio-operativo-modelo-210-arrendamiento-no-residentes",
+    "language": "es",
+    "jurisdiction": "ES"
+  },
+  "governance": {
+    "status": "validado",
+    "version": "1.0.0",
+    "owner": "equipo-fiscal",
+    "approvedBy": "direccion-tecnica",
+    "reviewedAt": "2026-07-17T10:00:00Z",
+    "changeReason": "Primer modelo físico canónico de ejemplo"
+  },
+  "classification": {
+    "domain": "fiscal",
+    "topic": "irnr",
+    "subtopic": "modelo 210",
+    "audience": "advisor",
+    "sensitivity": "medium",
+    "keywords": ["irnr", "modelo 210", "no residentes", "arrendamiento"]
+  },
+  "channelPolicy": {
+    "web": { "access": "derived_only" },
+    "planner": { "access": "allowed" },
+    "ia": { "access": "allowed" },
+    "faq": { "access": "derived_only" },
+    "checklist": { "access": "derived_only" },
+    "internal_guide": { "access": "allowed" },
+    "client_response": { "access": "derived_only" },
+    "tax_library": { "access": "allowed" }
+  },
+  "executiveSummary": {
+    "summary": "Define el criterio operativo base para gestionar alquileres de no residentes en el marco del Modelo 210.",
+    "problemSolved": "Evita respuestas contradictorias y homogeneiza la operativa del despacho.",
+    "scope": "Casos estándar de arrendamiento con tratamiento recurrente.",
+    "practicalImpact": "Sirve como base para Planner, biblioteca fiscal y respuestas guiadas."
+  },
+  "affectedTaxModels": [
+    {
+      "modelCode": "210",
+      "modelName": "Impuesto sobre la Renta de no Residentes",
+      "relationType": "primary",
+      "notes": "Aplicación principal del criterio"
+    }
+  ],
+  "affectedForms": [
+    {
+      "formCode": "M210-ARR",
+      "formName": "Ficha operativa interna de alquiler no residente",
+      "relationType": "required"
+    }
+  ],
+  "blocks": [
+    {
+      "blockId": "kb-legal-001",
+      "type": "legal_basis",
+      "title": "Base legal",
+      "order": 10,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "blocked" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "allowed" }
+      },
+      "lastReviewedAt": "2026-07-17T10:00:00Z",
+      "content": {
+        "basis": "Base legal resumida del tratamiento IRNR aplicable al arrendamiento."
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "src-001",
+          "type": "law",
+          "label": "TRLIRNR",
+          "citation": "Real Decreto Legislativo 5/2004",
+          "notes": "Referencia general del impuesto"
+        }
+      ]
+    },
+    {
+      "blockId": "kb-tech-001",
+      "type": "technical_development",
+      "title": "Desarrollo técnico",
+      "order": 20,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "derived_only" },
+        "checklist": { "access": "derived_only" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "allowed" }
+      },
+      "summary": "Resumen técnico del criterio",
+      "content": {
+        "development": "Explicación técnica estructurada sobre cálculo, periodicidad y cautelas."
+      }
+    },
+    {
+      "blockId": "kb-proc-001",
+      "type": "procedure",
+      "title": "Procedimiento operativo",
+      "order": 30,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "derived_only" },
+        "checklist": { "access": "derived_only" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "blocked" }
+      },
+      "content": {
+        "steps": [
+          { "text": "Confirmar residencia fiscal y naturaleza del inmueble.", "format": "plain_text" },
+          { "text": "Verificar documentación soporte del arrendamiento.", "format": "plain_text" },
+          { "text": "Aplicar el criterio operativo interno antes de preparar la liquidación.", "format": "plain_text" }
+        ]
+      }
+    },
+    {
+      "blockId": "kb-check-001",
+      "type": "checklist",
+      "title": "Checklist operativo",
+      "order": 40,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "derived_only" },
+        "faq": { "access": "derived_only" },
+        "checklist": { "access": "allowed" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "blocked" }
+      },
+      "content": {
+        "items": [
+          { "itemId": "chk-001", "label": "Residencia fiscal confirmada" },
+          { "itemId": "chk-002", "label": "Documentación mínima revisada" }
+        ]
+      }
+    },
+    {
+      "blockId": "kb-faq-001",
+      "type": "faq",
+      "title": "Preguntas frecuentes",
+      "order": 50,
+      "status": "draft",
+      "visibility": "public",
+      "channelPolicy": {
+        "web": { "access": "derived_only" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "allowed" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "derived_only" },
+        "tax_library": { "access": "allowed" }
+      },
+      "content": {
+        "items": [
+          {
+            "faqId": "faq-001",
+            "question": "¿Este criterio aplica a cualquier alquiler no residente?",
+            "answer": "No. Solo a los casos que entren en el alcance definido en el resumen ejecutivo."
+          }
+        ]
+      }
+    },
+    {
+      "blockId": "kb-risk-001",
+      "type": "risk",
+      "title": "Riesgos",
+      "order": 60,
+      "status": "validado",
+      "visibility": "restricted",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "blocked" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "blocked" }
+      },
+      "content": {
+        "items": [
+          {
+            "riskId": "risk-001",
+            "description": "Aplicar el criterio fuera de su alcance real.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Escalar revisión humana cuando falten datos."
+          }
+        ]
+      }
+    },
+    {
+      "blockId": "kb-doc-001",
+      "type": "required_documentation",
+      "title": "Documentación necesaria",
+      "order": 70,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "blocked" },
+        "checklist": { "access": "derived_only" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "blocked" }
+      },
+      "content": {
+        "items": [
+          {
+            "documentId": "doc-001",
+            "label": "Contrato de arrendamiento",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "blockId": "kb-case-001",
+      "type": "case_study",
+      "title": "Caso práctico",
+      "order": 80,
+      "status": "draft",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "blocked" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "derived_only" }
+      },
+      "content": {
+        "items": [
+          {
+            "caseId": "case-001",
+            "scenario": "Arrendamiento estándar de inmueble urbano sin incidencias especiales.",
+            "resolution": "Aplicar el criterio operativo y documentar la revisión."
+          }
+        ]
+      }
+    },
+    {
+      "blockId": "kb-ref-001",
+      "type": "internal_reference",
+      "title": "Referencias internas",
+      "order": 90,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "blocked" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "blocked" }
+      },
+      "content": {
+        "items": [
+          {
+            "referenceId": "ref-001",
+            "label": "Guía interna de revisión fiscal IRNR"
+          }
+        ]
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relationId": "rel-001",
+      "type": "supported_by",
+      "targetKnowledgeObjectId": "ko_es_irnr_modelo210_base_000",
+      "rationale": "Criterio dependiente de una base general de IRNR",
+      "order": 10
+    }
+  ],
+  "auditMetadata": {
+    "createdAt": "2026-07-17T09:30:00Z",
+    "createdBy": "codex",
+    "updatedAt": "2026-07-17T10:00:00Z",
+    "updatedBy": "codex",
+    "revisionCount": 1,
+    "sourceSystem": "knowledge-factory-bootstrap"
+  }
+}
