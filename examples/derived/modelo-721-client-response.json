@@ -1,0 +1,54 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_modelo721_monedas_virtuales_001",
+    "stableKey": "modelo-721-monedas-virtuales-extranjero",
+    "version": "1.0.0"
+  },
+  "responseType": "derived_draft",
+  "humanReviewRequired": true,
+  "summary": "Evita errores al decidir si existe obligacion de presentar el Modelo 721, al delimitar la custodia relevante, al aplicar el umbral conjunto y al separar correctamente este modelo de otras obligaciones fiscales sobre criptoactivos.",
+  "nextSteps": [
+    "Extractos o certificados de la plataforma con posicion a 31 de diciembre.",
+    "Documentacion contractual o funcional que acredite la custodia por terceros de las claves criptograficas privadas.",
+    "Historial de declaraciones 721 previas del mismo obligado, si existe.",
+    "Soporte de titularidad, beneficiario, autorizacion o titularidad real."
+  ],
+  "faqHighlights": [
+    {
+      "faqId": "faq721-001",
+      "question": "¿Debo declarar criptomonedas en un exchange espanol?",
+      "answer": "No de forma automatica en el Modelo 721. Si el proveedor esta dentro del perimetro informativo interno espanol, la moneda virtual no debe tratarse como situada en el extranjero a estos efectos."
+    },
+    {
+      "faqId": "faq721-002",
+      "question": "¿Que ocurre si utilizo un exchange extranjero?",
+      "answer": "Hay que analizar si custodia claves criptograficas privadas en nombre de terceros y si queda fuera del deber interno de informacion a la AEAT. Solo entonces, y si se supera el umbral, puede nacer obligacion de presentar."
+    },
+    {
+      "faqId": "faq721-003",
+      "question": "¿Existe un umbral minimo para presentar el Modelo 721?",
+      "answer": "Si. No existe obligacion cuando el valor conjunto a 31 de diciembre de las monedas virtuales situadas en el extranjero no supera 50.000 euros."
+    }
+  ],
+  "documentationHighlights": [
+    {
+      "documentId": "doc721-001",
+      "label": "Extractos o certificados de la plataforma con posicion a 31 de diciembre.",
+      "required": true,
+      "notes": "Finalidad: acreditar el valor conjunto declarable. Momento: calculo del umbral. Alternativa: reportes equivalentes descargados del custodio."
+    },
+    {
+      "documentId": "doc721-002",
+      "label": "Documentacion contractual o funcional que acredite la custodia por terceros de las claves criptograficas privadas.",
+      "required": true,
+      "notes": "Finalidad: distinguir custodia relevante de autocustodia. Momento: analisis de obligacion. Alternativa: terminos de servicio o evidencia operativa del proveedor."
+    },
+    {
+      "documentId": "doc721-004",
+      "label": "Soporte de titularidad, beneficiario, autorizacion o titularidad real.",
+      "required": true,
+      "notes": "Finalidad: identificar correctamente al obligado. Momento: apertura del expediente. Alternativa: documentacion societaria o evidencias de control equivalentes."
+    }
+  ],
+  "caution": "Borrador derivado para apoyo interno. No debe enviarse sin revision humana y sin contrastar la documentacion concreta del cliente."
+}
