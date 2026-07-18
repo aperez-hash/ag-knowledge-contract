@@ -508,8 +508,8 @@ Expected: diff acotado a `Modelo 714`.
 
 - [ ] **Step 4: Abrir la Draft PR**
 
-Base: `main`  
-Head: `story/kf-005b-modelo-714-knowledge-object`  
+Base: `main`
+Head: `story/kf-005b-modelo-714-knowledge-object`
 Title: `feat(knowledge): author canonical Modelo 714 knowledge object`
 
 - [ ] **Step 5: Verificar contenido de la PR**
