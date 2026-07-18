@@ -16,7 +16,8 @@
   "exports": {
     "./schema/knowledge-object.schema.json": "./schema/knowledge-object.schema.json",
     "./generated/knowledge-object.generated": "./generated/knowledge-object.generated.ts",
-    "./examples/modelo-210-imputacion-rentas.json": "./examples/modelo-210-imputacion-rentas.json"
+    "./examples/modelo-210-imputacion-rentas.json": "./examples/modelo-210-imputacion-rentas.json",
+    "./examples/modelo-720-bienes-extranjero.json": "./examples/modelo-720-bienes-extranjero.json"
   },
   "scripts": {
     "generate": "node scripts/generate-types.mjs",
@@ -24,6 +25,8 @@
     "validate:example": "node scripts/validate-example.mjs",
     "build:story-kf-004a": "node scripts/build-story-kf-004a-artifacts.mjs",
     "validate:story-kf-004a": "node scripts/validate-story-kf-004a.mjs",
+    "build:story-kf-005a": "node scripts/build-story-kf-005a-artifacts.mjs",
+    "validate:story-kf-005a": "node scripts/validate-story-kf-005a.mjs",
     "test": "node --test tests/*.test.mjs",
     "check": "node scripts/check.mjs"
   },

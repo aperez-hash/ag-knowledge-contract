@@ -1,0 +1,626 @@
+{
+  "identity": {
+    "knowledgeObjectId": "ko_es_modelo720_bienes_extranjero_001",
+    "stableKey": "modelo-720-bienes-derechos-extranjero",
+    "title": "Modelo 720 - Declaracion informativa sobre bienes y derechos situados en el extranjero",
+    "slug": "modelo-720-bienes-derechos-situados-extranjero",
+    "language": "es",
+    "jurisdiction": "ES"
+  },
+  "governance": {
+    "status": "validado",
+    "version": "1.0.0",
+    "owner": "equipo-fiscal-patrimonio-internacional",
+    "approvedBy": "direccion-tecnica-fiscal",
+    "reviewedAt": "2026-07-18T18:30:00Z",
+    "changeReason": "Segundo Knowledge Object productivo de Knowledge Factory, dedicado al Modelo 720 y validado contra el contrato publicado"
+  },
+  "classification": {
+    "domain": "fiscal",
+    "topic": "informativas",
+    "subtopic": "modelo-720-bienes-derechos-extranjero",
+    "audience": "advisor",
+    "sensitivity": "high",
+    "keywords": [
+      "modelo 720",
+      "bienes en el extranjero",
+      "cuentas extranjeras",
+      "valores en el extranjero",
+      "inmuebles extranjero",
+      "umbral 50000",
+      "incremento 20000"
+    ]
+  },
+  "channelPolicy": {
+    "web": {
+      "access": "derived_only",
+      "notes": "La web solo debe publicar salidas derivadas y prudentes."
+    },
+    "planner": {
+      "access": "allowed",
+      "notes": "Planner puede consumir la vista operativa interna del objeto."
+    },
+    "ia": {
+      "access": "allowed",
+      "notes": "La IA interna puede usar el criterio con trazabilidad y restricciones."
+    },
+    "faq": {
+      "access": "derived_only",
+      "notes": "Las FAQ deben derivarse de forma controlada."
+    },
+    "checklist": {
+      "access": "derived_only",
+      "notes": "La checklist puede exponerse como derivacion operativa."
+    },
+    "internal_guide": {
+      "access": "allowed",
+      "notes": "La guia interna puede reutilizar el contenido completo validado."
+    },
+    "client_response": {
+      "access": "derived_only",
+      "notes": "Nunca debe enviarse al cliente el texto bruto del objeto."
+    },
+    "tax_library": {
+      "access": "derived_only",
+      "notes": "La biblioteca fiscal debe consumir salidas derivadas, no el objeto bruto."
+    }
+  },
+  "executiveSummary": {
+    "summary": "Este Knowledge Object fija el criterio operativo del despacho para determinar cuando existe obligacion de presentar el Modelo 720 por bienes y derechos situados en el extranjero, como segmentar el analisis por bloques y como documentar la decision de presentar o no presentar en cada ejercicio. Su finalidad es evitar errores recurrentes en materia de umbral conjunto de 50.000 euros, nueva declaracion por incremento superior a 20.000 euros, confusion entre titularidad, autorizacion y titularidad real, y mezcla impropia entre cuentas, valores e inmuebles. Tambien sirve para separar con claridad el Modelo 720 de otras obligaciones informativas y patrimoniales, como el Modelo 721, CRS, FATCA o el Impuesto sobre el Patrimonio, que pueden relacionarse pero no forman parte de este objeto. El uso practico del objeto es homogeneizar la identificacion del obligado, la recopilacion documental, el calculo por bloques, la preparacion de la presentacion y la trazabilidad del expediente, incorporando ademas el efecto operativo de la sentencia del TJUE de 27 de enero de 2022 para no describir como vigente un regimen sancionador ya corregido.",
+    "problemSolved": "Evita errores al decidir si existe obligacion de declarar, al recalcular si debe repetirse la declaracion y al separar correctamente bloques, umbrales, titularidades y efectos practicos del marco vigente.",
+    "scope": "Personas fisicas y juridicas residentes en Espana, establecimientos permanentes y entidades del articulo 35.4 LGT con bienes o derechos situados en el extranjero, en lo relativo exclusivamente al Modelo 720.",
+    "practicalImpact": "Permite abrir, revisar y cerrar expedientes del Modelo 720 con un criterio unico, reutilizable por Planner, Web, IA, FAQ, checklist y respuestas al cliente sin duplicar doctrina."
+  },
+  "affectedTaxModels": [
+    {
+      "modelCode": "720",
+      "modelName": "Declaracion informativa sobre bienes y derechos situados en el extranjero",
+      "relationType": "primary",
+      "notes": "Modelo central del objeto y unica obligacion desarrollada directamente aqui."
+    },
+    {
+      "modelCode": "721",
+      "modelName": "Declaracion informativa sobre monedas virtuales situadas en el extranjero",
+      "relationType": "informative",
+      "notes": "Se cita solo para evitar confundir el alcance actual del Modelo 720 con monedas virtuales."
+    }
+  ],
+  "affectedForms": [
+    {
+      "formCode": "720",
+      "formName": "Modelo 720 - Declaracion informativa de bienes y derechos situados en el extranjero",
+      "relationType": "required",
+      "notes": "Formulario oficial cuando concurre obligacion informativa por alguno de los tres bloques."
+    }
+  ],
+  "blocks": [
+    {
+      "blockId": "kb720-legal-001",
+      "type": "legal_basis",
+      "title": "Base legal y encaje vigente del Modelo 720",
+      "order": 10,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "blocked" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "allowed" }
+      },
+      "lastReviewedAt": "2026-07-18T18:30:00Z",
+      "content": {
+        "basis": "La obligacion de informacion sobre bienes y derechos situados en el extranjero se fundamenta en la disposicion adicional decimoctava de la Ley General Tributaria y se desarrolla materialmente en los articulos 42 bis, 42 ter y 54 bis del Real Decreto 1065/2007. La Orden HAP/72/2013 aprueba el modelo, fija su contenido y regula forma, lugar, plazo y procedimiento de presentacion, en la redaccion vigente tras la Orden HFP/1180/2023. El objeto debe leerse a la luz de la sentencia del TJUE C-788/19 solo para entender que el modelo sigue existiendo como obligacion informativa, pero que no puede describirse como vigente el antiguo tratamiento sancionador y de imprescriptibilidad en los terminos censurados por el Tribunal. Alcance material: cuentas en entidades financieras, valores, derechos, seguros y rentas, y bienes inmuebles o derechos sobre inmuebles situados en el extranjero. Quedan fuera de este objeto las monedas virtuales, hoy separadas en el Modelo 721, y cualquier desarrollo completo de CRS, FATCA, Patrimonio, regularizacion inspectora o delito fiscal."
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "src720-lgt-da18",
+          "type": "law",
+          "label": "LGT - Disposicion adicional decimoctava",
+          "citation": "Ley 58/2003, disposicion adicional decimoctava",
+          "url": "https://boe.es/buscar/act.php?id=BOE-A-2003-23186&p=20241221&tn=0",
+          "notes": "Fundamento legal de la obligacion de informacion sobre bienes y derechos situados en el extranjero."
+        },
+        {
+          "referenceId": "src720-rd1065",
+          "type": "regulation",
+          "label": "RD 1065/2007 - articulos 42 bis, 42 ter y 54 bis",
+          "citation": "Real Decreto 1065/2007, texto consolidado",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-15984&p=20250402&tn=2",
+          "notes": "Desarrollo reglamentario de las tres obligaciones materiales."
+        },
+        {
+          "referenceId": "src720-orden-2013",
+          "type": "regulation",
+          "label": "Orden HAP/72/2013",
+          "citation": "BOE-A-2013-954",
+          "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2013-954",
+          "notes": "Aprueba el Modelo 720 y regula forma, contenido y plazo."
+        },
+        {
+          "referenceId": "src720-tjue-c78819",
+          "type": "jurisprudence",
+          "label": "TJUE C-788/19",
+          "citation": "Sentencia del TJUE de 27/01/2022, ECLI:EU:C:2022:55",
+          "url": "https://infocuria.curia.europa.eu/tabs/redirect/juris/liste.jsf?language=es&num=C-788%2F19&td=ALL",
+          "notes": "Debe usarse para explicar el efecto practico del marco vigente y no para reconstruir el antiguo regimen sancionador."
+        }
+      ]
+    },
+    {
+      "blockId": "kb720-tech-001",
+      "type": "technical_development",
+      "title": "Desarrollo tecnico de la obligacion, umbrales y bloques",
+      "order": 20,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "derived_only" },
+        "checklist": { "access": "derived_only" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "allowed" }
+      },
+      "lastReviewedAt": "2026-07-18T18:30:00Z",
+      "summary": "La clave operativa no es solo saber que bienes existen, sino clasificarlos por bloque, calcular el umbral conjunto de 50.000 euros y revisar si hay nueva declaracion por incremento superior a 20.000 euros o por perdida de titularidad.",
+      "content": {
+        "development": "El Modelo 720 se organiza en tres bloques autonomos: cuentas en entidades financieras situadas en el extranjero; valores, derechos, seguros y rentas depositados, gestionados u obtenidos en el extranjero; y bienes inmuebles o derechos sobre bienes inmuebles situados en el extranjero. La obligacion nace cuando el valor conjunto de un bloque supera 50.000 euros a 31 de diciembre o, cuando la norma del propio bloque asi lo contempla, tambien por los supuestos de cancelacion, extincion o perdida de condicion que obligan a informar. Tras la primera declaracion, no debe repetirse cada ano de forma automatica: en terminos operativos, solo vuelve a presentarse por un bloque cuando el incremento conjunto respecto de la ultima declaracion presentada supera 20.000 euros o cuando concurre otra causa reglamentaria de nueva declaracion. Debe distinguirse titularidad juridica, autorizacion, representacion, beneficiario y titularidad real, porque el hecho de figurar autorizado o titular real puede desencadenar obligacion en determinados supuestos. La residencia fiscal debe analizarse respecto del ejercicio informado. El objeto no cubre monedas virtuales, que hoy se canalizan por el Modelo 721, ni debe confundirse con la obligacion de declarar patrimonio mundial en el Impuesto sobre el Patrimonio. En trusts, masas patrimoniales y estructuras sin personalidad, la AEAT exige revisar la posicion material de control o beneficio segun el caso concreto, por lo que el expediente debe documentarse con especial prudencia."
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "src720-aeat-tres-obligaciones",
+          "type": "guidance",
+          "label": "AEAT - Un solo modelo para tres obligaciones",
+          "citation": "FAQ oficial del Modelo 720",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/declaraciones-informativas/modelo-720-decla_____sobre-bienes-derechos-extranjero_/preguntas-frecuentes.html?faqId=d018e5b0a9b8c310VgnVCM1000006986a8c0RCRD",
+          "notes": "Explica la estructura tripartita de la obligacion."
+        },
+        {
+          "referenceId": "src720-aeat-frecuencia",
+          "type": "guidance",
+          "label": "AEAT - Frecuencia de presentacion",
+          "citation": "FAQ oficial sobre nueva presentacion por incremento",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/declaraciones-informativas/modelo-720-decla_____sobre-bienes-derechos-extranjero_/preguntas-frecuentes/frecuencia-presentacion-declaracion.html?faqId=8f40e5b0a9b8c310VgnVCM1000006986a8c0RCRD",
+          "notes": "Base tecnica para la regla del incremento superior a 20.000 euros."
+        },
+        {
+          "referenceId": "src720-aeat-otras-cuestiones",
+          "type": "guidance",
+          "label": "AEAT - Otras cuestiones",
+          "citation": "FAQ oficial sobre residencia, titularidad y trusts",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/declaraciones-informativas/modelo-720-decla_____sobre-bienes-derechos-extranjero_/preguntas-frecuentes/otras-cuestiones.html?faqId=e1d6ff1d82d8f710VgnVCM100000dc381e0aRCRD",
+          "notes": "Respalda el tratamiento operativo de residencia, autorizados, titulares reales y estructuras sin personalidad."
+        }
+      ]
+    },
+    {
+      "blockId": "kb720-proc-001",
+      "type": "procedure",
+      "title": "Procedimiento operativo completo",
+      "order": 30,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "derived_only" },
+        "checklist": { "access": "derived_only" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "derived_only" }
+      },
+      "lastReviewedAt": "2026-07-18T18:30:00Z",
+      "content": {
+        "steps": [
+          {
+            "text": "Confirmar si el obligado es residente fiscal en Espana en el ejercicio informado y si actua como persona fisica, persona juridica, establecimiento permanente o entidad del articulo 35.4 LGT.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Abrir el inventario de activos y derechos situados fuera de Espana y clasificarlos por bloque: cuentas, valores/seguros/rentas o inmuebles/derechos sobre inmuebles.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Excluir desde el inicio lo que no pertenece al Modelo 720, especialmente monedas virtuales, cuestiones CRS/FATCA o materias puramente patrimoniales no cubiertas por la declaracion informativa.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Calcular por separado el valor conjunto de cada bloque a 31 de diciembre y verificar si supera 50.000 euros, documentando el criterio de valoracion aplicado en cada categoria.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Revisar si existe una declaracion anterior del mismo bloque y comparar el valor conjunto actual con el que determino la ultima presentacion para decidir si hay incremento superior a 20.000 euros o alguna otra causa de nueva declaracion.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Analizar titularidad juridica, autorizacion, beneficiario, representacion y titularidad real. En casos complejos, documentar por que la persona queda dentro o fuera del deber de informar.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Recopilar la documentacion soporte de cada bloque: certificaciones bancarias, extractos, contratos de depositaria, escrituras, notas registrales, certificados de seguros o cualquier prueba equivalente.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Preparar el Modelo 720 con separacion estricta de registros por bloque, comprobar identificacion del obligado, codigos, paises, saldos o valores declarables y validar el fichero o formulario antes de presentar.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Presentar dentro del plazo del 1 de enero al 31 de marzo del ano siguiente al ejercicio informado y archivar en el expediente la decision final de presentar o no presentar, junto con el soporte documental y el criterio aplicado.",
+            "format": "plain_text"
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "src720-aeat-plazo",
+          "type": "guidance",
+          "label": "AEAT - Plazos de presentacion",
+          "citation": "Sede AEAT, plazo oficial del modelo 720",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/declaraciones-informativas/modelo-720-decla_____sobre-bienes-derechos-extranjero_/plazos-presentacion.html",
+          "notes": "Fija el periodo ordinario de presentacion entre enero y marzo."
+        },
+        {
+          "referenceId": "src720-orden-procedimiento",
+          "type": "regulation",
+          "label": "Orden HAP/72/2013 - procedimiento",
+          "citation": "BOE-A-2013-954, articulos 1 a 7",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2013-954&p=20231031&tn=2",
+          "notes": "Desarrollo del procedimiento formal de presentacion."
+        }
+      ]
+    },
+    {
+      "blockId": "kb720-check-001",
+      "type": "checklist",
+      "title": "Checklist operativa reutilizable",
+      "order": 40,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "derived_only" },
+        "faq": { "access": "blocked" },
+        "checklist": { "access": "allowed" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "blocked" }
+      },
+      "lastReviewedAt": "2026-07-18T18:30:00Z",
+      "content": {
+        "items": [
+          { "itemId": "chk720-001", "label": "Residencia fiscal del ejercicio confirmada." },
+          { "itemId": "chk720-002", "label": "Inventario de activos extranjeros abierto y clasificado por bloque." },
+          { "itemId": "chk720-003", "label": "Monedas virtuales excluidas expresamente del analisis 720." },
+          { "itemId": "chk720-004", "label": "Umbral conjunto de 50.000 euros revisado por bloque." },
+          { "itemId": "chk720-005", "label": "Ultima declaracion historica localizada y comparada." },
+          { "itemId": "chk720-006", "label": "Incremento superior a 20.000 euros revisado cuando exista declaracion previa." },
+          { "itemId": "chk720-007", "label": "Titularidad juridica, autorizacion y titularidad real contrastadas." },
+          { "itemId": "chk720-008", "label": "Documentacion soporte recopilada y archivada." },
+          { "itemId": "chk720-009", "label": "Formulario o fichero validado sin inconsistencias." },
+          { "itemId": "chk720-010", "label": "Decision final de presentar o no presentar documentada en el expediente." }
+        ]
+      }
+    },
+    {
+      "blockId": "kb720-faq-001",
+      "type": "faq",
+      "title": "Preguntas frecuentes reales de clientes y expedientes",
+      "order": 50,
+      "status": "validado",
+      "visibility": "public",
+      "channelPolicy": {
+        "web": { "access": "derived_only" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "allowed" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "derived_only" },
+        "tax_library": { "access": "derived_only" }
+      },
+      "lastReviewedAt": "2026-07-18T18:30:00Z",
+      "content": {
+        "items": [
+          {
+            "faqId": "faq720-001",
+            "question": "Si ya presente el Modelo 720 una vez, ¿tengo que volver a presentarlo todos los anos?",
+            "answer": "No necesariamente. En terminos operativos, solo vuelve a presentarse por un bloque cuando el incremento conjunto respecto de la ultima declaracion supera 20.000 euros o cuando concurre otra causa reglamentaria de nueva declaracion."
+          },
+          {
+            "faqId": "faq720-002",
+            "question": "¿Las criptomonedas o monedas virtuales van en el Modelo 720?",
+            "answer": "No. Esa materia se separa del Modelo 720 y debe analizarse, en su caso, en el Modelo 721."
+          },
+          {
+            "faqId": "faq720-003",
+            "question": "¿Se suman cuentas, valores e inmuebles para ver si se superan los 50.000 euros?",
+            "answer": "No. El analisis del umbral se hace por bloques separados. Un bloque puede obligar a declarar aunque otro no alcance el limite."
+          },
+          {
+            "faqId": "faq720-004",
+            "question": "¿Puede obligar a declarar una cuenta en la que solo estoy autorizado?",
+            "answer": "Si, en determinados supuestos. La condicion de autorizado, representante, beneficiario o titular real puede ser relevante y debe revisarse con detalle segun el bloque y la posicion concreta."
+          },
+          {
+            "faqId": "faq720-005",
+            "question": "Si cancele una cuenta o vendi un inmueble y nunca habia tenido obligacion de presentar, ¿tengo que informar solo por esa cancelacion?",
+            "answer": "No por el mero hecho de cancelar o vender, si nunca existio antes obligacion de informar respecto de ese bien o derecho. Hay que revisar primero si alguna vez nacio la obligacion."
+          }
+        ]
+      }
+    },
+    {
+      "blockId": "kb720-risk-001",
+      "type": "risk",
+      "title": "Riesgos operativos y mitigacion",
+      "order": 60,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "blocked" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "blocked" }
+      },
+      "lastReviewedAt": "2026-07-18T18:30:00Z",
+      "summary": "Los errores mas costosos no suelen estar en el formulario, sino en la fase previa de clasificacion del activo, calculo por bloques y lectura de titularidades o historico de declaraciones.",
+      "content": {
+        "items": [
+          {
+            "riskId": "risk720-001",
+            "description": "Omitir un activo extranjero por no integrarlo en el inventario patrimonial completo del ejercicio.",
+            "severity": "critical",
+            "likelihood": "medium",
+            "mitigation": "Levantar siempre un inventario estructurado antes de entrar en el formulario y contrastarlo con documentacion bancaria, depositaria y registral."
+          },
+          {
+            "riskId": "risk720-002",
+            "description": "Calcular mal el umbral conjunto del bloque por mezclar categorias, monedas o fechas de referencia.",
+            "severity": "high",
+            "likelihood": "high",
+            "mitigation": "Separar los bloques desde el inicio y dejar trazado el criterio de valoracion utilizado a 31 de diciembre."
+          },
+          {
+            "riskId": "risk720-003",
+            "description": "No detectar la necesidad de nueva declaracion cuando el bloque ya se declaro anteriormente y el incremento supera 20.000 euros.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Localizar la ultima declaracion presentada y comparar expresamente el valor conjunto del bloque con el que determino aquella presentacion."
+          },
+          {
+            "riskId": "risk720-004",
+            "description": "Confundir residencia fiscal, autorizacion o titularidad real y excluir indebidamente al obligado del analisis.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Revisar posicion juridica y material del sujeto con apoyo documental y dejar nota de criterio cuando el caso sea complejo."
+          },
+          {
+            "riskId": "risk720-005",
+            "description": "Describir al cliente o al equipo un regimen sancionador como si siguiera intacto tras la sentencia del TJUE y la adaptacion normativa.",
+            "severity": "medium",
+            "likelihood": "medium",
+            "mitigation": "Usar siempre formulacion actualizada: la obligacion informativa sigue viva, pero el marco sancionador debe explicarse solo con criterio vigente y prudente."
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "src720-risk-frecuencia",
+          "type": "guidance",
+          "label": "AEAT - FAQ frecuencia de presentacion",
+          "citation": "FAQ oficial del Modelo 720",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/declaraciones-informativas/modelo-720-decla_____sobre-bienes-derechos-extranjero_/preguntas-frecuentes/frecuencia-presentacion-declaracion.html?faqId=8f40e5b0a9b8c310VgnVCM1000006986a8c0RCRD",
+          "notes": "Respalda el riesgo de olvidar el incremento superior a 20.000 euros."
+        },
+        {
+          "referenceId": "src720-risk-tjue",
+          "type": "jurisprudence",
+          "label": "TJUE C-788/19",
+          "citation": "Sentencia TJUE 27/01/2022",
+          "url": "https://infocuria.curia.europa.eu/tabs/redirect/juris/liste.jsf?language=es&num=C-788%2F19&td=ALL",
+          "notes": "Respalda la cautela al explicar efectos sancionadores y de prescripcion."
+        }
+      ]
+    },
+    {
+      "blockId": "kb720-doc-001",
+      "type": "required_documentation",
+      "title": "Documentacion necesaria",
+      "order": 70,
+      "status": "validado",
+      "visibility": "public",
+      "channelPolicy": {
+        "web": { "access": "derived_only" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "derived_only" },
+        "checklist": { "access": "derived_only" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "derived_only" },
+        "tax_library": { "access": "derived_only" }
+      },
+      "lastReviewedAt": "2026-07-18T18:30:00Z",
+      "content": {
+        "items": [
+          {
+            "documentId": "doc720-001",
+            "label": "Certificados bancarios o extractos con saldos a 31 de diciembre y saldo medio del ultimo trimestre, cuando proceda.",
+            "required": true,
+            "notes": "Base minima para cuentas en entidades financieras extranjeras."
+          },
+          {
+            "documentId": "doc720-002",
+            "label": "Documentacion de depositarias, brokers, aseguradoras o emisores con valor o posicion a 31 de diciembre.",
+            "required": true,
+            "notes": "Necesaria para valores, seguros, rentas y derechos del bloque 42 ter."
+          },
+          {
+            "documentId": "doc720-003",
+            "label": "Escrituras, certificaciones registrales o contratos acreditativos de inmuebles o derechos reales situados en el extranjero.",
+            "required": true,
+            "notes": "Imprescindible para el bloque de inmuebles."
+          },
+          {
+            "documentId": "doc720-004",
+            "label": "Historial de declaraciones 720 previas del mismo obligado.",
+            "required": false,
+            "notes": "Muy recomendable para decidir si existe nueva declaracion por incremento superior a 20.000 euros."
+          },
+          {
+            "documentId": "doc720-005",
+            "label": "Soporte de titularidad real, autorizacion o beneficiario en estructuras complejas.",
+            "required": false,
+            "notes": "Especialmente util en cuentas con autorizados, trusts o estructuras sin personalidad."
+          }
+        ]
+      }
+    },
+    {
+      "blockId": "kb720-case-001",
+      "type": "case_study",
+      "title": "Casos practicos de referencia",
+      "order": 80,
+      "status": "validado",
+      "visibility": "public",
+      "channelPolicy": {
+        "web": { "access": "derived_only" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "derived_only" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "derived_only" },
+        "tax_library": { "access": "derived_only" }
+      },
+      "lastReviewedAt": "2026-07-18T18:30:00Z",
+      "summary": "Los cuatro supuestos cubren las consultas mas habituales del despacho: cuenta bancaria, cartera de valores, inmueble en el extranjero y perdida de obligacion por reduccion patrimonial.",
+      "content": {
+        "items": [
+          {
+            "caseId": "case720-001",
+            "scenario": "Persona fisica residente en Espana con una cuenta bancaria en Portugal cuyo saldo a 31 de diciembre supera 50.000 euros y que nunca ha presentado el modelo 720.",
+            "resolution": "Procede presentar por el bloque de cuentas. Debe recopilarse certificacion bancaria, identificar saldo a 31 de diciembre y revisar si existe tambien saldo medio del ultimo trimestre exigible en la posicion concreta.",
+            "notes": "Caso base para el bloque 42 bis."
+          },
+          {
+            "caseId": "case720-002",
+            "scenario": "Contribuyente con cartera de valores depositada en una entidad francesa cuyo valor conjunto supera 50.000 euros, sin cuentas ni inmuebles relevantes.",
+            "resolution": "Procede presentar solo por el bloque de valores, derechos, seguros y rentas. No se arrastra automaticamente el resto de bloques.",
+            "notes": "Sirve para reforzar la autonomia de bloques y evitar sumas incorrectas."
+          },
+          {
+            "caseId": "case720-003",
+            "scenario": "Matrimonio residente en Espana con un inmueble en Italia en copropiedad al 50 por ciento y valor superior a 50.000 euros.",
+            "resolution": "Debe analizarse la posicion de cada titular y declararse el bloque de inmuebles con el criterio de titularidad correspondiente, dejando soporte registral y valor acreditado.",
+            "notes": "Caso centrado en bloque inmobiliario y copropiedad."
+          },
+          {
+            "caseId": "case720-004",
+            "scenario": "Cliente que presento en anos anteriores por cuentas en el extranjero, pero cuyo valor conjunto actual se ha reducido y ya no supera el historico que obligo a declarar ni concurre otra causa reglamentaria.",
+            "resolution": "No debe repetirse automaticamente la declaracion solo por inercia. Hay que comparar el bloque actual con la ultima declaracion y documentar la razon por la que no existe nueva obligacion.",
+            "notes": "Caso practico para perdida de obligacion o ausencia de nueva declaracion por reduccion patrimonial."
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "src720-case-frecuencia",
+          "type": "guidance",
+          "label": "AEAT - Frecuencia de presentacion",
+          "citation": "FAQ oficial del modelo 720",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/declaraciones-informativas/modelo-720-decla_____sobre-bienes-derechos-extranjero_/preguntas-frecuentes/frecuencia-presentacion-declaracion.html?faqId=8f40e5b0a9b8c310VgnVCM1000006986a8c0RCRD",
+          "notes": "Respalda el caso de nueva declaracion o ausencia de obligacion repetida."
+        },
+        {
+          "referenceId": "src720-case-tres-bloques",
+          "type": "guidance",
+          "label": "AEAT - Tres obligaciones diferentes",
+          "citation": "FAQ oficial del modelo 720",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/declaraciones-informativas/modelo-720-decla_____sobre-bienes-derechos-extranjero_/preguntas-frecuentes.html?faqId=d018e5b0a9b8c310VgnVCM1000006986a8c0RCRD",
+          "notes": "Respalda la separacion entre bloques en los casos practicos."
+        }
+      ]
+    },
+    {
+      "blockId": "kb720-intref-001",
+      "type": "internal_reference",
+      "title": "Referencias internas existentes",
+      "order": 90,
+      "status": "validado",
+      "visibility": "restricted",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "blocked" },
+        "ia": { "access": "blocked" },
+        "faq": { "access": "blocked" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "blocked" }
+      },
+      "lastReviewedAt": "2026-07-18T18:30:00Z",
+      "content": {
+        "items": [
+          {
+            "referenceId": "intref720-001",
+            "label": "Knowledge Factory v1 Certification",
+            "notes": "Documento real: docs/KNOWLEDGE_FACTORY_V1_CERTIFICATION_2026-07-18.md."
+          },
+          {
+            "referenceId": "intref720-002",
+            "label": "Dossier primario de fuentes del Modelo 720",
+            "notes": "Documento real: docs/research/2026-07-18-modelo-720-primary-sources.md."
+          },
+          {
+            "referenceId": "intref720-003",
+            "label": "Knowledge Object canonico del Modelo 210",
+            "notes": "Activo real: examples/modelo-210-imputacion-rentas.json."
+          }
+        ]
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relationId": "rel720-001",
+      "type": "related_to",
+      "targetKnowledgeObjectId": "ko_es_residencia_fiscal_personas_fisicas_001",
+      "rationale": "La residencia fiscal del ejercicio es condicion de entrada para decidir si el Modelo 720 resulta aplicable.",
+      "order": 10
+    },
+    {
+      "relationId": "rel720-002",
+      "type": "related_to",
+      "targetKnowledgeObjectId": "ko_es_modelo721_monedas_virtuales_001",
+      "rationale": "Debe existir relacion expresa para evitar confundir el alcance del Modelo 720 con monedas virtuales situadas en el extranjero.",
+      "order": 20
+    },
+    {
+      "relationId": "rel720-003",
+      "type": "references",
+      "targetKnowledgeObjectId": "ko_es_convenios_doble_imposicion_residencia_001",
+      "rationale": "Los convenios pueden ser relevantes para contextualizar residencia o posicion internacional, aunque no eliminan por si solos la obligacion informativa del Modelo 720.",
+      "order": 30
+    }
+  ],
+  "auditMetadata": {
+    "createdAt": "2026-07-18T18:30:00Z",
+    "createdBy": "codex-knowledge-authoring",
+    "updatedAt": "2026-07-18T18:30:00Z",
+    "updatedBy": "codex-knowledge-authoring",
+    "revisionCount": 1,
+    "sourceSystem": "ag-knowledge-contract"
+  }
+}

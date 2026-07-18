@@ -1,0 +1,35 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_modelo720_bienes_extranjero_001",
+    "stableKey": "modelo-720-bienes-derechos-extranjero",
+    "version": "1.0.0"
+  },
+  "title": "Modelo 720 - Declaracion informativa sobre bienes y derechos situados en el extranjero - FAQ derivada",
+  "items": [
+    {
+      "faqId": "faq720-001",
+      "question": "Si ya presente el Modelo 720 una vez, ¿tengo que volver a presentarlo todos los anos?",
+      "answer": "No necesariamente. En terminos operativos, solo vuelve a presentarse por un bloque cuando el incremento conjunto respecto de la ultima declaracion supera 20.000 euros o cuando concurre otra causa reglamentaria de nueva declaracion."
+    },
+    {
+      "faqId": "faq720-002",
+      "question": "¿Las criptomonedas o monedas virtuales van en el Modelo 720?",
+      "answer": "No. Esa materia se separa del Modelo 720 y debe analizarse, en su caso, en el Modelo 721."
+    },
+    {
+      "faqId": "faq720-003",
+      "question": "¿Se suman cuentas, valores e inmuebles para ver si se superan los 50.000 euros?",
+      "answer": "No. El analisis del umbral se hace por bloques separados. Un bloque puede obligar a declarar aunque otro no alcance el limite."
+    },
+    {
+      "faqId": "faq720-004",
+      "question": "¿Puede obligar a declarar una cuenta en la que solo estoy autorizado?",
+      "answer": "Si, en determinados supuestos. La condicion de autorizado, representante, beneficiario o titular real puede ser relevante y debe revisarse con detalle segun el bloque y la posicion concreta."
+    },
+    {
+      "faqId": "faq720-005",
+      "question": "Si cancele una cuenta o vendi un inmueble y nunca habia tenido obligacion de presentar, ¿tengo que informar solo por esa cancelacion?",
+      "answer": "No por el mero hecho de cancelar o vender, si nunca existio antes obligacion de informar respecto de ese bien o derecho. Hay que revisar primero si alguna vez nacio la obligacion."
+    }
+  ]
+}

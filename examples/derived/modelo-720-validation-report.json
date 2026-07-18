@@ -1,0 +1,17 @@
+{
+  "story": "STORY-KF-005A",
+  "knowledgeObject": "Modelo 720 - Declaracion informativa sobre bienes y derechos situados en el extranjero",
+  "research": "PASS",
+  "schemaValidation": "PASS",
+  "ruleEngine": "PASS",
+  "plannerView": "PASS",
+  "webView": "PASS",
+  "aiContext": "PASS",
+  "checklist": "PASS",
+  "faq": "PASS",
+  "clientResponse": "PASS",
+  "qualityGate": "PASS",
+  "structuralChangesRequired": "NO",
+  "generatedAt": "2026-07-18T13:29:29.102Z",
+  "incidentCount": 0
+}
