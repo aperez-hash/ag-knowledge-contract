@@ -1,0 +1,17 @@
+{
+  "story": "STORY-KF-008B",
+  "knowledgeObject": "Convenios para Evitar la Doble Imposicion (CDI)",
+  "research": "PASS",
+  "schemaValidation": "PASS",
+  "ruleEngine": "PASS",
+  "plannerView": "PASS",
+  "webView": "PASS",
+  "aiContext": "PASS",
+  "checklist": "PASS",
+  "faq": "PASS",
+  "clientResponse": "PASS",
+  "qualityGate": "PASS",
+  "structuralChangesRequired": "NO",
+  "generatedAt": "2026-07-18T21:27:35.767Z",
+  "incidentCount": 0
+}

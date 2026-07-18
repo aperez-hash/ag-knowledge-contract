@@ -1,0 +1,60 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_cdi_marco_general_001",
+    "stableKey": "convenios-doble-imposicion-cdi",
+    "version": "1.0.0"
+  },
+  "title": "Convenios para Evitar la Doble Imposicion (CDI) - Checklist operativa",
+  "items": [
+    {
+      "itemId": "chkcdi-001",
+      "label": "Confirmar si existe elemento internacional",
+      "notes": "No analizar CDI si el expediente sigue siendo puramente interno."
+    },
+    {
+      "itemId": "chkcdi-002",
+      "label": "Verificar existencia y vigencia del CDI aplicable",
+      "notes": "No asumir que siempre hay convenio vigente."
+    },
+    {
+      "itemId": "chkcdi-003",
+      "label": "Revisar ambito subjetivo del convenio",
+      "notes": "Comprobar quien puede invocarlo."
+    },
+    {
+      "itemId": "chkcdi-004",
+      "label": "Revisar ambito objetivo del convenio",
+      "notes": "Confirmar que la renta o patrimonio entra realmente en su radio material."
+    },
+    {
+      "itemId": "chkcdi-005",
+      "label": "Separar aplicabilidad de interpretacion",
+      "notes": "No mezclar la decision de relevancia con la lectura del texto convencional."
+    },
+    {
+      "itemId": "chkcdi-006",
+      "label": "Comprobar residencia a efectos del convenio",
+      "notes": "Especialmente relevante si existe conflicto de residencia."
+    },
+    {
+      "itemId": "chkcdi-007",
+      "label": "Valorar si hay riesgo de establecimiento permanente",
+      "notes": "Solo como detection gateway para futura derivacion."
+    },
+    {
+      "itemId": "chkcdi-008",
+      "label": "Identificar metodo general para evitar la doble imposicion",
+      "notes": "Exencion o imputacion segun corresponda."
+    },
+    {
+      "itemId": "chkcdi-009",
+      "label": "Guardar texto o referencia del convenio aplicado",
+      "notes": "Debe quedar trazabilidad documental suficiente."
+    },
+    {
+      "itemId": "chkcdi-0010",
+      "label": "Trasladar la conclusion al impuesto o modelo concreto",
+      "notes": "El CDI no cierra solo el expediente material."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_cdi_marco_general_001",
+    "stableKey": "convenios-doble-imposicion-cdi",
+    "version": "1.0.0"
+  },
+  "responseType": "derived_draft",
+  "humanReviewRequired": true,
+  "summary": "Evita aplicar convenios de forma prematura o incorrecta, separando con claridad la fase de aplicabilidad de la fase de interpretacion y ordenando la distribucion general de potestades tributarias.",
+  "nextSteps": [
+    "Certificado de residencia fiscal",
+    "Texto o referencia del CDI aplicable",
+    "Documentacion de la renta o patrimonio analizado",
+    "Soporte de retenciones o imposicion soportada en el extranjero"
+  ],
+  "faqHighlights": [
+    {
+      "faqId": "faqcdi-001",
+      "question": "Que ocurre si existe CDI y la norma interna parece contradictoria?",
+      "answer": "El analisis parte de la norma interna aplicable, pero el CDI puede limitar, coordinar o redistribuir la potestad tributaria. No se trata de crear una obligacion nueva, sino de modular la ya nacida en la ley interna."
+    },
+    {
+      "faqId": "faqcdi-002",
+      "question": "Que significa tie-breaker?",
+      "answer": "Es la regla convencional que ayuda a resolver conflictos de doble residencia cuando dos Estados pueden considerar residente al mismo contribuyente al mismo tiempo."
+    },
+    {
+      "faqId": "faqcdi-003",
+      "question": "Como se determina la residencia a efectos del convenio?",
+      "answer": "Primero se analiza la residencia interna; si existe doble residencia real, se aplica la secuencia convencional de desempate prevista en el propio tratado."
+    }
+  ],
+  "documentationHighlights": [
+    {
+      "documentId": "doccdi-001",
+      "label": "Certificado de residencia fiscal",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: residencia a efectos del convenio y conflictos de doble residencia."
+    },
+    {
+      "documentId": "doccdi-002",
+      "label": "Texto o referencia del CDI aplicable",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: comprobar vigencia, ambito y reglas generales del tratado."
+    },
+    {
+      "documentId": "doccdi-003",
+      "label": "Documentacion de la renta o patrimonio analizado",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: identificar el hecho economico sobre el que se proyecta el CDI."
+    }
+  ],
+  "caution": "Borrador derivado para apoyo interno. No debe enviarse sin revision humana y sin contrastar la documentacion concreta del cliente."
+}
