@@ -218,13 +218,13 @@ Debe exponer, sin copiar normas:
 Sera el nucleo doctrinal y operativo del objeto. Debe organizarse con este
 orden:
 
-1. requisitos del contribuyente principal;
-2. requisitos de los familiares;
+1. acceso al regimen del contribuyente principal;
+2. acceso al regimen de los familiares;
 3. relacion entre principal y familiares;
 4. momento de incorporacion;
-5. duracion del regimen para principal y familiares;
-6. causas de exclusion;
-7. perdida del regimen;
+5. permanencia en el regimen del principal y de los familiares;
+6. causas de exclusion inicial;
+7. perdida o exclusion sobrevenida;
 8. efectos generales de tributacion y gestion anual.
 
 Debe cubrir especificamente:
@@ -239,14 +239,18 @@ Debe cubrir especificamente:
 - profesionales altamente cualificados;
 - investigadores;
 - familiares cuando proceda;
-- exclusiones y limites;
-- renuncia y perdida;
+- exclusiones y limites iniciales;
+- permanencia, control anual, renuncia y perdida;
 - duracion del regimen;
 - interaccion general con `Modelo 149` y `Modelo 151`.
 
 La capa de familiares no sera un anexo. Se trata como dominio nuclear porque
 modifica la logica de decision del expediente y la configuracion operativa del
 caso.
+
+La separacion entre **acceso** y **permanencia** debe ser explicita. El objeto
+no puede tratar el regimen como una foto fija: primero resuelve la entrada
+juridica en el regimen y despues su mantenimiento, control anual y salida.
 
 ### Decision Gateway
 
@@ -273,22 +277,46 @@ Opcion inicial y gestion anual del regimen
 Este `Decision Gateway` debe dejar claro que el regimen no se analiza de forma
 abstracta ni aislada del hecho previo de residencia fiscal.
 
+### Cronologia operativa
+
+El objeto incorporara ademas una linea temporal reutilizable por `Planner` y
+por las derivadas operativas:
+
+```text
+Desplazamiento
+        ↓
+Adquisicion de residencia
+        ↓
+Plazo para ejercer la opcion
+        ↓
+Aplicacion del regimen
+        ↓
+Control anual
+        ↓
+Finalizacion o perdida
+```
+
+Esta cronologia debe reflejarse tanto en `TechnicalDevelopmentBlock` como en
+`ProcedureBlock`, porque sera la base natural de checklists, alertas y
+recordatorios.
+
 ### ProcedureBlock
 
 Debe describir el flujo operativo completo:
 
 1. verificar desplazamiento;
 2. confirmar residencia fiscal;
-3. analizar requisitos del contribuyente principal;
-4. revisar exclusiones;
+3. analizar requisitos de acceso del contribuyente principal;
+4. revisar exclusiones iniciales;
 5. identificar familiares elegibles;
-6. verificar requisitos especificos de cada familiar;
+6. verificar requisitos de acceso de cada familiar;
 7. confirmar plazo de opcion;
 8. preparar `Modelo 149` cuando proceda;
-9. verificar admision o mantenimiento del regimen;
-10. gestionar la tributacion anual y el `Modelo 151` cuando corresponda;
-11. controlar causas de perdida;
-12. documentar el expediente.
+9. verificar admision del regimen;
+10. controlar permanencia y mantenimiento anual;
+11. gestionar la tributacion anual y el `Modelo 151` cuando corresponda;
+12. controlar causas de perdida o exclusion sobrevenida;
+13. documentar el expediente.
 
 ### ChecklistBlock
 
@@ -406,6 +434,18 @@ Consumes Doctrine From:
 
 Esto deja claro que el objeto depende de doctrina transversal previa y no debe
 convertirse en una repeticion de esos marcos.
+
+Tambien declarara una seccion funcional adicional:
+
+```text
+Delegated Analysis
+
+- Residencia Fiscal -> determinacion de la residencia.
+- CDI -> resolucion de conflictos internacionales cuando proceda.
+```
+
+Esa nota debe hacer visible que `Modelo 151` no reimplementa la logica
+transversal ya resuelta por otros objetos de la biblioteca.
 
 ## Cobertura minima esperada
 
