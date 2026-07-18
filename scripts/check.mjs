@@ -26,4 +26,5 @@ function run(label, args) {
 
 run("generate:check", ["scripts/generate-types.mjs", "--check"]);
 run("validate:example", ["scripts/validate-example.mjs"]);
-run("test", ["--test", "tests/knowledge-object.schema.test.mjs"]);
+run("validate:story-kf-004a", ["scripts/validate-story-kf-004a.mjs"]);
+run("test", ["--test", "tests/knowledge-object.schema.test.mjs", "tests/modelo-210-story-kf-004a.test.mjs"]);

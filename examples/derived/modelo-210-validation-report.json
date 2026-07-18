@@ -1,0 +1,12 @@
+{
+  "story": "STORY-KF-004A",
+  "knowledgeObject": "Modelo 210 - Imputacion de rentas inmobiliarias de no residentes",
+  "schemaValidation": "PASS",
+  "ruleEngine": "PASS",
+  "plannerView": "PASS",
+  "webView": "PASS",
+  "aiContext": "PASS",
+  "structuralChangesRequired": "NO",
+  "generatedAt": "2026-07-18T12:38:01.549Z",
+  "incidentCount": 0
+}

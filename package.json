@@ -22,7 +22,9 @@
     "generate": "node scripts/generate-types.mjs",
     "generate:check": "node scripts/generate-types.mjs --check",
     "validate:example": "node scripts/validate-example.mjs",
-    "test": "node --test tests/knowledge-object.schema.test.mjs",
+    "build:story-kf-004a": "node scripts/build-story-kf-004a-artifacts.mjs",
+    "validate:story-kf-004a": "node scripts/validate-story-kf-004a.mjs",
+    "test": "node --test tests/*.test.mjs",
     "check": "node scripts/check.mjs"
   },
   "dependencies": {
