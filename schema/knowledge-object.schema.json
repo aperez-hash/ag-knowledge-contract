@@ -1,0 +1,994 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ag.example/knowledge-factory/schemas/knowledge-object.schema.json",
+  "title": "KnowledgeObject",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "identity",
+    "governance",
+    "classification",
+    "channelPolicy",
+    "executiveSummary",
+    "affectedTaxModels",
+    "affectedForms",
+    "blocks",
+    "relations",
+    "auditMetadata"
+  ],
+  "properties": {
+    "identity": {
+      "$ref": "#/$defs/KnowledgeIdentity"
+    },
+    "governance": {
+      "$ref": "#/$defs/KnowledgeGovernance"
+    },
+    "classification": {
+      "$ref": "#/$defs/KnowledgeClassification"
+    },
+    "channelPolicy": {
+      "$ref": "#/$defs/KnowledgeChannelPolicy"
+    },
+    "executiveSummary": {
+      "$ref": "#/$defs/KnowledgeExecutiveSummary"
+    },
+    "affectedTaxModels": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/AffectedTaxModelRef"
+      }
+    },
+    "affectedForms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/AffectedFormRef"
+      }
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/KnowledgeBlock"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/KnowledgeRelation"
+      }
+    },
+    "auditMetadata": {
+      "$ref": "#/$defs/KnowledgeAuditMetadata"
+    }
+  },
+  "$defs": {
+    "KnowledgeObjectStatus": {
+      "type": "string",
+      "enum": ["draft", "validado", "publicado", "obsoleto"]
+    },
+    "BlockStatus": {
+      "type": "string",
+      "enum": ["draft", "validado", "publicado", "obsoleto"]
+    },
+    "BlockVisibility": {
+      "type": "string",
+      "enum": ["internal", "public", "restricted"]
+    },
+    "Channel": {
+      "type": "string",
+      "enum": [
+        "web",
+        "planner",
+        "ia",
+        "faq",
+        "checklist",
+        "internal_guide",
+        "client_response",
+        "tax_library"
+      ]
+    },
+    "ChannelAccessPolicy": {
+      "type": "string",
+      "enum": ["allowed", "blocked", "derived_only"]
+    },
+    "AudienceType": {
+      "type": "string",
+      "enum": ["internal_staff", "advisor", "manager", "client", "mixed"]
+    },
+    "SensitivityLevel": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "TaxRelationType": {
+      "type": "string",
+      "enum": ["primary", "secondary", "informative", "exception"]
+    },
+    "FormRelationType": {
+      "type": "string",
+      "enum": ["required", "supporting", "informative"]
+    },
+    "RelationType": {
+      "type": "string",
+      "enum": [
+        "related_to",
+        "depends_on",
+        "expands",
+        "supersedes",
+        "supported_by",
+        "references"
+      ]
+    },
+    "KnowledgeBlockType": {
+      "type": "string",
+      "enum": [
+        "legal_basis",
+        "technical_development",
+        "procedure",
+        "checklist",
+        "faq",
+        "risk",
+        "required_documentation",
+        "case_study",
+        "internal_reference"
+      ]
+    },
+    "SourceReferenceType": {
+      "type": "string",
+      "enum": [
+        "law",
+        "regulation",
+        "guidance",
+        "internal_policy",
+        "jurisprudence",
+        "doctrine",
+        "other"
+      ]
+    },
+    "RiskSeverity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "RiskLikelihood": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "NonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "LocalizedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text"],
+      "properties": {
+        "text": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "format": {
+          "type": "string",
+          "enum": ["plain_text", "markdown"]
+        }
+      }
+    },
+    "SourceReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["referenceId", "type", "label"],
+      "properties": {
+        "referenceId": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "type": {
+          "$ref": "#/$defs/SourceReferenceType"
+        },
+        "label": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "citation": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "ChannelRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["access"],
+      "properties": {
+        "access": {
+          "$ref": "#/$defs/ChannelAccessPolicy"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "KnowledgeChannelPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "web",
+        "planner",
+        "ia",
+        "faq",
+        "checklist",
+        "internal_guide",
+        "client_response",
+        "tax_library"
+      ],
+      "properties": {
+        "web": {
+          "$ref": "#/$defs/ChannelRule"
+        },
+        "planner": {
+          "$ref": "#/$defs/ChannelRule"
+        },
+        "ia": {
+          "$ref": "#/$defs/ChannelRule"
+        },
+        "faq": {
+          "$ref": "#/$defs/ChannelRule"
+        },
+        "checklist": {
+          "$ref": "#/$defs/ChannelRule"
+        },
+        "internal_guide": {
+          "$ref": "#/$defs/ChannelRule"
+        },
+        "client_response": {
+          "$ref": "#/$defs/ChannelRule"
+        },
+        "tax_library": {
+          "$ref": "#/$defs/ChannelRule"
+        }
+      }
+    },
+    "BlockChannelPolicy": {
+      "$ref": "#/$defs/KnowledgeChannelPolicy"
+    },
+    "KnowledgeIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "knowledgeObjectId",
+        "stableKey",
+        "title",
+        "slug",
+        "language",
+        "jurisdiction"
+      ],
+      "properties": {
+        "knowledgeObjectId": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "stableKey": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "title": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "slug": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "language": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "jurisdiction": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      }
+    },
+    "KnowledgeGovernance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "version", "owner", "reviewedAt"],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/KnowledgeObjectStatus"
+        },
+        "version": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "owner": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "approvedBy": {
+          "type": "string"
+        },
+        "reviewedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "publishedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "obsoleteAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "changeReason": {
+          "type": "string"
+        },
+        "supersedes": {
+          "type": "string"
+        },
+        "supersededBy": {
+          "type": "string"
+        }
+      }
+    },
+    "KnowledgeClassification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domain", "topic", "audience", "sensitivity", "keywords"],
+      "properties": {
+        "domain": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "topic": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "subtopic": {
+          "type": "string"
+        },
+        "audience": {
+          "$ref": "#/$defs/AudienceType"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/SensitivityLevel"
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          }
+        }
+      }
+    },
+    "KnowledgeExecutiveSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "problemSolved", "scope"],
+      "properties": {
+        "summary": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "problemSolved": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "scope": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "practicalImpact": {
+          "type": "string"
+        }
+      }
+    },
+    "AffectedTaxModelRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["modelCode", "modelName", "relationType"],
+      "properties": {
+        "modelCode": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "modelName": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "relationType": {
+          "$ref": "#/$defs/TaxRelationType"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "AffectedFormRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formCode", "formName", "relationType"],
+      "properties": {
+        "formCode": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "formName": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "relationType": {
+          "$ref": "#/$defs/FormRelationType"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "KnowledgeRelation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relationId", "type", "targetKnowledgeObjectId"],
+      "properties": {
+        "relationId": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "type": {
+          "$ref": "#/$defs/RelationType"
+        },
+        "targetKnowledgeObjectId": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "targetBlockId": {
+          "type": "string"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "KnowledgeAuditMetadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["createdAt", "createdBy", "updatedAt", "updatedBy"],
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "createdBy": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedBy": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "revisionCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sourceSystem": {
+          "type": "string"
+        }
+      }
+    },
+    "BaseKnowledgeBlock": {
+      "type": "object",
+      "required": [
+        "blockId",
+        "type",
+        "title",
+        "order",
+        "status",
+        "visibility",
+        "channelPolicy",
+        "content"
+      ],
+      "properties": {
+        "blockId": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "type": {
+          "$ref": "#/$defs/KnowledgeBlockType"
+        },
+        "title": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "status": {
+          "$ref": "#/$defs/BlockStatus"
+        },
+        "visibility": {
+          "$ref": "#/$defs/BlockVisibility"
+        },
+        "channelPolicy": {
+          "$ref": "#/$defs/BlockChannelPolicy"
+        },
+        "lastReviewedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "changeNote": {
+          "type": "string"
+        },
+        "content": {
+          "type": "object"
+        }
+      }
+    },
+    "WithSourceRefs": {
+      "type": "object",
+      "properties": {
+        "sourceRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceReference"
+          }
+        }
+      }
+    },
+    "WithSummary": {
+      "type": "object",
+      "properties": {
+        "summary": {
+          "type": "string"
+        }
+      }
+    },
+    "ChecklistItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["itemId", "label"],
+      "properties": {
+        "itemId": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "label": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "FaqItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["faqId", "question", "answer"],
+      "properties": {
+        "faqId": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "question": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "answer": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      }
+    },
+    "RiskItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["riskId", "description", "severity", "likelihood"],
+      "properties": {
+        "riskId": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "description": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "severity": {
+          "$ref": "#/$defs/RiskSeverity"
+        },
+        "likelihood": {
+          "$ref": "#/$defs/RiskLikelihood"
+        },
+        "mitigation": {
+          "type": "string"
+        }
+      }
+    },
+    "RequiredDocumentItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["documentId", "label"],
+      "properties": {
+        "documentId": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "label": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "CaseStudyItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["caseId", "scenario", "resolution"],
+      "properties": {
+        "caseId": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "scenario": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "resolution": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "ReferenceItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["referenceId", "label"],
+      "properties": {
+        "referenceId": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "label": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "LegalBasisContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basis"],
+      "properties": {
+        "basis": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      }
+    },
+    "TechnicalDevelopmentContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["development"],
+      "properties": {
+        "development": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      }
+    },
+    "ProcedureContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["steps"],
+      "properties": {
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LocalizedText"
+          }
+        }
+      }
+    },
+    "ChecklistContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ChecklistItem"
+          }
+        }
+      }
+    },
+    "FaqContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FaqItem"
+          }
+        }
+      }
+    },
+    "RiskContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RiskItem"
+          }
+        }
+      }
+    },
+    "RequiredDocumentationContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RequiredDocumentItem"
+          }
+        }
+      }
+    },
+    "CaseStudyContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CaseStudyItem"
+          }
+        }
+      }
+    },
+    "InternalReferenceContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ReferenceItem"
+          }
+        }
+      }
+    },
+    "LegalBasisBlock": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/BaseKnowledgeBlock"
+        },
+        {
+          "$ref": "#/$defs/WithSourceRefs"
+        },
+        {
+          "type": "object",
+          "required": ["type", "content"],
+          "properties": {
+            "type": {
+              "const": "legal_basis"
+            },
+            "content": {
+              "$ref": "#/$defs/LegalBasisContent"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "TechnicalDevelopmentBlock": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/BaseKnowledgeBlock"
+        },
+        {
+          "$ref": "#/$defs/WithSummary"
+        },
+        {
+          "$ref": "#/$defs/WithSourceRefs"
+        },
+        {
+          "type": "object",
+          "required": ["type", "content"],
+          "properties": {
+            "type": {
+              "const": "technical_development"
+            },
+            "content": {
+              "$ref": "#/$defs/TechnicalDevelopmentContent"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "ProcedureBlock": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/BaseKnowledgeBlock"
+        },
+        {
+          "$ref": "#/$defs/WithSourceRefs"
+        },
+        {
+          "type": "object",
+          "required": ["type", "content"],
+          "properties": {
+            "type": {
+              "const": "procedure"
+            },
+            "content": {
+              "$ref": "#/$defs/ProcedureContent"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "ChecklistBlock": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/BaseKnowledgeBlock"
+        },
+        {
+          "type": "object",
+          "required": ["type", "content"],
+          "properties": {
+            "type": {
+              "const": "checklist"
+            },
+            "content": {
+              "$ref": "#/$defs/ChecklistContent"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "FaqBlock": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/BaseKnowledgeBlock"
+        },
+        {
+          "type": "object",
+          "required": ["type", "content"],
+          "properties": {
+            "type": {
+              "const": "faq"
+            },
+            "content": {
+              "$ref": "#/$defs/FaqContent"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "RiskBlock": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/BaseKnowledgeBlock"
+        },
+        {
+          "$ref": "#/$defs/WithSummary"
+        },
+        {
+          "$ref": "#/$defs/WithSourceRefs"
+        },
+        {
+          "type": "object",
+          "required": ["type", "content"],
+          "properties": {
+            "type": {
+              "const": "risk"
+            },
+            "content": {
+              "$ref": "#/$defs/RiskContent"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "RequiredDocumentBlock": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/BaseKnowledgeBlock"
+        },
+        {
+          "type": "object",
+          "required": ["type", "content"],
+          "properties": {
+            "type": {
+              "const": "required_documentation"
+            },
+            "content": {
+              "$ref": "#/$defs/RequiredDocumentationContent"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "CaseStudyBlock": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/BaseKnowledgeBlock"
+        },
+        {
+          "$ref": "#/$defs/WithSummary"
+        },
+        {
+          "$ref": "#/$defs/WithSourceRefs"
+        },
+        {
+          "type": "object",
+          "required": ["type", "content"],
+          "properties": {
+            "type": {
+              "const": "case_study"
+            },
+            "content": {
+              "$ref": "#/$defs/CaseStudyContent"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "InternalReferenceBlock": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/BaseKnowledgeBlock"
+        },
+        {
+          "type": "object",
+          "required": ["type", "content"],
+          "properties": {
+            "type": {
+              "const": "internal_reference"
+            },
+            "content": {
+              "$ref": "#/$defs/InternalReferenceContent"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "KnowledgeBlock": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/LegalBasisBlock"
+        },
+        {
+          "$ref": "#/$defs/TechnicalDevelopmentBlock"
+        },
+        {
+          "$ref": "#/$defs/ProcedureBlock"
+        },
+        {
+          "$ref": "#/$defs/ChecklistBlock"
+        },
+        {
+          "$ref": "#/$defs/FaqBlock"
+        },
+        {
+          "$ref": "#/$defs/RiskBlock"
+        },
+        {
+          "$ref": "#/$defs/RequiredDocumentBlock"
+        },
+        {
+          "$ref": "#/$defs/CaseStudyBlock"
+        },
+        {
+          "$ref": "#/$defs/InternalReferenceBlock"
+        }
+      ]
+    }
+  }
+}
