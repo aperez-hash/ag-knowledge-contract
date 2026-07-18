@@ -323,7 +323,6 @@ Expected: `ok`
 git add examples/modelo-151-regimen-trabajadores-desplazados.json
 git commit -m "feat(knowledge): author canonical modelo 151 knowledge object"
 ```
-
 ---
 
 ### Task 4: Crear helper de historia y builder de artefactos
@@ -631,4 +630,3 @@ git add \
   CHANGELOG.md
 git commit -m "feat(knowledge): author canonical modelo 151 knowledge object"
 ```
-
