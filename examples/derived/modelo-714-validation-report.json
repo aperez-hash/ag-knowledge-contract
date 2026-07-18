@@ -1,0 +1,17 @@
+{
+  "story": "STORY-KF-005B",
+  "knowledgeObject": "Modelo 714 - Impuesto sobre el Patrimonio",
+  "research": "PASS",
+  "schemaValidation": "PASS",
+  "ruleEngine": "PASS",
+  "plannerView": "PASS",
+  "webView": "PASS",
+  "aiContext": "PASS",
+  "checklist": "PASS",
+  "faq": "PASS",
+  "clientResponse": "PASS",
+  "qualityGate": "PASS",
+  "structuralChangesRequired": "NO",
+  "generatedAt": "2026-07-18T19:25:32.048Z",
+  "incidentCount": 0
+}

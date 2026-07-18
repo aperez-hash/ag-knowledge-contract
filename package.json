@@ -17,7 +17,8 @@
     "./schema/knowledge-object.schema.json": "./schema/knowledge-object.schema.json",
     "./generated/knowledge-object.generated": "./generated/knowledge-object.generated.ts",
     "./examples/modelo-210-imputacion-rentas.json": "./examples/modelo-210-imputacion-rentas.json",
-    "./examples/modelo-720-bienes-extranjero.json": "./examples/modelo-720-bienes-extranjero.json"
+    "./examples/modelo-720-bienes-extranjero.json": "./examples/modelo-720-bienes-extranjero.json",
+    "./examples/modelo-714-impuesto-patrimonio.json": "./examples/modelo-714-impuesto-patrimonio.json"
   },
   "scripts": {
     "generate": "node scripts/generate-types.mjs",
@@ -27,6 +28,8 @@
     "validate:story-kf-004a": "node scripts/validate-story-kf-004a.mjs",
     "build:story-kf-005a": "node scripts/build-story-kf-005a-artifacts.mjs",
     "validate:story-kf-005a": "node scripts/validate-story-kf-005a.mjs",
+    "build:story-kf-005b": "node scripts/build-story-kf-005b-artifacts.mjs",
+    "validate:story-kf-005b": "node scripts/validate-story-kf-005b.mjs",
     "test": "node --test tests/*.test.mjs",
     "check": "node scripts/check.mjs"
   },

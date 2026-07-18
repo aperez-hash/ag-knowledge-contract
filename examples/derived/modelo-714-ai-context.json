@@ -1,0 +1,78 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_modelo714_impuesto_patrimonio_001",
+    "stableKey": "modelo-714-impuesto-patrimonio",
+    "title": "Modelo 714 - Impuesto sobre el Patrimonio",
+    "version": "1.0.0",
+    "status": "validado"
+  },
+  "criterionStatus": "vigente para uso interno validado",
+  "executiveSummary": "Este Knowledge Object fija el criterio operativo del despacho para decidir cuando una persona fisica debe presentar el Modelo 714 por el Impuesto sobre el Patrimonio y como debe determinarse correctamente su obligacion tributaria. El eje del analisis no es la cumplimentacion del formulario, sino la separacion entre obligacion personal y obligacion real, la identificacion del patrimonio gravado, la aplicacion ordenada de exenciones y la verificacion final de si existe obligacion de declarar aunque no resulte cuota a ingresar. El objeto sirve para evitar errores recurrentes al mezclar patrimonio mundial con patrimonio situado en Espana, al ignorar el umbral de 2.000.000 de euros, al aplicar de forma automatica exenciones empresariales o al perder de vista que la normativa autonomica puede alterar minimo exento, tarifa, deducciones y bonificaciones. Tambien deja conectada, sin mezclarla, la revision del Impuesto Temporal de Solidaridad de las Grandes Fortunas cuando el volumen patrimonial o la cuota obligan a abrir ese segundo analisis. Su uso practico es homogeneizar expedientes reales y derivar contenido consistente para Planner, Web, IA, checklist, FAQ y respuesta al cliente sin duplicar doctrina.",
+  "legalBasis": [
+    "La norma troncal del objeto es la Ley 19/1991, de 6 de junio, del Impuesto sobre el Patrimonio, que regula sujetos pasivos, exenciones, valoracion, base imponible, cuota y obligacion de declarar. El impuesto se mantiene vigente y, conforme a la exposicion operativa de la AEAT y a la Orden HAC/277/2026 para la campana 2025, sigue siendo el marco juridico central del Modelo 714. El rendimiento del impuesto esta cedido a las Comunidades Autonomas y la Ley 22/2009 atribuye competencias normativas sobre minimo exento, tipo de gravamen y deducciones o bonificaciones, sin desplazar por ello la estructura estatal del impuesto. El objeto debe leerse, ademas, en convivencia practica con el ITSGF creado por la Ley 38/2022, pero sin confundir ambos tributos: primero se resuelve Patrimonio y despues, cuando proceda, se abre la revision complementaria de grandes fortunas."
+  ],
+  "technicalDevelopment": [
+    "El analisis arranca por la residencia fiscal. Los residentes en Espana tributan por obligacion personal y, en principio, por su patrimonio neto mundial a 31 de diciembre. Los no residentes tributan por obligacion real y solo por bienes o derechos situados, ejercitables o exigibles en territorio espanol, con las especialidades autonómicas hoy reconocidas para este carril. Sobre ese perimetro patrimonial deben identificarse activos y pasivos deducibles, aplicar las reglas de valoracion legalmente previstas y depurar despues las exenciones relevantes, entre ellas vivienda habitual, bienes empresariales y participaciones exentas cuando concurren todos sus requisitos materiales. La obligacion de declarar no depende solo de que exista cuota a ingresar: tambien aparece cuando, aun no resultando cuota final positiva, el valor de bienes y derechos supera 2.000.000 de euros en los terminos legales, computando incluso bienes exentos y sin descontar cargas o deudas para ese segundo umbral. La normativa autonómica puede alterar minimo exento, tarifa, deducciones y bonificaciones, por lo que el expediente debe identificar primero la comunidad competente y despues abrir la revision material concreta sin convertir el objeto en un catalogo territorial completo. En valoracion, el objeto debe cubrir de forma operativa inmuebles, valores cotizados, participaciones no cotizadas, seguros, bienes singulares y activos potencialmente exentos. El ITSGF no sustituye este analisis: se activa despues, cuando el volumen patrimonial o la cuota obligan a revisar si, ademas de Patrimonio, procede abrir la tributacion complementaria por grandes fortunas."
+  ],
+  "procedure": [
+    "Confirmar si el contribuyente es residente fiscal en Espana o no residente, y documentar desde el inicio si el expediente se mueve por obligacion personal o por obligacion real.",
+    "Levantar el inventario patrimonial completo a 31 de diciembre y separar bienes inmuebles, valores cotizados, participaciones no cotizadas, seguros, rentas, bienes singulares y activos potencialmente exentos.",
+    "Delimitar el perimetro patrimonial que entra en el impuesto: patrimonio mundial en obligacion personal y patrimonio situado, ejercitable o exigible en Espana en obligacion real.",
+    "Aplicar las reglas de valoracion legales de cada clase de activo y documentar el criterio utilizado en los casos de mayor juicio tecnico.",
+    "Revisar exenciones con especial prudencia en vivienda habitual, bienes empresariales y participaciones exentas, verificando requisitos materiales y no solo etiquetas del cliente.",
+    "Calcular base imponible, deudas deducibles y base liquidable segun la normativa estatal y, cuando proceda, la autonómica aplicable.",
+    "Identificar la Comunidad Autónoma competente y abrir la revision concreta de minimo exento, tarifa, deducciones y bonificaciones sin perder la columna vertebral estatal del impuesto.",
+    "Determinar la cuota y verificar si existe obligacion de declarar tanto por cuota a ingresar como por superacion del umbral de 2.000.000 de euros, aunque no exista ingreso final.",
+    "Solo despues de resolver Patrimonio, revisar si el volumen patrimonial o la cuota obligan a abrir analisis complementario de ITSGF y documentar la relacion entre ambos impuestos.",
+    "Cerrar el expediente con decision trazada de presentar o no presentar, soporte documental y, si procede, preparacion del Modelo 714 y de la documentacion de respaldo."
+  ],
+  "risks": [
+    {
+      "riskId": "risk714-001",
+      "description": "Confundir ausencia de cuota con ausencia de obligacion de declarar.",
+      "severity": "critical",
+      "likelihood": "high",
+      "mitigation": "Revisar siempre por separado cuota a ingresar y umbral de 2.000.000 de euros, dejando nota expresa del criterio aplicado."
+    },
+    {
+      "riskId": "risk714-002",
+      "description": "Valorar incorrectamente inmuebles, participaciones o seguros por aplicar reglas simplificadas no compatibles con la ley.",
+      "severity": "high",
+      "likelihood": "medium",
+      "mitigation": "Separar clases de activos y documentar la regla legal de valoracion utilizada en cada categoria material."
+    },
+    {
+      "riskId": "risk714-003",
+      "description": "Aplicar de forma automatica exenciones empresariales o de participaciones sin verificar requisitos materiales.",
+      "severity": "high",
+      "likelihood": "medium",
+      "mitigation": "Exigir soporte de afectacion, funciones de direccion y demas requisitos antes de considerar exento el activo o la participacion."
+    },
+    {
+      "riskId": "risk714-004",
+      "description": "Usar normativa autonómica no competente o trasladar a todos los expedientes una bonificacion propia de una sola Comunidad Autónoma.",
+      "severity": "high",
+      "likelihood": "medium",
+      "mitigation": "Identificar primero la comunidad competente y abrir despues la revision concreta de minimo exento, tarifa y bonificaciones aplicables."
+    },
+    {
+      "riskId": "risk714-005",
+      "description": "No abrir a tiempo el analisis complementario del ITSGF cuando el volumen patrimonial ya lo exige.",
+      "severity": "medium",
+      "likelihood": "medium",
+      "mitigation": "Incorporar un checkpoint expreso al final del analisis de Patrimonio para revisar si tambien debe activarse ITSGF."
+    }
+  ],
+  "restrictions": [
+    "Canales bloqueados a nivel raiz: ninguno.",
+    "Canales solo derivables a nivel raiz: web, faq, checklist, client_response, tax_library.",
+    "No debe reutilizarse este objeto como texto directo de respuesta al cliente sin derivacion controlada y revision humana."
+  ],
+  "clientResponseAuthorization": {
+    "channelAccess": "derived_only",
+    "mayExposeCanonicalTextDirectly": false,
+    "mayProduceDerivedDraft": true,
+    "humanReviewRequired": true,
+    "instruction": "Solo se permiten borradores derivados y controlados; no debe reutilizarse texto bruto del objeto."
+  }
+}
