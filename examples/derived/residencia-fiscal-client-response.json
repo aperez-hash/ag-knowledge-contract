@@ -1,0 +1,54 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_residencia_fiscal_personas_fisicas_001",
+    "stableKey": "residencia-fiscal-espana",
+    "version": "1.0.0"
+  },
+  "responseType": "derived_draft",
+  "humanReviewRequired": true,
+  "summary": "Evita errores al determinar la residencia fiscal en Espana, al mezclar criterios con jerarquias distintas o al cerrar expedientes sin evidencia probatoria suficiente.",
+  "nextSteps": [
+    "Certificado de residencia fiscal emitido por la administracion tributaria competente.",
+    "Registro de entradas y salidas, viajes, billetes o trazabilidad objetiva de presencia fisica.",
+    "Contratos de trabajo, de prestacion de servicios o soporte equivalente de actividad economica.",
+    "Contratos de arrendamiento, escrituras de uso de vivienda o soporte de residencia efectiva."
+  ],
+  "faqHighlights": [
+    {
+      "faqId": "faqres-001",
+      "question": "¿Que ocurre si paso menos de 183 dias en Espana?",
+      "answer": "No significa automaticamente que seas no residente fiscal. Si el criterio de permanencia no cierra el caso, todavia debe analizarse el centro de intereses economicos y, en su caso, la presuncion familiar."
+    },
+    {
+      "faqId": "faqres-002",
+      "question": "¿Como cuentan las ausencias esporadicas?",
+      "answer": "Se computan para el criterio de permanencia salvo que acredites residencia fiscal en otro pais. Ademas, la practica administrativa y jurisprudencial exige mirar la prueba objetiva del expediente, no solo la voluntad declarada del contribuyente."
+    },
+    {
+      "faqId": "faqres-003",
+      "question": "¿Que prevalece: presencia fisica o intereses economicos?",
+      "answer": "La permanencia superior a 183 dias es el criterio principal. El centro de intereses economicos funciona como criterio alternativo cuando la permanencia no resuelve el caso de forma suficiente."
+    }
+  ],
+  "documentationHighlights": [
+    {
+      "documentId": "docres-001",
+      "label": "Certificado de residencia fiscal emitido por la administracion tributaria competente.",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: doble residencia, neutralizacion del computo de ausencias esporadicas y soporte de la conclusion final. Alternativa: certificado de residencia fiscal espanol cuando el expediente lo requiera."
+    },
+    {
+      "documentId": "docres-002",
+      "label": "Registro de entradas y salidas, viajes, billetes o trazabilidad objetiva de presencia fisica.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: computo de dias, permanencia y contraste de ausencias esporadicas. Alternativa: sellos, historicos migratorios, reservas y otra prueba objetiva coherente."
+    },
+    {
+      "documentId": "docres-003",
+      "label": "Contratos de trabajo, de prestacion de servicios o soporte equivalente de actividad economica.",
+      "required": true,
+      "notes": "Fuerza probatoria: media. Uso habitual: centro de intereses economicos, localizacion de actividad y base de ingresos. Alternativa: nominas, facturacion o documentacion empresarial equivalente."
+    }
+  ],
+  "caution": "Borrador derivado para apoyo interno. No debe enviarse sin revision humana y sin contrastar la documentacion concreta del cliente."
+}

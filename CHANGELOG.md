@@ -8,11 +8,13 @@
 - Second real Knowledge Object for `Modelo 720 - Declaracion informativa sobre bienes y derechos situados en el extranjero`.
 - Third real Knowledge Object for `Modelo 714 - Impuesto sobre el Patrimonio`.
 - Fourth real Knowledge Object for `Modelo 721 - Declaracion informativa sobre monedas virtuales situadas en el extranjero`.
+- First transversal Knowledge Object for `Residencia Fiscal en Espana`.
 - Derived certified artifacts for Planner, Web and IA under `examples/derived/`.
 - Story-level semantic validation and focused automated coverage for `STORY-KF-004A`.
 - Derived checklist, FAQ and client response outputs plus focused automated coverage for `STORY-KF-005A`.
 - Derived checklist, FAQ and client response outputs plus focused automated coverage for `STORY-KF-005B`.
 - Derived checklist, FAQ and client response outputs plus focused automated coverage for `STORY-KF-005C`.
+- Derived checklist, FAQ and client response outputs plus focused automated coverage for `STORY-KF-008A`.
 - Official governance certification document for `Knowledge Factory v1.0`.
 
 ## 1.0.0 - 2026-07-18

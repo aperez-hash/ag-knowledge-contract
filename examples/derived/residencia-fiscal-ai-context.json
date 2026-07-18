@@ -1,0 +1,78 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_residencia_fiscal_personas_fisicas_001",
+    "stableKey": "residencia-fiscal-espana",
+    "title": "Residencia Fiscal en Espana",
+    "version": "1.0.0",
+    "status": "validado"
+  },
+  "criterionStatus": "vigente para uso interno validado",
+  "executiveSummary": "Este Knowledge Object fija el criterio operativo del despacho para decidir si una persona fisica es residente fiscal en Espana durante un ejercicio y como debe documentarse esa conclusion. Su importancia es transversal: antes de analizar IRPF, IRNR, Modelo 210, Patrimonio, Modelo 720, Modelo 721, Modelo 151 o un posible conflicto de doble residencia, el expediente necesita una decision clara sobre residencia fiscal. El objeto ordena los criterios sin mezclarlos: el punto de partida es la permanencia superior a 183 dias durante el ano natural; si ese criterio no cierra el caso, debe analizarse el centro de intereses economicos; ademas opera la presuncion familiar, y solo cuando exista una verdadera doble residencia entra en juego el criterio general de tie-breaker de los convenios. Tambien deja claro que un certificado fiscal extranjero puede ser una evidencia muy fuerte, pero no convierte por si solo cualquier caso en sencillo si el resto de hechos apuntan en otra direccion. Su utilidad practica es homogeneizar expedientes, reforzar la trazabilidad probatoria y permitir derivaciones consistentes para Planner, Web, IA, checklist, FAQ y respuesta al cliente sin duplicar doctrina.",
+  "legalBasis": [
+    "La norma troncal del objeto es el articulo 9 de la Ley del IRPF, que fija los tres ejes internos de residencia habitual en territorio espanol: permanencia superior a 183 dias durante el ano natural, radicacion en Espana del nucleo principal o la base de las actividades o intereses economicos, y presuncion familiar cuando residan habitualmente en Espana el conyuge no separado legalmente y los hijos menores dependientes. Ese armazon debe leerse junto con la doctrina administrativa y jurisprudencial que aclara el tratamiento de las ausencias esporadicas y con la capa internacional general de los convenios cuando exista una verdadera doble residencia. La regla de convenio no sustituye el analisis interno, sino que opera despues, como criterio de desempate, cuando dos Estados pueden considerarse competentes al mismo tiempo respecto de la misma persona."
+  ],
+  "technicalDevelopment": [
+    "La jerarquia de criterios debe quedar explicita en el expediente. El criterio principal es la permanencia superior a 183 dias durante el ano natural, computando ausencias esporadicas salvo acreditacion de residencia fiscal en otro pais. La practica de la AEAT y la doctrina TEAC distinguen entre presencia certificada, dias presuntos y ausencias esporadicas, y el Tribunal Supremo ha rechazado que la permanencia dependa de la voluntad subjetiva del contribuyente. Si la permanencia no cierra el caso de manera suficiente, entra en juego como criterio alternativo el centro de intereses economicos, es decir, donde radica de forma directa o indirecta el nucleo principal o la base de las actividades o intereses economicos. Ademas opera la presuncion familiar, salvo prueba en contrario, cuando residan habitualmente en Espana el conyuge no separado legalmente y los hijos menores dependientes. Un certificado de residencia fiscal extranjero es una evidencia de fuerza muy alta y puede ser decisivo para neutralizar el computo de ausencias esporadicas, pero no convierte por si solo cualquier expediente complejo en automatico si los demas hechos relevantes apuntan en otra direccion. Solo cuando de verdad exista doble residencia, y no mera duda documental, se aplica despues el criterio general de tie-breaker de convenio: vivienda permanente, centro de intereses vitales, estancia habitual, nacionalidad y, en ultimo termino, acuerdo entre autoridades competentes. La residencia fiscal de personas fisicas se determina por anos naturales completos, de modo que el cambio de domicilio o de residencia material dentro del ejercicio debe traducirse despues a una conclusion unica para todo el ano natural analizado."
+  ],
+  "procedure": [
+    "Identificar el ano natural y el periodo analizado, dejando claro que la conclusion de residencia fiscal de una persona fisica debe ser unica para todo el ejercicio.",
+    "Levantar la permanencia fisica acreditada en Espana y fuera de Espana mediante registros de entradas y salidas, viajes, estancias y otra evidencia objetiva.",
+    "Analizar ausencias esporadicas y dias presuntos, distinguiendo cuando el certificado extranjero neutraliza el computo y cuando no lo hace por si solo.",
+    "Si el criterio de permanencia no cierra el caso, revisar el centro de intereses economicos, la localizacion de las fuentes de renta, activos, actividad profesional y bases de gestion economica.",
+    "Revisar si opera la presuncion familiar por residencia habitual en Espana del conyuge no separado legalmente y de los hijos menores dependientes.",
+    "Recopilar y valorar certificados de residencia fiscal espanoles o extranjeros y distinguir su fuerza probatoria de otras evidencias documentales complementarias.",
+    "Detectar si existe una verdadera doble residencia o solo una duda de prueba. Solo en el primer caso debe abrirse la capa general de tie-breaker.",
+    "Aplicar, cuando proceda, el criterio general de convenio en su orden natural: vivienda permanente, centro de intereses vitales, estancia habitual, nacionalidad y acuerdo amistoso.",
+    "Emitir una conclusion unica de residencia fiscal para el ano natural, dejando trazado que criterio ha sido decisivo y cuales solo han operado como apoyo o contraste.",
+    "Documentar la evidencia utilizada, su fuerza probatoria, las incertidumbres residuales y los objetos tributarios dependientes que deben consumir despues esta decision."
+  ],
+  "risks": [
+    {
+      "riskId": "riskres-001",
+      "description": "Riesgo de cumplimiento: concluir residencia o no residencia sin haber fijado correctamente el ano natural y el perimetro del expediente.",
+      "severity": "high",
+      "likelihood": "medium",
+      "mitigation": "Abrir siempre el expediente con ano natural expreso y con una conclusion unica de residencia fiscal para todo el ejercicio."
+    },
+    {
+      "riskId": "riskres-002",
+      "description": "Riesgo documental: computar dias, ausencias o cambios de residencia con evidencia insuficiente o contradictoria.",
+      "severity": "critical",
+      "likelihood": "high",
+      "mitigation": "Trabajar con registros de entradas y salidas, viajes, certificados y soporte objetivo antes de cerrar el criterio de permanencia."
+    },
+    {
+      "riskId": "riskres-003",
+      "description": "Riesgo interpretativo: tratar todos los criterios como si operaran siempre al mismo nivel, sin jerarquia funcional.",
+      "severity": "high",
+      "likelihood": "medium",
+      "mitigation": "Documentar expresamente criterio principal, criterio alternativo, presuncion familiar y uso posterior del tie-breaker solo si existe doble residencia real."
+    },
+    {
+      "riskId": "riskres-004",
+      "description": "Riesgo internacional: abrir o cerrar doble residencia con una lectura simplista del certificado extranjero o del convenio.",
+      "severity": "high",
+      "likelihood": "medium",
+      "mitigation": "Separar la prueba de residencia interna del criterio general de tie-breaker y no bajar a convenios pais por pais en este objeto."
+    },
+    {
+      "riskId": "riskres-005",
+      "description": "Riesgo procedimental: no trasladar correctamente la decision de residencia a los objetos tributarios dependientes y rehacer despues el mismo analisis en cada expediente.",
+      "severity": "medium",
+      "likelihood": "high",
+      "mitigation": "Registrar la decision final como pieza de infraestructura doctrinal reutilizable para Modelo 210, 714, 720, 721, 151, IRPF, IRNR y convenios."
+    }
+  ],
+  "restrictions": [
+    "Canales bloqueados a nivel raiz: ninguno.",
+    "Canales solo derivables a nivel raiz: web, faq, checklist, client_response, tax_library.",
+    "No debe reutilizarse este objeto como texto directo de respuesta al cliente sin derivacion controlada y revision humana."
+  ],
+  "clientResponseAuthorization": {
+    "channelAccess": "derived_only",
+    "mayExposeCanonicalTextDirectly": false,
+    "mayProduceDerivedDraft": true,
+    "humanReviewRequired": true,
+    "instruction": "Solo se permiten borradores derivados y controlados; no debe reutilizarse texto bruto del objeto."
+  }
+}

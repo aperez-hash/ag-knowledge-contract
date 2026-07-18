@@ -1,0 +1,35 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_residencia_fiscal_personas_fisicas_001",
+    "stableKey": "residencia-fiscal-espana",
+    "version": "1.0.0"
+  },
+  "title": "Residencia Fiscal en Espana - FAQ derivada",
+  "items": [
+    {
+      "faqId": "faqres-001",
+      "question": "¿Que ocurre si paso menos de 183 dias en Espana?",
+      "answer": "No significa automaticamente que seas no residente fiscal. Si el criterio de permanencia no cierra el caso, todavia debe analizarse el centro de intereses economicos y, en su caso, la presuncion familiar."
+    },
+    {
+      "faqId": "faqres-002",
+      "question": "¿Como cuentan las ausencias esporadicas?",
+      "answer": "Se computan para el criterio de permanencia salvo que acredites residencia fiscal en otro pais. Ademas, la practica administrativa y jurisprudencial exige mirar la prueba objetiva del expediente, no solo la voluntad declarada del contribuyente."
+    },
+    {
+      "faqId": "faqres-003",
+      "question": "¿Que prevalece: presencia fisica o intereses economicos?",
+      "answer": "La permanencia superior a 183 dias es el criterio principal. El centro de intereses economicos funciona como criterio alternativo cuando la permanencia no resuelve el caso de forma suficiente."
+    },
+    {
+      "faqId": "faqres-004",
+      "question": "¿Como se resuelve una doble residencia?",
+      "answer": "Primero debe confirmarse que ambos Estados te consideran residente. Solo entonces entra en juego el criterio general de tie-breaker: vivienda permanente, centro de intereses vitales, estancia habitual, nacionalidad y, en ultimo termino, acuerdo entre autoridades."
+    },
+    {
+      "faqId": "faqres-005",
+      "question": "¿Sirve un certificado fiscal extranjero por si solo?",
+      "answer": "Es una prueba muy fuerte y puede ser decisiva en muchos expedientes, pero no siempre elimina por si sola la necesidad de analizar el resto de hechos relevantes si el caso es complejo o existe contradiccion probatoria."
+    }
+  ]
+}

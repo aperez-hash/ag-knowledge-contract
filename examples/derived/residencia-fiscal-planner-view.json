@@ -1,0 +1,634 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_residencia_fiscal_personas_fisicas_001",
+    "stableKey": "residencia-fiscal-espana",
+    "title": "Residencia Fiscal en Espana",
+    "version": "1.0.0",
+    "status": "validado"
+  },
+  "executiveSummary": {
+    "summary": "Este Knowledge Object fija el criterio operativo del despacho para decidir si una persona fisica es residente fiscal en Espana durante un ejercicio y como debe documentarse esa conclusion. Su importancia es transversal: antes de analizar IRPF, IRNR, Modelo 210, Patrimonio, Modelo 720, Modelo 721, Modelo 151 o un posible conflicto de doble residencia, el expediente necesita una decision clara sobre residencia fiscal. El objeto ordena los criterios sin mezclarlos: el punto de partida es la permanencia superior a 183 dias durante el ano natural; si ese criterio no cierra el caso, debe analizarse el centro de intereses economicos; ademas opera la presuncion familiar, y solo cuando exista una verdadera doble residencia entra en juego el criterio general de tie-breaker de los convenios. Tambien deja claro que un certificado fiscal extranjero puede ser una evidencia muy fuerte, pero no convierte por si solo cualquier caso en sencillo si el resto de hechos apuntan en otra direccion. Su utilidad practica es homogeneizar expedientes, reforzar la trazabilidad probatoria y permitir derivaciones consistentes para Planner, Web, IA, checklist, FAQ y respuesta al cliente sin duplicar doctrina.",
+    "problemSolved": "Evita errores al determinar la residencia fiscal en Espana, al mezclar criterios con jerarquias distintas o al cerrar expedientes sin evidencia probatoria suficiente.",
+    "scope": "Personas fisicas con vinculacion potencial con Espana y con uno o varios Estados adicionales, exclusivamente para decidir su residencia fiscal en el ejercicio analizado desde la perspectiva espanola.",
+    "practicalImpact": "Permite abrir, revisar y cerrar expedientes de residencia fiscal con un criterio unico y reutilizable antes de pasar a impuestos, modelos o obligaciones informativas dependientes."
+  },
+  "affectedTaxModels": [
+    {
+      "modelCode": "210",
+      "modelName": "Modelo 210 - IRNR",
+      "relationType": "secondary",
+      "notes": "La residencia fiscal es condicion de entrada para separar IRNR de IRPF y para usar correctamente el Modelo 210."
+    },
+    {
+      "modelCode": "714",
+      "modelName": "Modelo 714 - Impuesto sobre el Patrimonio",
+      "relationType": "secondary",
+      "notes": "La residencia fiscal condiciona la distincion entre obligacion personal y real."
+    },
+    {
+      "modelCode": "720",
+      "modelName": "Modelo 720 - Bienes y derechos situados en el extranjero",
+      "relationType": "secondary",
+      "notes": "La residencia fiscal es presupuesto material del analisis de la obligacion informativa."
+    },
+    {
+      "modelCode": "721",
+      "modelName": "Modelo 721 - Monedas virtuales situadas en el extranjero",
+      "relationType": "secondary",
+      "notes": "La residencia fiscal es condicion previa para analizar la obligacion informativa sobre criptoactivos en el extranjero."
+    },
+    {
+      "modelCode": "151",
+      "modelName": "Modelo 151 - Regimen especial de trabajadores desplazados",
+      "relationType": "informative",
+      "notes": "La residencia fiscal es pieza de entrada para futuros analisis del regimen especial."
+    }
+  ],
+  "affectedForms": [
+    {
+      "formCode": "210",
+      "formName": "Modelo 210",
+      "relationType": "informative",
+      "notes": "Formulario impactado indirectamente por la decision de residencia."
+    },
+    {
+      "formCode": "714",
+      "formName": "Modelo 714",
+      "relationType": "informative",
+      "notes": "Formulario impactado indirectamente por la decision de residencia."
+    },
+    {
+      "formCode": "720",
+      "formName": "Modelo 720",
+      "relationType": "informative",
+      "notes": "Formulario impactado indirectamente por la decision de residencia."
+    },
+    {
+      "formCode": "721",
+      "formName": "Modelo 721",
+      "relationType": "informative",
+      "notes": "Formulario impactado indirectamente por la decision de residencia."
+    },
+    {
+      "formCode": "151",
+      "formName": "Modelo 151",
+      "relationType": "informative",
+      "notes": "Formulario impactado indirectamente por la decision de residencia."
+    }
+  ],
+  "plannerBlocks": [
+    {
+      "blockId": "kbres-legal-001",
+      "content": {
+        "basis": "La norma troncal del objeto es el articulo 9 de la Ley del IRPF, que fija los tres ejes internos de residencia habitual en territorio espanol: permanencia superior a 183 dias durante el ano natural, radicacion en Espana del nucleo principal o la base de las actividades o intereses economicos, y presuncion familiar cuando residan habitualmente en Espana el conyuge no separado legalmente y los hijos menores dependientes. Ese armazon debe leerse junto con la doctrina administrativa y jurisprudencial que aclara el tratamiento de las ausencias esporadicas y con la capa internacional general de los convenios cuando exista una verdadera doble residencia. La regla de convenio no sustituye el analisis interno, sino que opera despues, como criterio de desempate, cuando dos Estados pueden considerarse competentes al mismo tiempo respecto de la misma persona."
+      },
+      "order": 10,
+      "status": "validado",
+      "title": "Base legal de la residencia fiscal en Espana",
+      "type": "legal_basis",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbres-tech-001",
+      "content": {
+        "development": "La jerarquia de criterios debe quedar explicita en el expediente. El criterio principal es la permanencia superior a 183 dias durante el ano natural, computando ausencias esporadicas salvo acreditacion de residencia fiscal en otro pais. La practica de la AEAT y la doctrina TEAC distinguen entre presencia certificada, dias presuntos y ausencias esporadicas, y el Tribunal Supremo ha rechazado que la permanencia dependa de la voluntad subjetiva del contribuyente. Si la permanencia no cierra el caso de manera suficiente, entra en juego como criterio alternativo el centro de intereses economicos, es decir, donde radica de forma directa o indirecta el nucleo principal o la base de las actividades o intereses economicos. Ademas opera la presuncion familiar, salvo prueba en contrario, cuando residan habitualmente en Espana el conyuge no separado legalmente y los hijos menores dependientes. Un certificado de residencia fiscal extranjero es una evidencia de fuerza muy alta y puede ser decisivo para neutralizar el computo de ausencias esporadicas, pero no convierte por si solo cualquier expediente complejo en automatico si los demas hechos relevantes apuntan en otra direccion. Solo cuando de verdad exista doble residencia, y no mera duda documental, se aplica despues el criterio general de tie-breaker de convenio: vivienda permanente, centro de intereses vitales, estancia habitual, nacionalidad y, en ultimo termino, acuerdo entre autoridades competentes. La residencia fiscal de personas fisicas se determina por anos naturales completos, de modo que el cambio de domicilio o de residencia material dentro del ejercicio debe traducirse despues a una conclusion unica para todo el ano natural analizado."
+      },
+      "order": 20,
+      "status": "validado",
+      "title": "Desarrollo tecnico del criterio operativo",
+      "type": "technical_development",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbres-proc-001",
+      "content": {
+        "steps": [
+          {
+            "text": "Identificar el ano natural y el periodo analizado, dejando claro que la conclusion de residencia fiscal de una persona fisica debe ser unica para todo el ejercicio.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Levantar la permanencia fisica acreditada en Espana y fuera de Espana mediante registros de entradas y salidas, viajes, estancias y otra evidencia objetiva.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Analizar ausencias esporadicas y dias presuntos, distinguiendo cuando el certificado extranjero neutraliza el computo y cuando no lo hace por si solo.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Si el criterio de permanencia no cierra el caso, revisar el centro de intereses economicos, la localizacion de las fuentes de renta, activos, actividad profesional y bases de gestion economica.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Revisar si opera la presuncion familiar por residencia habitual en Espana del conyuge no separado legalmente y de los hijos menores dependientes.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Recopilar y valorar certificados de residencia fiscal espanoles o extranjeros y distinguir su fuerza probatoria de otras evidencias documentales complementarias.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Detectar si existe una verdadera doble residencia o solo una duda de prueba. Solo en el primer caso debe abrirse la capa general de tie-breaker.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Aplicar, cuando proceda, el criterio general de convenio en su orden natural: vivienda permanente, centro de intereses vitales, estancia habitual, nacionalidad y acuerdo amistoso.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Emitir una conclusion unica de residencia fiscal para el ano natural, dejando trazado que criterio ha sido decisivo y cuales solo han operado como apoyo o contraste.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Documentar la evidencia utilizada, su fuerza probatoria, las incertidumbres residuales y los objetos tributarios dependientes que deben consumir despues esta decision.",
+            "format": "plain_text"
+          }
+        ]
+      },
+      "order": 30,
+      "status": "validado",
+      "title": "Procedimiento operativo completo",
+      "type": "procedure",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbres-check-001",
+      "content": {
+        "items": [
+          {
+            "itemId": "chkres-001",
+            "label": "[Obligatorio] Ano natural y periodo analizado fijados expresamente."
+          },
+          {
+            "itemId": "chkres-002",
+            "label": "[Obligatorio] Evidencia de permanencia fisica recopilada y ordenada."
+          },
+          {
+            "itemId": "chkres-003",
+            "label": "[Obligatorio] Analisis de ausencias esporadicas y dias presuntos documentado."
+          },
+          {
+            "itemId": "chkres-004",
+            "label": "[Obligatorio] Centro de intereses economicos revisado si la permanencia no cierra el caso."
+          },
+          {
+            "itemId": "chkres-005",
+            "label": "[Obligatorio] Presuncion familiar revisada de forma expresa, aunque finalmente no opere."
+          },
+          {
+            "itemId": "chkres-006",
+            "label": "[Obligatorio] Certificados de residencia fiscal solicitados o revisados cuando sean relevantes."
+          },
+          {
+            "itemId": "chkres-007",
+            "label": "[Obligatorio] Doble residencia confirmada o descartada antes de abrir tie-breaker."
+          },
+          {
+            "itemId": "chkres-008",
+            "label": "[Recomendable] Matriz de evidencias completada con fuerza probatoria y uso habitual."
+          },
+          {
+            "itemId": "chkres-009",
+            "label": "[Recomendable] Objetos tributarios dependientes identificados para consumo posterior de la decision."
+          },
+          {
+            "itemId": "chkres-010",
+            "label": "[Obligatorio] Conclusion final de residencia fiscal trazada con criterio decisivo y prueba soporte."
+          }
+        ]
+      },
+      "order": 40,
+      "status": "validado",
+      "title": "Checklist operativa reutilizable",
+      "type": "checklist",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbres-faq-001",
+      "content": {
+        "items": [
+          {
+            "faqId": "faqres-001",
+            "question": "¿Que ocurre si paso menos de 183 dias en Espana?",
+            "answer": "No significa automaticamente que seas no residente fiscal. Si el criterio de permanencia no cierra el caso, todavia debe analizarse el centro de intereses economicos y, en su caso, la presuncion familiar."
+          },
+          {
+            "faqId": "faqres-002",
+            "question": "¿Como cuentan las ausencias esporadicas?",
+            "answer": "Se computan para el criterio de permanencia salvo que acredites residencia fiscal en otro pais. Ademas, la practica administrativa y jurisprudencial exige mirar la prueba objetiva del expediente, no solo la voluntad declarada del contribuyente."
+          },
+          {
+            "faqId": "faqres-003",
+            "question": "¿Que prevalece: presencia fisica o intereses economicos?",
+            "answer": "La permanencia superior a 183 dias es el criterio principal. El centro de intereses economicos funciona como criterio alternativo cuando la permanencia no resuelve el caso de forma suficiente."
+          },
+          {
+            "faqId": "faqres-004",
+            "question": "¿Como se resuelve una doble residencia?",
+            "answer": "Primero debe confirmarse que ambos Estados te consideran residente. Solo entonces entra en juego el criterio general de tie-breaker: vivienda permanente, centro de intereses vitales, estancia habitual, nacionalidad y, en ultimo termino, acuerdo entre autoridades."
+          },
+          {
+            "faqId": "faqres-005",
+            "question": "¿Sirve un certificado fiscal extranjero por si solo?",
+            "answer": "Es una prueba muy fuerte y puede ser decisiva en muchos expedientes, pero no siempre elimina por si sola la necesidad de analizar el resto de hechos relevantes si el caso es complejo o existe contradiccion probatoria."
+          }
+        ]
+      },
+      "order": 50,
+      "status": "validado",
+      "title": "Preguntas frecuentes reales de clientes y expedientes",
+      "type": "faq",
+      "visibility": "public"
+    },
+    {
+      "blockId": "kbres-risk-001",
+      "content": {
+        "items": [
+          {
+            "riskId": "riskres-001",
+            "description": "Riesgo de cumplimiento: concluir residencia o no residencia sin haber fijado correctamente el ano natural y el perimetro del expediente.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Abrir siempre el expediente con ano natural expreso y con una conclusion unica de residencia fiscal para todo el ejercicio."
+          },
+          {
+            "riskId": "riskres-002",
+            "description": "Riesgo documental: computar dias, ausencias o cambios de residencia con evidencia insuficiente o contradictoria.",
+            "severity": "critical",
+            "likelihood": "high",
+            "mitigation": "Trabajar con registros de entradas y salidas, viajes, certificados y soporte objetivo antes de cerrar el criterio de permanencia."
+          },
+          {
+            "riskId": "riskres-003",
+            "description": "Riesgo interpretativo: tratar todos los criterios como si operaran siempre al mismo nivel, sin jerarquia funcional.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Documentar expresamente criterio principal, criterio alternativo, presuncion familiar y uso posterior del tie-breaker solo si existe doble residencia real."
+          },
+          {
+            "riskId": "riskres-004",
+            "description": "Riesgo internacional: abrir o cerrar doble residencia con una lectura simplista del certificado extranjero o del convenio.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Separar la prueba de residencia interna del criterio general de tie-breaker y no bajar a convenios pais por pais en este objeto."
+          },
+          {
+            "riskId": "riskres-005",
+            "description": "Riesgo procedimental: no trasladar correctamente la decision de residencia a los objetos tributarios dependientes y rehacer despues el mismo analisis en cada expediente.",
+            "severity": "medium",
+            "likelihood": "high",
+            "mitigation": "Registrar la decision final como pieza de infraestructura doctrinal reutilizable para Modelo 210, 714, 720, 721, 151, IRPF, IRNR y convenios."
+          }
+        ]
+      },
+      "order": 60,
+      "status": "validado",
+      "title": "Riesgos operativos y mitigacion",
+      "type": "risk",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbres-doc-001",
+      "content": {
+        "items": [
+          {
+            "documentId": "docres-001",
+            "label": "Certificado de residencia fiscal emitido por la administracion tributaria competente.",
+            "required": true,
+            "notes": "Fuerza probatoria: muy alta. Uso habitual: doble residencia, neutralizacion del computo de ausencias esporadicas y soporte de la conclusion final. Alternativa: certificado de residencia fiscal espanol cuando el expediente lo requiera."
+          },
+          {
+            "documentId": "docres-002",
+            "label": "Registro de entradas y salidas, viajes, billetes o trazabilidad objetiva de presencia fisica.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: computo de dias, permanencia y contraste de ausencias esporadicas. Alternativa: sellos, historicos migratorios, reservas y otra prueba objetiva coherente."
+          },
+          {
+            "documentId": "docres-003",
+            "label": "Contratos de trabajo, de prestacion de servicios o soporte equivalente de actividad economica.",
+            "required": true,
+            "notes": "Fuerza probatoria: media. Uso habitual: centro de intereses economicos, localizacion de actividad y base de ingresos. Alternativa: nominas, facturacion o documentacion empresarial equivalente."
+          },
+          {
+            "documentId": "docres-004",
+            "label": "Contratos de arrendamiento, escrituras de uso de vivienda o soporte de residencia efectiva.",
+            "required": false,
+            "notes": "Fuerza probatoria: media. Uso habitual: residencia efectiva, vivienda permanente y contraste de la vida material del contribuyente. Alternativa: certificados padronales o evidencia de ocupacion estable."
+          },
+          {
+            "documentId": "docres-005",
+            "label": "Consumos, escolarizacion, vida familiar y otras pruebas de arraigo o presencia efectiva.",
+            "required": false,
+            "notes": "Fuerza probatoria: complementaria. Uso habitual: refuerzo probatorio de la conclusion, especialmente en casos con conflicto de permanencia, familia o doble residencia. Alternativa: documentacion sanitaria, bancaria o administrativa coherente."
+          }
+        ]
+      },
+      "order": 70,
+      "status": "validado",
+      "title": "Documentacion necesaria y matriz de evidencias",
+      "type": "required_documentation",
+      "visibility": "public"
+    },
+    {
+      "blockId": "kbres-case-001",
+      "content": {
+        "items": [
+          {
+            "caseId": "caseres-001",
+            "scenario": "Traslado definitivo durante el ejercicio, con cambio material de vida al extranjero en el primer semestre y permanencia en Espana inferior a 183 dias.",
+            "resolution": "La conclusion debe formularse para todo el ano natural. Si la residencia fiscal extranjera queda acreditada y no se supera el umbral de permanencia ni operan intereses economicos o presuncion familiar en Espana, puede sostenerse la no residencia desde el 1 de enero del propio ejercicio.",
+            "notes": "Aprendizaje: no basta con mirar la fecha de salida; hay que conectar cambio material, ano natural y prueba de residencia extranjera."
+          },
+          {
+            "caseId": "caseres-002",
+            "scenario": "Teletrabajador internacional que pasa parte relevante del ano fuera de Espana pero mantiene clientes, ingresos y estructura economica principal en Espana.",
+            "resolution": "Aunque la permanencia no supere 183 dias, puede seguir existiendo residencia fiscal en Espana si el centro de intereses economicos permanece aqui y no existe una acreditacion mas fuerte en sentido contrario.",
+            "notes": "Aprendizaje: menos de 183 dias no equivale automaticamente a no residencia."
+          },
+          {
+            "caseId": "caseres-003",
+            "scenario": "Ejecutivo desplazado internacionalmente con vivienda en dos paises y presencia fisica fragmentada durante el ejercicio.",
+            "resolution": "Si la permanencia no resuelve el caso y los intereses economicos aparecen repartidos, debe abrirse la capa de doble residencia y aplicar el orden general de tie-breaker, comenzando por vivienda permanente y centro de intereses vitales.",
+            "notes": "Aprendizaje: el tie-breaker no se aplica por costumbre, sino solo cuando hay verdadera doble residencia."
+          },
+          {
+            "caseId": "caseres-004",
+            "scenario": "Doble residencia con certificado extranjero valido, familia parcialmente desplazada y dudas sobre el centro real de vida del contribuyente.",
+            "resolution": "El certificado extranjero es una evidencia muy fuerte, pero el expediente debe integrar tambien vivienda permanente, lazos personales y economicos y estancia habitual antes de cerrar la conclusion.",
+            "notes": "Aprendizaje: el certificado no elimina por si solo la necesidad de razonar el caso cuando la prueba es compleja."
+          },
+          {
+            "caseId": "caseres-005",
+            "scenario": "Persona con menos de 183 dias en Espana pero con negocio, activos productivos y direccion economica principal localizada en territorio espanol.",
+            "resolution": "Puede mantenerse la residencia fiscal en Espana por centro de intereses economicos aunque el criterio principal de permanencia no se haya alcanzado.",
+            "notes": "Aprendizaje: el criterio alternativo de intereses economicos tiene autonomia real y no es un simple complemento decorativo."
+          }
+        ]
+      },
+      "order": 80,
+      "status": "validado",
+      "title": "Casos practicos de referencia",
+      "type": "case_study",
+      "visibility": "public"
+    }
+  ],
+  "procedures": [
+    {
+      "blockId": "kbres-proc-001",
+      "content": {
+        "steps": [
+          {
+            "text": "Identificar el ano natural y el periodo analizado, dejando claro que la conclusion de residencia fiscal de una persona fisica debe ser unica para todo el ejercicio.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Levantar la permanencia fisica acreditada en Espana y fuera de Espana mediante registros de entradas y salidas, viajes, estancias y otra evidencia objetiva.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Analizar ausencias esporadicas y dias presuntos, distinguiendo cuando el certificado extranjero neutraliza el computo y cuando no lo hace por si solo.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Si el criterio de permanencia no cierra el caso, revisar el centro de intereses economicos, la localizacion de las fuentes de renta, activos, actividad profesional y bases de gestion economica.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Revisar si opera la presuncion familiar por residencia habitual en Espana del conyuge no separado legalmente y de los hijos menores dependientes.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Recopilar y valorar certificados de residencia fiscal espanoles o extranjeros y distinguir su fuerza probatoria de otras evidencias documentales complementarias.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Detectar si existe una verdadera doble residencia o solo una duda de prueba. Solo en el primer caso debe abrirse la capa general de tie-breaker.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Aplicar, cuando proceda, el criterio general de convenio en su orden natural: vivienda permanente, centro de intereses vitales, estancia habitual, nacionalidad y acuerdo amistoso.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Emitir una conclusion unica de residencia fiscal para el ano natural, dejando trazado que criterio ha sido decisivo y cuales solo han operado como apoyo o contraste.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Documentar la evidencia utilizada, su fuerza probatoria, las incertidumbres residuales y los objetos tributarios dependientes que deben consumir despues esta decision.",
+            "format": "plain_text"
+          }
+        ]
+      },
+      "order": 30,
+      "status": "validado",
+      "title": "Procedimiento operativo completo",
+      "type": "procedure",
+      "visibility": "internal"
+    }
+  ],
+  "checklists": [
+    {
+      "blockId": "kbres-check-001",
+      "content": {
+        "items": [
+          {
+            "itemId": "chkres-001",
+            "label": "[Obligatorio] Ano natural y periodo analizado fijados expresamente."
+          },
+          {
+            "itemId": "chkres-002",
+            "label": "[Obligatorio] Evidencia de permanencia fisica recopilada y ordenada."
+          },
+          {
+            "itemId": "chkres-003",
+            "label": "[Obligatorio] Analisis de ausencias esporadicas y dias presuntos documentado."
+          },
+          {
+            "itemId": "chkres-004",
+            "label": "[Obligatorio] Centro de intereses economicos revisado si la permanencia no cierra el caso."
+          },
+          {
+            "itemId": "chkres-005",
+            "label": "[Obligatorio] Presuncion familiar revisada de forma expresa, aunque finalmente no opere."
+          },
+          {
+            "itemId": "chkres-006",
+            "label": "[Obligatorio] Certificados de residencia fiscal solicitados o revisados cuando sean relevantes."
+          },
+          {
+            "itemId": "chkres-007",
+            "label": "[Obligatorio] Doble residencia confirmada o descartada antes de abrir tie-breaker."
+          },
+          {
+            "itemId": "chkres-008",
+            "label": "[Recomendable] Matriz de evidencias completada con fuerza probatoria y uso habitual."
+          },
+          {
+            "itemId": "chkres-009",
+            "label": "[Recomendable] Objetos tributarios dependientes identificados para consumo posterior de la decision."
+          },
+          {
+            "itemId": "chkres-010",
+            "label": "[Obligatorio] Conclusion final de residencia fiscal trazada con criterio decisivo y prueba soporte."
+          }
+        ]
+      },
+      "order": 40,
+      "status": "validado",
+      "title": "Checklist operativa reutilizable",
+      "type": "checklist",
+      "visibility": "internal"
+    }
+  ],
+  "requiredDocumentation": [
+    {
+      "blockId": "kbres-doc-001",
+      "content": {
+        "items": [
+          {
+            "documentId": "docres-001",
+            "label": "Certificado de residencia fiscal emitido por la administracion tributaria competente.",
+            "required": true,
+            "notes": "Fuerza probatoria: muy alta. Uso habitual: doble residencia, neutralizacion del computo de ausencias esporadicas y soporte de la conclusion final. Alternativa: certificado de residencia fiscal espanol cuando el expediente lo requiera."
+          },
+          {
+            "documentId": "docres-002",
+            "label": "Registro de entradas y salidas, viajes, billetes o trazabilidad objetiva de presencia fisica.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: computo de dias, permanencia y contraste de ausencias esporadicas. Alternativa: sellos, historicos migratorios, reservas y otra prueba objetiva coherente."
+          },
+          {
+            "documentId": "docres-003",
+            "label": "Contratos de trabajo, de prestacion de servicios o soporte equivalente de actividad economica.",
+            "required": true,
+            "notes": "Fuerza probatoria: media. Uso habitual: centro de intereses economicos, localizacion de actividad y base de ingresos. Alternativa: nominas, facturacion o documentacion empresarial equivalente."
+          },
+          {
+            "documentId": "docres-004",
+            "label": "Contratos de arrendamiento, escrituras de uso de vivienda o soporte de residencia efectiva.",
+            "required": false,
+            "notes": "Fuerza probatoria: media. Uso habitual: residencia efectiva, vivienda permanente y contraste de la vida material del contribuyente. Alternativa: certificados padronales o evidencia de ocupacion estable."
+          },
+          {
+            "documentId": "docres-005",
+            "label": "Consumos, escolarizacion, vida familiar y otras pruebas de arraigo o presencia efectiva.",
+            "required": false,
+            "notes": "Fuerza probatoria: complementaria. Uso habitual: refuerzo probatorio de la conclusion, especialmente en casos con conflicto de permanencia, familia o doble residencia. Alternativa: documentacion sanitaria, bancaria o administrativa coherente."
+          }
+        ]
+      },
+      "order": 70,
+      "status": "validado",
+      "title": "Documentacion necesaria y matriz de evidencias",
+      "type": "required_documentation",
+      "visibility": "public"
+    }
+  ],
+  "risks": [
+    {
+      "blockId": "kbres-risk-001",
+      "content": {
+        "items": [
+          {
+            "riskId": "riskres-001",
+            "description": "Riesgo de cumplimiento: concluir residencia o no residencia sin haber fijado correctamente el ano natural y el perimetro del expediente.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Abrir siempre el expediente con ano natural expreso y con una conclusion unica de residencia fiscal para todo el ejercicio."
+          },
+          {
+            "riskId": "riskres-002",
+            "description": "Riesgo documental: computar dias, ausencias o cambios de residencia con evidencia insuficiente o contradictoria.",
+            "severity": "critical",
+            "likelihood": "high",
+            "mitigation": "Trabajar con registros de entradas y salidas, viajes, certificados y soporte objetivo antes de cerrar el criterio de permanencia."
+          },
+          {
+            "riskId": "riskres-003",
+            "description": "Riesgo interpretativo: tratar todos los criterios como si operaran siempre al mismo nivel, sin jerarquia funcional.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Documentar expresamente criterio principal, criterio alternativo, presuncion familiar y uso posterior del tie-breaker solo si existe doble residencia real."
+          },
+          {
+            "riskId": "riskres-004",
+            "description": "Riesgo internacional: abrir o cerrar doble residencia con una lectura simplista del certificado extranjero o del convenio.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Separar la prueba de residencia interna del criterio general de tie-breaker y no bajar a convenios pais por pais en este objeto."
+          },
+          {
+            "riskId": "riskres-005",
+            "description": "Riesgo procedimental: no trasladar correctamente la decision de residencia a los objetos tributarios dependientes y rehacer despues el mismo analisis en cada expediente.",
+            "severity": "medium",
+            "likelihood": "high",
+            "mitigation": "Registrar la decision final como pieza de infraestructura doctrinal reutilizable para Modelo 210, 714, 720, 721, 151, IRPF, IRNR y convenios."
+          }
+        ]
+      },
+      "order": 60,
+      "status": "validado",
+      "title": "Riesgos operativos y mitigacion",
+      "type": "risk",
+      "visibility": "internal"
+    }
+  ],
+  "relevantRelations": [
+    {
+      "relationId": "relres-001",
+      "type": "expands",
+      "targetKnowledgeObjectId": "ko_es_irnr_modelo210_imputacion_rentas_001",
+      "rationale": "Provides Residency Decision To: el Modelo 210 necesita esta decision para separar correctamente no residencia, residencia y uso prudente del IRNR.",
+      "order": 10
+    },
+    {
+      "relationId": "relres-002",
+      "type": "expands",
+      "targetKnowledgeObjectId": "ko_es_modelo714_impuesto_patrimonio_001",
+      "rationale": "Provides Residency Decision To: el Modelo 714 depende de esta decision para distinguir obligacion personal y real.",
+      "order": 20
+    },
+    {
+      "relationId": "relres-003",
+      "type": "expands",
+      "targetKnowledgeObjectId": "ko_es_modelo720_bienes_extranjero_001",
+      "rationale": "Provides Residency Decision To: el Modelo 720 utiliza esta decision como presupuesto material de la obligacion informativa.",
+      "order": 30
+    },
+    {
+      "relationId": "relres-004",
+      "type": "expands",
+      "targetKnowledgeObjectId": "ko_es_modelo721_monedas_virtuales_001",
+      "rationale": "Provides Residency Decision To: el Modelo 721 depende de esta decision antes de entrar en custodia y localizacion extranjera de los criptoactivos.",
+      "order": 40
+    },
+    {
+      "relationId": "relres-005",
+      "type": "references",
+      "targetKnowledgeObjectId": "ko_es_modelo151_regimen_trabajadores_desplazados_001",
+      "rationale": "Provides Residency Decision To: un futuro objeto sobre Modelo 151 debe partir de esta base para decidir adquisicion o perdida de residencia fiscal.",
+      "order": 50
+    },
+    {
+      "relationId": "relres-006",
+      "type": "references",
+      "targetKnowledgeObjectId": "ko_es_irpf_personas_fisicas_001",
+      "rationale": "Provides Residency Decision To: un futuro objeto general de IRPF debe consumir esta decision como criterio de entrada.",
+      "order": 60
+    },
+    {
+      "relationId": "relres-007",
+      "type": "references",
+      "targetKnowledgeObjectId": "ko_es_irnr_personas_fisicas_001",
+      "rationale": "Provides Residency Decision To: un futuro objeto general de IRNR debe consumir esta decision como criterio de separacion frente al IRPF.",
+      "order": 70
+    },
+    {
+      "relationId": "relres-008",
+      "type": "supported_by",
+      "targetKnowledgeObjectId": "ko_es_convenios_doble_imposicion_personas_fisicas_001",
+      "rationale": "Provides Residency Decision To: un futuro objeto transversal de convenios debera consumir y ampliar esta base solo cuando exista doble residencia real.",
+      "order": 80
+    }
+  ]
+}

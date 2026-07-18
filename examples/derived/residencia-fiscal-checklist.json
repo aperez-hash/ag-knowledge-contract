@@ -1,0 +1,50 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_residencia_fiscal_personas_fisicas_001",
+    "stableKey": "residencia-fiscal-espana",
+    "version": "1.0.0"
+  },
+  "title": "Residencia Fiscal en Espana - Checklist operativa",
+  "items": [
+    {
+      "itemId": "chkres-001",
+      "label": "[Obligatorio] Ano natural y periodo analizado fijados expresamente."
+    },
+    {
+      "itemId": "chkres-002",
+      "label": "[Obligatorio] Evidencia de permanencia fisica recopilada y ordenada."
+    },
+    {
+      "itemId": "chkres-003",
+      "label": "[Obligatorio] Analisis de ausencias esporadicas y dias presuntos documentado."
+    },
+    {
+      "itemId": "chkres-004",
+      "label": "[Obligatorio] Centro de intereses economicos revisado si la permanencia no cierra el caso."
+    },
+    {
+      "itemId": "chkres-005",
+      "label": "[Obligatorio] Presuncion familiar revisada de forma expresa, aunque finalmente no opere."
+    },
+    {
+      "itemId": "chkres-006",
+      "label": "[Obligatorio] Certificados de residencia fiscal solicitados o revisados cuando sean relevantes."
+    },
+    {
+      "itemId": "chkres-007",
+      "label": "[Obligatorio] Doble residencia confirmada o descartada antes de abrir tie-breaker."
+    },
+    {
+      "itemId": "chkres-008",
+      "label": "[Recomendable] Matriz de evidencias completada con fuerza probatoria y uso habitual."
+    },
+    {
+      "itemId": "chkres-009",
+      "label": "[Recomendable] Objetos tributarios dependientes identificados para consumo posterior de la decision."
+    },
+    {
+      "itemId": "chkres-010",
+      "label": "[Obligatorio] Conclusion final de residencia fiscal trazada con criterio decisivo y prueba soporte."
+    }
+  ]
+}
