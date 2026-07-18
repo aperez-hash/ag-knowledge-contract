@@ -33,6 +33,7 @@ Consumidores
 - `examples/residencia-fiscal-espana.json`: primer Knowledge Object transversal del segundo ciclo, dedicado a la residencia fiscal de personas fisicas en Espana.
 - `examples/convenios-doble-imposicion-cdi.json`: segundo Knowledge Object transversal del segundo ciclo, dedicado al marco general de los CDI.
 - `examples/modelo-151-regimen-trabajadores-desplazados.json`: primer Knowledge Object de regimen especial del segundo ciclo, dedicado al articulo 93 de la LIRPF y a la gestion del Modelo 151.
+- `examples/irnr-rendimientos-trabajo.json`: tercer Knowledge Object del segundo ciclo, dedicado al IRNR sobre rendimientos del trabajo con foco en teletrabajo internacional, modelos hibridos y retenciones.
 - `examples/derived/`: salidas derivadas certificadas para Planner, Web e IA.
 - `scripts/generate-types.mjs`: generación reproducible de tipos.
 - `scripts/validate-example.mjs`: validación estricta del ejemplo.
@@ -50,6 +51,8 @@ Consumidores
 - `scripts/validate-story-kf-008b.mjs`: validación consolidada de STORY-KF-008B.
 - `scripts/build-story-kf-008c-artifacts.mjs`: generación reproducible de artefactos derivados del Modelo 151.
 - `scripts/validate-story-kf-008c.mjs`: validación consolidada de STORY-KF-008C.
+- `scripts/build-story-kf-008d-artifacts.mjs`: generación reproducible de artefactos derivados de IRNR - Rendimientos del Trabajo.
+- `scripts/validate-story-kf-008d.mjs`: validación consolidada de STORY-KF-008D.
 - `tests/knowledge-object.schema.test.mjs`: pruebas del contrato.
 - `tests/modelo-210-story-kf-004a.test.mjs`: pruebas del primer objeto real y de sus derivaciones.
 - `tests/modelo-720-story-kf-005a.test.mjs`: pruebas del segundo objeto real y de sus derivaciones.
@@ -58,6 +61,7 @@ Consumidores
 - `tests/residencia-fiscal-story-kf-008a.test.mjs`: pruebas del primer objeto transversal y de sus derivaciones.
 - `tests/cdi-story-kf-008b.test.mjs`: pruebas del segundo objeto transversal y de sus derivaciones.
 - `tests/modelo-151-story-kf-008c.test.mjs`: pruebas del primer objeto de regimen especial y de sus derivaciones.
+- `tests/irnr-rendimientos-trabajo-story-kf-008d.test.mjs`: pruebas del objeto IRNR sobre rendimientos del trabajo y de sus derivaciones.
 - `docs/SCHEMA_ERROR_2026-07-18.md`: explicación del defecto corregido.
 
 ## Principios
@@ -136,8 +140,6 @@ npm run build:story-kf-005c
 npm run validate:story-kf-005c
 ```
 
-### Ejecutar pruebas del contrato
-
 ### Generar artefactos derivados de Residencia Fiscal en Espana
 
 ```bash
@@ -172,6 +174,18 @@ npm run build:story-kf-008c
 
 ```bash
 npm run validate:story-kf-008c
+```
+
+### Generar artefactos derivados de IRNR - Rendimientos del Trabajo
+
+```bash
+npm run build:story-kf-008d
+```
+
+### Validar STORY-KF-008D de extremo a extremo
+
+```bash
+npm run validate:story-kf-008d
 ```
 
 ### Ejecutar pruebas del contrato

@@ -1,0 +1,60 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_rendimientos_trabajo_001",
+    "stableKey": "irnr-rendimientos-trabajo",
+    "version": "1.0.0"
+  },
+  "responseType": "derived_draft",
+  "humanReviewRequired": true,
+  "summary": "Evita errores al confundir residencia, fuente de la renta, convenio, retenciones y declaracion en expedientes de trabajo internacional sujetos potencialmente a IRNR.",
+  "nextSteps": [
+    "Certificado de residencia fiscal del contribuyente o soporte equivalente de su residencia en otro Estado.",
+    "Contrato laboral, carta de desplazamiento o documentacion equivalente sobre la relacion de trabajo.",
+    "Registro de dias trabajados, calendario de presencia, viajes y trazabilidad de trabajo en Espana y fuera de Espana.",
+    "Nominas, justificantes de pago y detalle de remuneraciones o periodificaciones relevantes."
+  ],
+  "faqHighlights": [
+    {
+      "faqId": "faqirnr-001",
+      "question": "¿Si me paga una empresa espanola siempre tributo en Espana por IRNR?",
+      "answer": "No. El dato decisivo no es solo quien paga, sino donde se presta efectivamente el trabajo y si un CDI limita o excluye la potestad espanola."
+    },
+    {
+      "faqId": "faqirnr-002",
+      "question": "¿El teletrabajo desde el extranjero para una empresa espanola genera siempre IRNR?",
+      "answer": "No necesariamente. Si el trabajo se desarrolla efectivamente fuera de Espana, puede no existir renta obtenida en territorio espanol a efectos del IRNR."
+    },
+    {
+      "faqId": "faqirnr-003",
+      "question": "¿Que ocurre si trabajo parte del tiempo en Espana y parte fuera?",
+      "answer": "El expediente debe separar la remuneracion o los periodos atribuibles a la actividad efectivamente desarrollada en Espana y contrastarlos con el CDI aplicable."
+    }
+  ],
+  "documentationHighlights": [
+    {
+      "documentId": "docirnr-001",
+      "label": "Certificado de residencia fiscal del contribuyente o soporte equivalente de su residencia en otro Estado.",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: confirmar no residencia espanola y coordinar el expediente con el CDI aplicable."
+    },
+    {
+      "documentId": "docirnr-002",
+      "label": "Contrato laboral, carta de desplazamiento o documentacion equivalente sobre la relacion de trabajo.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: identificar pagador, funciones, periodo y marco contractual del rendimiento."
+    },
+    {
+      "documentId": "docirnr-003",
+      "label": "Registro de dias trabajados, calendario de presencia, viajes y trazabilidad de trabajo en Espana y fuera de Espana.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: separar actividad en Espana, teletrabajo internacional y esquemas hibridos."
+    },
+    {
+      "documentId": "docirnr-004",
+      "label": "Nominas, justificantes de pago y detalle de remuneraciones o periodificaciones relevantes.",
+      "required": true,
+      "notes": "Fuerza probatoria: media. Uso habitual: conectar el rendimiento con los periodos y troceos que deban analizarse materialmente."
+    }
+  ],
+  "caution": "Borrador derivado para apoyo interno. No debe enviarse sin revision humana y sin contrastar la documentacion concreta del cliente."
+}

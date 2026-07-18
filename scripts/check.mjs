@@ -33,6 +33,7 @@ run("validate:story-kf-005c", ["scripts/validate-story-kf-005c.mjs"]);
 run("validate:story-kf-008a", ["scripts/validate-story-kf-008a.mjs"]);
 run("validate:story-kf-008b", ["scripts/validate-story-kf-008b.mjs"]);
 run("validate:story-kf-008c", ["scripts/validate-story-kf-008c.mjs"]);
+run("validate:story-kf-008d", ["scripts/validate-story-kf-008d.mjs"]);
 run("test", [
   "--test",
   "tests/knowledge-object.schema.test.mjs",
@@ -43,4 +44,5 @@ run("test", [
   "tests/residencia-fiscal-story-kf-008a.test.mjs",
   "tests/cdi-story-kf-008b.test.mjs",
   "tests/modelo-151-story-kf-008c.test.mjs",
+  "tests/irnr-rendimientos-trabajo-story-kf-008d.test.mjs",
 ]);

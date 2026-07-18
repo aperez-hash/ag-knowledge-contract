@@ -1,0 +1,35 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_rendimientos_trabajo_001",
+    "stableKey": "irnr-rendimientos-trabajo",
+    "version": "1.0.0"
+  },
+  "title": "IRNR - Rendimientos del Trabajo - FAQ derivada",
+  "items": [
+    {
+      "faqId": "faqirnr-001",
+      "question": "¿Si me paga una empresa espanola siempre tributo en Espana por IRNR?",
+      "answer": "No. El dato decisivo no es solo quien paga, sino donde se presta efectivamente el trabajo y si un CDI limita o excluye la potestad espanola."
+    },
+    {
+      "faqId": "faqirnr-002",
+      "question": "¿El teletrabajo desde el extranjero para una empresa espanola genera siempre IRNR?",
+      "answer": "No necesariamente. Si el trabajo se desarrolla efectivamente fuera de Espana, puede no existir renta obtenida en territorio espanol a efectos del IRNR."
+    },
+    {
+      "faqId": "faqirnr-003",
+      "question": "¿Que ocurre si trabajo parte del tiempo en Espana y parte fuera?",
+      "answer": "El expediente debe separar la remuneracion o los periodos atribuibles a la actividad efectivamente desarrollada en Espana y contrastarlos con el CDI aplicable."
+    },
+    {
+      "faqId": "faqirnr-004",
+      "question": "¿Si hay convenio ya no tengo que mirar la ley espanola?",
+      "answer": "No. Primero se analiza la normativa interna y despues se comprueba si el convenio limita o redistribuye la potestad tributaria."
+    },
+    {
+      "faqId": "faqirnr-005",
+      "question": "¿Retener significa automaticamente que la renta era imponible en Espana?",
+      "answer": "No. La retencion es una capa operativa importante, pero no sustituye el analisis material de residencia, fuente de renta y convenio."
+    }
+  ]
+}

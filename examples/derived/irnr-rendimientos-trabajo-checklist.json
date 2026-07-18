@@ -1,0 +1,50 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_rendimientos_trabajo_001",
+    "stableKey": "irnr-rendimientos-trabajo",
+    "version": "1.0.0"
+  },
+  "title": "IRNR - Rendimientos del Trabajo - Checklist operativa",
+  "items": [
+    {
+      "itemId": "chkirnr-001",
+      "label": "[Obligatorio] Residencia fiscal confirmada o derivada al objeto transversal antes del cierre."
+    },
+    {
+      "itemId": "chkirnr-002",
+      "label": "[Obligatorio] Rendimiento del trabajo y periodo analizado identificados."
+    },
+    {
+      "itemId": "chkirnr-003",
+      "label": "[Obligatorio] Lugar efectivo de prestacion del trabajo trazado."
+    },
+    {
+      "itemId": "chkirnr-004",
+      "label": "[Obligatorio] Dias trabajados en Espana y fuera de Espana diferenciados cuando sea necesario."
+    },
+    {
+      "itemId": "chkirnr-005",
+      "label": "[Obligatorio] CDI comprobado y documentado cuando exista elemento internacional."
+    },
+    {
+      "itemId": "chkirnr-006",
+      "label": "[Obligatorio] Potestad tributaria espanola total, parcial o nula razonada expresamente."
+    },
+    {
+      "itemId": "chkirnr-007",
+      "label": "[Obligatorio] Analisis de retenciones realizado como parte nuclear del expediente."
+    },
+    {
+      "itemId": "chkirnr-008",
+      "label": "[Obligatorio] Necesidad o no de Modelo 210 resuelta con soporte normativo."
+    },
+    {
+      "itemId": "chkirnr-009",
+      "label": "[Recomendable] Escenario de teletrabajo internacional o modelo hibrido documentado de forma separada."
+    },
+    {
+      "itemId": "chkirnr-010",
+      "label": "[Obligatorio] Conclusion final emitida con evidencia, convenio y cierre operativo minimo."
+    }
+  ]
+}

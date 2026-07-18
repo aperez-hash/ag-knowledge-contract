@@ -1,0 +1,597 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_rendimientos_trabajo_001",
+    "stableKey": "irnr-rendimientos-trabajo",
+    "title": "IRNR - Rendimientos del Trabajo",
+    "version": "1.0.0",
+    "status": "validado"
+  },
+  "executiveSummary": {
+    "summary": "Este Knowledge Object fija el criterio operativo del despacho para decidir cuando un rendimiento del trabajo obtenido por una persona no residente queda sometido al IRNR en Espana y que consecuencias minimas genera en materia de convenio, retenciones y declaracion. El problema practico no suele estar en el salario puramente domestico, sino en los escenarios con teletrabajo internacional, modelos hibridos, empleador espanol con prestacion desde el extranjero, empleador extranjero con dias trabajados en Espana o desplazamientos parciales durante el ejercicio. El objeto separa con claridad cuatro planos que suelen mezclarse en los expedientes: residencia fiscal del contribuyente, localizacion territorial del trabajo, posible limitacion por CDI y cierre operativo minimo de retenciones o declaracion. Tambien deja claro que una empresa espanola pagando la remuneracion no convierte por si sola la renta en imponible en Espana si el trabajo no se desarrolla aqui, y que un CDI no crea una obligacion tributaria nueva, sino que limita o redistribuye potestades. Su utilidad practica es homogeneizar expedientes de movilidad internacional, reforzar la trazabilidad de la decision y permitir derivaciones consistentes para Planner, Web, IA, checklist, FAQ y respuesta al cliente sin duplicar doctrina.",
+    "problemSolved": "Evita errores al confundir residencia, fuente de la renta, convenio, retenciones y declaracion en expedientes de trabajo internacional sujetos potencialmente a IRNR.",
+    "scope": "Rendimientos del trabajo de personas fisicas no residentes desde la perspectiva espanola, con especial foco en teletrabajo internacional, trabajo hibrido, actividad parcial en Espana y cumplimiento operativo minimo asociado.",
+    "practicalImpact": "Permite abrir, revisar y cerrar expedientes de trabajo internacional con un criterio unico y reusable antes de bajar al detalle formal del Modelo 210 u otras obligaciones procedimentales."
+  },
+  "affectedTaxModels": [
+    {
+      "modelCode": "210",
+      "modelName": "Modelo 210 - IRNR",
+      "relationType": "primary",
+      "notes": "Es el modelo declarativo natural cuando procede declarar rentas del trabajo sin establecimiento permanente."
+    },
+    {
+      "modelCode": "216",
+      "modelName": "Modelo 216 - Retenciones e ingresos a cuenta del IRNR",
+      "relationType": "secondary",
+      "notes": "Conecta el analisis material con la capa de retenciones a no residentes."
+    },
+    {
+      "modelCode": "151",
+      "modelName": "Modelo 151 - Regimen especial de trabajadores desplazados",
+      "relationType": "informative",
+      "notes": "Puede consumir este objeto cuando el expediente exige distinguir IRPF especial frente a IRNR."
+    }
+  ],
+  "affectedForms": [
+    {
+      "formCode": "210",
+      "formName": "Modelo 210",
+      "relationType": "required",
+      "notes": "Formulario impactado directamente por la conclusion material del objeto."
+    },
+    {
+      "formCode": "216",
+      "formName": "Modelo 216",
+      "relationType": "informative",
+      "notes": "Formulario impactado cuando existe obligacion de retener e ingresar a cuenta."
+    }
+  ],
+  "plannerBlocks": [
+    {
+      "blockId": "kbirnr-legal-001",
+      "content": {
+        "basis": "La base juridica del objeto descansa en el Texto Refundido de la Ley del IRNR y en su Reglamento, con especial importancia de las reglas sobre contribuyentes no residentes, rentas obtenidas en territorio espanol, declaracion y retenciones. La secuencia correcta es siempre normativa interna, posible CDI, retenciones y obligacion formal. Un CDI no crea por si solo una obligacion tributaria nueva, sino que limita, redistribuye o condiciona la potestad que la norma interna atribuiria inicialmente. La fuente de la renta laboral se conecta con el lugar de realizacion efectiva del trabajo, no solo con el pais del pagador ni con la cuenta desde la que se satisface la remuneracion."
+      },
+      "order": 10,
+      "status": "validado",
+      "title": "Base legal del IRNR sobre rendimientos del trabajo",
+      "type": "legal_basis",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbirnr-tech-001",
+      "content": {
+        "development": "El objeto debe trabajar con una jerarquia funcional clara. Primero se determina si la persona es no residente a efectos espanoles, delegando esa conclusion en el objeto de Residencia Fiscal cuando haga falta. Segundo se confirma que existe un rendimiento del trabajo y se localiza donde se desarrolla efectivamente la actividad. En IRNR, la clave no es solo quien paga, sino donde se presta el trabajo y cual es el lugar de realizacion efectiva del trabajo. Por eso el teletrabajo internacional y los modelos hibridos exigen separar dias trabajados en Espana, dias trabajados fuera de Espana y remuneraciones mixtas. Tercero se revisa si hay CDI aplicable y si Espana conserva potestad tributaria total, parcial o nula sobre la remuneracion. Cuarto se aterriza la capa de retenciones como dominio nuclear, no auxiliar: la retencion no prueba por si sola la sujecion material, pero tampoco puede dejarse para el final como detalle irrelevante. Debe analizarse cuando existe empresa espanola o pagador espanol, cuando la renta queda sometida al IRNR y cuando la limitacion por convenio altera el cierre operativo. Este objeto no es un manual completo del Modelo 210, pero si explica cuando la conclusion material desemboca en declaracion, cuando puede operar la ausencia de obligacion por retencion o exencion y cuando el expediente necesita escalar a cumplimiento formal mas detallado. El Modelo 210 aparece aqui como capa procedimental derivada y no como centro del objeto."
+      },
+      "order": 20,
+      "status": "validado",
+      "title": "Desarrollo tecnico del criterio material y operativo",
+      "type": "technical_development",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbirnr-proc-001",
+      "content": {
+        "steps": [
+          {
+            "text": "Confirmar si la persona es no residente desde la perspectiva espanola y, si no esta cerrado, abrir el objeto de Residencia Fiscal antes de seguir.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Identificar el rendimiento del trabajo analizado, el pagador, el periodo y el tipo de relacion laboral o asimilada.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Determinar donde se ha prestado efectivamente el trabajo, diferenciando Espana, extranjero y esquemas hibridos o teletrabajo internacional.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Separar, cuando sea necesario, la remuneracion correspondiente a dias o funciones desarrolladas en Espana frente a los desarrollados fuera de Espana.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Comprobar si existe CDI vigente y si limita o elimina la potestad tributaria espanola sobre la remuneracion concreta.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Resolver si la renta queda obtenida en territorio espanol a efectos del IRNR y si la sujecion es total, parcial o inexistente.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Analizar la capa de retenciones como parte central del expediente: existencia de obligado a retener, alcance material y eventual modulacion por convenio.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Revisar si procede declaracion por Modelo 210 o si opera una excepcion por retencion practicada o exencion convencional o legal.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Documentar la evidencia utilizada para residencia, dias de trabajo, lugar de prestacion, convenio y retenciones.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Emitir una conclusion final unica sobre tributacion material en Espana y cierre operativo minimo del expediente.",
+            "format": "plain_text"
+          }
+        ]
+      },
+      "order": 30,
+      "status": "validado",
+      "title": "Procedimiento operativo completo",
+      "type": "procedure",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbirnr-check-001",
+      "content": {
+        "items": [
+          {
+            "itemId": "chkirnr-001",
+            "label": "[Obligatorio] Residencia fiscal confirmada o derivada al objeto transversal antes del cierre."
+          },
+          {
+            "itemId": "chkirnr-002",
+            "label": "[Obligatorio] Rendimiento del trabajo y periodo analizado identificados."
+          },
+          {
+            "itemId": "chkirnr-003",
+            "label": "[Obligatorio] Lugar efectivo de prestacion del trabajo trazado."
+          },
+          {
+            "itemId": "chkirnr-004",
+            "label": "[Obligatorio] Dias trabajados en Espana y fuera de Espana diferenciados cuando sea necesario."
+          },
+          {
+            "itemId": "chkirnr-005",
+            "label": "[Obligatorio] CDI comprobado y documentado cuando exista elemento internacional."
+          },
+          {
+            "itemId": "chkirnr-006",
+            "label": "[Obligatorio] Potestad tributaria espanola total, parcial o nula razonada expresamente."
+          },
+          {
+            "itemId": "chkirnr-007",
+            "label": "[Obligatorio] Analisis de retenciones realizado como parte nuclear del expediente."
+          },
+          {
+            "itemId": "chkirnr-008",
+            "label": "[Obligatorio] Necesidad o no de Modelo 210 resuelta con soporte normativo."
+          },
+          {
+            "itemId": "chkirnr-009",
+            "label": "[Recomendable] Escenario de teletrabajo internacional o modelo hibrido documentado de forma separada."
+          },
+          {
+            "itemId": "chkirnr-010",
+            "label": "[Obligatorio] Conclusion final emitida con evidencia, convenio y cierre operativo minimo."
+          }
+        ]
+      },
+      "order": 40,
+      "status": "validado",
+      "title": "Checklist operativa reutilizable",
+      "type": "checklist",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbirnr-faq-001",
+      "content": {
+        "items": [
+          {
+            "faqId": "faqirnr-001",
+            "question": "¿Si me paga una empresa espanola siempre tributo en Espana por IRNR?",
+            "answer": "No. El dato decisivo no es solo quien paga, sino donde se presta efectivamente el trabajo y si un CDI limita o excluye la potestad espanola."
+          },
+          {
+            "faqId": "faqirnr-002",
+            "question": "¿El teletrabajo desde el extranjero para una empresa espanola genera siempre IRNR?",
+            "answer": "No necesariamente. Si el trabajo se desarrolla efectivamente fuera de Espana, puede no existir renta obtenida en territorio espanol a efectos del IRNR."
+          },
+          {
+            "faqId": "faqirnr-003",
+            "question": "¿Que ocurre si trabajo parte del tiempo en Espana y parte fuera?",
+            "answer": "El expediente debe separar la remuneracion o los periodos atribuibles a la actividad efectivamente desarrollada en Espana y contrastarlos con el CDI aplicable."
+          },
+          {
+            "faqId": "faqirnr-004",
+            "question": "¿Si hay convenio ya no tengo que mirar la ley espanola?",
+            "answer": "No. Primero se analiza la normativa interna y despues se comprueba si el convenio limita o redistribuye la potestad tributaria."
+          },
+          {
+            "faqId": "faqirnr-005",
+            "question": "¿Retener significa automaticamente que la renta era imponible en Espana?",
+            "answer": "No. La retencion es una capa operativa importante, pero no sustituye el analisis material de residencia, fuente de renta y convenio."
+          }
+        ]
+      },
+      "order": 50,
+      "status": "validado",
+      "title": "Preguntas frecuentes reales de clientes y expedientes",
+      "type": "faq",
+      "visibility": "public"
+    },
+    {
+      "blockId": "kbirnr-risk-001",
+      "content": {
+        "items": [
+          {
+            "riskId": "riskirnr-001",
+            "description": "Riesgo de residencia mal resuelta o no documentada antes de entrar en IRNR.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Abrir siempre el analisis de residencia primero y delegarlo al objeto transversal cuando sea necesario."
+          },
+          {
+            "riskId": "riskirnr-002",
+            "description": "Riesgo de tratar como imponible en Espana toda remuneracion pagada por empresa espanola, aunque el trabajo se preste fuera.",
+            "severity": "critical",
+            "likelihood": "high",
+            "mitigation": "Trazar el lugar efectivo de prestacion del trabajo y no confundir pagador con fuente territorial."
+          },
+          {
+            "riskId": "riskirnr-003",
+            "description": "Riesgo de no trocear correctamente escenarios hibridos o teletrabajo internacional con dias en varios paises.",
+            "severity": "high",
+            "likelihood": "high",
+            "mitigation": "Separar dias, funciones y remuneraciones cuando el expediente no sea enteramente espanol ni enteramente extranjero."
+          },
+          {
+            "riskId": "riskirnr-004",
+            "description": "Riesgo de usar el CDI como sustituto de la norma interna o de aplicarlo antes de confirmar su relevancia.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Seguir la secuencia interna, fuente, convenio y solo despues cierre material."
+          },
+          {
+            "riskId": "riskirnr-005",
+            "description": "Riesgo de relegar retenciones y declaracion a un detalle final, dejando un expediente materialmente correcto pero operativamente incompleto.",
+            "severity": "medium",
+            "likelihood": "high",
+            "mitigation": "Tratar la retencion como dominio nuclear y dejar resuelto si procede o no Modelo 210."
+          }
+        ]
+      },
+      "order": 60,
+      "status": "validado",
+      "title": "Riesgos operativos y mitigacion",
+      "type": "risk",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbirnr-doc-001",
+      "content": {
+        "items": [
+          {
+            "documentId": "docirnr-001",
+            "label": "Certificado de residencia fiscal del contribuyente o soporte equivalente de su residencia en otro Estado.",
+            "required": true,
+            "notes": "Fuerza probatoria: muy alta. Uso habitual: confirmar no residencia espanola y coordinar el expediente con el CDI aplicable."
+          },
+          {
+            "documentId": "docirnr-002",
+            "label": "Contrato laboral, carta de desplazamiento o documentacion equivalente sobre la relacion de trabajo.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: identificar pagador, funciones, periodo y marco contractual del rendimiento."
+          },
+          {
+            "documentId": "docirnr-003",
+            "label": "Registro de dias trabajados, calendario de presencia, viajes y trazabilidad de trabajo en Espana y fuera de Espana.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: separar actividad en Espana, teletrabajo internacional y esquemas hibridos."
+          },
+          {
+            "documentId": "docirnr-004",
+            "label": "Nominas, justificantes de pago y detalle de remuneraciones o periodificaciones relevantes.",
+            "required": true,
+            "notes": "Fuerza probatoria: media. Uso habitual: conectar el rendimiento con los periodos y troceos que deban analizarse materialmente."
+          },
+          {
+            "documentId": "docirnr-005",
+            "label": "Certificados de retencion, comunicaciones internas o evidencia de practica de retenciones y cierre declarativo.",
+            "required": false,
+            "notes": "Fuerza probatoria: media. Uso habitual: verificar la capa operativa de retenciones y si procede o no declaracion adicional por Modelo 210."
+          }
+        ]
+      },
+      "order": 70,
+      "status": "validado",
+      "title": "Documentacion necesaria y matriz de evidencias",
+      "type": "required_documentation",
+      "visibility": "public"
+    },
+    {
+      "blockId": "kbirnr-case-001",
+      "content": {
+        "items": [
+          {
+            "caseId": "caseirnr-001",
+            "scenario": "Persona residente en otro Estado contratada por empresa espanola para trabajar de forma continuada desde su pais de residencia.",
+            "resolution": "Si el trabajo no se desarrolla en Espana, la renta puede no considerarse obtenida en territorio espanol y no quedar sujeta al IRNR por ese concepto.",
+            "notes": "Aprendizaje: empresa espanola no equivale por si sola a fuente espanola."
+          },
+          {
+            "caseId": "caseirnr-002",
+            "scenario": "Teletrabajador internacional que pasa semanas puntuales en Espana y el resto del ano trabaja en remoto desde el extranjero.",
+            "resolution": "El expediente debe trocear la actividad y revisar si la parte efectivamente desarrollada en Espana genera renta sometida al IRNR y con que limites convencionales.",
+            "notes": "Aprendizaje: el modelo hibrido exige separar dias y funciones."
+          },
+          {
+            "caseId": "caseirnr-003",
+            "scenario": "Empleado de grupo extranjero desplazado temporalmente a Espana con CDI aplicable y posible retencion local.",
+            "resolution": "Debe analizarse primero la fuente interna y despues el CDI para decidir si Espana conserva potestad total, parcial o ninguna sobre la remuneracion.",
+            "notes": "Aprendizaje: el convenio limita o redistribuye, no sustituye el analisis previo."
+          },
+          {
+            "caseId": "caseirnr-004",
+            "scenario": "No residente con trabajo parcialmente realizado en Espana y retenciones ya practicadas por el pagador.",
+            "resolution": "La retencion es relevante, pero no evita revisar si la renta estaba bien localizada, si el convenio la limitaba y si queda o no obligacion declarativa residual.",
+            "notes": "Aprendizaje: retencion no equivale automaticamente a cierre material perfecto."
+          },
+          {
+            "caseId": "caseirnr-005",
+            "scenario": "Profesional confundido entre regimen especial de desplazados y tributacion por IRNR sobre salario internacional.",
+            "resolution": "Antes de cerrar IRNR debe aclararse si el expediente realmente pertenece al ambito del Modelo 151 o si sigue siendo un caso de no residente con rendimientos del trabajo.",
+            "notes": "Aprendizaje: IRNR y regimen especial no deben mezclarse sin resolver antes la puerta de entrada."
+          }
+        ]
+      },
+      "order": 80,
+      "status": "validado",
+      "title": "Casos practicos de referencia",
+      "type": "case_study",
+      "visibility": "public"
+    }
+  ],
+  "procedures": [
+    {
+      "blockId": "kbirnr-proc-001",
+      "content": {
+        "steps": [
+          {
+            "text": "Confirmar si la persona es no residente desde la perspectiva espanola y, si no esta cerrado, abrir el objeto de Residencia Fiscal antes de seguir.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Identificar el rendimiento del trabajo analizado, el pagador, el periodo y el tipo de relacion laboral o asimilada.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Determinar donde se ha prestado efectivamente el trabajo, diferenciando Espana, extranjero y esquemas hibridos o teletrabajo internacional.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Separar, cuando sea necesario, la remuneracion correspondiente a dias o funciones desarrolladas en Espana frente a los desarrollados fuera de Espana.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Comprobar si existe CDI vigente y si limita o elimina la potestad tributaria espanola sobre la remuneracion concreta.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Resolver si la renta queda obtenida en territorio espanol a efectos del IRNR y si la sujecion es total, parcial o inexistente.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Analizar la capa de retenciones como parte central del expediente: existencia de obligado a retener, alcance material y eventual modulacion por convenio.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Revisar si procede declaracion por Modelo 210 o si opera una excepcion por retencion practicada o exencion convencional o legal.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Documentar la evidencia utilizada para residencia, dias de trabajo, lugar de prestacion, convenio y retenciones.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Emitir una conclusion final unica sobre tributacion material en Espana y cierre operativo minimo del expediente.",
+            "format": "plain_text"
+          }
+        ]
+      },
+      "order": 30,
+      "status": "validado",
+      "title": "Procedimiento operativo completo",
+      "type": "procedure",
+      "visibility": "internal"
+    }
+  ],
+  "checklists": [
+    {
+      "blockId": "kbirnr-check-001",
+      "content": {
+        "items": [
+          {
+            "itemId": "chkirnr-001",
+            "label": "[Obligatorio] Residencia fiscal confirmada o derivada al objeto transversal antes del cierre."
+          },
+          {
+            "itemId": "chkirnr-002",
+            "label": "[Obligatorio] Rendimiento del trabajo y periodo analizado identificados."
+          },
+          {
+            "itemId": "chkirnr-003",
+            "label": "[Obligatorio] Lugar efectivo de prestacion del trabajo trazado."
+          },
+          {
+            "itemId": "chkirnr-004",
+            "label": "[Obligatorio] Dias trabajados en Espana y fuera de Espana diferenciados cuando sea necesario."
+          },
+          {
+            "itemId": "chkirnr-005",
+            "label": "[Obligatorio] CDI comprobado y documentado cuando exista elemento internacional."
+          },
+          {
+            "itemId": "chkirnr-006",
+            "label": "[Obligatorio] Potestad tributaria espanola total, parcial o nula razonada expresamente."
+          },
+          {
+            "itemId": "chkirnr-007",
+            "label": "[Obligatorio] Analisis de retenciones realizado como parte nuclear del expediente."
+          },
+          {
+            "itemId": "chkirnr-008",
+            "label": "[Obligatorio] Necesidad o no de Modelo 210 resuelta con soporte normativo."
+          },
+          {
+            "itemId": "chkirnr-009",
+            "label": "[Recomendable] Escenario de teletrabajo internacional o modelo hibrido documentado de forma separada."
+          },
+          {
+            "itemId": "chkirnr-010",
+            "label": "[Obligatorio] Conclusion final emitida con evidencia, convenio y cierre operativo minimo."
+          }
+        ]
+      },
+      "order": 40,
+      "status": "validado",
+      "title": "Checklist operativa reutilizable",
+      "type": "checklist",
+      "visibility": "internal"
+    }
+  ],
+  "requiredDocumentation": [
+    {
+      "blockId": "kbirnr-doc-001",
+      "content": {
+        "items": [
+          {
+            "documentId": "docirnr-001",
+            "label": "Certificado de residencia fiscal del contribuyente o soporte equivalente de su residencia en otro Estado.",
+            "required": true,
+            "notes": "Fuerza probatoria: muy alta. Uso habitual: confirmar no residencia espanola y coordinar el expediente con el CDI aplicable."
+          },
+          {
+            "documentId": "docirnr-002",
+            "label": "Contrato laboral, carta de desplazamiento o documentacion equivalente sobre la relacion de trabajo.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: identificar pagador, funciones, periodo y marco contractual del rendimiento."
+          },
+          {
+            "documentId": "docirnr-003",
+            "label": "Registro de dias trabajados, calendario de presencia, viajes y trazabilidad de trabajo en Espana y fuera de Espana.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: separar actividad en Espana, teletrabajo internacional y esquemas hibridos."
+          },
+          {
+            "documentId": "docirnr-004",
+            "label": "Nominas, justificantes de pago y detalle de remuneraciones o periodificaciones relevantes.",
+            "required": true,
+            "notes": "Fuerza probatoria: media. Uso habitual: conectar el rendimiento con los periodos y troceos que deban analizarse materialmente."
+          },
+          {
+            "documentId": "docirnr-005",
+            "label": "Certificados de retencion, comunicaciones internas o evidencia de practica de retenciones y cierre declarativo.",
+            "required": false,
+            "notes": "Fuerza probatoria: media. Uso habitual: verificar la capa operativa de retenciones y si procede o no declaracion adicional por Modelo 210."
+          }
+        ]
+      },
+      "order": 70,
+      "status": "validado",
+      "title": "Documentacion necesaria y matriz de evidencias",
+      "type": "required_documentation",
+      "visibility": "public"
+    }
+  ],
+  "risks": [
+    {
+      "blockId": "kbirnr-risk-001",
+      "content": {
+        "items": [
+          {
+            "riskId": "riskirnr-001",
+            "description": "Riesgo de residencia mal resuelta o no documentada antes de entrar en IRNR.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Abrir siempre el analisis de residencia primero y delegarlo al objeto transversal cuando sea necesario."
+          },
+          {
+            "riskId": "riskirnr-002",
+            "description": "Riesgo de tratar como imponible en Espana toda remuneracion pagada por empresa espanola, aunque el trabajo se preste fuera.",
+            "severity": "critical",
+            "likelihood": "high",
+            "mitigation": "Trazar el lugar efectivo de prestacion del trabajo y no confundir pagador con fuente territorial."
+          },
+          {
+            "riskId": "riskirnr-003",
+            "description": "Riesgo de no trocear correctamente escenarios hibridos o teletrabajo internacional con dias en varios paises.",
+            "severity": "high",
+            "likelihood": "high",
+            "mitigation": "Separar dias, funciones y remuneraciones cuando el expediente no sea enteramente espanol ni enteramente extranjero."
+          },
+          {
+            "riskId": "riskirnr-004",
+            "description": "Riesgo de usar el CDI como sustituto de la norma interna o de aplicarlo antes de confirmar su relevancia.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Seguir la secuencia interna, fuente, convenio y solo despues cierre material."
+          },
+          {
+            "riskId": "riskirnr-005",
+            "description": "Riesgo de relegar retenciones y declaracion a un detalle final, dejando un expediente materialmente correcto pero operativamente incompleto.",
+            "severity": "medium",
+            "likelihood": "high",
+            "mitigation": "Tratar la retencion como dominio nuclear y dejar resuelto si procede o no Modelo 210."
+          }
+        ]
+      },
+      "order": 60,
+      "status": "validado",
+      "title": "Riesgos operativos y mitigacion",
+      "type": "risk",
+      "visibility": "internal"
+    }
+  ],
+  "relevantRelations": [
+    {
+      "relationId": "relirnr-001",
+      "type": "depends_on",
+      "targetKnowledgeObjectId": "ko_es_residencia_fiscal_personas_fisicas_001",
+      "rationale": "Consumes Doctrine From: la residencia fiscal determina si el expediente entra realmente en IRNR o debe desplazarse a IRPF u otro analisis.",
+      "order": 10
+    },
+    {
+      "relationId": "relirnr-002",
+      "type": "depends_on",
+      "targetKnowledgeObjectId": "ko_es_convenios_doble_imposicion_personas_fisicas_001",
+      "rationale": "Consumes Doctrine From: los CDI limitan o redistribuyen la potestad tributaria sobre rendimientos del trabajo cuando existe elemento internacional.",
+      "order": 20
+    },
+    {
+      "relationId": "relirnr-003",
+      "type": "references",
+      "targetKnowledgeObjectId": "ko_es_irnr_modelo210_imputacion_rentas_001",
+      "rationale": "Consumes Doctrine From: el objeto de Modelo 210 aporta la capa de cumplimiento cuando la conclusion material de IRNR exige declaracion.",
+      "order": 30
+    },
+    {
+      "relationId": "relirnr-004",
+      "type": "expands",
+      "targetKnowledgeObjectId": "ko_es_irnr_otras_categorias_renta_001",
+      "rationale": "Provides Doctrine To: este objeto puede servir de base para otros objetos de IRNR por categorias materiales distintas.",
+      "order": 40
+    },
+    {
+      "relationId": "relirnr-005",
+      "type": "expands",
+      "targetKnowledgeObjectId": "ko_es_irpf_internacional_personas_fisicas_001",
+      "rationale": "Provides Doctrine To: la tributacion internacional del trabajo en IRPF necesita este analisis como contraste frente al IRNR.",
+      "order": 50
+    },
+    {
+      "relationId": "relirnr-006",
+      "type": "expands",
+      "targetKnowledgeObjectId": "ko_es_modelo151_regimen_trabajadores_desplazados_001",
+      "rationale": "Provides Doctrine To: el objeto de Modelo 151 puede consumir esta doctrina para distinguir expedientes de no residentes frente a regimen especial.",
+      "order": 60
+    },
+    {
+      "relationId": "relirnr-007",
+      "type": "expands",
+      "targetKnowledgeObjectId": "ko_es_fiscalidad_teletrabajo_internacional_001",
+      "rationale": "Provides Doctrine To: la fiscalidad del teletrabajo internacional necesita esta base sobre localizacion de trabajo, fuente de renta y retenciones.",
+      "order": 70
+    }
+  ]
+}
