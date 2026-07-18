@@ -1,0 +1,151 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_rendimientos_capital_inmobiliario_001",
+    "stableKey": "irnr-rendimientos-capital-inmobiliario",
+    "title": "IRNR - Rendimientos del Capital Inmobiliario",
+    "slug": "irnr-rendimientos-capital-inmobiliario",
+    "version": "1.0.0"
+  },
+  "executiveSummary": {
+    "summary": "Este Knowledge Object fija el criterio operativo del despacho para decidir cuando una persona o entidad no residente tributa en Espana por rendimientos del capital inmobiliario derivados de inmuebles situados en territorio espanol, en especial en supuestos de alquiler, subarrendamiento o cesiones de uso que todavia no desbordan hacia una actividad economica con establecimiento permanente. El objeto distingue con claridad la secuencia correcta del analisis: primero se verifica la no residencia, despues la existencia de un inmueble situado en Espana y de un rendimiento procedente del mismo, luego se comprueba que el caso sigue siendo capital inmobiliario y no actividad economica, a continuacion se revisa el eventual CDI y, solo al final, se aterriza la deducibilidad de gastos y el cumplimiento minimo conectado con el Modelo 210. Tambien deja trazado que el CDI no crea una obligacion tributaria nueva, sino que coordina o limita la potestad que la normativa interna atribuye inicialmente; y que la diferencia entre residentes UE/EEE y terceros Estados afecta de forma directa a la deducibilidad de gastos, no a la existencia del rendimiento. Su utilidad practica es homogeneizar expedientes de no residentes con inmuebles arrendados, reforzar la trazabilidad de la decision y permitir derivaciones consistentes para Planner, Web, IA, checklist, FAQ y respuesta al cliente sin duplicar doctrina.",
+    "problemSolved": "Evita errores al mezclar arrendamiento civil, actividad economica, convenio, deducibilidad y cumplimiento formal en expedientes inmobiliarios de no residentes.",
+    "scope": "Rendimientos del capital inmobiliario obtenidos por no residentes desde la perspectiva espanola, con foco en inmuebles situados en Espana, alquileres y cesiones de uso accesorias, deducibilidad de gastos, copropiedad y cumplimiento minimo asociado.",
+    "practicalImpact": "Permite abrir, revisar y cerrar expedientes de alquileres de no residentes con un criterio unico antes de bajar al detalle formal completo del Modelo 210."
+  },
+  "affectedTaxModels": [
+    {
+      "modelCode": "210",
+      "modelName": "Modelo 210 - IRNR",
+      "relationType": "primary",
+      "notes": "Es el modelo declarativo natural cuando procede declarar rendimientos del capital inmobiliario sin establecimiento permanente."
+    },
+    {
+      "modelCode": "216",
+      "modelName": "Modelo 216 - Retenciones e ingresos a cuenta del IRNR",
+      "relationType": "secondary",
+      "notes": "Conecta el analisis material con la capa de retenciones cuando existe retenedor."
+    }
+  ],
+  "affectedForms": [
+    {
+      "formCode": "210",
+      "formName": "Modelo 210",
+      "relationType": "required",
+      "notes": "Formulario impactado directamente por la conclusion material del objeto."
+    },
+    {
+      "formCode": "216",
+      "formName": "Modelo 216",
+      "relationType": "informative",
+      "notes": "Formulario impactado cuando existe obligacion de retener e ingresar a cuenta."
+    }
+  ],
+  "faq": [
+    {
+      "faqId": "faqirnrci-001",
+      "question": "Si vivo fuera de Espana y alquilo una vivienda en Alicante, tengo que tributar aqui?",
+      "answer": "Con caracter general, si. La normativa interna del IRNR considera renta obtenida en territorio espanol los rendimientos derivados de inmuebles situados en Espana, y los CDI suelen permitir tambien la imposicion en el Estado donde esta situado el inmueble."
+    },
+    {
+      "faqId": "faqirnrci-002",
+      "question": "Puedo deducir gastos del alquiler en IRNR?",
+      "answer": "Depende. Para residentes en la UE o en determinados Estados del EEE con asistencia mutua aplicable, pueden deducirse gastos directamente relacionados y con vinculo economico indisociable. Para terceros Estados, la regla general sigue siendo la base integra sin deduccion de gastos."
+    },
+    {
+      "faqId": "faqirnrci-003",
+      "question": "Si ofrezco limpieza al entrar y salir el inquilino, ya no estoy en este objeto?",
+      "answer": "No necesariamente. Los servicios limitados o accesorios no siempre sacan el caso del capital inmobiliario. El problema aparece cuando se prestan servicios propios de hosteleria o existe una verdadera ordenacion empresarial que pueda llevar a actividad economica o establecimiento permanente."
+    },
+    {
+      "faqId": "faqirnrci-004",
+      "question": "Si el piso es de dos hermanos no residentes, se presenta una sola declaracion?",
+      "answer": "No. Cada cotitular es contribuyente independiente en IRNR y debe tributar por su propia participacion, salvo que un supuesto concreto admita otra tecnica formal que no es la regla general."
+    },
+    {
+      "faqId": "faqirnrci-005",
+      "question": "Necesito revisar el convenio aunque el inmueble este en Espana?",
+      "answer": "Si conviene revisarlo, pero en renta inmobiliaria lo habitual es que el convenio mantenga la posibilidad de gravamen del Estado donde esta situado el inmueble. El convenio no suele eliminar la imposicion espanola de forma automatica en estos casos."
+    },
+    {
+      "faqId": "faqirnrci-006",
+      "question": "Este objeto explica ya como rellenar todas las casillas del Modelo 210?",
+      "answer": "No. El objeto solo cubre el cumplimiento operativo minimo y la conexion con el Modelo 210. La cumplimentacion completa del formulario pertenece a una capa operativa derivada o a un objeto mas procedimental."
+    }
+  ],
+  "requiredDocumentation": [
+    {
+      "documentId": "docirnrci-001",
+      "label": "Identificacion del titular o titulares no residentes y certificado de residencia fiscal o soporte equivalente fuera de Espana.",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: confirmar la condicion de no residente y preparar la capa de CDI cuando proceda."
+    },
+    {
+      "documentId": "docirnrci-002",
+      "label": "Acreditacion de titularidad del inmueble, porcentaje de participacion y localizacion en territorio espanol.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: fijar el inmueble relevante, la copropiedad y la base personal del expediente."
+    },
+    {
+      "documentId": "docirnrci-003",
+      "label": "Contrato de arrendamiento o documento equivalente de cesion de uso con detalle del periodo, renta y condiciones basicas.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: acreditar existencia del rendimiento y separar capital inmobiliario de otros supuestos."
+    },
+    {
+      "documentId": "docirnrci-004",
+      "label": "Detalle de importes percibidos, fechas de devengo y justificantes de cobro o extractos equivalentes.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: base imponible, periodicidad y contraste con la declaracion."
+    },
+    {
+      "documentId": "docirnrci-005",
+      "label": "Soporte de gastos deducibles directamente vinculados al inmueble cuando el contribuyente sea residente UE/EEE con derecho potencial a deducirlos.",
+      "required": false,
+      "notes": "Fuerza probatoria: media. Uso habitual: analisis de deducibilidad, anexo de gastos y preparacion del Modelo 210."
+    },
+    {
+      "documentId": "docirnrci-006",
+      "label": "Soporte de ausencia de servicios hoteleros o de medios personales en Espana cuando exista riesgo de recalificacion empresarial.",
+      "required": false,
+      "notes": "Fuerza probatoria: complementaria. Uso habitual: reforzar que el caso sigue dentro de capital inmobiliario y no escala a establecimiento permanente."
+    }
+  ],
+  "caseStudies": [
+    {
+      "caseId": "caseirnrci-001",
+      "scenario": "Ciudadano residente en Alemania alquila un apartamento en Valencia y soporta gastos directamente vinculados al inmueble.",
+      "resolution": "La renta deriva de inmueble situado en Espana y tributa inicialmente en IRNR. El CDI no elimina la potestad espanola sobre la renta inmobiliaria. Al ser residente UE, el contribuyente puede plantear la deduccion de gastos que cumplan los requisitos legales.",
+      "notes": "Aprendizaje: la potestad espanola y la deducibilidad son preguntas distintas."
+    },
+    {
+      "caseId": "caseirnrci-002",
+      "scenario": "Contribuyente residente en Canada alquila una vivienda en Malaga y pretende deducir gastos de reparacion y comunidad.",
+      "resolution": "La renta sigue estando sujeta a IRNR por el inmueble situado en Espana, pero la regla general de base integra sin deduccion de gastos se mantiene para terceros Estados. El expediente debe separar sujecion material y tratamiento de gastos.",
+      "notes": "Aprendizaje: el derecho a gasto no acompana por defecto a todos los no residentes."
+    },
+    {
+      "caseId": "caseirnrci-003",
+      "scenario": "Propietaria no residente cede un apartamento en la Costa del Sol y solo ofrece limpieza al inicio y fin de cada estancia.",
+      "resolution": "Los servicios limitados o accesorios no bastan por si solos para sacar el caso del capital inmobiliario. Mientras no existan servicios propios de hosteleria ni estructura empresarial relevante, el caso sigue en este objeto.",
+      "notes": "Aprendizaje: no toda cesion con servicios accesorios se transforma en actividad economica."
+    },
+    {
+      "caseId": "caseirnrci-004",
+      "scenario": "Entidad no residente explota varios inmuebles arrendados y dispone en Espana de una persona empleada a jornada completa para ordenar la actividad.",
+      "resolution": "Aparece un fuerte riesgo de salida del objeto hacia actividad economica o establecimiento permanente. Este objeto solo sirve como puerta de deteccion y escalado, no como solucion final.",
+      "notes": "Aprendizaje: la estructura personal en Espana puede cambiar por completo el encuadre."
+    },
+    {
+      "caseId": "caseirnrci-005",
+      "scenario": "Dos hermanos residentes fuera de Espana alquilan conjuntamente un inmueble urbano en Sevilla.",
+      "resolution": "Cada cotitular es contribuyente independiente. Debe repartirse ingreso, gastos potencialmente deducibles y cumplimiento segun la cuota de participacion, con declaraciones separadas y trazabilidad individual.",
+      "notes": "Aprendizaje: la copropiedad no fusiona al contribuyente a efectos de IRNR."
+    }
+  ],
+  "excludedByPolicy": [
+    "internal_reference",
+    "risk",
+    "restricted visibility"
+  ],
+  "disclaimer": "Vista derivada para web. Excluye referencias internas, riesgos internos y cualquier contenido restringido o bloqueado para este canal."
+}

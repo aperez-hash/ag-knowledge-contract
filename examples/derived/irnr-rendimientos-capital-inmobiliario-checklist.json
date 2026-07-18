@@ -1,0 +1,50 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_rendimientos_capital_inmobiliario_001",
+    "stableKey": "irnr-rendimientos-capital-inmobiliario",
+    "version": "1.0.0"
+  },
+  "title": "IRNR - Rendimientos del Capital Inmobiliario - Checklist operativa",
+  "items": [
+    {
+      "itemId": "chkirnrci-001",
+      "label": "[Obligatorio] No residencia fiscal confirmada o derivada al objeto transversal antes del cierre."
+    },
+    {
+      "itemId": "chkirnrci-002",
+      "label": "[Obligatorio] Inmueble situado en Espana y cuota de participacion identificados."
+    },
+    {
+      "itemId": "chkirnrci-003",
+      "label": "[Obligatorio] Tipo de renta delimitado frente a renta imputada o ganancia patrimonial."
+    },
+    {
+      "itemId": "chkirnrci-004",
+      "label": "[Obligatorio] Frontera entre capital inmobiliario y actividad economica revisada expresamente."
+    },
+    {
+      "itemId": "chkirnrci-005",
+      "label": "[Obligatorio] CDI comprobado y documentado cuando exista elemento internacional."
+    },
+    {
+      "itemId": "chkirnrci-006",
+      "label": "[Obligatorio] Potestad tributaria espanola razonada con apoyo en norma interna y convenio."
+    },
+    {
+      "itemId": "chkirnrci-007",
+      "label": "[Obligatorio] Tratamiento UE/EEE o terceros Estados resuelto para deducibilidad de gastos."
+    },
+    {
+      "itemId": "chkirnrci-008",
+      "label": "[Obligatorio] Copropiedad y reparto por cotitular trazados cuando existan varios titulares."
+    },
+    {
+      "itemId": "chkirnrci-009",
+      "label": "[Recomendable] Documentacion de gastos directos archivada con vinculo economico indisociable."
+    },
+    {
+      "itemId": "chkirnrci-010",
+      "label": "[Obligatorio] Cierre operativo minimo del Modelo 210 documentado con periodo y calendario vigentes."
+    }
+  ]
+}
