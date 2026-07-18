@@ -7,6 +7,7 @@
 - First real Knowledge Object for `Modelo 210 - Imputacion de rentas inmobiliarias de no residentes`.
 - Derived certified artifacts for Planner, Web and IA under `examples/derived/`.
 - Story-level semantic validation and focused automated coverage for `STORY-KF-004A`.
+- Official governance certification document for `Knowledge Factory v1.0`.
 
 ## 1.0.0 - 2026-07-18
 
