@@ -1,0 +1,50 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_modelo720_bienes_extranjero_001",
+    "stableKey": "modelo-720-bienes-derechos-extranjero",
+    "version": "1.0.0"
+  },
+  "title": "Modelo 720 - Declaracion informativa sobre bienes y derechos situados en el extranjero - Checklist operativa",
+  "items": [
+    {
+      "itemId": "chk720-001",
+      "label": "Residencia fiscal del ejercicio confirmada."
+    },
+    {
+      "itemId": "chk720-002",
+      "label": "Inventario de activos extranjeros abierto y clasificado por bloque."
+    },
+    {
+      "itemId": "chk720-003",
+      "label": "Monedas virtuales excluidas expresamente del analisis 720."
+    },
+    {
+      "itemId": "chk720-004",
+      "label": "Umbral conjunto de 50.000 euros revisado por bloque."
+    },
+    {
+      "itemId": "chk720-005",
+      "label": "Ultima declaracion historica localizada y comparada."
+    },
+    {
+      "itemId": "chk720-006",
+      "label": "Incremento superior a 20.000 euros revisado cuando exista declaracion previa."
+    },
+    {
+      "itemId": "chk720-007",
+      "label": "Titularidad juridica, autorizacion y titularidad real contrastadas."
+    },
+    {
+      "itemId": "chk720-008",
+      "label": "Documentacion soporte recopilada y archivada."
+    },
+    {
+      "itemId": "chk720-009",
+      "label": "Formulario o fichero validado sin inconsistencias."
+    },
+    {
+      "itemId": "chk720-010",
+      "label": "Decision final de presentar o no presentar documentada en el expediente."
+    }
+  ]
+}

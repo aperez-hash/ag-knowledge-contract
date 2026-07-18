@@ -1,0 +1,54 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_modelo720_bienes_extranjero_001",
+    "stableKey": "modelo-720-bienes-derechos-extranjero",
+    "version": "1.0.0"
+  },
+  "responseType": "derived_draft",
+  "humanReviewRequired": true,
+  "summary": "Evita errores al decidir si existe obligacion de declarar, al recalcular si debe repetirse la declaracion y al separar correctamente bloques, umbrales, titularidades y efectos practicos del marco vigente.",
+  "nextSteps": [
+    "Certificados bancarios o extractos con saldos a 31 de diciembre y saldo medio del ultimo trimestre, cuando proceda.",
+    "Documentacion de depositarias, brokers, aseguradoras o emisores con valor o posicion a 31 de diciembre.",
+    "Escrituras, certificaciones registrales o contratos acreditativos de inmuebles o derechos reales situados en el extranjero.",
+    "Historial de declaraciones 720 previas del mismo obligado."
+  ],
+  "faqHighlights": [
+    {
+      "faqId": "faq720-001",
+      "question": "Si ya presente el Modelo 720 una vez, ¿tengo que volver a presentarlo todos los anos?",
+      "answer": "No necesariamente. En terminos operativos, solo vuelve a presentarse por un bloque cuando el incremento conjunto respecto de la ultima declaracion supera 20.000 euros o cuando concurre otra causa reglamentaria de nueva declaracion."
+    },
+    {
+      "faqId": "faq720-002",
+      "question": "¿Las criptomonedas o monedas virtuales van en el Modelo 720?",
+      "answer": "No. Esa materia se separa del Modelo 720 y debe analizarse, en su caso, en el Modelo 721."
+    },
+    {
+      "faqId": "faq720-003",
+      "question": "¿Se suman cuentas, valores e inmuebles para ver si se superan los 50.000 euros?",
+      "answer": "No. El analisis del umbral se hace por bloques separados. Un bloque puede obligar a declarar aunque otro no alcance el limite."
+    }
+  ],
+  "documentationHighlights": [
+    {
+      "documentId": "doc720-001",
+      "label": "Certificados bancarios o extractos con saldos a 31 de diciembre y saldo medio del ultimo trimestre, cuando proceda.",
+      "required": true,
+      "notes": "Base minima para cuentas en entidades financieras extranjeras."
+    },
+    {
+      "documentId": "doc720-002",
+      "label": "Documentacion de depositarias, brokers, aseguradoras o emisores con valor o posicion a 31 de diciembre.",
+      "required": true,
+      "notes": "Necesaria para valores, seguros, rentas y derechos del bloque 42 ter."
+    },
+    {
+      "documentId": "doc720-003",
+      "label": "Escrituras, certificaciones registrales o contratos acreditativos de inmuebles o derechos reales situados en el extranjero.",
+      "required": true,
+      "notes": "Imprescindible para el bloque de inmuebles."
+    }
+  ],
+  "caution": "Borrador derivado para apoyo interno. No debe enviarse sin revision humana y sin contrastar la documentacion concreta del cliente."
+}

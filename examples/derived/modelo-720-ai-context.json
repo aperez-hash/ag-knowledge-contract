@@ -1,0 +1,77 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_modelo720_bienes_extranjero_001",
+    "stableKey": "modelo-720-bienes-derechos-extranjero",
+    "title": "Modelo 720 - Declaracion informativa sobre bienes y derechos situados en el extranjero",
+    "version": "1.0.0",
+    "status": "validado"
+  },
+  "criterionStatus": "vigente para uso interno validado",
+  "executiveSummary": "Este Knowledge Object fija el criterio operativo del despacho para determinar cuando existe obligacion de presentar el Modelo 720 por bienes y derechos situados en el extranjero, como segmentar el analisis por bloques y como documentar la decision de presentar o no presentar en cada ejercicio. Su finalidad es evitar errores recurrentes en materia de umbral conjunto de 50.000 euros, nueva declaracion por incremento superior a 20.000 euros, confusion entre titularidad, autorizacion y titularidad real, y mezcla impropia entre cuentas, valores e inmuebles. Tambien sirve para separar con claridad el Modelo 720 de otras obligaciones informativas y patrimoniales, como el Modelo 721, CRS, FATCA o el Impuesto sobre el Patrimonio, que pueden relacionarse pero no forman parte de este objeto. El uso practico del objeto es homogeneizar la identificacion del obligado, la recopilacion documental, el calculo por bloques, la preparacion de la presentacion y la trazabilidad del expediente, incorporando ademas el efecto operativo de la sentencia del TJUE de 27 de enero de 2022 para no describir como vigente un regimen sancionador ya corregido.",
+  "legalBasis": [
+    "La obligacion de informacion sobre bienes y derechos situados en el extranjero se fundamenta en la disposicion adicional decimoctava de la Ley General Tributaria y se desarrolla materialmente en los articulos 42 bis, 42 ter y 54 bis del Real Decreto 1065/2007. La Orden HAP/72/2013 aprueba el modelo, fija su contenido y regula forma, lugar, plazo y procedimiento de presentacion, en la redaccion vigente tras la Orden HFP/1180/2023. El objeto debe leerse a la luz de la sentencia del TJUE C-788/19 solo para entender que el modelo sigue existiendo como obligacion informativa, pero que no puede describirse como vigente el antiguo tratamiento sancionador y de imprescriptibilidad en los terminos censurados por el Tribunal. Alcance material: cuentas en entidades financieras, valores, derechos, seguros y rentas, y bienes inmuebles o derechos sobre inmuebles situados en el extranjero. Quedan fuera de este objeto las monedas virtuales, hoy separadas en el Modelo 721, y cualquier desarrollo completo de CRS, FATCA, Patrimonio, regularizacion inspectora o delito fiscal."
+  ],
+  "technicalDevelopment": [
+    "El Modelo 720 se organiza en tres bloques autonomos: cuentas en entidades financieras situadas en el extranjero; valores, derechos, seguros y rentas depositados, gestionados u obtenidos en el extranjero; y bienes inmuebles o derechos sobre bienes inmuebles situados en el extranjero. La obligacion nace cuando el valor conjunto de un bloque supera 50.000 euros a 31 de diciembre o, cuando la norma del propio bloque asi lo contempla, tambien por los supuestos de cancelacion, extincion o perdida de condicion que obligan a informar. Tras la primera declaracion, no debe repetirse cada ano de forma automatica: en terminos operativos, solo vuelve a presentarse por un bloque cuando el incremento conjunto respecto de la ultima declaracion presentada supera 20.000 euros o cuando concurre otra causa reglamentaria de nueva declaracion. Debe distinguirse titularidad juridica, autorizacion, representacion, beneficiario y titularidad real, porque el hecho de figurar autorizado o titular real puede desencadenar obligacion en determinados supuestos. La residencia fiscal debe analizarse respecto del ejercicio informado. El objeto no cubre monedas virtuales, que hoy se canalizan por el Modelo 721, ni debe confundirse con la obligacion de declarar patrimonio mundial en el Impuesto sobre el Patrimonio. En trusts, masas patrimoniales y estructuras sin personalidad, la AEAT exige revisar la posicion material de control o beneficio segun el caso concreto, por lo que el expediente debe documentarse con especial prudencia."
+  ],
+  "procedure": [
+    "Confirmar si el obligado es residente fiscal en Espana en el ejercicio informado y si actua como persona fisica, persona juridica, establecimiento permanente o entidad del articulo 35.4 LGT.",
+    "Abrir el inventario de activos y derechos situados fuera de Espana y clasificarlos por bloque: cuentas, valores/seguros/rentas o inmuebles/derechos sobre inmuebles.",
+    "Excluir desde el inicio lo que no pertenece al Modelo 720, especialmente monedas virtuales, cuestiones CRS/FATCA o materias puramente patrimoniales no cubiertas por la declaracion informativa.",
+    "Calcular por separado el valor conjunto de cada bloque a 31 de diciembre y verificar si supera 50.000 euros, documentando el criterio de valoracion aplicado en cada categoria.",
+    "Revisar si existe una declaracion anterior del mismo bloque y comparar el valor conjunto actual con el que determino la ultima presentacion para decidir si hay incremento superior a 20.000 euros o alguna otra causa de nueva declaracion.",
+    "Analizar titularidad juridica, autorizacion, beneficiario, representacion y titularidad real. En casos complejos, documentar por que la persona queda dentro o fuera del deber de informar.",
+    "Recopilar la documentacion soporte de cada bloque: certificaciones bancarias, extractos, contratos de depositaria, escrituras, notas registrales, certificados de seguros o cualquier prueba equivalente.",
+    "Preparar el Modelo 720 con separacion estricta de registros por bloque, comprobar identificacion del obligado, codigos, paises, saldos o valores declarables y validar el fichero o formulario antes de presentar.",
+    "Presentar dentro del plazo del 1 de enero al 31 de marzo del ano siguiente al ejercicio informado y archivar en el expediente la decision final de presentar o no presentar, junto con el soporte documental y el criterio aplicado."
+  ],
+  "risks": [
+    {
+      "riskId": "risk720-001",
+      "description": "Omitir un activo extranjero por no integrarlo en el inventario patrimonial completo del ejercicio.",
+      "severity": "critical",
+      "likelihood": "medium",
+      "mitigation": "Levantar siempre un inventario estructurado antes de entrar en el formulario y contrastarlo con documentacion bancaria, depositaria y registral."
+    },
+    {
+      "riskId": "risk720-002",
+      "description": "Calcular mal el umbral conjunto del bloque por mezclar categorias, monedas o fechas de referencia.",
+      "severity": "high",
+      "likelihood": "high",
+      "mitigation": "Separar los bloques desde el inicio y dejar trazado el criterio de valoracion utilizado a 31 de diciembre."
+    },
+    {
+      "riskId": "risk720-003",
+      "description": "No detectar la necesidad de nueva declaracion cuando el bloque ya se declaro anteriormente y el incremento supera 20.000 euros.",
+      "severity": "high",
+      "likelihood": "medium",
+      "mitigation": "Localizar la ultima declaracion presentada y comparar expresamente el valor conjunto del bloque con el que determino aquella presentacion."
+    },
+    {
+      "riskId": "risk720-004",
+      "description": "Confundir residencia fiscal, autorizacion o titularidad real y excluir indebidamente al obligado del analisis.",
+      "severity": "high",
+      "likelihood": "medium",
+      "mitigation": "Revisar posicion juridica y material del sujeto con apoyo documental y dejar nota de criterio cuando el caso sea complejo."
+    },
+    {
+      "riskId": "risk720-005",
+      "description": "Describir al cliente o al equipo un regimen sancionador como si siguiera intacto tras la sentencia del TJUE y la adaptacion normativa.",
+      "severity": "medium",
+      "likelihood": "medium",
+      "mitigation": "Usar siempre formulacion actualizada: la obligacion informativa sigue viva, pero el marco sancionador debe explicarse solo con criterio vigente y prudente."
+    }
+  ],
+  "restrictions": [
+    "Canales bloqueados a nivel raiz: ninguno.",
+    "Canales solo derivables a nivel raiz: web, faq, checklist, client_response, tax_library.",
+    "No debe reutilizarse este objeto como texto directo de respuesta al cliente sin derivacion controlada y revision humana."
+  ],
+  "clientResponseAuthorization": {
+    "channelAccess": "derived_only",
+    "mayExposeCanonicalTextDirectly": false,
+    "mayProduceDerivedDraft": true,
+    "humanReviewRequired": true,
+    "instruction": "Solo se permiten borradores derivados y controlados; no debe reutilizarse texto bruto del objeto."
+  }
+}

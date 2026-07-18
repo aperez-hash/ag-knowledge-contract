@@ -1,0 +1,128 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_modelo720_bienes_extranjero_001",
+    "stableKey": "modelo-720-bienes-derechos-extranjero",
+    "title": "Modelo 720 - Declaracion informativa sobre bienes y derechos situados en el extranjero",
+    "slug": "modelo-720-bienes-derechos-situados-extranjero",
+    "version": "1.0.0"
+  },
+  "executiveSummary": {
+    "summary": "Este Knowledge Object fija el criterio operativo del despacho para determinar cuando existe obligacion de presentar el Modelo 720 por bienes y derechos situados en el extranjero, como segmentar el analisis por bloques y como documentar la decision de presentar o no presentar en cada ejercicio. Su finalidad es evitar errores recurrentes en materia de umbral conjunto de 50.000 euros, nueva declaracion por incremento superior a 20.000 euros, confusion entre titularidad, autorizacion y titularidad real, y mezcla impropia entre cuentas, valores e inmuebles. Tambien sirve para separar con claridad el Modelo 720 de otras obligaciones informativas y patrimoniales, como el Modelo 721, CRS, FATCA o el Impuesto sobre el Patrimonio, que pueden relacionarse pero no forman parte de este objeto. El uso practico del objeto es homogeneizar la identificacion del obligado, la recopilacion documental, el calculo por bloques, la preparacion de la presentacion y la trazabilidad del expediente, incorporando ademas el efecto operativo de la sentencia del TJUE de 27 de enero de 2022 para no describir como vigente un regimen sancionador ya corregido.",
+    "problemSolved": "Evita errores al decidir si existe obligacion de declarar, al recalcular si debe repetirse la declaracion y al separar correctamente bloques, umbrales, titularidades y efectos practicos del marco vigente.",
+    "scope": "Personas fisicas y juridicas residentes en Espana, establecimientos permanentes y entidades del articulo 35.4 LGT con bienes o derechos situados en el extranjero, en lo relativo exclusivamente al Modelo 720.",
+    "practicalImpact": "Permite abrir, revisar y cerrar expedientes del Modelo 720 con un criterio unico, reutilizable por Planner, Web, IA, FAQ, checklist y respuestas al cliente sin duplicar doctrina."
+  },
+  "affectedTaxModels": [
+    {
+      "modelCode": "720",
+      "modelName": "Declaracion informativa sobre bienes y derechos situados en el extranjero",
+      "relationType": "primary",
+      "notes": "Modelo central del objeto y unica obligacion desarrollada directamente aqui."
+    },
+    {
+      "modelCode": "721",
+      "modelName": "Declaracion informativa sobre monedas virtuales situadas en el extranjero",
+      "relationType": "informative",
+      "notes": "Se cita solo para evitar confundir el alcance actual del Modelo 720 con monedas virtuales."
+    }
+  ],
+  "affectedForms": [
+    {
+      "formCode": "720",
+      "formName": "Modelo 720 - Declaracion informativa de bienes y derechos situados en el extranjero",
+      "relationType": "required",
+      "notes": "Formulario oficial cuando concurre obligacion informativa por alguno de los tres bloques."
+    }
+  ],
+  "faq": [
+    {
+      "faqId": "faq720-001",
+      "question": "Si ya presente el Modelo 720 una vez, ¿tengo que volver a presentarlo todos los anos?",
+      "answer": "No necesariamente. En terminos operativos, solo vuelve a presentarse por un bloque cuando el incremento conjunto respecto de la ultima declaracion supera 20.000 euros o cuando concurre otra causa reglamentaria de nueva declaracion."
+    },
+    {
+      "faqId": "faq720-002",
+      "question": "¿Las criptomonedas o monedas virtuales van en el Modelo 720?",
+      "answer": "No. Esa materia se separa del Modelo 720 y debe analizarse, en su caso, en el Modelo 721."
+    },
+    {
+      "faqId": "faq720-003",
+      "question": "¿Se suman cuentas, valores e inmuebles para ver si se superan los 50.000 euros?",
+      "answer": "No. El analisis del umbral se hace por bloques separados. Un bloque puede obligar a declarar aunque otro no alcance el limite."
+    },
+    {
+      "faqId": "faq720-004",
+      "question": "¿Puede obligar a declarar una cuenta en la que solo estoy autorizado?",
+      "answer": "Si, en determinados supuestos. La condicion de autorizado, representante, beneficiario o titular real puede ser relevante y debe revisarse con detalle segun el bloque y la posicion concreta."
+    },
+    {
+      "faqId": "faq720-005",
+      "question": "Si cancele una cuenta o vendi un inmueble y nunca habia tenido obligacion de presentar, ¿tengo que informar solo por esa cancelacion?",
+      "answer": "No por el mero hecho de cancelar o vender, si nunca existio antes obligacion de informar respecto de ese bien o derecho. Hay que revisar primero si alguna vez nacio la obligacion."
+    }
+  ],
+  "requiredDocumentation": [
+    {
+      "documentId": "doc720-001",
+      "label": "Certificados bancarios o extractos con saldos a 31 de diciembre y saldo medio del ultimo trimestre, cuando proceda.",
+      "required": true,
+      "notes": "Base minima para cuentas en entidades financieras extranjeras."
+    },
+    {
+      "documentId": "doc720-002",
+      "label": "Documentacion de depositarias, brokers, aseguradoras o emisores con valor o posicion a 31 de diciembre.",
+      "required": true,
+      "notes": "Necesaria para valores, seguros, rentas y derechos del bloque 42 ter."
+    },
+    {
+      "documentId": "doc720-003",
+      "label": "Escrituras, certificaciones registrales o contratos acreditativos de inmuebles o derechos reales situados en el extranjero.",
+      "required": true,
+      "notes": "Imprescindible para el bloque de inmuebles."
+    },
+    {
+      "documentId": "doc720-004",
+      "label": "Historial de declaraciones 720 previas del mismo obligado.",
+      "required": false,
+      "notes": "Muy recomendable para decidir si existe nueva declaracion por incremento superior a 20.000 euros."
+    },
+    {
+      "documentId": "doc720-005",
+      "label": "Soporte de titularidad real, autorizacion o beneficiario en estructuras complejas.",
+      "required": false,
+      "notes": "Especialmente util en cuentas con autorizados, trusts o estructuras sin personalidad."
+    }
+  ],
+  "caseStudies": [
+    {
+      "caseId": "case720-001",
+      "scenario": "Persona fisica residente en Espana con una cuenta bancaria en Portugal cuyo saldo a 31 de diciembre supera 50.000 euros y que nunca ha presentado el modelo 720.",
+      "resolution": "Procede presentar por el bloque de cuentas. Debe recopilarse certificacion bancaria, identificar saldo a 31 de diciembre y revisar si existe tambien saldo medio del ultimo trimestre exigible en la posicion concreta.",
+      "notes": "Caso base para el bloque 42 bis."
+    },
+    {
+      "caseId": "case720-002",
+      "scenario": "Contribuyente con cartera de valores depositada en una entidad francesa cuyo valor conjunto supera 50.000 euros, sin cuentas ni inmuebles relevantes.",
+      "resolution": "Procede presentar solo por el bloque de valores, derechos, seguros y rentas. No se arrastra automaticamente el resto de bloques.",
+      "notes": "Sirve para reforzar la autonomia de bloques y evitar sumas incorrectas."
+    },
+    {
+      "caseId": "case720-003",
+      "scenario": "Matrimonio residente en Espana con un inmueble en Italia en copropiedad al 50 por ciento y valor superior a 50.000 euros.",
+      "resolution": "Debe analizarse la posicion de cada titular y declararse el bloque de inmuebles con el criterio de titularidad correspondiente, dejando soporte registral y valor acreditado.",
+      "notes": "Caso centrado en bloque inmobiliario y copropiedad."
+    },
+    {
+      "caseId": "case720-004",
+      "scenario": "Cliente que presento en anos anteriores por cuentas en el extranjero, pero cuyo valor conjunto actual se ha reducido y ya no supera el historico que obligo a declarar ni concurre otra causa reglamentaria.",
+      "resolution": "No debe repetirse automaticamente la declaracion solo por inercia. Hay que comparar el bloque actual con la ultima declaracion y documentar la razon por la que no existe nueva obligacion.",
+      "notes": "Caso practico para perdida de obligacion o ausencia de nueva declaracion por reduccion patrimonial."
+    }
+  ],
+  "excludedByPolicy": [
+    "internal_reference",
+    "risk",
+    "restricted visibility"
+  ],
+  "disclaimer": "Vista derivada para web. Excluye referencias internas, riesgos internos y cualquier contenido restringido o bloqueado para este canal."
+}

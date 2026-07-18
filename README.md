@@ -27,13 +27,17 @@ Consumidores
 - `schema/knowledge-object.schema.json`: contrato estructural canónico.
 - `generated/knowledge-object.generated.ts`: tipos TypeScript derivados.
 - `examples/modelo-210-imputacion-rentas.json`: primer Knowledge Object real de referencia.
+- `examples/modelo-720-bienes-extranjero.json`: segundo Knowledge Object real de referencia.
 - `examples/derived/`: salidas derivadas certificadas para Planner, Web e IA.
 - `scripts/generate-types.mjs`: generación reproducible de tipos.
 - `scripts/validate-example.mjs`: validación estricta del ejemplo.
 - `scripts/build-story-kf-004a-artifacts.mjs`: generación reproducible de artefactos derivados.
 - `scripts/validate-story-kf-004a.mjs`: validación consolidada de STORY-KF-004A.
+- `scripts/build-story-kf-005a-artifacts.mjs`: generación reproducible de artefactos derivados del Modelo 720.
+- `scripts/validate-story-kf-005a.mjs`: validación consolidada de STORY-KF-005A.
 - `tests/knowledge-object.schema.test.mjs`: pruebas del contrato.
 - `tests/modelo-210-story-kf-004a.test.mjs`: pruebas del primer objeto real y de sus derivaciones.
+- `tests/modelo-720-story-kf-005a.test.mjs`: pruebas del segundo objeto real y de sus derivaciones.
 - `docs/SCHEMA_ERROR_2026-07-18.md`: explicación del defecto corregido.
 
 ## Principios
@@ -74,6 +78,18 @@ npm run build:story-kf-004a
 
 ```bash
 npm run validate:story-kf-004a
+```
+
+### Generar artefactos derivados del Modelo 720
+
+```bash
+npm run build:story-kf-005a
+```
+
+### Validar STORY-KF-005A de extremo a extremo
+
+```bash
+npm run validate:story-kf-005a
 ```
 
 ### Ejecutar pruebas del contrato
