@@ -1,0 +1,50 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_modelo721_monedas_virtuales_001",
+    "stableKey": "modelo-721-monedas-virtuales-extranjero",
+    "version": "1.0.0"
+  },
+  "title": "Modelo 721 - Declaracion informativa sobre monedas virtuales situadas en el extranjero - Checklist operativa",
+  "items": [
+    {
+      "itemId": "chk721-001",
+      "label": "[Obligatorio] Residencia fiscal del ejercicio confirmada."
+    },
+    {
+      "itemId": "chk721-002",
+      "label": "[Obligatorio] Inventario de monedas virtuales potencialmente declarables completado."
+    },
+    {
+      "itemId": "chk721-003",
+      "label": "[Obligatorio] Custodia por terceros o autocustodia contrastada para cada plataforma."
+    },
+    {
+      "itemId": "chk721-004",
+      "label": "[Obligatorio] Localizacion extranjera revisada con criterio AEAT, no solo comercial."
+    },
+    {
+      "itemId": "chk721-005",
+      "label": "[Obligatorio] Umbral conjunto de 50.000 euros calculado y soportado."
+    },
+    {
+      "itemId": "chk721-006",
+      "label": "[Obligatorio] Historico de declaraciones 721 previas localizado si existe."
+    },
+    {
+      "itemId": "chk721-007",
+      "label": "[Obligatorio] Regla de incremento superior a 20.000 euros revisada."
+    },
+    {
+      "itemId": "chk721-008",
+      "label": "[Recomendable] Registro de proveedores espanoles consultado como apoyo operativo si hay duda de localizacion."
+    },
+    {
+      "itemId": "chk721-009",
+      "label": "[Recomendable] Documentacion soporte archivada por plataforma y titularidad."
+    },
+    {
+      "itemId": "chk721-010",
+      "label": "[Obligatorio] Decision final de presentar o no presentar documentada en el expediente."
+    }
+  ]
+}

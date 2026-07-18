@@ -1,0 +1,17 @@
+{
+  "story": "STORY-KF-005C",
+  "knowledgeObject": "Modelo 721 - Declaracion informativa sobre monedas virtuales situadas en el extranjero",
+  "research": "PASS",
+  "schemaValidation": "PASS",
+  "ruleEngine": "PASS",
+  "plannerView": "PASS",
+  "webView": "PASS",
+  "aiContext": "PASS",
+  "checklist": "PASS",
+  "faq": "PASS",
+  "clientResponse": "PASS",
+  "qualityGate": "PASS",
+  "structuralChangesRequired": "NO",
+  "generatedAt": "2026-07-18T20:14:21.649Z",
+  "incidentCount": 0
+}
