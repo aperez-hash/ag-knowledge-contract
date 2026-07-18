@@ -32,6 +32,7 @@ Consumidores
 - `examples/modelo-721-monedas-virtuales.json`: cuarto Knowledge Object real de referencia.
 - `examples/residencia-fiscal-espana.json`: primer Knowledge Object transversal del segundo ciclo, dedicado a la residencia fiscal de personas fisicas en Espana.
 - `examples/convenios-doble-imposicion-cdi.json`: segundo Knowledge Object transversal del segundo ciclo, dedicado al marco general de los CDI.
+- `examples/modelo-151-regimen-trabajadores-desplazados.json`: primer Knowledge Object de regimen especial del segundo ciclo, dedicado al articulo 93 de la LIRPF y a la gestion del Modelo 151.
 - `examples/derived/`: salidas derivadas certificadas para Planner, Web e IA.
 - `scripts/generate-types.mjs`: generación reproducible de tipos.
 - `scripts/validate-example.mjs`: validación estricta del ejemplo.
@@ -47,6 +48,8 @@ Consumidores
 - `scripts/validate-story-kf-008a.mjs`: validación consolidada de STORY-KF-008A.
 - `scripts/build-story-kf-008b-artifacts.mjs`: generación reproducible de artefactos derivados del marco general de CDI.
 - `scripts/validate-story-kf-008b.mjs`: validación consolidada de STORY-KF-008B.
+- `scripts/build-story-kf-008c-artifacts.mjs`: generación reproducible de artefactos derivados del Modelo 151.
+- `scripts/validate-story-kf-008c.mjs`: validación consolidada de STORY-KF-008C.
 - `tests/knowledge-object.schema.test.mjs`: pruebas del contrato.
 - `tests/modelo-210-story-kf-004a.test.mjs`: pruebas del primer objeto real y de sus derivaciones.
 - `tests/modelo-720-story-kf-005a.test.mjs`: pruebas del segundo objeto real y de sus derivaciones.
@@ -54,6 +57,7 @@ Consumidores
 - `tests/modelo-721-story-kf-005c.test.mjs`: pruebas del cuarto objeto real y de sus derivaciones.
 - `tests/residencia-fiscal-story-kf-008a.test.mjs`: pruebas del primer objeto transversal y de sus derivaciones.
 - `tests/cdi-story-kf-008b.test.mjs`: pruebas del segundo objeto transversal y de sus derivaciones.
+- `tests/modelo-151-story-kf-008c.test.mjs`: pruebas del primer objeto de regimen especial y de sus derivaciones.
 - `docs/SCHEMA_ERROR_2026-07-18.md`: explicación del defecto corregido.
 
 ## Principios
@@ -156,6 +160,18 @@ npm run build:story-kf-008b
 
 ```bash
 npm run validate:story-kf-008b
+```
+
+### Generar artefactos derivados del Modelo 151
+
+```bash
+npm run build:story-kf-008c
+```
+
+### Validar STORY-KF-008C de extremo a extremo
+
+```bash
+npm run validate:story-kf-008c
 ```
 
 ### Ejecutar pruebas del contrato

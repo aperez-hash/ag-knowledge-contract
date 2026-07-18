@@ -1,0 +1,60 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irpf_modelo151_regimen_desplazados_001",
+    "stableKey": "modelo-151-regimen-trabajadores-desplazados",
+    "version": "1.0.0"
+  },
+  "title": "Modelo 151 - Regimen especial aplicable a los trabajadores, profesionales, emprendedores e inversores desplazados a territorio espanol - Checklist operativa",
+  "items": [
+    {
+      "itemId": "chk151-001",
+      "label": "Confirmar desplazamiento y fecha clave de entrada",
+      "notes": "Obligatorio. Sin fecha clara de desplazamiento no puede ordenarse el expediente."
+    },
+    {
+      "itemId": "chk151-002",
+      "label": "Validar residencia fiscal en Espana",
+      "notes": "Obligatorio. Debe venir soportado por el objeto transversal de Residencia Fiscal."
+    },
+    {
+      "itemId": "chk151-003",
+      "label": "Revisar no residencia previa y causa valida del desplazamiento",
+      "notes": "Obligatorio. Punto de acceso juridico al regimen."
+    },
+    {
+      "itemId": "chk151-004",
+      "label": "Comprobar exclusion inicial o riesgo de establecimiento permanente",
+      "notes": "Obligatorio. El acceso puede bloquearse aunque exista desplazamiento."
+    },
+    {
+      "itemId": "chk151-005",
+      "label": "Analizar familiares elegibles y su ventana temporal de incorporacion",
+      "notes": "Obligatorio cuando exista nucleo familiar potencialmente afectado."
+    },
+    {
+      "itemId": "chk151-006",
+      "label": "Verificar plazo y preparacion del Modelo 149",
+      "notes": "Obligatorio. El regimen no nace por mera intencion del contribuyente."
+    },
+    {
+      "itemId": "chk151-007",
+      "label": "Registrar cronologia operativa del regimen",
+      "notes": "Recomendable. Sirve para Planner, recordatorios y trazabilidad."
+    },
+    {
+      "itemId": "chk151-008",
+      "label": "Controlar permanencia y cambios anuales",
+      "notes": "Obligatorio. El acceso no garantiza la continuidad."
+    },
+    {
+      "itemId": "chk151-009",
+      "label": "Preparar documentacion soporte para la declaracion anual",
+      "notes": "Recomendable. Reduce errores en el Modelo 151."
+    },
+    {
+      "itemId": "chk151-010",
+      "label": "Cerrar expediente por renuncia, exclusion, fin del desplazamiento o agotamiento del plazo",
+      "notes": "Obligatorio al final del ciclo del regimen."
+    }
+  ]
+}

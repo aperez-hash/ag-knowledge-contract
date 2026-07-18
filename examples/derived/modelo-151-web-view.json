@@ -1,0 +1,146 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irpf_modelo151_regimen_desplazados_001",
+    "stableKey": "modelo-151-regimen-trabajadores-desplazados",
+    "title": "Modelo 151 - Regimen especial aplicable a los trabajadores, profesionales, emprendedores e inversores desplazados a territorio espanol",
+    "slug": "modelo-151-regimen-trabajadores-desplazados",
+    "version": "1.0.0"
+  },
+  "executiveSummary": {
+    "summary": "Este Knowledge Object fija el criterio operativo del despacho para decidir si una persona puede acogerse al regimen especial aplicable a trabajadores, profesionales, emprendedores e inversores desplazados a territorio espanol y como debe gestionarse correctamente durante su vigencia. El nucleo del analisis no es el formulario, sino el regimen: primero debe verificarse el desplazamiento, la adquisicion de residencia fiscal en Espana y el cumplimiento de los requisitos de acceso; despues debe controlarse su permanencia, las causas de exclusion inicial o sobrevenida y la eventual extension a familiares. El objeto deja claro que el Modelo 149 actua como puerta de opcion, renuncia, exclusion y fin del desplazamiento, mientras que el Modelo 151 es la pieza anual de gestion del regimen y no su centro doctrinal. Tambien explicita que la determinacion de la residencia fiscal se delega en el objeto transversal correspondiente y que los conflictos internacionales generales se apoyan en el marco de CDI cuando proceda. Su utilidad practica es homogeneizar expedientes de movilidad internacional, ordenar la documentacion, fijar la cronologia operativa del regimen y permitir derivaciones consistentes para Planner, Web, IA, checklist, FAQ y respuesta al cliente sin duplicar doctrina.",
+    "problemSolved": "Evita errores al decidir el acceso al regimen especial, al controlar su mantenimiento, al integrar correctamente la capa de familiares y al separar la opcion inicial del control anual del Modelo 151.",
+    "scope": "Personas fisicas que adquieren residencia fiscal en Espana por desplazamiento y, cuando proceda, miembros elegibles de su nucleo familiar, exclusivamente para analizar el regimen especial del articulo 93 de la LIRPF.",
+    "practicalImpact": "Permite abrir, revisar y cerrar expedientes del regimen especial con un criterio unico y reutilizable antes de descender a liquidaciones concretas o a casuistica retributiva especializada."
+  },
+  "affectedTaxModels": [
+    {
+      "modelCode": "149",
+      "modelName": "Modelo 149 - Comunicacion de la opcion, renuncia, exclusion y fin del desplazamiento",
+      "relationType": "informative",
+      "notes": "Puerta formal de acceso, renuncia, exclusion y finalizacion del regimen."
+    },
+    {
+      "modelCode": "151",
+      "modelName": "Modelo 151 - Declaracion anual del regimen especial aplicable a los trabajadores desplazados a territorio espanol",
+      "relationType": "primary",
+      "notes": "Modelo anual central de gestion del regimen una vez ejercitada la opcion."
+    },
+    {
+      "modelCode": "210",
+      "modelName": "Modelo 210 - IRNR",
+      "relationType": "secondary",
+      "notes": "El regimen toma como referencia reglas especiales del IRNR, por lo que el objeto debe coordinarse con expedientes materiales de no residentes cuando proceda."
+    }
+  ],
+  "affectedForms": [
+    {
+      "formCode": "149",
+      "formName": "Modelo 149",
+      "relationType": "required",
+      "notes": "Formulario obligatorio para ejercitar la opcion y para determinadas comunicaciones posteriores."
+    },
+    {
+      "formCode": "151",
+      "formName": "Modelo 151",
+      "relationType": "required",
+      "notes": "Formulario anual de declaracion del impuesto para contribuyentes acogidos al regimen."
+    }
+  ],
+  "faq": [
+    {
+      "faqId": "faq151-001",
+      "question": "Cuando puedo optar al regimen especial?",
+      "answer": "Solo cuando adquieres residencia fiscal en Espana como consecuencia del desplazamiento y cumples los requisitos legales y reglamentarios, ejercitando la opcion en plazo a traves del Modelo 149."
+    },
+    {
+      "faqId": "faq151-002",
+      "question": "Que diferencia hay entre Modelo 149 y Modelo 151?",
+      "answer": "El Modelo 149 sirve para ejercitar la opcion y comunicar renuncia, exclusion o fin del desplazamiento; el Modelo 151 es la declaracion anual del impuesto mientras el regimen esta vigente."
+    },
+    {
+      "faqId": "faq151-003",
+      "question": "Pueden acogerse mis familiares?",
+      "answer": "Si, en determinados supuestos y siempre que cumplan requisitos especificos de desplazamiento, residencia fiscal, no residencia previa, ausencia de establecimiento permanente y limites cuantitativos frente al contribuyente principal."
+    },
+    {
+      "faqId": "faq151-004",
+      "question": "Pierdo el regimen si cambio de situacion profesional?",
+      "answer": "Depende del cambio concreto. El regimen exige controlar tanto los requisitos de acceso como los de permanencia, por lo que un cambio de empleador, de actividad o de estructura puede requerir revisar continuidad, exclusion o renuncia."
+    },
+    {
+      "faqId": "faq151-005",
+      "question": "Que ocurre si dejo de cumplir los requisitos durante la vigencia?",
+      "answer": "Debe analizarse si existe causa de exclusion sobrevenida, si procede comunicar el fin del desplazamiento o si se agota el periodo maximo de aplicacion, dejando trazabilidad documental suficiente."
+    }
+  ],
+  "requiredDocumentation": [
+    {
+      "documentId": "doc151-001",
+      "label": "Contrato de trabajo, carta de desplazamiento o soporte equivalente del motivo habilitante",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: justificar acceso del contribuyente principal y la causa del desplazamiento."
+    },
+    {
+      "documentId": "doc151-002",
+      "label": "Certificado de residencia fiscal anterior y soporte del periodo previo de no residencia",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: acreditar presupuesto temporal de acceso y enlazar con el analisis de Residencia Fiscal."
+    },
+    {
+      "documentId": "doc151-003",
+      "label": "Documentacion societaria o profesional que acredite la categoria aplicable y ausencia de establecimiento permanente",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: validar administradores, emprendedores, profesionales cualificados o investigadores y revisar limites del articulo 93."
+    },
+    {
+      "documentId": "doc151-004",
+      "label": "Documentacion de familiares: parentesco, edad o discapacidad, residencia y momento de incorporacion",
+      "required": false,
+      "notes": "Fuerza probatoria: alta. Uso habitual: analizar acceso individual de familiares y su encaje temporal en el regimen."
+    },
+    {
+      "documentId": "doc151-005",
+      "label": "Evidencia de control anual del regimen y soporte de la declaracion por Modelo 151",
+      "required": false,
+      "notes": "Fuerza probatoria: media. Uso habitual: permanencia, control anual, exclusion sobrevenida y cierre del ciclo del regimen."
+    }
+  ],
+  "caseStudies": [
+    {
+      "caseId": "case151-001",
+      "scenario": "Trabajador desplazado contratado por empresa espanola y traslado efectivo a Espana en el ano anterior al primer ejercicio de aplicacion.",
+      "resolution": "Si se adquiere residencia fiscal, no existe residencia previa en el periodo exigido y la opcion se ejercita en plazo, el acceso al regimen puede sostenerse con Modelo 149 y control documental completo.",
+      "notes": "Aprendizaje: la opcion no sustituye el analisis previo de residencia ni la cronologia del desplazamiento."
+    },
+    {
+      "caseId": "case151-002",
+      "scenario": "Directivo trasladado desde grupo multinacional con cambio posterior de funciones dentro del grupo.",
+      "resolution": "El acceso puede ser valido inicialmente, pero la permanencia exige revisar cada cambio de situacion profesional para detectar exclusion sobrevenida o continuidad del presupuesto habilitante.",
+      "notes": "Aprendizaje: acceso y permanencia deben documentarse por separado."
+    },
+    {
+      "caseId": "case151-003",
+      "scenario": "Administrador que pretende aplicar el regimen al desplazarse a Espana para asumir funciones directivas en una entidad.",
+      "resolution": "Debe analizarse la via concreta de acceso, su encaje legal y la ausencia de causas incompatibles, sin dar por supuesto que toda posicion societaria queda automaticamente amparada.",
+      "notes": "Aprendizaje: la categoria de administrador exige analisis fino de la base habilitante."
+    },
+    {
+      "caseId": "case151-004",
+      "scenario": "Profesional altamente cualificado que pasa a prestar servicios en Espana y valora teletrabajo parcial para terceros paises.",
+      "resolution": "Puede existir acceso inicial valido, pero la estructura de actividad y el riesgo de establecimiento permanente o de cambio sustancial deben vigilarse en permanencia.",
+      "notes": "Aprendizaje: la movilidad internacional posterior puede afectar a la continuidad del regimen."
+    },
+    {
+      "caseId": "case151-005",
+      "scenario": "Desplazamiento del trabajador con incorporacion posterior del conyuge e hijos, analizando requisitos individuales, momento de incorporacion, efectos sobre la duracion y documentacion necesaria.",
+      "resolution": "Cada familiar debe superar sus propios requisitos de acceso y quedar dentro del marco temporal del regimen del contribuyente principal, con soporte individual de residencia, parentesco y limites cuantitativos.",
+      "notes": "Aprendizaje: la extension a familiares es una decision nuclear del expediente y no una consecuencia automatica."
+    }
+  ],
+  "excludedByPolicy": [
+    "internal_reference",
+    "risk",
+    "restricted visibility"
+  ],
+  "disclaimer": "Vista derivada para web. Excluye referencias internas, riesgos internos y cualquier contenido restringido o bloqueado para este canal."
+}
