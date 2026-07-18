@@ -103,6 +103,14 @@ function getBlocksForChannel(knowledgeObject, channel, options = {}) {
   );
 }
 
+function getSingleBlockForChannel(knowledgeObject, channel, type, options = {}) {
+  const [block] = getBlocksForChannel(knowledgeObject, channel, options).filter(
+    (candidate) => candidate.type === type,
+  );
+
+  return block;
+}
+
 function normalizePlannerBlock(block) {
   return {
     blockId: block.blockId,
@@ -449,13 +457,22 @@ export function buildAiContext(knowledgeObject) {
 }
 
 export function buildChecklistView(knowledgeObject) {
-  const checklistBlock = getBlock(knowledgeObject, "checklist");
-  if (!checklistBlock) {
-    return { ok: false, errors: ["Falta el bloque checklist."] };
+  if (!isNotObsolete(knowledgeObject.governance.status)) {
+    return { ok: false, errors: ["El objeto esta obsoleto y no debe derivar checklist activa."] };
   }
 
-  if (knowledgeObject.channelPolicy.checklist.access === "blocked") {
-    return { ok: false, errors: ["La raiz bloquea la derivacion de checklist."] };
+  const checklistBlock = getSingleBlockForChannel(knowledgeObject, "checklist", "checklist", {
+    allowRestricted: false,
+    excludeInternalReference: true,
+    requireDirect: false,
+  });
+  if (!checklistBlock) {
+    return {
+      ok: false,
+      errors: [
+        "No existe un bloque checklist consumible para este canal o queda excluido por politica.",
+      ],
+    };
   }
 
   return {
@@ -473,9 +490,20 @@ export function buildChecklistView(knowledgeObject) {
 }
 
 export function buildFaqView(knowledgeObject) {
-  const faqBlock = getBlock(knowledgeObject, "faq");
+  if (!isNotObsolete(knowledgeObject.governance.status)) {
+    return { ok: false, errors: ["El objeto esta obsoleto y no debe derivar FAQ activa."] };
+  }
+
+  const faqBlock = getSingleBlockForChannel(knowledgeObject, "faq", "faq", {
+    allowRestricted: false,
+    excludeInternalReference: true,
+    requireDirect: false,
+  });
   if (!faqBlock) {
-    return { ok: false, errors: ["Falta el bloque FAQ."] };
+    return {
+      ok: false,
+      errors: ["No existe un bloque FAQ consumible para este canal o queda excluido por politica."],
+    };
   }
 
   return {
@@ -493,12 +521,45 @@ export function buildFaqView(knowledgeObject) {
 }
 
 export function buildClientResponse(knowledgeObject) {
-  if (knowledgeObject.channelPolicy.client_response.access === "blocked") {
-    return { ok: false, errors: ["El canal client_response esta bloqueado a nivel raiz."] };
+  if (!isNotObsolete(knowledgeObject.governance.status)) {
+    return {
+      ok: false,
+      errors: ["El objeto esta obsoleto y no debe generar respuesta derivada al cliente."],
+    };
   }
 
-  const faqBlock = getBlock(knowledgeObject, "faq");
-  const requiredDocumentation = getBlock(knowledgeObject, "required_documentation");
+  const faqBlock = getSingleBlockForChannel(knowledgeObject, "client_response", "faq", {
+    allowRestricted: false,
+    excludeInternalReference: true,
+    requireDirect: false,
+  });
+  const requiredDocumentation = getSingleBlockForChannel(
+    knowledgeObject,
+    "client_response",
+    "required_documentation",
+    {
+      allowRestricted: false,
+      excludeInternalReference: true,
+      requireDirect: false,
+    },
+  );
+  if (knowledgeObject.channelPolicy.client_response.access !== "derived_only") {
+    return {
+      ok: false,
+      errors: ["client_response solo puede consumirse como derivacion controlada."],
+    };
+  }
+
+  if (!faqBlock || !requiredDocumentation) {
+    return {
+      ok: false,
+      errors: [
+        "Faltan bloques consumibles para client_response o quedan excluidos por politica de canal.",
+      ],
+    };
+  }
+
+  const nextSteps = requiredDocumentation.content.items.slice(0, 4).map((item) => item.label);
 
   return {
     ok: true,
@@ -510,18 +571,10 @@ export function buildClientResponse(knowledgeObject) {
       },
       responseType: "derived_draft",
       humanReviewRequired: true,
-      summary:
-        "El Modelo 720 es una declaracion informativa sobre determinados bienes y derechos situados en el extranjero. La obligacion no depende de una sola cifra global, sino de si alguno de los bloques supera el umbral legal y de si ya hubo una declaracion previa del mismo bloque.",
-      nextSteps: [
-        "Confirmar la residencia fiscal del ejercicio.",
-        "Clasificar los activos por bloques y calcular si alguno supera el umbral correspondiente.",
-        "Revisar si existio una declaracion previa y si ahora procede una nueva declaracion.",
-        "Reunir la documentacion soporte antes de preparar la presentacion."
-      ],
-      faqHighlights: faqBlock ? faqBlock.content.items.slice(0, 3) : [],
-      documentationHighlights: requiredDocumentation
-        ? requiredDocumentation.content.items.filter((item) => item.required)
-        : [],
+      summary: knowledgeObject.executiveSummary.problemSolved,
+      nextSteps,
+      faqHighlights: faqBlock.content.items.slice(0, 3),
+      documentationHighlights: requiredDocumentation.content.items.filter((item) => item.required),
       caution:
         "Borrador derivado para apoyo interno. No debe enviarse sin revision humana y sin contrastar la documentacion concreta del cliente.",
     },

@@ -27,6 +27,12 @@ async function readJson(filePath) {
   return JSON.parse(await readFile(filePath, "utf8"));
 }
 
+function getRequiredDocumentationLabels(knowledgeObject) {
+  return knowledgeObject.blocks
+    .find((block) => block.type === "required_documentation")
+    .content.items.map((item) => item.label);
+}
+
 test("el Knowledge Object del Modelo 720 valida contra el schema publicado", async () => {
   const knowledgeObject = await loadKnowledgeObject();
   const result = await validateSchemaRuntime(knowledgeObject);
@@ -95,7 +101,34 @@ test("las derivaciones de checklist, FAQ y client response se generan sin duplic
   assert.equal(clientResponse.ok, true);
   assert.equal(clientResponse.data.responseType, "derived_draft");
   assert.equal(clientResponse.data.humanReviewRequired, true);
+  assert.equal(clientResponse.data.summary, knowledgeObject.executiveSummary.problemSolved);
+  assert.deepEqual(
+    clientResponse.data.nextSteps,
+    getRequiredDocumentationLabels(knowledgeObject).slice(0, 4),
+  );
   assert.equal(clientResponse.data.documentationHighlights.length >= 3, true);
+});
+
+test("las derivaciones auxiliares respetan politicas de canal y estado", async () => {
+  const knowledgeObject = await loadKnowledgeObject();
+  const blockedClientResponse = structuredClone(knowledgeObject);
+  blockedClientResponse.channelPolicy.client_response.access = "blocked";
+
+  const obsoleteChecklist = structuredClone(knowledgeObject);
+  obsoleteChecklist.governance.status = "obsoleto";
+
+  const blockedFaq = structuredClone(knowledgeObject);
+  const faqBlock = blockedFaq.blocks.find((block) => block.type === "faq");
+  faqBlock.channelPolicy.faq.access = "blocked";
+
+  const blockedChecklist = structuredClone(knowledgeObject);
+  const checklistBlock = blockedChecklist.blocks.find((block) => block.type === "checklist");
+  checklistBlock.channelPolicy.checklist.access = "blocked";
+
+  assert.equal(buildClientResponse(blockedClientResponse).ok, false);
+  assert.equal(buildChecklistView(obsoleteChecklist).ok, false);
+  assert.equal(buildFaqView(blockedFaq).ok, false);
+  assert.equal(buildChecklistView(blockedChecklist).ok, false);
 });
 
 test("el informe de validacion queda certificado completamente en PASS", async () => {
