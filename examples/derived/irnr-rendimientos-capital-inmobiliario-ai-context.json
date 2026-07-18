@@ -1,0 +1,78 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_rendimientos_capital_inmobiliario_001",
+    "stableKey": "irnr-rendimientos-capital-inmobiliario",
+    "title": "IRNR - Rendimientos del Capital Inmobiliario",
+    "version": "1.0.0",
+    "status": "validado"
+  },
+  "criterionStatus": "vigente para uso interno validado",
+  "executiveSummary": "Este Knowledge Object fija el criterio operativo del despacho para decidir cuando una persona o entidad no residente tributa en Espana por rendimientos del capital inmobiliario derivados de inmuebles situados en territorio espanol, en especial en supuestos de alquiler, subarrendamiento o cesiones de uso que todavia no desbordan hacia una actividad economica con establecimiento permanente. El objeto distingue con claridad la secuencia correcta del analisis: primero se verifica la no residencia, despues la existencia de un inmueble situado en Espana y de un rendimiento procedente del mismo, luego se comprueba que el caso sigue siendo capital inmobiliario y no actividad economica, a continuacion se revisa el eventual CDI y, solo al final, se aterriza la deducibilidad de gastos y el cumplimiento minimo conectado con el Modelo 210. Tambien deja trazado que el CDI no crea una obligacion tributaria nueva, sino que coordina o limita la potestad que la normativa interna atribuye inicialmente; y que la diferencia entre residentes UE/EEE y terceros Estados afecta de forma directa a la deducibilidad de gastos, no a la existencia del rendimiento. Su utilidad practica es homogeneizar expedientes de no residentes con inmuebles arrendados, reforzar la trazabilidad de la decision y permitir derivaciones consistentes para Planner, Web, IA, checklist, FAQ y respuesta al cliente sin duplicar doctrina.",
+  "legalBasis": [
+    "La base juridica del objeto descansa en el Texto Refundido de la Ley del IRNR y en su Reglamento, con especial importancia de las reglas sobre contribuyentes no residentes, rentas obtenidas en territorio espanol y declaracion de rentas sin establecimiento permanente. El articulo 13.1.g) de la Ley IRNR conecta la renta con los bienes inmuebles situados en Espana o con derechos relativos a ellos. La secuencia correcta es siempre normativa interna, posible CDI, deducibilidad de gastos y, al final, cierre operativo minimo de declaracion o retencion. El CDI no crea por si solo una obligacion tributaria nueva, sino que limita o coordina la potestad que la norma interna atribuiria inicialmente. La Ley del IRPF solo entra aqui como norma auxiliar para identificar los gastos deducibles de personas fisicas cuando la ley del IRNR remite a ese tratamiento para determinados residentes UE/EEE."
+  ],
+  "technicalDevelopment": [
+    "1. No residencia fiscal. El punto de partida es confirmar que el contribuyente no es residente fiscal en Espana, delegando esa conclusion en el objeto de Residencia Fiscal cuando sea necesario. 2. Inmueble situado en Espana. Sin inmueble situado en territorio espanol, este objeto no opera. 3. Existencia de rendimiento obtenido del inmueble. Debe existir una renta derivada del uso, cesion o explotacion del inmueble o de derechos relativos al mismo. 4. Capital inmobiliario frente a actividad economica. El mero arrendamiento o las cesiones de uso con servicios limitados siguen siendo capital inmobiliario; si se prestan servicios propios de hosteleria o existe en Espana una persona empleada con contrato laboral y a jornada completa para ordenar la actividad, el caso puede salir del objeto y escalar hacia actividad economica o establecimiento permanente. 5. Localizacion territorial. La norma interna situa en Espana los rendimientos derivados directa o indirectamente de bienes inmuebles situados en Espana. 6. Potestad tributaria espanola bajo norma interna. Partiendo de la localizacion del inmueble, la renta queda inicialmente dentro del IRNR sin establecimiento permanente. 7. Revisión de CDI. Si existe convenio aplicable, se verifica si mantiene, coordina o limita la potestad espanola. En materia inmobiliaria, la regla general convencional es que el Estado de situacion del inmueble puede gravar la renta, tanto si deriva del arrendamiento como de otra forma de explotacion del bien. 8. UE/EEE frente a terceros Estados. La deducibilidad de gastos no altera la existencia del rendimiento, pero si modifica la base imponible cuando el contribuyente es residente en la UE o en un Estado del EEE con normativa de asistencia mutua aplicable, siempre que acredite relacion directa y vinculo economico indisociable con la actividad realizada en Espana. Para terceros Estados, la regla general sigue siendo la base integra sin deduccion de gasto alguno. 9. Copropiedad. La copropiedad debe tratarse como una pieza nuclear del expediente: si el inmueble pertenece a varias personas, cada cotitular es contribuyente independiente y debe tributar por su propia participacion, con declaracion separada y con atencion a la cuota de participacion y dias de devengo. 10. Cumplimiento operativo minimo. Una vez cerrado el criterio material, el expediente desciende al Modelo 210, a la existencia o no de retenedor, a la posibilidad de agrupacion y al nuevo calendario de presentacion introducido por la Orden HAC/623/2026. El analisis correcto es siempre normativa interna primero, CDI segundo y consecuencias de cumplimiento despues.\n\nDecision Gateway\n\nEs residente fiscal en Espana?\n        ↓\nNO\n        ↓\nExiste un inmueble situado en Espana?\n        ↓\nSe obtienen rendimientos del inmueble?\n        ↓\nEl rendimiento sigue siendo capital inmobiliario y no actividad economica?\n        ↓\nExiste CDI aplicable?\n        ↓\nEspana conserva la potestad tributaria?\n        ↓\nExiste derecho a deducir gastos?\n        ↓\nTributacion IRNR\n        ↓\nCumplimiento operativo minimo"
+  ],
+  "procedure": [
+    "Confirmar si la persona o entidad es no residente desde la perspectiva espanola y, si no esta cerrado, abrir antes el objeto de Residencia Fiscal.",
+    "Identificar el inmueble, su localizacion en Espana, la titularidad, la cuota de participacion y el periodo de devengo relevante.",
+    "Delimitar el tipo de renta: alquiler, subarrendamiento o cesion de uso, separandolo de la renta imputada por periodos de uso propio o vacio cuando corresponda.",
+    "Verificar que el supuesto sigue siendo capital inmobiliario y no actividad economica, revisando servicios complementarios y medios personales en Espana.",
+    "Aplicar la normativa interna del IRNR para confirmar que se trata de renta obtenida en territorio espanol por proceder del inmueble situado en Espana.",
+    "Comprobar si existe CDI vigente y si el convenio mantiene o matiza la potestad tributaria espanola sobre la renta inmobiliaria concreta.",
+    "Determinar si procede deducir gastos y, en su caso, separar claramente el tratamiento de residentes UE/EEE frente al resto de contribuyentes.",
+    "Repartir ingreso, gastos y cumplimiento por cotitular cuando exista copropiedad o varios obligados independientes.",
+    "Cerrar la capa de cumplimiento minimo: existencia o no de retenedor, periodicidad general, agrupacion posible y referencia operativa al Modelo 210.",
+    "Documentar la decision final con evidencia suficiente sobre residencia, inmueble, renta, CDI, gastos y via de cumplimiento elegida."
+  ],
+  "risks": [
+    {
+      "riskId": "riskirnrci-001",
+      "description": "Confundir capital inmobiliario con actividad economica o con establecimiento permanente.",
+      "severity": "high",
+      "likelihood": "medium",
+      "mitigation": "Revisar servicios prestados y medios personales antes de cerrar el criterio material."
+    },
+    {
+      "riskId": "riskirnrci-002",
+      "description": "Aplicar gastos deducibles a contribuyentes que no tienen derecho a deducirlos.",
+      "severity": "high",
+      "likelihood": "high",
+      "mitigation": "Separar siempre residentes UE/EEE con asistencia mutua de terceros Estados y exigir soporte documental."
+    },
+    {
+      "riskId": "riskirnrci-003",
+      "description": "No separar periodos de arrendamiento de periodos de uso propio o vacio.",
+      "severity": "medium",
+      "likelihood": "medium",
+      "mitigation": "Trabajar por tramos temporales y vincular este objeto solo al periodo realmente arrendado o cedido."
+    },
+    {
+      "riskId": "riskirnrci-004",
+      "description": "Ignorar la copropiedad y presentar una unica conclusion economica o formal.",
+      "severity": "medium",
+      "likelihood": "medium",
+      "mitigation": "Desglosar desde el inicio porcentaje de participacion, ingresos y gastos por titular."
+    },
+    {
+      "riskId": "riskirnrci-005",
+      "description": "Aplicar plazos antiguos del Modelo 210 tras la Orden HAC/623/2026.",
+      "severity": "medium",
+      "likelihood": "medium",
+      "mitigation": "Anotar siempre la fecha de devengo y distinguir expresamente reglas transitorias de 2026."
+    }
+  ],
+  "restrictions": [
+    "Canales bloqueados a nivel raiz: ninguno.",
+    "Canales solo derivables a nivel raiz: web, faq, checklist, client_response, tax_library.",
+    "No debe reutilizarse este objeto como texto directo de respuesta al cliente sin derivacion controlada y revision humana."
+  ],
+  "clientResponseAuthorization": {
+    "channelAccess": "derived_only",
+    "mayExposeCanonicalTextDirectly": false,
+    "mayProduceDerivedDraft": true,
+    "humanReviewRequired": true,
+    "instruction": "Solo se permiten borradores derivados y controlados; no debe reutilizarse texto bruto del objeto."
+  }
+}

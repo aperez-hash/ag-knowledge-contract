@@ -1,0 +1,60 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_rendimientos_capital_inmobiliario_001",
+    "stableKey": "irnr-rendimientos-capital-inmobiliario",
+    "version": "1.0.0"
+  },
+  "responseType": "derived_draft",
+  "humanReviewRequired": true,
+  "summary": "Evita errores al mezclar arrendamiento civil, actividad economica, convenio, deducibilidad y cumplimiento formal en expedientes inmobiliarios de no residentes.",
+  "nextSteps": [
+    "Identificacion del titular o titulares no residentes y certificado de residencia fiscal o soporte equivalente fuera de Espana.",
+    "Acreditacion de titularidad del inmueble, porcentaje de participacion y localizacion en territorio espanol.",
+    "Contrato de arrendamiento o documento equivalente de cesion de uso con detalle del periodo, renta y condiciones basicas.",
+    "Detalle de importes percibidos, fechas de devengo y justificantes de cobro o extractos equivalentes."
+  ],
+  "faqHighlights": [
+    {
+      "faqId": "faqirnrci-001",
+      "question": "Si vivo fuera de Espana y alquilo una vivienda en Alicante, tengo que tributar aqui?",
+      "answer": "Con caracter general, si. La normativa interna del IRNR considera renta obtenida en territorio espanol los rendimientos derivados de inmuebles situados en Espana, y los CDI suelen permitir tambien la imposicion en el Estado donde esta situado el inmueble."
+    },
+    {
+      "faqId": "faqirnrci-002",
+      "question": "Puedo deducir gastos del alquiler en IRNR?",
+      "answer": "Depende. Para residentes en la UE o en determinados Estados del EEE con asistencia mutua aplicable, pueden deducirse gastos directamente relacionados y con vinculo economico indisociable. Para terceros Estados, la regla general sigue siendo la base integra sin deduccion de gastos."
+    },
+    {
+      "faqId": "faqirnrci-003",
+      "question": "Si ofrezco limpieza al entrar y salir el inquilino, ya no estoy en este objeto?",
+      "answer": "No necesariamente. Los servicios limitados o accesorios no siempre sacan el caso del capital inmobiliario. El problema aparece cuando se prestan servicios propios de hosteleria o existe una verdadera ordenacion empresarial que pueda llevar a actividad economica o establecimiento permanente."
+    }
+  ],
+  "documentationHighlights": [
+    {
+      "documentId": "docirnrci-001",
+      "label": "Identificacion del titular o titulares no residentes y certificado de residencia fiscal o soporte equivalente fuera de Espana.",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: confirmar la condicion de no residente y preparar la capa de CDI cuando proceda."
+    },
+    {
+      "documentId": "docirnrci-002",
+      "label": "Acreditacion de titularidad del inmueble, porcentaje de participacion y localizacion en territorio espanol.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: fijar el inmueble relevante, la copropiedad y la base personal del expediente."
+    },
+    {
+      "documentId": "docirnrci-003",
+      "label": "Contrato de arrendamiento o documento equivalente de cesion de uso con detalle del periodo, renta y condiciones basicas.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: acreditar existencia del rendimiento y separar capital inmobiliario de otros supuestos."
+    },
+    {
+      "documentId": "docirnrci-004",
+      "label": "Detalle de importes percibidos, fechas de devengo y justificantes de cobro o extractos equivalentes.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: base imponible, periodicidad y contraste con la declaracion."
+    }
+  ],
+  "caution": "Borrador derivado para apoyo interno. No debe enviarse sin revision humana y sin contrastar la documentacion concreta del cliente."
+}

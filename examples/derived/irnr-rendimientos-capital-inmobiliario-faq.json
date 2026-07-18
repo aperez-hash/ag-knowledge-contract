@@ -1,0 +1,40 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_rendimientos_capital_inmobiliario_001",
+    "stableKey": "irnr-rendimientos-capital-inmobiliario",
+    "version": "1.0.0"
+  },
+  "title": "IRNR - Rendimientos del Capital Inmobiliario - FAQ derivada",
+  "items": [
+    {
+      "faqId": "faqirnrci-001",
+      "question": "Si vivo fuera de Espana y alquilo una vivienda en Alicante, tengo que tributar aqui?",
+      "answer": "Con caracter general, si. La normativa interna del IRNR considera renta obtenida en territorio espanol los rendimientos derivados de inmuebles situados en Espana, y los CDI suelen permitir tambien la imposicion en el Estado donde esta situado el inmueble."
+    },
+    {
+      "faqId": "faqirnrci-002",
+      "question": "Puedo deducir gastos del alquiler en IRNR?",
+      "answer": "Depende. Para residentes en la UE o en determinados Estados del EEE con asistencia mutua aplicable, pueden deducirse gastos directamente relacionados y con vinculo economico indisociable. Para terceros Estados, la regla general sigue siendo la base integra sin deduccion de gastos."
+    },
+    {
+      "faqId": "faqirnrci-003",
+      "question": "Si ofrezco limpieza al entrar y salir el inquilino, ya no estoy en este objeto?",
+      "answer": "No necesariamente. Los servicios limitados o accesorios no siempre sacan el caso del capital inmobiliario. El problema aparece cuando se prestan servicios propios de hosteleria o existe una verdadera ordenacion empresarial que pueda llevar a actividad economica o establecimiento permanente."
+    },
+    {
+      "faqId": "faqirnrci-004",
+      "question": "Si el piso es de dos hermanos no residentes, se presenta una sola declaracion?",
+      "answer": "No. Cada cotitular es contribuyente independiente en IRNR y debe tributar por su propia participacion, salvo que un supuesto concreto admita otra tecnica formal que no es la regla general."
+    },
+    {
+      "faqId": "faqirnrci-005",
+      "question": "Necesito revisar el convenio aunque el inmueble este en Espana?",
+      "answer": "Si conviene revisarlo, pero en renta inmobiliaria lo habitual es que el convenio mantenga la posibilidad de gravamen del Estado donde esta situado el inmueble. El convenio no suele eliminar la imposicion espanola de forma automatica en estos casos."
+    },
+    {
+      "faqId": "faqirnrci-006",
+      "question": "Este objeto explica ya como rellenar todas las casillas del Modelo 210?",
+      "answer": "No. El objeto solo cubre el cumplimiento operativo minimo y la conexion con el Modelo 210. La cumplimentacion completa del formulario pertenece a una capa operativa derivada o a un objeto mas procedimental."
+    }
+  ]
+}

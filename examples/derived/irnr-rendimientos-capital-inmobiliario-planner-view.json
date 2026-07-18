@@ -1,72 +1,10 @@
 {
-  "identity": {
+  "source": {
     "knowledgeObjectId": "ko_es_irnr_rendimientos_capital_inmobiliario_001",
     "stableKey": "irnr-rendimientos-capital-inmobiliario",
     "title": "IRNR - Rendimientos del Capital Inmobiliario",
-    "slug": "irnr-rendimientos-capital-inmobiliario",
-    "language": "es",
-    "jurisdiction": "ES"
-  },
-  "governance": {
-    "status": "validado",
     "version": "1.0.0",
-    "owner": "equipo-fiscal-no-residentes-internacional",
-    "approvedBy": "direccion-tecnica-fiscal",
-    "reviewedAt": "2026-07-18T23:59:00Z",
-    "changeReason": "Knowledge Object canonico de IRNR sobre rendimientos del capital inmobiliario, orientado a tributacion material, frontera con actividad economica, deducibilidad UE/EEE y cumplimiento operativo minimo"
-  },
-  "classification": {
-    "domain": "fiscal",
-    "topic": "irnr",
-    "subtopic": "rendimientos-capital-inmobiliario",
-    "audience": "advisor",
-    "sensitivity": "high",
-    "keywords": [
-      "irnr",
-      "rendimientos del capital inmobiliario",
-      "arrendamiento",
-      "inmueble situado en espana",
-      "cdi",
-      "ue",
-      "eee",
-      "gastos deducibles",
-      "modelo 210",
-      "copropiedad"
-    ]
-  },
-  "channelPolicy": {
-    "web": {
-      "access": "derived_only",
-      "notes": "La web solo debe publicar explicaciones derivadas y prudentes."
-    },
-    "planner": {
-      "access": "allowed",
-      "notes": "Planner puede consumir la vista operativa interna del objeto."
-    },
-    "ia": {
-      "access": "allowed",
-      "notes": "La IA interna puede usar este criterio con trazabilidad y restricciones."
-    },
-    "faq": {
-      "access": "derived_only",
-      "notes": "Las FAQ deben derivarse de forma controlada."
-    },
-    "checklist": {
-      "access": "derived_only",
-      "notes": "La checklist puede exponerse como derivacion operativa."
-    },
-    "internal_guide": {
-      "access": "allowed",
-      "notes": "La guia interna puede reutilizar el contenido completo validado."
-    },
-    "client_response": {
-      "access": "derived_only",
-      "notes": "Nunca debe enviarse al cliente el texto bruto del objeto."
-    },
-    "tax_library": {
-      "access": "derived_only",
-      "notes": "La biblioteca fiscal debe consumir salidas derivadas, no el objeto bruto."
-    }
+    "status": "validado"
   },
   "executiveSummary": {
     "summary": "Este Knowledge Object fija el criterio operativo del despacho para decidir cuando una persona o entidad no residente tributa en Espana por rendimientos del capital inmobiliario derivados de inmuebles situados en territorio espanol, en especial en supuestos de alquiler, subarrendamiento o cesiones de uso que todavia no desbordan hacia una actividad economica con establecimiento permanente. El objeto distingue con claridad la secuencia correcta del analisis: primero se verifica la no residencia, despues la existencia de un inmueble situado en Espana y de un rendimiento procedente del mismo, luego se comprueba que el caso sigue siendo capital inmobiliario y no actividad economica, a continuacion se revisa el eventual CDI y, solo al final, se aterriza la deducibilidad de gastos y el cumplimiento minimo conectado con el Modelo 210. Tambien deja trazado que el CDI no crea una obligacion tributaria nueva, sino que coordina o limita la potestad que la normativa interna atribuye inicialmente; y que la diferencia entre residentes UE/EEE y terceros Estados afecta de forma directa a la deducibilidad de gastos, no a la existencia del rendimiento. Su utilidad practica es homogeneizar expedientes de no residentes con inmuebles arrendados, reforzar la trazabilidad de la decision y permitir derivaciones consistentes para Planner, Web, IA, checklist, FAQ y respuesta al cliente sin duplicar doctrina.",
@@ -102,170 +40,31 @@
       "notes": "Formulario impactado cuando existe obligacion de retener e ingresar a cuenta."
     }
   ],
-  "blocks": [
+  "plannerBlocks": [
     {
       "blockId": "kbirnrci-legal-001",
-      "type": "legal_basis",
-      "title": "Base legal del IRNR sobre rendimientos del capital inmobiliario",
-      "order": 10,
-      "status": "validado",
-      "visibility": "internal",
-      "channelPolicy": {
-        "web": {
-          "access": "blocked"
-        },
-        "planner": {
-          "access": "allowed"
-        },
-        "ia": {
-          "access": "allowed"
-        },
-        "faq": {
-          "access": "blocked"
-        },
-        "checklist": {
-          "access": "blocked"
-        },
-        "internal_guide": {
-          "access": "allowed"
-        },
-        "client_response": {
-          "access": "blocked"
-        },
-        "tax_library": {
-          "access": "allowed"
-        }
-      },
-      "lastReviewedAt": "2026-07-18T23:59:00Z",
       "content": {
         "basis": "La base juridica del objeto descansa en el Texto Refundido de la Ley del IRNR y en su Reglamento, con especial importancia de las reglas sobre contribuyentes no residentes, rentas obtenidas en territorio espanol y declaracion de rentas sin establecimiento permanente. El articulo 13.1.g) de la Ley IRNR conecta la renta con los bienes inmuebles situados en Espana o con derechos relativos a ellos. La secuencia correcta es siempre normativa interna, posible CDI, deducibilidad de gastos y, al final, cierre operativo minimo de declaracion o retencion. El CDI no crea por si solo una obligacion tributaria nueva, sino que limita o coordina la potestad que la norma interna atribuiria inicialmente. La Ley del IRPF solo entra aqui como norma auxiliar para identificar los gastos deducibles de personas fisicas cuando la ley del IRNR remite a ese tratamiento para determinados residentes UE/EEE."
       },
-      "sourceRefs": [
-        {
-          "referenceId": "srcirnrci-trlirnr",
-          "type": "law",
-          "label": "Texto Refundido de la Ley del IRNR",
-          "citation": "Real Decreto Legislativo 5/2004, BOE-A-2004-4527",
-          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4527",
-          "notes": "Base legal principal del objeto."
-        },
-        {
-          "referenceId": "srcirnrci-rirnr",
-          "type": "law",
-          "label": "Reglamento del IRNR",
-          "citation": "Real Decreto 1776/2004, BOE-A-2004-14532",
-          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2004-14532",
-          "notes": "Desarrollo reglamentario clave para declaracion y plazos."
-        },
-        {
-          "referenceId": "srcirnrci-aeat-manual",
-          "type": "guidance",
-          "label": "AEAT - Rendimientos de capital inmobiliario",
-          "citation": "Manual de Tributacion de No Residentes, pagina actualizada el 01/julio/2026",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-tributacion-no-residentes/capitulo-03-tributacion-rentas-comunes-nr/otros-rendimientos/rendimientos-capital-inmobiliario.html",
-          "notes": "Resume la aplicacion material de la Ley IRNR y la deducibilidad UE/EEE."
-        }
-      ]
+      "order": 10,
+      "status": "validado",
+      "title": "Base legal del IRNR sobre rendimientos del capital inmobiliario",
+      "type": "legal_basis",
+      "visibility": "internal"
     },
     {
       "blockId": "kbirnrci-tech-001",
-      "type": "technical_development",
-      "title": "Desarrollo tecnico del criterio material y operativo",
-      "order": 20,
-      "status": "validado",
-      "visibility": "internal",
-      "channelPolicy": {
-        "web": {
-          "access": "blocked"
-        },
-        "planner": {
-          "access": "allowed"
-        },
-        "ia": {
-          "access": "allowed"
-        },
-        "faq": {
-          "access": "derived_only"
-        },
-        "checklist": {
-          "access": "derived_only"
-        },
-        "internal_guide": {
-          "access": "allowed"
-        },
-        "client_response": {
-          "access": "blocked"
-        },
-        "tax_library": {
-          "access": "allowed"
-        }
-      },
-      "lastReviewedAt": "2026-07-18T23:59:00Z",
-      "summary": "El analisis debe separar no residencia, fuente inmobiliaria espanola, frontera entre capital inmobiliario y actividad economica, CDI, deducibilidad y cumplimiento minimo.",
       "content": {
         "development": "1. No residencia fiscal. El punto de partida es confirmar que el contribuyente no es residente fiscal en Espana, delegando esa conclusion en el objeto de Residencia Fiscal cuando sea necesario. 2. Inmueble situado en Espana. Sin inmueble situado en territorio espanol, este objeto no opera. 3. Existencia de rendimiento obtenido del inmueble. Debe existir una renta derivada del uso, cesion o explotacion del inmueble o de derechos relativos al mismo. 4. Capital inmobiliario frente a actividad economica. El mero arrendamiento o las cesiones de uso con servicios limitados siguen siendo capital inmobiliario; si se prestan servicios propios de hosteleria o existe en Espana una persona empleada con contrato laboral y a jornada completa para ordenar la actividad, el caso puede salir del objeto y escalar hacia actividad economica o establecimiento permanente. 5. Localizacion territorial. La norma interna situa en Espana los rendimientos derivados directa o indirectamente de bienes inmuebles situados en Espana. 6. Potestad tributaria espanola bajo norma interna. Partiendo de la localizacion del inmueble, la renta queda inicialmente dentro del IRNR sin establecimiento permanente. 7. Revisión de CDI. Si existe convenio aplicable, se verifica si mantiene, coordina o limita la potestad espanola. En materia inmobiliaria, la regla general convencional es que el Estado de situacion del inmueble puede gravar la renta, tanto si deriva del arrendamiento como de otra forma de explotacion del bien. 8. UE/EEE frente a terceros Estados. La deducibilidad de gastos no altera la existencia del rendimiento, pero si modifica la base imponible cuando el contribuyente es residente en la UE o en un Estado del EEE con normativa de asistencia mutua aplicable, siempre que acredite relacion directa y vinculo economico indisociable con la actividad realizada en Espana. Para terceros Estados, la regla general sigue siendo la base integra sin deduccion de gasto alguno. 9. Copropiedad. La copropiedad debe tratarse como una pieza nuclear del expediente: si el inmueble pertenece a varias personas, cada cotitular es contribuyente independiente y debe tributar por su propia participacion, con declaracion separada y con atencion a la cuota de participacion y dias de devengo. 10. Cumplimiento operativo minimo. Una vez cerrado el criterio material, el expediente desciende al Modelo 210, a la existencia o no de retenedor, a la posibilidad de agrupacion y al nuevo calendario de presentacion introducido por la Orden HAC/623/2026. El analisis correcto es siempre normativa interna primero, CDI segundo y consecuencias de cumplimiento despues.\n\nDecision Gateway\n\nEs residente fiscal en Espana?\n        ↓\nNO\n        ↓\nExiste un inmueble situado en Espana?\n        ↓\nSe obtienen rendimientos del inmueble?\n        ↓\nEl rendimiento sigue siendo capital inmobiliario y no actividad economica?\n        ↓\nExiste CDI aplicable?\n        ↓\nEspana conserva la potestad tributaria?\n        ↓\nExiste derecho a deducir gastos?\n        ↓\nTributacion IRNR\n        ↓\nCumplimiento operativo minimo"
       },
-      "sourceRefs": [
-        {
-          "referenceId": "srcirnrci-aeat-ep",
-          "type": "guidance",
-          "label": "AEAT - Establecimiento permanente e inmuebles arrendados",
-          "citation": "Pagina oficial AEAT consultada en julio de 2026",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-establecimiento-permanente/establecimiento-permanente-inmuebles-arrendados.html",
-          "notes": "Base practica para distinguir arrendamiento civil de actividad economica o hostelera."
-        },
-        {
-          "referenceId": "srcirnrci-aeat-210",
-          "type": "guidance",
-          "label": "AEAT - Instrucciones Modelo 210",
-          "citation": "Instrucciones oficiales vigentes en julio de 2026",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-210-irnr______a-no-residentes-permanente_/instrucciones.html",
-          "notes": "Apoya la capa de cumplimiento minimo sin convertir el objeto en un manual del modelo."
-        },
-        {
-          "referenceId": "srcirnrci-aeat-plazos-2026",
-          "type": "guidance",
-          "label": "AEAT - Nota sobre modificaciones de plazos del Modelo 210",
-          "citation": "Nota actualizada el 02/julio/2026",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-210-irnr______a-no-residentes-permanente_/nota-modificaciones-plazos-presentacion-modelo-210.html",
-          "notes": "Ancla la parte de periodicidad y cambios de contenido vigentes."
-        }
-      ]
+      "order": 20,
+      "status": "validado",
+      "title": "Desarrollo tecnico del criterio material y operativo",
+      "type": "technical_development",
+      "visibility": "internal"
     },
     {
       "blockId": "kbirnrci-proc-001",
-      "type": "procedure",
-      "title": "Procedimiento operativo completo",
-      "order": 30,
-      "status": "validado",
-      "visibility": "internal",
-      "channelPolicy": {
-        "web": {
-          "access": "blocked"
-        },
-        "planner": {
-          "access": "allowed"
-        },
-        "ia": {
-          "access": "allowed"
-        },
-        "faq": {
-          "access": "derived_only"
-        },
-        "checklist": {
-          "access": "derived_only"
-        },
-        "internal_guide": {
-          "access": "allowed"
-        },
-        "client_response": {
-          "access": "blocked"
-        },
-        "tax_library": {
-          "access": "derived_only"
-        }
-      },
-      "lastReviewedAt": "2026-07-18T23:59:00Z",
       "content": {
         "steps": [
           {
@@ -310,59 +109,14 @@
           }
         ]
       },
-      "sourceRefs": [
-        {
-          "referenceId": "srcirnrci-proc-210",
-          "type": "guidance",
-          "label": "AEAT - Instrucciones Modelo 210",
-          "citation": "Instrucciones oficiales vigentes en julio de 2026",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-210-irnr______a-no-residentes-permanente_/instrucciones.html",
-          "notes": "Base operativa para obligacion de declarar, agrupacion y cierre minimo."
-        },
-        {
-          "referenceId": "srcirnrci-proc-plazos",
-          "type": "guidance",
-          "label": "AEAT - Nota sobre modificaciones de plazos del Modelo 210",
-          "citation": "Nota actualizada el 02/julio/2026",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-210-irnr______a-no-residentes-permanente_/nota-modificaciones-plazos-presentacion-modelo-210.html",
-          "notes": "Fija la periodicidad general vigente y la transicion de 2026."
-        }
-      ]
+      "order": 30,
+      "status": "validado",
+      "title": "Procedimiento operativo completo",
+      "type": "procedure",
+      "visibility": "internal"
     },
     {
       "blockId": "kbirnrci-check-001",
-      "type": "checklist",
-      "title": "Checklist operativa reutilizable",
-      "order": 40,
-      "status": "validado",
-      "visibility": "internal",
-      "channelPolicy": {
-        "web": {
-          "access": "blocked"
-        },
-        "planner": {
-          "access": "allowed"
-        },
-        "ia": {
-          "access": "derived_only"
-        },
-        "faq": {
-          "access": "blocked"
-        },
-        "checklist": {
-          "access": "allowed"
-        },
-        "internal_guide": {
-          "access": "allowed"
-        },
-        "client_response": {
-          "access": "blocked"
-        },
-        "tax_library": {
-          "access": "derived_only"
-        }
-      },
-      "lastReviewedAt": "2026-07-18T23:59:00Z",
       "content": {
         "items": [
           {
@@ -406,42 +160,15 @@
             "label": "[Obligatorio] Cierre operativo minimo del Modelo 210 documentado con periodo y calendario vigentes."
           }
         ]
-      }
+      },
+      "order": 40,
+      "status": "validado",
+      "title": "Checklist operativa reutilizable",
+      "type": "checklist",
+      "visibility": "internal"
     },
     {
       "blockId": "kbirnrci-faq-001",
-      "type": "faq",
-      "title": "Preguntas frecuentes reales de cliente y expediente",
-      "order": 50,
-      "status": "validado",
-      "visibility": "public",
-      "channelPolicy": {
-        "web": {
-          "access": "derived_only"
-        },
-        "planner": {
-          "access": "allowed"
-        },
-        "ia": {
-          "access": "allowed"
-        },
-        "faq": {
-          "access": "allowed"
-        },
-        "checklist": {
-          "access": "blocked"
-        },
-        "internal_guide": {
-          "access": "allowed"
-        },
-        "client_response": {
-          "access": "derived_only"
-        },
-        "tax_library": {
-          "access": "derived_only"
-        }
-      },
-      "lastReviewedAt": "2026-07-18T23:59:00Z",
       "content": {
         "items": [
           {
@@ -475,42 +202,15 @@
             "answer": "No. El objeto solo cubre el cumplimiento operativo minimo y la conexion con el Modelo 210. La cumplimentacion completa del formulario pertenece a una capa operativa derivada o a un objeto mas procedimental."
           }
         ]
-      }
+      },
+      "order": 50,
+      "status": "validado",
+      "title": "Preguntas frecuentes reales de cliente y expediente",
+      "type": "faq",
+      "visibility": "public"
     },
     {
       "blockId": "kbirnrci-risk-001",
-      "type": "risk",
-      "title": "Riesgos materiales y operativos",
-      "order": 60,
-      "status": "validado",
-      "visibility": "internal",
-      "channelPolicy": {
-        "web": {
-          "access": "blocked"
-        },
-        "planner": {
-          "access": "allowed"
-        },
-        "ia": {
-          "access": "allowed"
-        },
-        "faq": {
-          "access": "blocked"
-        },
-        "checklist": {
-          "access": "derived_only"
-        },
-        "internal_guide": {
-          "access": "allowed"
-        },
-        "client_response": {
-          "access": "blocked"
-        },
-        "tax_library": {
-          "access": "derived_only"
-        }
-      },
-      "lastReviewedAt": "2026-07-18T23:59:00Z",
       "content": {
         "items": [
           {
@@ -550,60 +250,14 @@
           }
         ]
       },
-      "summary": "Los errores mas costosos vienen de mezclar frontera empresarial, deducibilidad, copropiedad, CDI y calendario de cumplimiento como si fueran la misma pregunta.",
-      "sourceRefs": [
-        {
-          "referenceId": "srcirnrci-risk-manual",
-          "type": "guidance",
-          "label": "AEAT - Rendimientos de capital inmobiliario",
-          "citation": "Manual de Tributacion de No Residentes, pagina actualizada el 01/julio/2026",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-tributacion-no-residentes/capitulo-03-tributacion-rentas-comunes-nr/otros-rendimientos/rendimientos-capital-inmobiliario.html",
-          "notes": "Base para riesgos sobre gastos, convenio y establecimiento permanente."
-        },
-        {
-          "referenceId": "srcirnrci-risk-ep",
-          "type": "guidance",
-          "label": "AEAT - Establecimiento permanente e inmuebles arrendados",
-          "citation": "Pagina oficial AEAT consultada en julio de 2026",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-establecimiento-permanente/establecimiento-permanente-inmuebles-arrendados.html",
-          "notes": "Base para el riesgo de recalificacion como actividad economica o establecimiento permanente."
-        }
-      ]
+      "order": 60,
+      "status": "validado",
+      "title": "Riesgos materiales y operativos",
+      "type": "risk",
+      "visibility": "internal"
     },
     {
       "blockId": "kbirnrci-docs-001",
-      "type": "required_documentation",
-      "title": "Documentacion necesaria y matriz de evidencias",
-      "order": 70,
-      "status": "validado",
-      "visibility": "public",
-      "channelPolicy": {
-        "web": {
-          "access": "derived_only"
-        },
-        "planner": {
-          "access": "allowed"
-        },
-        "ia": {
-          "access": "allowed"
-        },
-        "faq": {
-          "access": "derived_only"
-        },
-        "checklist": {
-          "access": "derived_only"
-        },
-        "internal_guide": {
-          "access": "allowed"
-        },
-        "client_response": {
-          "access": "derived_only"
-        },
-        "tax_library": {
-          "access": "derived_only"
-        }
-      },
-      "lastReviewedAt": "2026-07-18T23:59:00Z",
       "content": {
         "items": [
           {
@@ -643,42 +297,15 @@
             "notes": "Fuerza probatoria: complementaria. Uso habitual: reforzar que el caso sigue dentro de capital inmobiliario y no escala a establecimiento permanente."
           }
         ]
-      }
+      },
+      "order": 70,
+      "status": "validado",
+      "title": "Documentacion necesaria y matriz de evidencias",
+      "type": "required_documentation",
+      "visibility": "public"
     },
     {
       "blockId": "kbirnrci-cases-001",
-      "type": "case_study",
-      "title": "Casos practicos reutilizables",
-      "order": 80,
-      "status": "validado",
-      "visibility": "public",
-      "channelPolicy": {
-        "web": {
-          "access": "derived_only"
-        },
-        "planner": {
-          "access": "allowed"
-        },
-        "ia": {
-          "access": "allowed"
-        },
-        "faq": {
-          "access": "derived_only"
-        },
-        "checklist": {
-          "access": "blocked"
-        },
-        "internal_guide": {
-          "access": "allowed"
-        },
-        "client_response": {
-          "access": "derived_only"
-        },
-        "tax_library": {
-          "access": "derived_only"
-        }
-      },
-      "lastReviewedAt": "2026-07-18T23:59:00Z",
       "content": {
         "items": [
           {
@@ -713,87 +340,221 @@
           }
         ]
       },
-      "summary": "Los casos cubren alquiler UE, terceros Estados, cesiones con servicios accesorios, riesgo de establecimiento permanente y copropiedad.",
-      "sourceRefs": [
-        {
-          "referenceId": "srcirnrci-case-manual",
-          "type": "guidance",
-          "label": "AEAT - Rendimientos de capital inmobiliario",
-          "citation": "Manual de Tributacion de No Residentes, pagina actualizada el 01/julio/2026",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-tributacion-no-residentes/capitulo-03-tributacion-rentas-comunes-nr/otros-rendimientos/rendimientos-capital-inmobiliario.html",
-          "notes": "Base de apoyo para la casuistica general de renta inmobiliaria."
-        },
-        {
-          "referenceId": "srcirnrci-case-inmuebles",
-          "type": "guidance",
-          "label": "AEAT - Cuestiones especificas sobre tributacion de inmuebles",
-          "citation": "Portal oficial consultado en julio de 2026",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-sin-establecimiento-permanente/cuestiones-especificas-sobre-tributacion-inmuebles.html",
-          "notes": "Base util para copropiedad, clasificacion de rentas y expedientes mixtos."
-        }
-      ]
-    },
-    {
-      "blockId": "kbirnrci-internal-001",
-      "type": "internal_reference",
-      "title": "Referencias internas y relaciones doctrinales",
-      "order": 90,
+      "order": 80,
       "status": "validado",
-      "visibility": "restricted",
-      "channelPolicy": {
-        "web": {
-          "access": "blocked"
-        },
-        "planner": {
-          "access": "blocked"
-        },
-        "ia": {
-          "access": "blocked"
-        },
-        "faq": {
-          "access": "blocked"
-        },
-        "checklist": {
-          "access": "blocked"
-        },
-        "internal_guide": {
-          "access": "allowed"
-        },
-        "client_response": {
-          "access": "blocked"
-        },
-        "tax_library": {
-          "access": "blocked"
-        }
+      "title": "Casos practicos reutilizables",
+      "type": "case_study",
+      "visibility": "public"
+    }
+  ],
+  "procedures": [
+    {
+      "blockId": "kbirnrci-proc-001",
+      "content": {
+        "steps": [
+          {
+            "text": "Confirmar si la persona o entidad es no residente desde la perspectiva espanola y, si no esta cerrado, abrir antes el objeto de Residencia Fiscal.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Identificar el inmueble, su localizacion en Espana, la titularidad, la cuota de participacion y el periodo de devengo relevante.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Delimitar el tipo de renta: alquiler, subarrendamiento o cesion de uso, separandolo de la renta imputada por periodos de uso propio o vacio cuando corresponda.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Verificar que el supuesto sigue siendo capital inmobiliario y no actividad economica, revisando servicios complementarios y medios personales en Espana.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Aplicar la normativa interna del IRNR para confirmar que se trata de renta obtenida en territorio espanol por proceder del inmueble situado en Espana.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Comprobar si existe CDI vigente y si el convenio mantiene o matiza la potestad tributaria espanola sobre la renta inmobiliaria concreta.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Determinar si procede deducir gastos y, en su caso, separar claramente el tratamiento de residentes UE/EEE frente al resto de contribuyentes.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Repartir ingreso, gastos y cumplimiento por cotitular cuando exista copropiedad o varios obligados independientes.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Cerrar la capa de cumplimiento minimo: existencia o no de retenedor, periodicidad general, agrupacion posible y referencia operativa al Modelo 210.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Documentar la decision final con evidencia suficiente sobre residencia, inmueble, renta, CDI, gastos y via de cumplimiento elegida.",
+            "format": "plain_text"
+          }
+        ]
       },
-      "lastReviewedAt": "2026-07-18T23:59:00Z",
+      "order": 30,
+      "status": "validado",
+      "title": "Procedimiento operativo completo",
+      "type": "procedure",
+      "visibility": "internal"
+    }
+  ],
+  "checklists": [
+    {
+      "blockId": "kbirnrci-check-001",
       "content": {
         "items": [
           {
-            "referenceId": "intrefirnrci-001",
-            "label": "Dossier primario de fuentes de IRNR - Rendimientos del Capital Inmobiliario",
-            "notes": "Documento real: docs/research/2026-07-18-irnr-capital-inmobiliario-primary-sources.md."
+            "itemId": "chkirnrci-001",
+            "label": "[Obligatorio] No residencia fiscal confirmada o derivada al objeto transversal antes del cierre."
           },
           {
-            "referenceId": "intrefirnrci-002",
-            "label": "Knowledge Factory v1 Certification",
-            "notes": "Documento real: docs/KNOWLEDGE_FACTORY_V1_CERTIFICATION_2026-07-18.md."
+            "itemId": "chkirnrci-002",
+            "label": "[Obligatorio] Inmueble situado en Espana y cuota de participacion identificados."
           },
           {
-            "referenceId": "intrefirnrci-003",
-            "label": "Knowledge Library v2 Certification",
-            "notes": "Documento real: docs/KNOWLEDGE_LIBRARY_V2_CERTIFICATION.md."
+            "itemId": "chkirnrci-003",
+            "label": "[Obligatorio] Tipo de renta delimitado frente a renta imputada o ganancia patrimonial."
           },
           {
-            "referenceId": "intrefirnrci-004",
-            "label": "Modelo 210 - Imputacion de rentas inmobiliarias",
-            "notes": "Relacion doctrinal interna para expedientes con periodos mixtos de arrendamiento y uso propio."
+            "itemId": "chkirnrci-004",
+            "label": "[Obligatorio] Frontera entre capital inmobiliario y actividad economica revisada expresamente."
+          },
+          {
+            "itemId": "chkirnrci-005",
+            "label": "[Obligatorio] CDI comprobado y documentado cuando exista elemento internacional."
+          },
+          {
+            "itemId": "chkirnrci-006",
+            "label": "[Obligatorio] Potestad tributaria espanola razonada con apoyo en norma interna y convenio."
+          },
+          {
+            "itemId": "chkirnrci-007",
+            "label": "[Obligatorio] Tratamiento UE/EEE o terceros Estados resuelto para deducibilidad de gastos."
+          },
+          {
+            "itemId": "chkirnrci-008",
+            "label": "[Obligatorio] Copropiedad y reparto por cotitular trazados cuando existan varios titulares."
+          },
+          {
+            "itemId": "chkirnrci-009",
+            "label": "[Recomendable] Documentacion de gastos directos archivada con vinculo economico indisociable."
+          },
+          {
+            "itemId": "chkirnrci-010",
+            "label": "[Obligatorio] Cierre operativo minimo del Modelo 210 documentado con periodo y calendario vigentes."
           }
         ]
-      }
+      },
+      "order": 40,
+      "status": "validado",
+      "title": "Checklist operativa reutilizable",
+      "type": "checklist",
+      "visibility": "internal"
     }
   ],
-  "relations": [
+  "requiredDocumentation": [
+    {
+      "blockId": "kbirnrci-docs-001",
+      "content": {
+        "items": [
+          {
+            "documentId": "docirnrci-001",
+            "label": "Identificacion del titular o titulares no residentes y certificado de residencia fiscal o soporte equivalente fuera de Espana.",
+            "required": true,
+            "notes": "Fuerza probatoria: muy alta. Uso habitual: confirmar la condicion de no residente y preparar la capa de CDI cuando proceda."
+          },
+          {
+            "documentId": "docirnrci-002",
+            "label": "Acreditacion de titularidad del inmueble, porcentaje de participacion y localizacion en territorio espanol.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: fijar el inmueble relevante, la copropiedad y la base personal del expediente."
+          },
+          {
+            "documentId": "docirnrci-003",
+            "label": "Contrato de arrendamiento o documento equivalente de cesion de uso con detalle del periodo, renta y condiciones basicas.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: acreditar existencia del rendimiento y separar capital inmobiliario de otros supuestos."
+          },
+          {
+            "documentId": "docirnrci-004",
+            "label": "Detalle de importes percibidos, fechas de devengo y justificantes de cobro o extractos equivalentes.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: base imponible, periodicidad y contraste con la declaracion."
+          },
+          {
+            "documentId": "docirnrci-005",
+            "label": "Soporte de gastos deducibles directamente vinculados al inmueble cuando el contribuyente sea residente UE/EEE con derecho potencial a deducirlos.",
+            "required": false,
+            "notes": "Fuerza probatoria: media. Uso habitual: analisis de deducibilidad, anexo de gastos y preparacion del Modelo 210."
+          },
+          {
+            "documentId": "docirnrci-006",
+            "label": "Soporte de ausencia de servicios hoteleros o de medios personales en Espana cuando exista riesgo de recalificacion empresarial.",
+            "required": false,
+            "notes": "Fuerza probatoria: complementaria. Uso habitual: reforzar que el caso sigue dentro de capital inmobiliario y no escala a establecimiento permanente."
+          }
+        ]
+      },
+      "order": 70,
+      "status": "validado",
+      "title": "Documentacion necesaria y matriz de evidencias",
+      "type": "required_documentation",
+      "visibility": "public"
+    }
+  ],
+  "risks": [
+    {
+      "blockId": "kbirnrci-risk-001",
+      "content": {
+        "items": [
+          {
+            "riskId": "riskirnrci-001",
+            "description": "Confundir capital inmobiliario con actividad economica o con establecimiento permanente.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Revisar servicios prestados y medios personales antes de cerrar el criterio material."
+          },
+          {
+            "riskId": "riskirnrci-002",
+            "description": "Aplicar gastos deducibles a contribuyentes que no tienen derecho a deducirlos.",
+            "severity": "high",
+            "likelihood": "high",
+            "mitigation": "Separar siempre residentes UE/EEE con asistencia mutua de terceros Estados y exigir soporte documental."
+          },
+          {
+            "riskId": "riskirnrci-003",
+            "description": "No separar periodos de arrendamiento de periodos de uso propio o vacio.",
+            "severity": "medium",
+            "likelihood": "medium",
+            "mitigation": "Trabajar por tramos temporales y vincular este objeto solo al periodo realmente arrendado o cedido."
+          },
+          {
+            "riskId": "riskirnrci-004",
+            "description": "Ignorar la copropiedad y presentar una unica conclusion economica o formal.",
+            "severity": "medium",
+            "likelihood": "medium",
+            "mitigation": "Desglosar desde el inicio porcentaje de participacion, ingresos y gastos por titular."
+          },
+          {
+            "riskId": "riskirnrci-005",
+            "description": "Aplicar plazos antiguos del Modelo 210 tras la Orden HAC/623/2026.",
+            "severity": "medium",
+            "likelihood": "medium",
+            "mitigation": "Anotar siempre la fecha de devengo y distinguir expresamente reglas transitorias de 2026."
+          }
+        ]
+      },
+      "order": 60,
+      "status": "validado",
+      "title": "Riesgos materiales y operativos",
+      "type": "risk",
+      "visibility": "internal"
+    }
+  ],
+  "relevantRelations": [
     {
       "relationId": "rel-irnrci-consumes-residencia",
       "type": "depends_on",
@@ -829,13 +590,5 @@
       "rationale": "Provides Doctrine To: puede servir de contraste cuando el expediente exige distinguir IRPF e IRNR en explotacion inmobiliaria internacional.",
       "order": 50
     }
-  ],
-  "auditMetadata": {
-    "createdAt": "2026-07-18T23:59:00Z",
-    "createdBy": "codex-knowledge-authoring",
-    "updatedAt": "2026-07-18T23:59:00Z",
-    "updatedBy": "codex-knowledge-authoring",
-    "revisionCount": 1,
-    "sourceSystem": "ag-knowledge-contract"
-  }
+  ]
 }
