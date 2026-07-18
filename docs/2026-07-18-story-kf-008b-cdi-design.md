@@ -60,6 +60,45 @@ La vision de establecimiento permanente debe servir para detectar el posible pro
 
 No debe desarrollar aun sus tests materiales ni resolver casuistica profunda de `EP`.
 
+## Decision Gateway
+
+Antes de aplicar doctrina interpretativa o de bajar al impuesto concreto, el objeto debe dejar visible un gateway metodologico reutilizable:
+
+Existe elemento internacional
+↓
+Existe CDI vigente entre Espana y el otro Estado
+↓
+El contribuyente esta dentro del ambito subjetivo
+↓
+La renta o el patrimonio estan dentro del ambito objetivo
+↓
+Aplicar las reglas generales del convenio
+
+Este gateway debe poder reutilizarse despues en `Planner` como filtro previo para evitar analisis prematuros de CDI cuando el caso todavia no ha superado la fase de aplicabilidad.
+
+## Separacion entre aplicabilidad e interpretacion
+
+La implementacion debe distinguir dos niveles doctrinales:
+
+- aplicabilidad: decidir si el CDI es relevante y puede entrar en juego en el caso concreto;
+- interpretacion: decidir como deben leerse sus disposiciones una vez confirmada la relevancia del convenio.
+
+La parte de aplicabilidad debe apoyarse en:
+
+- elemento internacional;
+- existencia y vigencia del CDI;
+- ambito subjetivo;
+- ambito objetivo.
+
+La parte de interpretacion debe apoyarse en:
+
+- texto del convenio concreto aplicable;
+- marco metodologico del Modelo OCDE;
+- Comentarios al Modelo OCDE cuando tengan valor interpretativo reconocido;
+- jurisprudencia o doctrina administrativa operativa cuando realmente aclaren el caso.
+
+Esta separacion debe quedar visible en el `TechnicalDevelopmentBlock`, en el `ProcedureBlock` y en las vistas derivadas.
+
 ## Fuera de alcance
 
 Este objeto no debe desarrollar todavia:
@@ -87,6 +126,23 @@ La biblioteca doctrinal queda ordenada asi:
 - `Residencia Fiscal en Espana` responde donde es residente el contribuyente.
 - `Convenios para Evitar la Doble Imposicion (CDI)` responde como se resuelve el conflicto internacional y bajo que principios se distribuye la potestad tributaria.
 - Los objetos tributarios concretos (`Modelo 210`, `Modelo 151`, `IRNR`, etc.) responden como tributa una renta, patrimonio u obligacion concreta.
+
+## Matriz de dependencias doctrinales
+
+El objeto debe declarar expresamente que actua como dependencia doctrinal para otros objetos y que estos no deben volver a explicar la teoria general de los CDI.
+
+Categoria funcional propuesta:
+
+`Provides Treaty Framework To:`
+
+Dependencias minimas:
+
+- `Residencia Fiscal en Espana`
+- `Modelo 210`
+- `Modelo 151`
+- `IRPF`
+- `IRNR`
+- `Fiscalidad Internacional`
 
 ## Estructura obligatoria del objeto
 
@@ -191,6 +247,11 @@ Debe desarrollar de forma operativa:
 - intercambio de informacion en vision general;
 - procedimiento amistoso (`MAP`).
 
+Y debe separar expresamente:
+
+- bloque de aplicabilidad del CDI;
+- bloque de interpretacion del CDI.
+
 El bloque debe remarcar que:
 
 - primero se identifica el impuesto y la norma interna de partida;
@@ -211,6 +272,8 @@ Flujo operativo cerrado:
 8. Documentar el analisis y sus evidencias.
 9. Trasladar la conclusion al impuesto o modelo correspondiente.
 10. Archivar el soporte probatorio.
+
+Los cuatro primeros pasos deben funcionar, ademas, como el `Decision Gateway` operativo del objeto.
 
 ### ChecklistBlock
 
@@ -305,6 +368,10 @@ Las relaciones deben dejar visible que este objeto actua como infraestructura do
 - `Fiscalidad internacional`
 - `Establecimiento permanente`
 - `Rentas internacionales`
+
+Al menos una parte de esas relaciones debe explicitar la categoria:
+
+`Provides Treaty Framework To:`
 
 ## Fuentes autorizadas
 
