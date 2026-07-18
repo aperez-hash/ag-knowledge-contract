@@ -279,21 +279,21 @@ export function validateStorySemanticRules(knowledgeObject) {
   }
 
   const requiredRelationTargets = [
-    "residencia",
-    "convenios",
-    "modelo210",
-    "modelo151",
-    "teletrabajo",
-    "irpf",
+    ["residencia"],
+    ["convenios", "cdi"],
+    ["modelo210"],
+    ["modelo151"],
+    ["teletrabajo"],
+    ["irpf"],
   ];
 
-  for (const targetFragment of requiredRelationTargets) {
+  for (const targetFragments of requiredRelationTargets) {
     if (
       !knowledgeObject.relations.some((relation) =>
-        relation.targetKnowledgeObjectId.includes(targetFragment),
+        targetFragments.some((fragment) => relation.targetKnowledgeObjectId.includes(fragment)),
       )
     ) {
-      errors.push(`Debe existir una relacion expresa que apunte a '${targetFragment}'.`);
+      errors.push(`Debe existir una relacion expresa que apunte a '${targetFragments.join("' o '")}'.`);
     }
   }
 
