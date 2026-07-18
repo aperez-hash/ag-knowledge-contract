@@ -200,6 +200,12 @@ Debe exponer, sin copiar normas:
 
 Sera el nucleo doctrinal y operativo del objeto. Debe cubrir:
 
+- jerarquia de criterios y su orden de uso:
+  - criterio principal: permanencia superior a 183 dias;
+  - criterio alternativo: centro de intereses economicos;
+  - presuncion familiar;
+  - aplicacion posterior del `tie-breaker` solo cuando exista doble
+    residencia real;
 - permanencia superior a 183 dias;
 - computo practico de dias;
 - ausencias esporadicas;
@@ -291,6 +297,22 @@ Y cubrir, como minimo:
 - pruebas de residencia efectiva;
 - documentacion economica para centro de intereses.
 
+Ademas, el bloque debe incorporar una matriz practica de evidencias con estas
+columnas:
+
+- evidencia;
+- fuerza probatoria;
+- uso habitual.
+
+La matriz minima esperada es:
+
+- certificado de residencia fiscal -> fuerza muy alta -> doble residencia;
+- registro de entradas y salidas -> fuerza alta -> computo de dias;
+- contratos de trabajo -> fuerza media -> centro de intereses;
+- contratos de arrendamiento -> fuerza media -> residencia efectiva;
+- consumos, escolarizacion y otras pruebas de vida efectiva -> fuerza
+  complementaria -> refuerzo probatorio.
+
 ### CaseStudyBlock
 
 Debe incorporar al menos cinco casos:
@@ -328,6 +350,14 @@ El objeto debe relacionarse, al menos, con:
 
 La regla es clara: el resto de objetos deben enlazar esta doctrina, no volver a
 explicarla desde cero.
+
+Ademas, las relaciones deben dejar explicita la categoria funcional:
+
+`Provides Residency Decision To`
+
+con esos mismos destinos, para reforzar que este objeto actua como pieza de
+infraestructura doctrinal transversal y no solo como una entrada tematica mas
+de la biblioteca.
 
 ## Reglas semanticas de la historia
 
