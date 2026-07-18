@@ -279,23 +279,23 @@ export function validateStorySemanticRules(knowledgeObject) {
   }
 
   const requiredRelationTargets = [
-    "modelo210",
-    "modelo714",
-    "modelo720",
-    "modelo721",
-    "modelo151",
-    "irpf",
-    "irnr",
-    "convenios",
+    ["modelo210"],
+    ["modelo714"],
+    ["modelo720"],
+    ["modelo721"],
+    ["modelo151"],
+    ["irpf"],
+    ["irnr"],
+    ["convenios", "cdi"],
   ];
 
-  for (const targetFragment of requiredRelationTargets) {
+  for (const targetFragments of requiredRelationTargets) {
     if (
       !knowledgeObject.relations.some((relation) =>
-        relation.targetKnowledgeObjectId.includes(targetFragment),
+        targetFragments.some((fragment) => relation.targetKnowledgeObjectId.includes(fragment)),
       )
     ) {
-      errors.push(`Debe existir una relacion expresa que apunte a '${targetFragment}'.`);
+      errors.push(`Debe existir una relacion expresa que apunte a '${targetFragments.join("' o '")}'.`);
     }
   }
 

@@ -554,7 +554,7 @@
     {
       "relationId": "relirnr-002",
       "type": "depends_on",
-      "targetKnowledgeObjectId": "ko_es_convenios_doble_imposicion_personas_fisicas_001",
+      "targetKnowledgeObjectId": "ko_es_cdi_marco_general_001",
       "rationale": "Consumes Doctrine From: los CDI limitan o redistribuyen la potestad tributaria sobre rendimientos del trabajo cuando existe elemento internacional.",
       "order": 20
     },
@@ -582,7 +582,7 @@
     {
       "relationId": "relirnr-006",
       "type": "expands",
-      "targetKnowledgeObjectId": "ko_es_modelo151_regimen_trabajadores_desplazados_001",
+      "targetKnowledgeObjectId": "ko_es_irpf_modelo151_regimen_desplazados_001",
       "rationale": "Provides Doctrine To: el objeto de Modelo 151 puede consumir esta doctrina para distinguir expedientes de no residentes frente a regimen especial.",
       "order": 60
     },

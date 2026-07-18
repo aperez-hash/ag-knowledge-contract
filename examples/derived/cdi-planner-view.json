@@ -604,15 +604,15 @@
     {
       "relationId": "rel-cdi-modelo210",
       "type": "supported_by",
-      "targetKnowledgeObjectId": "ko_es_modelo210_irnr_001",
+      "targetKnowledgeObjectId": "ko_es_irnr_modelo210_imputacion_rentas_001",
       "rationale": "Provides Treaty Framework To: el Modelo 210 necesita este marco para leer limitaciones y distribucion de potestades en expedientes internacionales.",
       "order": 20
     },
     {
       "relationId": "rel-cdi-modelo151",
       "type": "supported_by",
-      "targetKnowledgeObjectId": "future-modelo151",
-      "rationale": "Provides Treaty Framework To: un futuro objeto de Modelo 151 necesitara este marco para coordinar residencia y convenio.",
+      "targetKnowledgeObjectId": "ko_es_irpf_modelo151_regimen_desplazados_001",
+      "rationale": "Provides Treaty Framework To: el objeto de Modelo 151 consume este marco para coordinar residencia y convenio cuando el expediente tiene dimension internacional.",
       "order": 30
     },
     {

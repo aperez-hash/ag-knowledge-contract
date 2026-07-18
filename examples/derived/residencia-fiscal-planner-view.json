@@ -605,8 +605,8 @@
     {
       "relationId": "relres-005",
       "type": "references",
-      "targetKnowledgeObjectId": "ko_es_modelo151_regimen_trabajadores_desplazados_001",
-      "rationale": "Provides Residency Decision To: un futuro objeto sobre Modelo 151 debe partir de esta base para decidir adquisicion o perdida de residencia fiscal.",
+      "targetKnowledgeObjectId": "ko_es_irpf_modelo151_regimen_desplazados_001",
+      "rationale": "Provides Residency Decision To: el objeto de Modelo 151 parte de esta base para decidir adquisicion o perdida de residencia fiscal.",
       "order": 50
     },
     {
@@ -626,8 +626,8 @@
     {
       "relationId": "relres-008",
       "type": "supported_by",
-      "targetKnowledgeObjectId": "ko_es_convenios_doble_imposicion_personas_fisicas_001",
-      "rationale": "Provides Residency Decision To: un futuro objeto transversal de convenios debera consumir y ampliar esta base solo cuando exista doble residencia real.",
+      "targetKnowledgeObjectId": "ko_es_cdi_marco_general_001",
+      "rationale": "Provides Residency Decision To: el objeto transversal de CDI consume y amplia esta base solo cuando existe una doble residencia real o potencial.",
       "order": 80
     }
   ]
