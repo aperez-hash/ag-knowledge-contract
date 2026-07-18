@@ -1,0 +1,54 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irpf_modelo151_regimen_desplazados_001",
+    "stableKey": "modelo-151-regimen-trabajadores-desplazados",
+    "version": "1.0.0"
+  },
+  "responseType": "derived_draft",
+  "humanReviewRequired": true,
+  "summary": "Evita errores al decidir el acceso al regimen especial, al controlar su mantenimiento, al integrar correctamente la capa de familiares y al separar la opcion inicial del control anual del Modelo 151.",
+  "nextSteps": [
+    "Contrato de trabajo, carta de desplazamiento o soporte equivalente del motivo habilitante",
+    "Certificado de residencia fiscal anterior y soporte del periodo previo de no residencia",
+    "Documentacion societaria o profesional que acredite la categoria aplicable y ausencia de establecimiento permanente",
+    "Documentacion de familiares: parentesco, edad o discapacidad, residencia y momento de incorporacion"
+  ],
+  "faqHighlights": [
+    {
+      "faqId": "faq151-001",
+      "question": "Cuando puedo optar al regimen especial?",
+      "answer": "Solo cuando adquieres residencia fiscal en Espana como consecuencia del desplazamiento y cumples los requisitos legales y reglamentarios, ejercitando la opcion en plazo a traves del Modelo 149."
+    },
+    {
+      "faqId": "faq151-002",
+      "question": "Que diferencia hay entre Modelo 149 y Modelo 151?",
+      "answer": "El Modelo 149 sirve para ejercitar la opcion y comunicar renuncia, exclusion o fin del desplazamiento; el Modelo 151 es la declaracion anual del impuesto mientras el regimen esta vigente."
+    },
+    {
+      "faqId": "faq151-003",
+      "question": "Pueden acogerse mis familiares?",
+      "answer": "Si, en determinados supuestos y siempre que cumplan requisitos especificos de desplazamiento, residencia fiscal, no residencia previa, ausencia de establecimiento permanente y limites cuantitativos frente al contribuyente principal."
+    }
+  ],
+  "documentationHighlights": [
+    {
+      "documentId": "doc151-001",
+      "label": "Contrato de trabajo, carta de desplazamiento o soporte equivalente del motivo habilitante",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: justificar acceso del contribuyente principal y la causa del desplazamiento."
+    },
+    {
+      "documentId": "doc151-002",
+      "label": "Certificado de residencia fiscal anterior y soporte del periodo previo de no residencia",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: acreditar presupuesto temporal de acceso y enlazar con el analisis de Residencia Fiscal."
+    },
+    {
+      "documentId": "doc151-003",
+      "label": "Documentacion societaria o profesional que acredite la categoria aplicable y ausencia de establecimiento permanente",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: validar administradores, emprendedores, profesionales cualificados o investigadores y revisar limites del articulo 93."
+    }
+  ],
+  "caution": "Borrador derivado para apoyo interno. No debe enviarse sin revision humana y sin contrastar la documentacion concreta del cliente."
+}

@@ -1,0 +1,710 @@
+{
+  "identity": {
+    "knowledgeObjectId": "ko_es_irpf_modelo151_regimen_desplazados_001",
+    "stableKey": "modelo-151-regimen-trabajadores-desplazados",
+    "title": "Modelo 151 - Regimen especial aplicable a los trabajadores, profesionales, emprendedores e inversores desplazados a territorio espanol",
+    "slug": "modelo-151-regimen-trabajadores-desplazados",
+    "language": "es",
+    "jurisdiction": "ES"
+  },
+  "governance": {
+    "status": "validado",
+    "version": "1.0.0",
+    "owner": "equipo-fiscal-movilidad-internacional",
+    "approvedBy": "direccion-tecnica-fiscal",
+    "reviewedAt": "2026-07-18T23:59:00Z",
+    "changeReason": "Knowledge Object canonico del regimen especial de trabajadores desplazados, con foco en acceso, permanencia, familiares y gestion anual del Modelo 151"
+  },
+  "classification": {
+    "domain": "fiscal",
+    "topic": "regimenes-especiales",
+    "subtopic": "modelo-151-regimen-trabajadores-desplazados",
+    "audience": "advisor",
+    "sensitivity": "high",
+    "keywords": [
+      "modelo 151",
+      "modelo 149",
+      "articulo 93 lirpf",
+      "trabajadores desplazados",
+      "impatriados",
+      "familiares",
+      "regimen especial",
+      "movilidad internacional"
+    ]
+  },
+  "channelPolicy": {
+    "web": {
+      "access": "derived_only",
+      "notes": "La web solo debe publicar salidas derivadas y prudentes."
+    },
+    "planner": {
+      "access": "allowed",
+      "notes": "Planner puede consumir la vista operativa interna del objeto."
+    },
+    "ia": {
+      "access": "allowed",
+      "notes": "La IA interna puede usar el criterio con trazabilidad y restricciones."
+    },
+    "faq": {
+      "access": "derived_only",
+      "notes": "Las FAQ deben derivarse de forma controlada."
+    },
+    "checklist": {
+      "access": "derived_only",
+      "notes": "La checklist puede exponerse como derivacion operativa."
+    },
+    "internal_guide": {
+      "access": "allowed",
+      "notes": "La guia interna puede reutilizar el contenido completo validado."
+    },
+    "client_response": {
+      "access": "derived_only",
+      "notes": "Nunca debe enviarse al cliente el texto bruto del objeto."
+    },
+    "tax_library": {
+      "access": "derived_only",
+      "notes": "La biblioteca fiscal debe consumir salidas derivadas, no el objeto bruto."
+    }
+  },
+  "executiveSummary": {
+    "summary": "Este Knowledge Object fija el criterio operativo del despacho para decidir si una persona puede acogerse al regimen especial aplicable a trabajadores, profesionales, emprendedores e inversores desplazados a territorio espanol y como debe gestionarse correctamente durante su vigencia. El nucleo del analisis no es el formulario, sino el regimen: primero debe verificarse el desplazamiento, la adquisicion de residencia fiscal en Espana y el cumplimiento de los requisitos de acceso; despues debe controlarse su permanencia, las causas de exclusion inicial o sobrevenida y la eventual extension a familiares. El objeto deja claro que el Modelo 149 actua como puerta de opcion, renuncia, exclusion y fin del desplazamiento, mientras que el Modelo 151 es la pieza anual de gestion del regimen y no su centro doctrinal. Tambien explicita que la determinacion de la residencia fiscal se delega en el objeto transversal correspondiente y que los conflictos internacionales generales se apoyan en el marco de CDI cuando proceda. Su utilidad practica es homogeneizar expedientes de movilidad internacional, ordenar la documentacion, fijar la cronologia operativa del regimen y permitir derivaciones consistentes para Planner, Web, IA, checklist, FAQ y respuesta al cliente sin duplicar doctrina.",
+    "problemSolved": "Evita errores al decidir el acceso al regimen especial, al controlar su mantenimiento, al integrar correctamente la capa de familiares y al separar la opcion inicial del control anual del Modelo 151.",
+    "scope": "Personas fisicas que adquieren residencia fiscal en Espana por desplazamiento y, cuando proceda, miembros elegibles de su nucleo familiar, exclusivamente para analizar el regimen especial del articulo 93 de la LIRPF.",
+    "practicalImpact": "Permite abrir, revisar y cerrar expedientes del regimen especial con un criterio unico y reutilizable antes de descender a liquidaciones concretas o a casuistica retributiva especializada."
+  },
+  "affectedTaxModels": [
+    {
+      "modelCode": "149",
+      "modelName": "Modelo 149 - Comunicacion de la opcion, renuncia, exclusion y fin del desplazamiento",
+      "relationType": "informative",
+      "notes": "Puerta formal de acceso, renuncia, exclusion y finalizacion del regimen."
+    },
+    {
+      "modelCode": "151",
+      "modelName": "Modelo 151 - Declaracion anual del regimen especial aplicable a los trabajadores desplazados a territorio espanol",
+      "relationType": "primary",
+      "notes": "Modelo anual central de gestion del regimen una vez ejercitada la opcion."
+    },
+    {
+      "modelCode": "210",
+      "modelName": "Modelo 210 - IRNR",
+      "relationType": "secondary",
+      "notes": "El regimen toma como referencia reglas especiales del IRNR, por lo que el objeto debe coordinarse con expedientes materiales de no residentes cuando proceda."
+    }
+  ],
+  "affectedForms": [
+    {
+      "formCode": "149",
+      "formName": "Modelo 149",
+      "relationType": "required",
+      "notes": "Formulario obligatorio para ejercitar la opcion y para determinadas comunicaciones posteriores."
+    },
+    {
+      "formCode": "151",
+      "formName": "Modelo 151",
+      "relationType": "required",
+      "notes": "Formulario anual de declaracion del impuesto para contribuyentes acogidos al regimen."
+    }
+  ],
+  "blocks": [
+    {
+      "blockId": "kb151-legal-001",
+      "type": "legal_basis",
+      "title": "Base legal del regimen especial",
+      "order": 10,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "blocked" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "allowed" }
+      },
+      "lastReviewedAt": "2026-07-18T23:59:00Z",
+      "content": {
+        "basis": "El regimen especial se apoya en el articulo 93 de la Ley del IRPF y en su desarrollo reglamentario, hoy ampliado por la reforma introducida por la Ley 28/2022 para incorporar nuevos colectivos y extender la aplicacion a determinados familiares. Su estructura es singular: el contribuyente mantiene la condicion de contribuyente por IRPF, pero tributa por IRNR con reglas especiales durante el periodo del cambio de residencia y los cinco periodos impositivos siguientes. El fundamento practico del objeto exige leer conjuntamente ley, reglamento, Orden HFP/1338/2023 y criterio oficial de la AEAT sobre `Modelo 149`, `Modelo 151`, familiares y control de vigencia. La residencia fiscal no se presume desde este objeto, sino que se recibe como analisis delegado desde el objeto transversal correspondiente. Cuando existan conflictos internacionales, el marco general de `CDI` opera despues, sin sustituir el juicio interno de acceso al regimen."
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "src151-lirpf-93",
+          "type": "law",
+          "label": "Ley 35/2006, articulo 93",
+          "citation": "BOE-A-2006-20764, texto consolidado",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+          "notes": "Base legal principal del regimen especial."
+        },
+        {
+          "referenceId": "src151-ley282022",
+          "type": "law",
+          "label": "Ley 28/2022",
+          "citation": "BOE-A-2022-21739",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-21739",
+          "notes": "Reforma el articulo 93 y amplía el ambito subjetivo y familiar del regimen."
+        },
+        {
+          "referenceId": "src151-rirpf-113-120",
+          "type": "regulation",
+          "label": "Reglamento del IRPF, articulos 113 a 120",
+          "citation": "Real Decreto 439/2007, texto consolidado",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820",
+          "notes": "Desarrollo reglamentario operativo del regimen especial."
+        },
+        {
+          "referenceId": "src151-orden-hfp1338-2023",
+          "type": "regulation",
+          "label": "Orden HFP/1338/2023",
+          "citation": "BOE-A-2023-25416",
+          "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-25416",
+          "notes": "Aprueba los modelos 149 y 151 vigentes."
+        }
+      ]
+    },
+    {
+      "blockId": "kb151-tech-001",
+      "type": "technical_development",
+      "title": "Desarrollo tecnico del criterio operativo",
+      "order": 20,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "derived_only" },
+        "checklist": { "access": "derived_only" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "allowed" }
+      },
+      "lastReviewedAt": "2026-07-18T23:59:00Z",
+      "summary": "El regimen no debe tratarse como una foto fija. Primero se resuelve el acceso juridico al sistema; despues se controla su permanencia, su extension a familiares y su eventual perdida.",
+      "content": {
+        "development": "El analisis debe separarse expresamente entre acceso y permanencia. En acceso, la primera pregunta es si existe desplazamiento a Espana y si, como consecuencia de ese desplazamiento, se adquiere residencia fiscal en Espana; esa determinacion se recibe por Delegated Analysis desde el objeto de Residencia Fiscal. A partir de ahi se revisa si el contribuyente principal no ha sido residente en Espana en el periodo previo exigido, si el desplazamiento se produce por una de las circunstancias admitidas por el articulo 93 y si no obtiene rentas que se calificarian como obtenidas mediante establecimiento permanente situado en territorio espanol. El regimen cubre trabajadores por cuenta ajena, administradores en los terminos legales, emprendedores, profesionales altamente cualificados, investigadores y determinados supuestos de trabajo a distancia, sin extenderse automaticamente a cualquier movilidad internacional. En permanencia, debe controlarse cada ano si subsisten los presupuestos del regimen, si se ha producido una exclusion inicial no detectada o una exclusion sobrevenida, si existe renuncia valida o si ha finalizado el desplazamiento a los efectos reglamentarios. La capa de familiares forma parte del nucleo del objeto: no es un anexo, sino un dominio decisional propio. Tras la reforma, pueden analizarse con autonomia el conyuge, hijos menores de veinticinco anos o con discapacidad y, en su caso, el progenitor, siempre que se cumplan los requisitos especificos, se adquiera residencia fiscal y la suma de bases liquidables quede por debajo de la del contribuyente principal. El momento de incorporacion del familiar importa: puede producirse con anterioridad, simultaneamente o despues del principal, pero siempre dentro del marco temporal legal del regimen. Decision Gateway: existe desplazamiento a Espana; se adquiere residencia fiscal; el contribuyente principal puede optar al regimen; existe causa de exclusion; existen familiares potencialmente elegibles; cumplen sus requisitos especificos; determinacion del regimen aplicable a cada miembro; opcion inicial y gestion anual. Cronologia operativa: desplazamiento; adquisicion de residencia; plazo para ejercer la opcion; aplicacion del regimen; control anual; finalizacion o perdida. El objeto no reimplementa la teoria general de la residencia ni la de los convenios. Delegated Analysis: Residencia Fiscal -> determinacion de la residencia. CDI -> resolucion de conflictos internacionales cuando proceda. El Modelo 149 queda asi como acto de entrada, renuncia, exclusion o fin del desplazamiento; el Modelo 151 como consecuencia anual de gestion y cierre del regimen."
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "src151-aeat-regimen-especial",
+          "type": "guidance",
+          "label": "AEAT - Regimen especial aplicable a los trabajadores desplazados",
+          "citation": "Pagina general del regimen especial",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/irpf/tengo-que-presentar-declaracion/regimen-fiscal-aplicable-trabajadores-desplazados/regimen-especial.html",
+          "notes": "Marco oficial resumido del acceso, duracion y modelos 149/151."
+        },
+        {
+          "referenceId": "src151-aeat-familiares",
+          "type": "guidance",
+          "label": "AEAT - Extension del regimen especial a familiares",
+          "citation": "Manual practico IRPF 2024/2025",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2024/c02-irpf-cuestiones-generales/sujecion-irpf-aspectos-personales/regimen-fiscal-especial-aplicable-trabajadores-desplazados/extension-regimen-especial-familiares.html",
+          "notes": "Base operativa para la dimension familiar del regimen."
+        },
+        {
+          "referenceId": "src151-aeat-ambito-familiares",
+          "type": "guidance",
+          "label": "AEAT - Ambito de aplicacion para familiares",
+          "citation": "Manual practico IRPF 2024/2025",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2024/c02-irpf-cuestiones-generales/sujecion-irpf-aspectos-personales/regimen-fiscal-especial-aplicable-trabajadores-desplazados/extension-regimen-especial-familiares/ambito-aplicacion-familiares.html",
+          "notes": "Detalla requisitos especificos de familiares y orden temporal de incorporacion."
+        }
+      ]
+    },
+    {
+      "blockId": "kb151-proc-001",
+      "type": "procedure",
+      "title": "Procedimiento operativo completo",
+      "order": 30,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "derived_only" },
+        "checklist": { "access": "derived_only" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "derived_only" }
+      },
+      "lastReviewedAt": "2026-07-18T23:59:00Z",
+      "content": {
+        "steps": [
+          {
+            "text": "Verificar el desplazamiento a Espana y la fecha relevante de inicio del expediente.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Confirmar la adquisicion de residencia fiscal en Espana mediante el analisis delegado de Residencia Fiscal.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Revisar los requisitos de acceso del contribuyente principal: no residencia previa, causa valida del desplazamiento y ausencia de rentas obtenidas mediante establecimiento permanente en Espana.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Revisar si existe exclusion inicial o cualquier limite que impida el acceso al regimen.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Identificar familiares potencialmente elegibles y verificar sus requisitos de acceso individuales y la relacion con el contribuyente principal.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Confirmar el plazo para ejercer la opcion y preparar el Modelo 149 cuando proceda, incluyendo los datos censales y documentales necesarios.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Documentar la admision del regimen y la fecha efectiva de inicio para cada contribuyente afectado.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Controlar la permanencia anual del regimen: continuidad de requisitos, cambios de situacion profesional, renuncias o exclusiones sobrevenidas.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Preparar la gestion anual del periodo especial y la declaracion por Modelo 151 cuando corresponda.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Registrar finalizacion del desplazamiento, perdida del regimen o cierre de su periodo maximo de aplicacion.",
+            "format": "plain_text"
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "src151-aeat-modelo149-instrucciones",
+          "type": "guidance",
+          "label": "AEAT - Instrucciones del Modelo 149",
+          "citation": "Instrucciones oficiales de cumplimentacion",
+          "url": "https://www3.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-personas-fisicas/modelo-149-irpf-comunicacion-opcion-exclusion_/instrucciones-cumplimentar-comunicacion.html",
+          "notes": "Base procedimental para opcion, renuncia, exclusion y fin del desplazamiento."
+        },
+        {
+          "referenceId": "src151-aeat-modelo151",
+          "type": "guidance",
+          "label": "AEAT - Procedimiento Modelo 151",
+          "citation": "Ficha general del procedimiento",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/procedimientos/G615.shtml",
+          "notes": "Base operativa del tramo anual de declaracion del regimen."
+        }
+      ]
+    },
+    {
+      "blockId": "kb151-check-001",
+      "type": "checklist",
+      "title": "Checklist operativa del regimen especial",
+      "order": 40,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "derived_only" },
+        "faq": { "access": "blocked" },
+        "checklist": { "access": "allowed" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "blocked" }
+      },
+      "lastReviewedAt": "2026-07-18T23:59:00Z",
+      "content": {
+        "items": [
+          {
+            "itemId": "chk151-001",
+            "label": "Confirmar desplazamiento y fecha clave de entrada",
+            "notes": "Obligatorio. Sin fecha clara de desplazamiento no puede ordenarse el expediente."
+          },
+          {
+            "itemId": "chk151-002",
+            "label": "Validar residencia fiscal en Espana",
+            "notes": "Obligatorio. Debe venir soportado por el objeto transversal de Residencia Fiscal."
+          },
+          {
+            "itemId": "chk151-003",
+            "label": "Revisar no residencia previa y causa valida del desplazamiento",
+            "notes": "Obligatorio. Punto de acceso juridico al regimen."
+          },
+          {
+            "itemId": "chk151-004",
+            "label": "Comprobar exclusion inicial o riesgo de establecimiento permanente",
+            "notes": "Obligatorio. El acceso puede bloquearse aunque exista desplazamiento."
+          },
+          {
+            "itemId": "chk151-005",
+            "label": "Analizar familiares elegibles y su ventana temporal de incorporacion",
+            "notes": "Obligatorio cuando exista nucleo familiar potencialmente afectado."
+          },
+          {
+            "itemId": "chk151-006",
+            "label": "Verificar plazo y preparacion del Modelo 149",
+            "notes": "Obligatorio. El regimen no nace por mera intencion del contribuyente."
+          },
+          {
+            "itemId": "chk151-007",
+            "label": "Registrar cronologia operativa del regimen",
+            "notes": "Recomendable. Sirve para Planner, recordatorios y trazabilidad."
+          },
+          {
+            "itemId": "chk151-008",
+            "label": "Controlar permanencia y cambios anuales",
+            "notes": "Obligatorio. El acceso no garantiza la continuidad."
+          },
+          {
+            "itemId": "chk151-009",
+            "label": "Preparar documentacion soporte para la declaracion anual",
+            "notes": "Recomendable. Reduce errores en el Modelo 151."
+          },
+          {
+            "itemId": "chk151-010",
+            "label": "Cerrar expediente por renuncia, exclusion, fin del desplazamiento o agotamiento del plazo",
+            "notes": "Obligatorio al final del ciclo del regimen."
+          }
+        ]
+      }
+    },
+    {
+      "blockId": "kb151-faq-001",
+      "type": "faq",
+      "title": "FAQ operativa sobre el regimen especial",
+      "order": 50,
+      "status": "validado",
+      "visibility": "public",
+      "channelPolicy": {
+        "web": { "access": "derived_only" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "allowed" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "derived_only" },
+        "tax_library": { "access": "derived_only" }
+      },
+      "lastReviewedAt": "2026-07-18T23:59:00Z",
+      "content": {
+        "items": [
+          {
+            "faqId": "faq151-001",
+            "question": "Cuando puedo optar al regimen especial?",
+            "answer": "Solo cuando adquieres residencia fiscal en Espana como consecuencia del desplazamiento y cumples los requisitos legales y reglamentarios, ejercitando la opcion en plazo a traves del Modelo 149."
+          },
+          {
+            "faqId": "faq151-002",
+            "question": "Que diferencia hay entre Modelo 149 y Modelo 151?",
+            "answer": "El Modelo 149 sirve para ejercitar la opcion y comunicar renuncia, exclusion o fin del desplazamiento; el Modelo 151 es la declaracion anual del impuesto mientras el regimen esta vigente."
+          },
+          {
+            "faqId": "faq151-003",
+            "question": "Pueden acogerse mis familiares?",
+            "answer": "Si, en determinados supuestos y siempre que cumplan requisitos especificos de desplazamiento, residencia fiscal, no residencia previa, ausencia de establecimiento permanente y limites cuantitativos frente al contribuyente principal."
+          },
+          {
+            "faqId": "faq151-004",
+            "question": "Pierdo el regimen si cambio de situacion profesional?",
+            "answer": "Depende del cambio concreto. El regimen exige controlar tanto los requisitos de acceso como los de permanencia, por lo que un cambio de empleador, de actividad o de estructura puede requerir revisar continuidad, exclusion o renuncia."
+          },
+          {
+            "faqId": "faq151-005",
+            "question": "Que ocurre si dejo de cumplir los requisitos durante la vigencia?",
+            "answer": "Debe analizarse si existe causa de exclusion sobrevenida, si procede comunicar el fin del desplazamiento o si se agota el periodo maximo de aplicacion, dejando trazabilidad documental suficiente."
+          }
+        ]
+      }
+    },
+    {
+      "blockId": "kb151-risk-001",
+      "type": "risk",
+      "title": "Riesgos operativos del regimen especial",
+      "order": 60,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "blocked" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "blocked" }
+      },
+      "lastReviewedAt": "2026-07-18T23:59:00Z",
+      "summary": "Los errores mas costosos del regimen vienen de confundir acceso con permanencia, ignorar la logica propia de familiares o gestionar tarde la exclusion y el control anual.",
+      "content": {
+        "items": [
+          {
+            "riskId": "risk151-001",
+            "description": "Ejercitar la opcion fuera de plazo o sin soporte censal suficiente",
+            "severity": "high",
+            "likelihood": "high",
+            "mitigation": "Controlar desde el inicio la cronologia del desplazamiento, la residencia fiscal y la ventana de presentacion del Modelo 149."
+          },
+          {
+            "riskId": "risk151-002",
+            "description": "Dar por cumplido el acceso sin revisar exclusion inicial o riesgo de establecimiento permanente",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Separar de forma expresa acceso, exclusion inicial y riesgos materiales incompatibles con el regimen."
+          },
+          {
+            "riskId": "risk151-003",
+            "description": "Tratar a los familiares como apendice automatico del contribuyente principal",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Analizar a cada familiar con sus propios requisitos, cronologia y limites cuantitativos."
+          },
+          {
+            "riskId": "risk151-004",
+            "description": "No detectar una exclusion sobrevenida o un cambio de situacion incompatible con la permanencia",
+            "severity": "high",
+            "likelihood": "high",
+            "mitigation": "Introducir control anual expreso y trazabilidad de cambios profesionales, familiares y documentales."
+          },
+          {
+            "riskId": "risk151-005",
+            "description": "Confundir el regimen con una simple declaracion anual y no con un ciclo completo de acceso, control y salida",
+            "severity": "medium",
+            "likelihood": "high",
+            "mitigation": "Usar la cronologia operativa y distinguir Modelo 149 como entrada y Modelo 151 como gestion anual."
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "src151-risk-modelo149",
+          "type": "guidance",
+          "label": "AEAT - Instrucciones Modelo 149",
+          "citation": "Sede AEAT",
+          "url": "https://www3.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-personas-fisicas/modelo-149-irpf-comunicacion-opcion-exclusion_/instrucciones-cumplimentar-comunicacion.html",
+          "notes": "Base para riesgos ligados a opcion, exclusion y fin del desplazamiento."
+        },
+        {
+          "referenceId": "src151-risk-teac-2025",
+          "type": "guidance",
+          "label": "TEAC 17/07/2025",
+          "citation": "Criterio 00/03697/2025/00/00",
+          "url": "https://serviciostelematicosext.hacienda.gob.es/TEAC/DYCTEA/criterio.aspx?id=00%2F03697%2F2025%2F00%2F0%2F1",
+          "notes": "Refuerza que el regimen tiene reglas propias y no replica automaticamente el IRPF ordinario."
+        }
+      ]
+    },
+    {
+      "blockId": "kb151-docs-001",
+      "type": "required_documentation",
+      "title": "Documentacion necesaria para el regimen especial",
+      "order": 70,
+      "status": "validado",
+      "visibility": "public",
+      "channelPolicy": {
+        "web": { "access": "derived_only" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "derived_only" },
+        "checklist": { "access": "derived_only" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "derived_only" },
+        "tax_library": { "access": "derived_only" }
+      },
+      "lastReviewedAt": "2026-07-18T23:59:00Z",
+      "content": {
+        "items": [
+          {
+            "documentId": "doc151-001",
+            "label": "Contrato de trabajo, carta de desplazamiento o soporte equivalente del motivo habilitante",
+            "required": true,
+            "notes": "Fuerza probatoria: muy alta. Uso habitual: justificar acceso del contribuyente principal y la causa del desplazamiento."
+          },
+          {
+            "documentId": "doc151-002",
+            "label": "Certificado de residencia fiscal anterior y soporte del periodo previo de no residencia",
+            "required": true,
+            "notes": "Fuerza probatoria: muy alta. Uso habitual: acreditar presupuesto temporal de acceso y enlazar con el analisis de Residencia Fiscal."
+          },
+          {
+            "documentId": "doc151-003",
+            "label": "Documentacion societaria o profesional que acredite la categoria aplicable y ausencia de establecimiento permanente",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: validar administradores, emprendedores, profesionales cualificados o investigadores y revisar limites del articulo 93."
+          },
+          {
+            "documentId": "doc151-004",
+            "label": "Documentacion de familiares: parentesco, edad o discapacidad, residencia y momento de incorporacion",
+            "required": false,
+            "notes": "Fuerza probatoria: alta. Uso habitual: analizar acceso individual de familiares y su encaje temporal en el regimen."
+          },
+          {
+            "documentId": "doc151-005",
+            "label": "Evidencia de control anual del regimen y soporte de la declaracion por Modelo 151",
+            "required": false,
+            "notes": "Fuerza probatoria: media. Uso habitual: permanencia, control anual, exclusion sobrevenida y cierre del ciclo del regimen."
+          }
+        ]
+      }
+    },
+    {
+      "blockId": "kb151-case-001",
+      "type": "case_study",
+      "title": "Casos practicos del regimen especial",
+      "order": 80,
+      "status": "validado",
+      "visibility": "public",
+      "channelPolicy": {
+        "web": { "access": "derived_only" },
+        "planner": { "access": "allowed" },
+        "ia": { "access": "allowed" },
+        "faq": { "access": "derived_only" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "derived_only" },
+        "tax_library": { "access": "derived_only" }
+      },
+      "lastReviewedAt": "2026-07-18T23:59:00Z",
+      "summary": "Los casos cubren acceso del trabajador, directivo multinacional, administrador, profesional altamente cualificado y la extension del regimen a familiares.",
+      "content": {
+        "items": [
+          {
+            "caseId": "case151-001",
+            "scenario": "Trabajador desplazado contratado por empresa espanola y traslado efectivo a Espana en el ano anterior al primer ejercicio de aplicacion.",
+            "resolution": "Si se adquiere residencia fiscal, no existe residencia previa en el periodo exigido y la opcion se ejercita en plazo, el acceso al regimen puede sostenerse con Modelo 149 y control documental completo.",
+            "notes": "Aprendizaje: la opcion no sustituye el analisis previo de residencia ni la cronologia del desplazamiento."
+          },
+          {
+            "caseId": "case151-002",
+            "scenario": "Directivo trasladado desde grupo multinacional con cambio posterior de funciones dentro del grupo.",
+            "resolution": "El acceso puede ser valido inicialmente, pero la permanencia exige revisar cada cambio de situacion profesional para detectar exclusion sobrevenida o continuidad del presupuesto habilitante.",
+            "notes": "Aprendizaje: acceso y permanencia deben documentarse por separado."
+          },
+          {
+            "caseId": "case151-003",
+            "scenario": "Administrador que pretende aplicar el regimen al desplazarse a Espana para asumir funciones directivas en una entidad.",
+            "resolution": "Debe analizarse la via concreta de acceso, su encaje legal y la ausencia de causas incompatibles, sin dar por supuesto que toda posicion societaria queda automaticamente amparada.",
+            "notes": "Aprendizaje: la categoria de administrador exige analisis fino de la base habilitante."
+          },
+          {
+            "caseId": "case151-004",
+            "scenario": "Profesional altamente cualificado que pasa a prestar servicios en Espana y valora teletrabajo parcial para terceros paises.",
+            "resolution": "Puede existir acceso inicial valido, pero la estructura de actividad y el riesgo de establecimiento permanente o de cambio sustancial deben vigilarse en permanencia.",
+            "notes": "Aprendizaje: la movilidad internacional posterior puede afectar a la continuidad del regimen."
+          },
+          {
+            "caseId": "case151-005",
+            "scenario": "Desplazamiento del trabajador con incorporacion posterior del conyuge e hijos, analizando requisitos individuales, momento de incorporacion, efectos sobre la duracion y documentacion necesaria.",
+            "resolution": "Cada familiar debe superar sus propios requisitos de acceso y quedar dentro del marco temporal del regimen del contribuyente principal, con soporte individual de residencia, parentesco y limites cuantitativos.",
+            "notes": "Aprendizaje: la extension a familiares es una decision nuclear del expediente y no una consecuencia automatica."
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "src151-case-aeat-familiares",
+          "type": "guidance",
+          "label": "AEAT - Extension del regimen a familiares",
+          "citation": "Manual practico IRPF 2024/2025",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2024/c02-irpf-cuestiones-generales/sujecion-irpf-aspectos-personales/regimen-fiscal-especial-aplicable-trabajadores-desplazados/extension-regimen-especial-familiares.html",
+          "notes": "Respalda la casuistica familiar y su orden de analisis."
+        },
+        {
+          "referenceId": "src151-case-dgt-v1034-23",
+          "type": "guidance",
+          "label": "DGT V1034-23",
+          "citation": "Consulta vinculante",
+          "url": "https://petete.tributos.hacienda.gob.es/consultas/?num_consulta=V1034-23",
+          "notes": "Respalda escenarios de continuidad del regimen ante cambios de empleador o desempleo."
+        }
+      ]
+    },
+    {
+      "blockId": "kb151-int-001",
+      "type": "internal_reference",
+      "title": "Referencias internas y dependencias doctrinales",
+      "order": 90,
+      "status": "validado",
+      "visibility": "restricted",
+      "channelPolicy": {
+        "web": { "access": "blocked" },
+        "planner": { "access": "blocked" },
+        "ia": { "access": "blocked" },
+        "faq": { "access": "blocked" },
+        "checklist": { "access": "blocked" },
+        "internal_guide": { "access": "allowed" },
+        "client_response": { "access": "blocked" },
+        "tax_library": { "access": "blocked" }
+      },
+      "lastReviewedAt": "2026-07-18T23:59:00Z",
+      "content": {
+        "items": [
+          {
+            "referenceId": "intref151-001",
+            "label": "Residencia Fiscal en Espana",
+            "notes": "Dependencia doctrinal directa para la determinacion de residencia previa al acceso al regimen."
+          },
+          {
+            "referenceId": "intref151-002",
+            "label": "Convenios de Doble Imposicion",
+            "notes": "Dependencia doctrinal directa para conflictos internacionales cuando proceda."
+          },
+          {
+            "referenceId": "intref151-003",
+            "label": "Dossier primario Modelo 151",
+            "notes": "Documento real: docs/research/2026-07-18-modelo-151-primary-sources.md."
+          }
+        ]
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relationId": "rel151-001",
+      "type": "depends_on",
+      "targetKnowledgeObjectId": "ko_es_residencia_fiscal_personas_fisicas_001",
+      "rationale": "Consumes Doctrine From: Residencia Fiscal -> determinacion de la residencia.",
+      "order": 10
+    },
+    {
+      "relationId": "rel151-002",
+      "type": "depends_on",
+      "targetKnowledgeObjectId": "ko_es_cdi_marco_general_001",
+      "rationale": "Consumes Doctrine From: CDI -> resolucion de conflictos internacionales cuando proceda.",
+      "order": 20
+    },
+    {
+      "relationId": "rel151-003",
+      "type": "supported_by",
+      "targetKnowledgeObjectId": "ko_es_irnr_modelo210_imputacion_rentas_001",
+      "rationale": "Supports Related Analysis: el regimen convive con reglas materiales del IRNR y con expedientes que pueden exigir coordinacion posterior con Modelo 210.",
+      "order": 30
+    },
+    {
+      "relationId": "rel151-004",
+      "type": "references",
+      "targetKnowledgeObjectId": "ko_es_irpf_personas_fisicas_001",
+      "rationale": "Supports Related Analysis: un futuro objeto general de IRPF debera apoyarse en este regimen especial sin duplicar su doctrina propia.",
+      "order": 40
+    },
+    {
+      "relationId": "rel151-005",
+      "type": "references",
+      "targetKnowledgeObjectId": "ko_es_irnr_personas_fisicas_001",
+      "rationale": "Supports Related Analysis: un futuro objeto general de IRNR podra necesitar coordinarse con la logica especial del articulo 93.",
+      "order": 50
+    },
+    {
+      "relationId": "rel151-006",
+      "type": "references",
+      "targetKnowledgeObjectId": "ko_es_fiscalidad_internacional_personas_fisicas_001",
+      "rationale": "Supports Related Analysis: la fiscalidad internacional de personas fisicas no debe reexplicar desde cero la logica del regimen especial.",
+      "order": 60
+    }
+  ],
+  "auditMetadata": {
+    "createdAt": "2026-07-18T23:59:00Z",
+    "createdBy": "codex-knowledge-authoring",
+    "updatedAt": "2026-07-18T23:59:00Z",
+    "updatedBy": "codex-knowledge-authoring",
+    "revisionCount": 1,
+    "sourceSystem": "ag-knowledge-contract"
+  }
+}

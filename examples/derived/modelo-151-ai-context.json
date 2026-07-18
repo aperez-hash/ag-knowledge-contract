@@ -1,0 +1,78 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irpf_modelo151_regimen_desplazados_001",
+    "stableKey": "modelo-151-regimen-trabajadores-desplazados",
+    "title": "Modelo 151 - Regimen especial aplicable a los trabajadores, profesionales, emprendedores e inversores desplazados a territorio espanol",
+    "version": "1.0.0",
+    "status": "validado"
+  },
+  "criterionStatus": "vigente para uso interno validado",
+  "executiveSummary": "Este Knowledge Object fija el criterio operativo del despacho para decidir si una persona puede acogerse al regimen especial aplicable a trabajadores, profesionales, emprendedores e inversores desplazados a territorio espanol y como debe gestionarse correctamente durante su vigencia. El nucleo del analisis no es el formulario, sino el regimen: primero debe verificarse el desplazamiento, la adquisicion de residencia fiscal en Espana y el cumplimiento de los requisitos de acceso; despues debe controlarse su permanencia, las causas de exclusion inicial o sobrevenida y la eventual extension a familiares. El objeto deja claro que el Modelo 149 actua como puerta de opcion, renuncia, exclusion y fin del desplazamiento, mientras que el Modelo 151 es la pieza anual de gestion del regimen y no su centro doctrinal. Tambien explicita que la determinacion de la residencia fiscal se delega en el objeto transversal correspondiente y que los conflictos internacionales generales se apoyan en el marco de CDI cuando proceda. Su utilidad practica es homogeneizar expedientes de movilidad internacional, ordenar la documentacion, fijar la cronologia operativa del regimen y permitir derivaciones consistentes para Planner, Web, IA, checklist, FAQ y respuesta al cliente sin duplicar doctrina.",
+  "legalBasis": [
+    "El regimen especial se apoya en el articulo 93 de la Ley del IRPF y en su desarrollo reglamentario, hoy ampliado por la reforma introducida por la Ley 28/2022 para incorporar nuevos colectivos y extender la aplicacion a determinados familiares. Su estructura es singular: el contribuyente mantiene la condicion de contribuyente por IRPF, pero tributa por IRNR con reglas especiales durante el periodo del cambio de residencia y los cinco periodos impositivos siguientes. El fundamento practico del objeto exige leer conjuntamente ley, reglamento, Orden HFP/1338/2023 y criterio oficial de la AEAT sobre `Modelo 149`, `Modelo 151`, familiares y control de vigencia. La residencia fiscal no se presume desde este objeto, sino que se recibe como analisis delegado desde el objeto transversal correspondiente. Cuando existan conflictos internacionales, el marco general de `CDI` opera despues, sin sustituir el juicio interno de acceso al regimen."
+  ],
+  "technicalDevelopment": [
+    "El analisis debe separarse expresamente entre acceso y permanencia. En acceso, la primera pregunta es si existe desplazamiento a Espana y si, como consecuencia de ese desplazamiento, se adquiere residencia fiscal en Espana; esa determinacion se recibe por Delegated Analysis desde el objeto de Residencia Fiscal. A partir de ahi se revisa si el contribuyente principal no ha sido residente en Espana en el periodo previo exigido, si el desplazamiento se produce por una de las circunstancias admitidas por el articulo 93 y si no obtiene rentas que se calificarian como obtenidas mediante establecimiento permanente situado en territorio espanol. El regimen cubre trabajadores por cuenta ajena, administradores en los terminos legales, emprendedores, profesionales altamente cualificados, investigadores y determinados supuestos de trabajo a distancia, sin extenderse automaticamente a cualquier movilidad internacional. En permanencia, debe controlarse cada ano si subsisten los presupuestos del regimen, si se ha producido una exclusion inicial no detectada o una exclusion sobrevenida, si existe renuncia valida o si ha finalizado el desplazamiento a los efectos reglamentarios. La capa de familiares forma parte del nucleo del objeto: no es un anexo, sino un dominio decisional propio. Tras la reforma, pueden analizarse con autonomia el conyuge, hijos menores de veinticinco anos o con discapacidad y, en su caso, el progenitor, siempre que se cumplan los requisitos especificos, se adquiera residencia fiscal y la suma de bases liquidables quede por debajo de la del contribuyente principal. El momento de incorporacion del familiar importa: puede producirse con anterioridad, simultaneamente o despues del principal, pero siempre dentro del marco temporal legal del regimen. Decision Gateway: existe desplazamiento a Espana; se adquiere residencia fiscal; el contribuyente principal puede optar al regimen; existe causa de exclusion; existen familiares potencialmente elegibles; cumplen sus requisitos especificos; determinacion del regimen aplicable a cada miembro; opcion inicial y gestion anual. Cronologia operativa: desplazamiento; adquisicion de residencia; plazo para ejercer la opcion; aplicacion del regimen; control anual; finalizacion o perdida. El objeto no reimplementa la teoria general de la residencia ni la de los convenios. Delegated Analysis: Residencia Fiscal -> determinacion de la residencia. CDI -> resolucion de conflictos internacionales cuando proceda. El Modelo 149 queda asi como acto de entrada, renuncia, exclusion o fin del desplazamiento; el Modelo 151 como consecuencia anual de gestion y cierre del regimen."
+  ],
+  "procedure": [
+    "Verificar el desplazamiento a Espana y la fecha relevante de inicio del expediente.",
+    "Confirmar la adquisicion de residencia fiscal en Espana mediante el analisis delegado de Residencia Fiscal.",
+    "Revisar los requisitos de acceso del contribuyente principal: no residencia previa, causa valida del desplazamiento y ausencia de rentas obtenidas mediante establecimiento permanente en Espana.",
+    "Revisar si existe exclusion inicial o cualquier limite que impida el acceso al regimen.",
+    "Identificar familiares potencialmente elegibles y verificar sus requisitos de acceso individuales y la relacion con el contribuyente principal.",
+    "Confirmar el plazo para ejercer la opcion y preparar el Modelo 149 cuando proceda, incluyendo los datos censales y documentales necesarios.",
+    "Documentar la admision del regimen y la fecha efectiva de inicio para cada contribuyente afectado.",
+    "Controlar la permanencia anual del regimen: continuidad de requisitos, cambios de situacion profesional, renuncias o exclusiones sobrevenidas.",
+    "Preparar la gestion anual del periodo especial y la declaracion por Modelo 151 cuando corresponda.",
+    "Registrar finalizacion del desplazamiento, perdida del regimen o cierre de su periodo maximo de aplicacion."
+  ],
+  "risks": [
+    {
+      "riskId": "risk151-001",
+      "description": "Ejercitar la opcion fuera de plazo o sin soporte censal suficiente",
+      "severity": "high",
+      "likelihood": "high",
+      "mitigation": "Controlar desde el inicio la cronologia del desplazamiento, la residencia fiscal y la ventana de presentacion del Modelo 149."
+    },
+    {
+      "riskId": "risk151-002",
+      "description": "Dar por cumplido el acceso sin revisar exclusion inicial o riesgo de establecimiento permanente",
+      "severity": "high",
+      "likelihood": "medium",
+      "mitigation": "Separar de forma expresa acceso, exclusion inicial y riesgos materiales incompatibles con el regimen."
+    },
+    {
+      "riskId": "risk151-003",
+      "description": "Tratar a los familiares como apendice automatico del contribuyente principal",
+      "severity": "high",
+      "likelihood": "medium",
+      "mitigation": "Analizar a cada familiar con sus propios requisitos, cronologia y limites cuantitativos."
+    },
+    {
+      "riskId": "risk151-004",
+      "description": "No detectar una exclusion sobrevenida o un cambio de situacion incompatible con la permanencia",
+      "severity": "high",
+      "likelihood": "high",
+      "mitigation": "Introducir control anual expreso y trazabilidad de cambios profesionales, familiares y documentales."
+    },
+    {
+      "riskId": "risk151-005",
+      "description": "Confundir el regimen con una simple declaracion anual y no con un ciclo completo de acceso, control y salida",
+      "severity": "medium",
+      "likelihood": "high",
+      "mitigation": "Usar la cronologia operativa y distinguir Modelo 149 como entrada y Modelo 151 como gestion anual."
+    }
+  ],
+  "restrictions": [
+    "Canales bloqueados a nivel raiz: ninguno.",
+    "Canales solo derivables a nivel raiz: web, faq, checklist, client_response, tax_library.",
+    "No debe reutilizarse este objeto como texto directo de respuesta al cliente sin derivacion controlada y revision humana."
+  ],
+  "clientResponseAuthorization": {
+    "channelAccess": "derived_only",
+    "mayExposeCanonicalTextDirectly": false,
+    "mayProduceDerivedDraft": true,
+    "humanReviewRequired": true,
+    "instruction": "Solo se permiten borradores derivados y controlados; no debe reutilizarse texto bruto del objeto."
+  }
+}
