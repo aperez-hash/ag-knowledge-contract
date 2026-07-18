@@ -30,6 +30,7 @@ run("validate:story-kf-004a", ["scripts/validate-story-kf-004a.mjs"]);
 run("validate:story-kf-005a", ["scripts/validate-story-kf-005a.mjs"]);
 run("validate:story-kf-005b", ["scripts/validate-story-kf-005b.mjs"]);
 run("validate:story-kf-005c", ["scripts/validate-story-kf-005c.mjs"]);
+run("validate:story-kf-008a", ["scripts/validate-story-kf-008a.mjs"]);
 run("test", [
   "--test",
   "tests/knowledge-object.schema.test.mjs",
@@ -37,4 +38,5 @@ run("test", [
   "tests/modelo-720-story-kf-005a.test.mjs",
   "tests/modelo-714-story-kf-005b.test.mjs",
   "tests/modelo-721-story-kf-005c.test.mjs",
+  "tests/residencia-fiscal-story-kf-008a.test.mjs",
 ]);

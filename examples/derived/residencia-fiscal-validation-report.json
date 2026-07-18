@@ -1,0 +1,17 @@
+{
+  "story": "STORY-KF-008A",
+  "knowledgeObject": "Residencia Fiscal en Espana",
+  "research": "PASS",
+  "schemaValidation": "PASS",
+  "ruleEngine": "PASS",
+  "plannerView": "PASS",
+  "webView": "PASS",
+  "aiContext": "PASS",
+  "checklist": "PASS",
+  "faq": "PASS",
+  "clientResponse": "PASS",
+  "qualityGate": "PASS",
+  "structuralChangesRequired": "NO",
+  "generatedAt": "2026-07-18T20:51:15.617Z",
+  "incidentCount": 0
+}
