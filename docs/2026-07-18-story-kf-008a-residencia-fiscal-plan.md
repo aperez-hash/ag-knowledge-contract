@@ -530,4 +530,3 @@ If any quality-gate fixes were required:
 git add -A
 git commit -m "chore(knowledge): finalize residencia fiscal quality gate"
 ```
-
