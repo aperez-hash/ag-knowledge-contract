@@ -1,0 +1,509 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_modelo210_imputacion_rentas_001",
+    "stableKey": "irnr-modelo-210-imputacion-rentas",
+    "title": "Modelo 210 - Imputacion de rentas inmobiliarias de no residentes",
+    "version": "1.0.0",
+    "status": "validado"
+  },
+  "executiveSummary": {
+    "summary": "Este Knowledge Object fija el criterio operativo del despacho para la renta imputada de inmuebles urbanos situados en Espana cuando su titular es una persona fisica no residente y el inmueble ha estado a su disposicion, vacio o destinado a uso propio durante todo o parte del ejercicio. Sirve para resolver el tramo del Modelo 210 identificado con el tipo de renta 02 y para separar con claridad este supuesto de los rendimientos por alquiler, de las transmisiones y de otros hechos imponibles del IRNR. El objeto es especialmente util cuando hay compras o ventas dentro del ejercicio, periodos mixtos de alquiler y uso propio, copropiedad, ausencia de valor catastral notificado o dudas sobre si procede aplicar el 1,1 por ciento o el 2 por ciento sobre la base de imputacion. Su uso practico es homogeneizar el calculo, ordenar la documentacion minima, fijar el paso a paso de preparacion de la autoliquidacion y anticipar riesgos frecuentes antes de presentar el Modelo 210. Tambien deja trazado el cambio de plazos introducido por la Orden HAC/623/2026 para devengos 2026 y siguientes, de modo que el equipo no mezcle reglas antiguas y nuevas durante la campana.",
+    "problemSolved": "Evita errores recurrentes al distinguir imputacion por uso propio de alquileres, al prorratear dias y titularidad y al aplicar correctamente base, tipo y plazo del Modelo 210.",
+    "scope": "Personas fisicas no residentes titulares de inmuebles urbanos en Espana, sin establecimiento permanente, en supuestos de uso propio, vacio o disponibilidad parcial durante el ejercicio.",
+    "practicalImpact": "Permite revisar un expediente de Modelo 210 por renta imputada con un criterio unico, documentado y reutilizable por Planner, Web e IA sin duplicar doctrina."
+  },
+  "affectedTaxModels": [
+    {
+      "modelCode": "210",
+      "modelName": "Impuesto sobre la Renta de no Residentes sin establecimiento permanente",
+      "relationType": "primary",
+      "notes": "Aplicable al tipo de renta 02 por imputacion de inmuebles urbanos."
+    }
+  ],
+  "affectedForms": [
+    {
+      "formCode": "210",
+      "formName": "Modelo 210 - Autoliquidacion IRNR sin establecimiento permanente (tipo de renta 02)",
+      "relationType": "required",
+      "notes": "La autoliquidacion debe prepararse para el tipo de renta 02 y con fecha de devengo 31/12."
+    }
+  ],
+  "plannerBlocks": [
+    {
+      "blockId": "kb-legal-001",
+      "content": {
+        "basis": "Normas: Real Decreto Legislativo 5/2004 por el que se aprueba el texto refundido de la Ley del IRNR, Real Decreto 1776/2004 por el que se aprueba su Reglamento, instrucciones vigentes del Modelo 210 y la nota AEAT sobre cambios de plazo introducidos por la Orden HAC/623/2026. Articulos clave: articulo 13.1.h) de la Ley IRNR para la sujecion de las rentas imputadas de personas fisicas titulares de inmuebles urbanos en Espana; articulos 24, 25 y 26 de la Ley IRNR para base, tipo y deducciones; instrucciones del modelo 210 para tipo de renta 02, fecha de devengo y plazo; y criterio AEAT especifico sobre renta imputada de inmueble urbano para uso propio. Alcance: persona fisica no residente, sin establecimiento permanente, titular de inmueble urbano no afecto a actividad economica y no generador de rendimientos durante los dias imputados. Interpretacion operativa: este objeto no cubre alquileres, transmisiones, entidades no residentes ni inmuebles afectos a actividad economica. Cuando existe convenio de doble imposicion, el inmueble sigue pudiendo gravarse en el Estado de situacion del bien, por lo que el convenio no desplaza automaticamente la obligacion espanola."
+      },
+      "order": 10,
+      "status": "validado",
+      "title": "Base legal aplicable",
+      "type": "legal_basis",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kb-tech-001",
+      "content": {
+        "development": "Cuando existe imputacion: persona fisica no residente, inmueble urbano situado en Espana, no afecto a actividad economica, no arrendado en los dias objeto de calculo y a disposicion del titular. Cuando no existe imputacion: dias efectivamente arrendados, inmuebles en construccion, inmuebles no susceptibles de uso por razones urbanisticas, supuestos fuera del ambito personal de personas fisicas no residentes o inmuebles afectos a actividad economica. Inmuebles afectados: viviendas, apartamentos u otros inmuebles urbanos no arrendados durante todo o parte del ejercicio. Inmuebles excluidos o con tratamiento distinto: suelo no edificable sin uso imputable, inmuebles en construccion, inmuebles sin posibilidad de uso y periodos ya gravados como rendimiento por alquiler. Calculo: se toma el valor catastral y se aplica el 1,1 por ciento cuando el valor catastral revisado o modificado entra en los supuestos vigentes; en el resto, 2 por ciento. Si no hay valor catastral o no ha sido notificado, la base de imputacion pasa a ser el 50 por ciento del mayor entre valor de adquisicion y valor comprobado por la Administracion, aplicando el 1,1 por ciento. El importe anual se prorratea por dias y por porcentaje de titularidad. Sobre la base resultante se aplica el tipo general vigente: 19 por ciento para residentes UE, Islandia, Noruega y Liechtenstein desde 11-07-2021; 24 por ciento para el resto. No se deducen gastos. Interaccion con residencia fiscal: antes de calcular, debe confirmarse que el contribuyente es no residente a efectos fiscales y, si invoca convenio, conservar certificado de residencia. Interaccion con campanas 2026 y siguientes: el cambio de plazo aprobado por la Orden HAC/623/2026 obliga a distinguir entre rentas imputadas de 2025 y de 2026 en adelante."
+      },
+      "order": 20,
+      "status": "validado",
+      "title": "Desarrollo tecnico del supuesto",
+      "type": "technical_development",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kb-proc-001",
+      "content": {
+        "steps": [
+          {
+            "text": "Confirmar que el titular es una persona fisica no residente sin establecimiento permanente y que el inmueble esta situado en Espana.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Verificar la naturaleza urbana del inmueble, su porcentaje de titularidad y si ha estado vacio, a disposicion del titular, arrendado o en situacion mixta durante el ejercicio.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Delimitar unicamente los dias imputables: excluir dias arrendados y revisar si existe alguna causa de no imputacion, como construccion o imposibilidad urbanistica de uso.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Recoger el valor catastral y la referencia catastral desde el IBI o Catastro. Si no existe valor catastral notificado a 31 de diciembre, preparar la base sustitutiva del 50 por ciento del mayor entre valor de adquisicion y valor comprobado.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Determinar el porcentaje aplicable a la base de imputacion: 1,1 por ciento o 2 por ciento segun la regla vigente para el inmueble y el ejercicio; dejar trazada la justificacion en el expediente.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Prorratear la base anual por numero de dias imputables y por cuota de participacion. Aplicar despues el tipo de gravamen general que corresponda al pais de residencia del contribuyente.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Preparar el Modelo 210 con tipo de renta 02, periodo 0A, fecha de devengo 31/12 y datos de situacion del inmueble. No consignar pagador en este supuesto.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Aplicar el plazo correcto segun el ejercicio: para rentas imputadas de 2025, presentacion del 1 de enero al 31 de diciembre de 2026; para rentas imputadas de 2026 en adelante, del 1 de abril al 31 de diciembre del ano siguiente al devengo, salvo cambio normativo posterior.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Archivar en el expediente el certificado de residencia fiscal si se usa para convenio o para justificar tipo, el soporte del valor catastral y la evidencia de dias, titularidad y criterio aplicado.",
+            "format": "plain_text"
+          }
+        ]
+      },
+      "order": 30,
+      "status": "validado",
+      "title": "Procedimiento operativo paso a paso",
+      "type": "procedure",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kb-check-001",
+      "content": {
+        "items": [
+          {
+            "itemId": "chk-001",
+            "label": "Residencia fiscal no residente confirmada."
+          },
+          {
+            "itemId": "chk-002",
+            "label": "Persona fisica y no entidad."
+          },
+          {
+            "itemId": "chk-003",
+            "label": "Inmueble urbano situado en Espana identificado con referencia catastral."
+          },
+          {
+            "itemId": "chk-004",
+            "label": "Dias imputables separados de los dias arrendados."
+          },
+          {
+            "itemId": "chk-005",
+            "label": "Porcentaje de titularidad documentado."
+          },
+          {
+            "itemId": "chk-006",
+            "label": "Valor catastral o base sustitutiva revisados."
+          },
+          {
+            "itemId": "chk-007",
+            "label": "Porcentaje de imputacion 1,1% o 2% justificado."
+          },
+          {
+            "itemId": "chk-008",
+            "label": "Tipo de gravamen 19% o 24% confirmado."
+          },
+          {
+            "itemId": "chk-009",
+            "label": "Modelo 210 preparado como tipo de renta 02, periodo 0A y devengo 31/12."
+          },
+          {
+            "itemId": "chk-010",
+            "label": "Plazo de presentacion comprobado segun el ejercicio."
+          }
+        ]
+      },
+      "order": 40,
+      "status": "validado",
+      "title": "Checklist operativa para Planner",
+      "type": "checklist",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kb-faq-001",
+      "content": {
+        "items": [
+          {
+            "faqId": "faq-001",
+            "question": "Si la vivienda ha estado alquilada parte del ano, ¿se presenta igualmente por imputacion?",
+            "answer": "Si, pero solo por los dias en que el inmueble estuvo a disposicion del titular y no genero rendimiento por alquiler. Los dias arrendados no entran en la imputacion."
+          },
+          {
+            "faqId": "faq-002",
+            "question": "¿La imputacion aplica aunque el inmueble haya estado vacio todo el ano?",
+            "answer": "Si. Un inmueble urbano vacio y a disposicion del titular no residente sigue generando renta imputada salvo que concurra una causa valida de no imputacion."
+          },
+          {
+            "faqId": "faq-003",
+            "question": "¿Que ocurre si el inmueble se compro a mitad de ejercicio?",
+            "answer": "La renta imputada anual se prorratea por los dias de titularidad y, en su caso, tambien por los dias en que el inmueble no estuvo arrendado."
+          },
+          {
+            "faqId": "faq-004",
+            "question": "¿Que porcentaje se aplica sobre el valor catastral?",
+            "answer": "Con caracter general, 1,1 por ciento o 2 por ciento segun la situacion catastral del inmueble y la regla vigente para el ejercicio de que se trate."
+          },
+          {
+            "faqId": "faq-005",
+            "question": "¿Se pueden deducir gastos en la imputacion por uso propio?",
+            "answer": "No. En este tipo de renta la base se calcula sin deducir gastos."
+          }
+        ]
+      },
+      "order": 50,
+      "status": "validado",
+      "title": "Preguntas frecuentes reales",
+      "type": "faq",
+      "visibility": "public"
+    },
+    {
+      "blockId": "kb-risk-001",
+      "content": {
+        "items": [
+          {
+            "riskId": "risk-001",
+            "description": "Declarar como imputacion dias que realmente estuvieron arrendados o subarrendados.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Cruzar contrato, calendario de ocupacion y cobros antes de calcular la base."
+          },
+          {
+            "riskId": "risk-002",
+            "description": "Aplicar el 1,1 por ciento cuando el inmueble no cumple la regla catastral vigente o cuando el ejercicio exige revisar la transicion normativa.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Documentar ano de revision catastral y dejar evidencia expresa del criterio usado en cada campana."
+          },
+          {
+            "riskId": "risk-003",
+            "description": "Olvidar prorratear por dias de titularidad cuando la compra, venta o arrendamiento parcial ocurre dentro del ejercicio.",
+            "severity": "high",
+            "likelihood": "high",
+            "mitigation": "Calcular siempre dias imputables y cuota de participacion antes de llevar importe al modelo."
+          },
+          {
+            "riskId": "risk-004",
+            "description": "Confundir la imputacion de uso propio con el tratamiento fiscal de un alquiler o con la necesidad de presentar modelos agrupados de arrendamiento.",
+            "severity": "medium",
+            "likelihood": "medium",
+            "mitigation": "Separar desde el inicio el tipo de renta 02 de los tipos 01 y 35 y usar un expediente diferenciado si conviven supuestos."
+          },
+          {
+            "riskId": "risk-005",
+            "description": "Aplicar el plazo antiguo a devengos 2026 y siguientes tras la Orden HAC/623/2026.",
+            "severity": "critical",
+            "likelihood": "medium",
+            "mitigation": "Bloquear en checklist la comprobacion del ejercicio y del plazo vigente antes de presentar."
+          }
+        ]
+      },
+      "order": 60,
+      "status": "validado",
+      "title": "Riesgos frecuentes y mitigacion",
+      "type": "risk",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kb-doc-001",
+      "content": {
+        "items": [
+          {
+            "documentId": "doc-001",
+            "label": "Recibo del IBI o consulta catastral con referencia y valor catastral.",
+            "required": true,
+            "notes": "Imprescindible para determinar base y porcentaje aplicable."
+          },
+          {
+            "documentId": "doc-002",
+            "label": "Escritura, nota simple o documento de adquisicion con fecha y porcentaje de titularidad.",
+            "required": true,
+            "notes": "Necesario para prorratear dias y participacion."
+          },
+          {
+            "documentId": "doc-003",
+            "label": "Calendario de ocupacion o evidencia de dias arrendados y dias a disposicion del titular.",
+            "required": true,
+            "notes": "Obligatorio cuando hay periodos mixtos."
+          },
+          {
+            "documentId": "doc-004",
+            "label": "Contrato de arrendamiento o justificantes de alquiler si el inmueble estuvo arrendado parte del ano.",
+            "required": false,
+            "notes": "Recomendable para excluir correctamente los dias no imputables."
+          },
+          {
+            "documentId": "doc-005",
+            "label": "Certificado de residencia fiscal del pais de residencia.",
+            "required": false,
+            "notes": "Necesario cuando se invoque convenio o se documente la residencia a efectos de tipo y obligaciones."
+          }
+        ]
+      },
+      "order": 70,
+      "status": "validado",
+      "title": "Documentacion necesaria",
+      "type": "required_documentation",
+      "visibility": "public"
+    },
+    {
+      "blockId": "kb-case-001",
+      "content": {
+        "items": [
+          {
+            "caseId": "case-001",
+            "scenario": "Contribuyente residente en Alemania, titular unico de una vivienda urbana en Malaga, vacia y a su disposicion durante todo 2025, sin alquiler ni afectacion economica.",
+            "resolution": "Procede imputacion por todo el ano. Se calcula la base con el porcentaje que corresponda al valor catastral, sin deducir gastos, y se aplica el tipo general del 19 por ciento. La presentacion se hace con Modelo 210 tipo 02 dentro del plazo vigente para rentas imputadas de 2025.",
+            "notes": "Caso base para expediente sin incidencias de titularidad ni dias mixtos."
+          },
+          {
+            "caseId": "case-002",
+            "scenario": "Contribuyente residente fuera de la UE adquiere una vivienda urbana el 1 de abril de 2026 y la mantiene a su disposicion, sin alquilarla, hasta 31 de diciembre de 2026.",
+            "resolution": "Procede imputacion solo por los dias de titularidad desde la compra hasta final de ano. Se prorratea por dias y se aplica el tipo general del 24 por ciento. Como el devengo es 2026, el nuevo plazo de presentacion comenzara el 1 de abril de 2027 y finalizara el 31 de diciembre de 2027, salvo cambio normativo posterior.",
+            "notes": "Caso clave para no mezclar el plazo historico con el nuevo plazo de la Orden HAC/623/2026."
+          },
+          {
+            "caseId": "case-003",
+            "scenario": "Dos copropietarios no residentes poseen al 50 por ciento una vivienda urbana. El inmueble estuvo alquilado del 1 de junio al 30 de septiembre y el resto del ano quedo a disposicion de ambos titulares.",
+            "resolution": "Cada titular debe calcular solo su 50 por ciento de la renta imputada y exclusivamente por los dias no arrendados. Los dias de alquiler no entran en la imputacion y deben tratarse, en su caso, como rendimientos por arrendamiento en el flujo correcto del Modelo 210.",
+            "notes": "Caso de separacion entre periodos imputables y dias de rendimiento."
+          }
+        ]
+      },
+      "order": 80,
+      "status": "validado",
+      "title": "Casos practicos de referencia",
+      "type": "case_study",
+      "visibility": "public"
+    }
+  ],
+  "procedures": [
+    {
+      "blockId": "kb-proc-001",
+      "content": {
+        "steps": [
+          {
+            "text": "Confirmar que el titular es una persona fisica no residente sin establecimiento permanente y que el inmueble esta situado en Espana.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Verificar la naturaleza urbana del inmueble, su porcentaje de titularidad y si ha estado vacio, a disposicion del titular, arrendado o en situacion mixta durante el ejercicio.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Delimitar unicamente los dias imputables: excluir dias arrendados y revisar si existe alguna causa de no imputacion, como construccion o imposibilidad urbanistica de uso.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Recoger el valor catastral y la referencia catastral desde el IBI o Catastro. Si no existe valor catastral notificado a 31 de diciembre, preparar la base sustitutiva del 50 por ciento del mayor entre valor de adquisicion y valor comprobado.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Determinar el porcentaje aplicable a la base de imputacion: 1,1 por ciento o 2 por ciento segun la regla vigente para el inmueble y el ejercicio; dejar trazada la justificacion en el expediente.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Prorratear la base anual por numero de dias imputables y por cuota de participacion. Aplicar despues el tipo de gravamen general que corresponda al pais de residencia del contribuyente.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Preparar el Modelo 210 con tipo de renta 02, periodo 0A, fecha de devengo 31/12 y datos de situacion del inmueble. No consignar pagador en este supuesto.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Aplicar el plazo correcto segun el ejercicio: para rentas imputadas de 2025, presentacion del 1 de enero al 31 de diciembre de 2026; para rentas imputadas de 2026 en adelante, del 1 de abril al 31 de diciembre del ano siguiente al devengo, salvo cambio normativo posterior.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Archivar en el expediente el certificado de residencia fiscal si se usa para convenio o para justificar tipo, el soporte del valor catastral y la evidencia de dias, titularidad y criterio aplicado.",
+            "format": "plain_text"
+          }
+        ]
+      },
+      "order": 30,
+      "status": "validado",
+      "title": "Procedimiento operativo paso a paso",
+      "type": "procedure",
+      "visibility": "internal"
+    }
+  ],
+  "checklists": [
+    {
+      "blockId": "kb-check-001",
+      "content": {
+        "items": [
+          {
+            "itemId": "chk-001",
+            "label": "Residencia fiscal no residente confirmada."
+          },
+          {
+            "itemId": "chk-002",
+            "label": "Persona fisica y no entidad."
+          },
+          {
+            "itemId": "chk-003",
+            "label": "Inmueble urbano situado en Espana identificado con referencia catastral."
+          },
+          {
+            "itemId": "chk-004",
+            "label": "Dias imputables separados de los dias arrendados."
+          },
+          {
+            "itemId": "chk-005",
+            "label": "Porcentaje de titularidad documentado."
+          },
+          {
+            "itemId": "chk-006",
+            "label": "Valor catastral o base sustitutiva revisados."
+          },
+          {
+            "itemId": "chk-007",
+            "label": "Porcentaje de imputacion 1,1% o 2% justificado."
+          },
+          {
+            "itemId": "chk-008",
+            "label": "Tipo de gravamen 19% o 24% confirmado."
+          },
+          {
+            "itemId": "chk-009",
+            "label": "Modelo 210 preparado como tipo de renta 02, periodo 0A y devengo 31/12."
+          },
+          {
+            "itemId": "chk-010",
+            "label": "Plazo de presentacion comprobado segun el ejercicio."
+          }
+        ]
+      },
+      "order": 40,
+      "status": "validado",
+      "title": "Checklist operativa para Planner",
+      "type": "checklist",
+      "visibility": "internal"
+    }
+  ],
+  "requiredDocumentation": [
+    {
+      "blockId": "kb-doc-001",
+      "content": {
+        "items": [
+          {
+            "documentId": "doc-001",
+            "label": "Recibo del IBI o consulta catastral con referencia y valor catastral.",
+            "required": true,
+            "notes": "Imprescindible para determinar base y porcentaje aplicable."
+          },
+          {
+            "documentId": "doc-002",
+            "label": "Escritura, nota simple o documento de adquisicion con fecha y porcentaje de titularidad.",
+            "required": true,
+            "notes": "Necesario para prorratear dias y participacion."
+          },
+          {
+            "documentId": "doc-003",
+            "label": "Calendario de ocupacion o evidencia de dias arrendados y dias a disposicion del titular.",
+            "required": true,
+            "notes": "Obligatorio cuando hay periodos mixtos."
+          },
+          {
+            "documentId": "doc-004",
+            "label": "Contrato de arrendamiento o justificantes de alquiler si el inmueble estuvo arrendado parte del ano.",
+            "required": false,
+            "notes": "Recomendable para excluir correctamente los dias no imputables."
+          },
+          {
+            "documentId": "doc-005",
+            "label": "Certificado de residencia fiscal del pais de residencia.",
+            "required": false,
+            "notes": "Necesario cuando se invoque convenio o se documente la residencia a efectos de tipo y obligaciones."
+          }
+        ]
+      },
+      "order": 70,
+      "status": "validado",
+      "title": "Documentacion necesaria",
+      "type": "required_documentation",
+      "visibility": "public"
+    }
+  ],
+  "risks": [
+    {
+      "blockId": "kb-risk-001",
+      "content": {
+        "items": [
+          {
+            "riskId": "risk-001",
+            "description": "Declarar como imputacion dias que realmente estuvieron arrendados o subarrendados.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Cruzar contrato, calendario de ocupacion y cobros antes de calcular la base."
+          },
+          {
+            "riskId": "risk-002",
+            "description": "Aplicar el 1,1 por ciento cuando el inmueble no cumple la regla catastral vigente o cuando el ejercicio exige revisar la transicion normativa.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Documentar ano de revision catastral y dejar evidencia expresa del criterio usado en cada campana."
+          },
+          {
+            "riskId": "risk-003",
+            "description": "Olvidar prorratear por dias de titularidad cuando la compra, venta o arrendamiento parcial ocurre dentro del ejercicio.",
+            "severity": "high",
+            "likelihood": "high",
+            "mitigation": "Calcular siempre dias imputables y cuota de participacion antes de llevar importe al modelo."
+          },
+          {
+            "riskId": "risk-004",
+            "description": "Confundir la imputacion de uso propio con el tratamiento fiscal de un alquiler o con la necesidad de presentar modelos agrupados de arrendamiento.",
+            "severity": "medium",
+            "likelihood": "medium",
+            "mitigation": "Separar desde el inicio el tipo de renta 02 de los tipos 01 y 35 y usar un expediente diferenciado si conviven supuestos."
+          },
+          {
+            "riskId": "risk-005",
+            "description": "Aplicar el plazo antiguo a devengos 2026 y siguientes tras la Orden HAC/623/2026.",
+            "severity": "critical",
+            "likelihood": "medium",
+            "mitigation": "Bloquear en checklist la comprobacion del ejercicio y del plazo vigente antes de presentar."
+          }
+        ]
+      },
+      "order": 60,
+      "status": "validado",
+      "title": "Riesgos frecuentes y mitigacion",
+      "type": "risk",
+      "visibility": "internal"
+    }
+  ],
+  "relevantRelations": []
+}

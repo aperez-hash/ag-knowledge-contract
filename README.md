@@ -26,10 +26,14 @@ Consumidores
 
 - `schema/knowledge-object.schema.json`: contrato estructural canónico.
 - `generated/knowledge-object.generated.ts`: tipos TypeScript derivados.
-- `examples/modelo-210-imputacion-rentas.json`: ejemplo técnico canónico.
+- `examples/modelo-210-imputacion-rentas.json`: primer Knowledge Object real de referencia.
+- `examples/derived/`: salidas derivadas certificadas para Planner, Web e IA.
 - `scripts/generate-types.mjs`: generación reproducible de tipos.
 - `scripts/validate-example.mjs`: validación estricta del ejemplo.
+- `scripts/build-story-kf-004a-artifacts.mjs`: generación reproducible de artefactos derivados.
+- `scripts/validate-story-kf-004a.mjs`: validación consolidada de STORY-KF-004A.
 - `tests/knowledge-object.schema.test.mjs`: pruebas del contrato.
+- `tests/modelo-210-story-kf-004a.test.mjs`: pruebas del primer objeto real y de sus derivaciones.
 - `docs/SCHEMA_ERROR_2026-07-18.md`: explicación del defecto corregido.
 
 ## Principios
@@ -58,6 +62,18 @@ npm run generate:check
 
 ```bash
 npm run validate:example
+```
+
+### Generar artefactos derivados del Modelo 210
+
+```bash
+npm run build:story-kf-004a
+```
+
+### Validar STORY-KF-004A de extremo a extremo
+
+```bash
+npm run validate:story-kf-004a
 ```
 
 ### Ejecutar pruebas del contrato
@@ -90,8 +106,8 @@ No deben usarse:
 ## Compatibilidad
 
 - `Planner`: consumidor operativo interno con filtrado por canal.
-- `Web`: futuro consumidor derivado.
-- `IA`: futuro consumidor con las mismas restricciones del contrato.
+- `Web`: consumidor derivado seguro desde el mismo objeto.
+- `IA`: consumidor derivado seguro con restricciones de canal.
 
 El contrato no pertenece a ninguno de esos consumidores; todos dependen de él.
 
