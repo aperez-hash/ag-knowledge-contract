@@ -35,6 +35,8 @@ run("validate:story-kf-008b", ["scripts/validate-story-kf-008b.mjs"]);
 run("validate:story-kf-008c", ["scripts/validate-story-kf-008c.mjs"]);
 run("validate:story-kf-008d", ["scripts/validate-story-kf-008d.mjs"]);
 run("validate:story-kf-010a", ["scripts/validate-story-kf-010a.mjs"]);
+run("validate:story-kf-010b", ["scripts/validate-story-kf-010b.mjs"]);
+run("validate:story-kf-010c", ["scripts/validate-story-kf-010c.mjs"]);
 run("test", [
   "--test",
   "tests/knowledge-object.schema.test.mjs",
@@ -47,4 +49,6 @@ run("test", [
   "tests/modelo-151-story-kf-008c.test.mjs",
   "tests/irnr-rendimientos-trabajo-story-kf-008d.test.mjs",
   "tests/irnr-rendimientos-capital-inmobiliario-story-kf-010a.test.mjs",
+  "tests/irnr-dividendos-intereses-canones-story-kf-010b.test.mjs",
+  "tests/irnr-ganancias-patrimoniales-story-kf-010c.test.mjs",
 ]);

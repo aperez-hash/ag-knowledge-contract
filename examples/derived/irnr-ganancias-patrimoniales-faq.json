@@ -1,0 +1,40 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_ganancias_patrimoniales_001",
+    "stableKey": "irnr-ganancias-patrimoniales",
+    "version": "1.0.0"
+  },
+  "title": "IRNR - Ganancias Patrimoniales - FAQ derivada",
+  "items": [
+    {
+      "faqId": "faqirnrgp-001",
+      "question": "Si vendo un inmueble en Espana siendo no residente, tengo que tributar aqui?",
+      "answer": "Con caracter general, si. La normativa interna del IRNR considera obtenidas en Espana las ganancias patrimoniales procedentes de inmuebles situados en territorio espanol y los CDI suelen mantener tambien la imposicion en el Estado donde esta situado el inmueble."
+    },
+    {
+      "faqId": "faqirnrgp-002",
+      "question": "La retencion del 3 por ciento en la venta del inmueble sustituye a la declaracion?",
+      "answer": "No. La retencion del 3 por ciento es un pago a cuenta del impuesto correspondiente al transmitente no residente. Despues debe revisarse el cierre del Modelo 210 para regularizar el resultado final o solicitar, en su caso, la devolucion que corresponda."
+    },
+    {
+      "faqId": "faqirnrgp-003",
+      "question": "Si vendo acciones, Espana siempre puede gravar la ganancia?",
+      "answer": "No siempre. Depende del punto de conexion de la norma interna y del CDI aplicable. En acciones o participaciones el analisis exige mirar con cuidado emisor, residencia, activo subyacente cuando sea relevante y texto concreto del convenio."
+    },
+    {
+      "faqId": "faqirnrgp-004",
+      "question": "Que diferencia hay entre no sujecion y exencion?",
+      "answer": "La no sujecion significa que la ganancia no entra en el hecho imponible por faltar el punto de conexion aplicable. La exencion significa que la ganancia si entra inicialmente en el impuesto, pero una norma posterior libera total o parcialmente de tributacion."
+    },
+    {
+      "faqId": "faqirnrgp-005",
+      "question": "Si el inmueble pertenece a dos no residentes, se analiza como un solo contribuyente?",
+      "answer": "No. La copropiedad no fusiona a los obligados. Cada cotitular debe analizar su propia parte de la ganancia, su cuota de retencion y su cierre formal correspondiente."
+    },
+    {
+      "faqId": "faqirnrgp-006",
+      "question": "Este objeto explica ya todas las casillas del Modelo 210 y del Modelo 211?",
+      "answer": "No. El objeto cubre el criterio material y el cumplimiento operativo minimo. La cumplimentacion completa de formularios pertenece a una capa operativa derivada o a guias procedimentales especificas."
+    }
+  ]
+}

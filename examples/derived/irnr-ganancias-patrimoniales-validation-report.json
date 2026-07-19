@@ -1,0 +1,17 @@
+{
+  "story": "STORY-KF-010C",
+  "knowledgeObject": "IRNR - Ganancias Patrimoniales",
+  "research": "PASS",
+  "schemaValidation": "PASS",
+  "ruleEngine": "PASS",
+  "plannerView": "PASS",
+  "webView": "PASS",
+  "aiContext": "PASS",
+  "checklist": "PASS",
+  "faq": "PASS",
+  "clientResponse": "PASS",
+  "qualityGate": "PASS",
+  "structuralChangesRequired": "NO",
+  "generatedAt": "2026-07-19T12:27:53.528Z",
+  "incidentCount": 0
+}

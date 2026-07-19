@@ -1,0 +1,60 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_ganancias_patrimoniales_001",
+    "stableKey": "irnr-ganancias-patrimoniales",
+    "version": "1.0.0"
+  },
+  "responseType": "derived_draft",
+  "humanReviewRequired": true,
+  "summary": "Evita errores al mezclar sujecion, exencion, CDI, retencion del 3 por ciento, copropiedad y cumplimiento formal en expedientes de ganancias patrimoniales de no residentes.",
+  "nextSteps": [
+    "Identificacion del titular o titulares no residentes y certificado de residencia fiscal o soporte equivalente fuera de Espana.",
+    "Escritura, contrato o documento de transmision del activo con fecha, partes, contraprestacion y detalle del bien o derecho transmitido.",
+    "Documentacion de adquisicion original, inversiones, mejoras, gastos y tributos inherentes para cuantificar la ganancia.",
+    "Soporte de titularidad, porcentaje de participacion y pactos internos cuando exista copropiedad o varios transmitentes."
+  ],
+  "faqHighlights": [
+    {
+      "faqId": "faqirnrgp-001",
+      "question": "Si vendo un inmueble en Espana siendo no residente, tengo que tributar aqui?",
+      "answer": "Con caracter general, si. La normativa interna del IRNR considera obtenidas en Espana las ganancias patrimoniales procedentes de inmuebles situados en territorio espanol y los CDI suelen mantener tambien la imposicion en el Estado donde esta situado el inmueble."
+    },
+    {
+      "faqId": "faqirnrgp-002",
+      "question": "La retencion del 3 por ciento en la venta del inmueble sustituye a la declaracion?",
+      "answer": "No. La retencion del 3 por ciento es un pago a cuenta del impuesto correspondiente al transmitente no residente. Despues debe revisarse el cierre del Modelo 210 para regularizar el resultado final o solicitar, en su caso, la devolucion que corresponda."
+    },
+    {
+      "faqId": "faqirnrgp-003",
+      "question": "Si vendo acciones, Espana siempre puede gravar la ganancia?",
+      "answer": "No siempre. Depende del punto de conexion de la norma interna y del CDI aplicable. En acciones o participaciones el analisis exige mirar con cuidado emisor, residencia, activo subyacente cuando sea relevante y texto concreto del convenio."
+    }
+  ],
+  "documentationHighlights": [
+    {
+      "documentId": "docirnrgp-001",
+      "label": "Identificacion del titular o titulares no residentes y certificado de residencia fiscal o soporte equivalente fuera de Espana.",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: confirmar la condicion de no residente y preparar la capa de CDI cuando proceda."
+    },
+    {
+      "documentId": "docirnrgp-002",
+      "label": "Escritura, contrato o documento de transmision del activo con fecha, partes, contraprestacion y detalle del bien o derecho transmitido.",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: acreditar la transmision y el activo concreto."
+    },
+    {
+      "documentId": "docirnrgp-003",
+      "label": "Documentacion de adquisicion original, inversiones, mejoras, gastos y tributos inherentes para cuantificar la ganancia.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: construir valor de adquisicion y contrastar la base imponible."
+    },
+    {
+      "documentId": "docirnrgp-004",
+      "label": "Soporte de titularidad, porcentaje de participacion y pactos internos cuando exista copropiedad o varios transmitentes.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: repartir la ganancia, la retencion y el cumplimiento por cotitular."
+    }
+  ],
+  "caution": "Borrador derivado para apoyo interno. No debe enviarse sin revision humana y sin contrastar la documentacion concreta del cliente."
+}
