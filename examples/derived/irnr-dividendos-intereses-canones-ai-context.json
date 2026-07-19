@@ -1,0 +1,78 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_dividendos_intereses_canones_001",
+    "stableKey": "irnr-dividendos-intereses-canones",
+    "title": "IRNR - Dividendos, Intereses y Canones",
+    "version": "1.0.0",
+    "status": "validado"
+  },
+  "criterionStatus": "vigente para uso interno validado",
+  "executiveSummary": "Este Knowledge Object fija el criterio operativo del despacho para decidir cuando una persona o entidad no residente tributa en Espana por dividendos, intereses y canones obtenidos sin establecimiento permanente. El objeto separa con claridad cuatro capas que suelen mezclarse en la practica: calificacion material del pago, localizacion en Espana conforme a la normativa interna, modulacion por el convenio para evitar la doble imposicion y cierre operativo de retencion, declaracion o devolucion. Tambien deja trazado que el convenio no crea una obligacion tributaria nueva, sino que limita, reparte o coordina la potestad que la ley interna atribuiria inicialmente; y que el Modelo OCDE y sus Comentarios cumplen una funcion interpretativa, pero no sustituyen nunca el texto concreto del convenio aplicable. La utilidad practica del objeto es evitar errores recurrentes en expedientes de rentas pasivas internacionales: tratar todo pago financiero como dividendo, ignorar exenciones internas de intereses, aplicar automaticamente el convenio sin cerrar antes la fuente espanola, o dar por buena una retencion sin verificar si la carga material, el tipo aplicable o la obligacion declarativa estaban bien resueltos. Su salida debe ser una conclusion unica, trazable y reutilizable para Planner, Web, IA, checklist, FAQ y respuesta al cliente derivada.",
+  "legalBasis": [
+    "La base juridica del objeto descansa en el Texto Refundido de la Ley del IRNR y en su Reglamento, con especial importancia de las reglas sobre contribuyentes no residentes, rentas obtenidas en territorio espanol, exenciones, retenciones e ingresos a cuenta. El articulo 13.1.f) de la Ley IRNR conecta con Espana los dividendos distribuidos por entidades residentes, los intereses satisfechos por residentes o vinculados a capitales utilizados en territorio espanol y los canones satisfechos por residentes o utilizados economicamente en Espana. El orden correcto del analisis es siempre norma interna, posible exencion interna, CDI, retencion y cierre declarativo. Un CDI no crea por si solo una obligacion tributaria nueva, sino que limita, redistribuye o coordina la potestad que la norma interna atribuiria inicialmente. El Modelo OCDE y sus Comentarios cumplen una funcion interpretativa util, pero no sustituyen el texto concreto del convenio bilateral aplicable."
+  ],
+  "technicalDevelopment": [
+    "1. No residencia fiscal. El punto de partida es confirmar que el perceptor no es residente fiscal en Espana, delegando esa conclusion en el objeto de Residencia Fiscal cuando haga falta. 2. Calificacion correcta del pago. Antes de hablar de convenio, retencion o modelo, debe cerrarse si el pago es dividendo, interes o canon. La mala calificacion del pago arrastra errores posteriores en exenciones, tipos y cumplimiento. 3. Fuente espanola conforme a norma interna. Debe analizarse si la renta queda conectada con Espana por la residencia del pagador, por la utilizacion economica en territorio espanol o por la regla interna especifica aplicable a cada categoria. 4. Exenciones internas. No toda renta pasiva de fuente espanola acaba tributando materialmente. En intereses y en determinados dividendos o canones pueden operar exenciones legales que deben revisarse antes de saltar al convenio. 5. Aplicabilidad del CDI. Solo despues de cerrar la renta interna se comprueba si existe convenio vigente, si el perceptor esta cubierto por su ambito subjetivo y si la renta entra en su ambito objetivo. 6. Tributacion compartida y limite en fuente. En dividendos, intereses y canones, el CDI suele mantener una potestad compartida y limitar la imposicion espanola con porcentajes maximos que dependen del tratado concreto. 7. Modelo OCDE y Comentarios. Cumplen una funcion interpretativa metodologica, pero no sustituyen el texto del convenio suscrito por Espana con el otro Estado. 8. Beneficiario efectivo y documentacion. La aplicacion de tipos reducidos, exenciones o devoluciones exige acreditar residencia y, cuando proceda, la posicion material del perceptor respecto de la renta. 9. Retenciones como dominio nuclear. La retencion no prueba por si sola la correccion material del expediente, pero tampoco puede dejarse para el final como un detalle menor. Debe analizarse como parte central de la conclusion. 10. Modelo 210 y Modelo 216. El Modelo 210 aparece como capa declarativa del perceptor cuando procede autoliquidacion o devolucion. El Modelo 216 pertenece al retenedor, pero su logica operativa debe quedar conectada con el objeto para cerrar bien el expediente.\n\nDecision Gateway\n\nExiste un perceptor no residente?\n        ↓\nLa renta es dividendo, interes o canon?\n        ↓\nExiste fuente espanola conforme a norma interna?\n        ↓\nOpera una exencion interna?\n        ↓\nExiste CDI vigente y aplicable?\n        ↓\nEl convenio limita la imposicion en origen?\n        ↓\nLa retencion practicada es coherente con la conclusion material?\n        ↓\nProcede Modelo 210, devolucion o solo cierre por retencion?\n        ↓\nConclusion unica del expediente"
+  ],
+  "procedure": [
+    "Confirmar si la persona o entidad perceptora es no residente desde la perspectiva espanola y, si no esta cerrado, abrir el objeto de Residencia Fiscal.",
+    "Identificar el pago analizado, el pagador, el periodo, la documentacion disponible y la categoria inicialmente atribuida.",
+    "Calificar correctamente si la renta es dividendo, interes o canon, evitando resolver el expediente solo por apariencia contractual o contable.",
+    "Aplicar la normativa interna para determinar si existe fuente espanola conforme a la regla especifica de esa categoria de renta pasiva.",
+    "Comprobar si opera una exencion interna antes de pasar al convenio o a la capa de retenciones.",
+    "Verificar si existe CDI vigente, si el perceptor esta cubierto por su ambito subjetivo y si la renta entra en su ambito objetivo.",
+    "Resolver si Espana conserva potestad total, parcial o ninguna sobre la renta y si existe un limite maximo de imposicion en origen.",
+    "Revisar si la retencion practicada es coherente con la conclusion material y si falta o sobra imposicion en origen.",
+    "Cerrar la capa de cumplimiento minimo: existencia o no de Modelo 210, necesidad de devolucion y conexion con el Modelo 216 del retenedor.",
+    "Documentar la conclusion final con evidencia suficiente sobre residencia, naturaleza del pago, convenio, retencion y cierre operativo elegido."
+  ],
+  "risks": [
+    {
+      "riskId": "riskirnrdic-001",
+      "description": "Calificar incorrectamente el pago y tratar como dividendo, interes o canon una renta que no encaja en esa categoria.",
+      "severity": "critical",
+      "likelihood": "medium",
+      "mitigation": "Cerrar primero la naturaleza material del pago y no resolver el caso solo por la etiqueta contractual."
+    },
+    {
+      "riskId": "riskirnrdic-002",
+      "description": "Aplicar el CDI antes de verificar si existe fuente espanola o si opera una exencion interna.",
+      "severity": "high",
+      "likelihood": "high",
+      "mitigation": "Seguir siempre la secuencia norma interna, exencion, convenio, retencion y declaracion."
+    },
+    {
+      "riskId": "riskirnrdic-003",
+      "description": "No detectar exenciones internas en intereses, dividendos o canones y practicar o soportar tributacion indebida en origen.",
+      "severity": "high",
+      "likelihood": "medium",
+      "mitigation": "Revisar expresamente las exenciones internas antes de fijar tipo y cierre operativo."
+    },
+    {
+      "riskId": "riskirnrdic-004",
+      "description": "Asumir que una retencion practicada prueba por si sola la correccion material del expediente.",
+      "severity": "high",
+      "likelihood": "high",
+      "mitigation": "Separar conclusion material y operativa del retenedor, y revisar si la retencion coincide con el criterio correcto."
+    },
+    {
+      "riskId": "riskirnrdic-005",
+      "description": "Aplicar tipo convencional reducido sin soporte suficiente de residencia o sin cerrar bien la posicion material del perceptor.",
+      "severity": "high",
+      "likelihood": "medium",
+      "mitigation": "Exigir soporte documental de residencia y revisar si el expediente necesita analisis adicional sobre la titularidad material de la renta."
+    }
+  ],
+  "restrictions": [
+    "Canales bloqueados a nivel raiz: ninguno.",
+    "Canales solo derivables a nivel raiz: web, faq, checklist, client_response, tax_library.",
+    "No debe reutilizarse este objeto como texto directo de respuesta al cliente sin derivacion controlada y revision humana."
+  ],
+  "clientResponseAuthorization": {
+    "channelAccess": "derived_only",
+    "mayExposeCanonicalTextDirectly": false,
+    "mayProduceDerivedDraft": true,
+    "humanReviewRequired": true,
+    "instruction": "Solo se permiten borradores derivados y controlados; no debe reutilizarse texto bruto del objeto."
+  }
+}

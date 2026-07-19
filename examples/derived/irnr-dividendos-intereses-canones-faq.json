@@ -1,0 +1,40 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_dividendos_intereses_canones_001",
+    "stableKey": "irnr-dividendos-intereses-canones",
+    "version": "1.0.0"
+  },
+  "title": "IRNR - Dividendos, Intereses y Canones - FAQ derivada",
+  "items": [
+    {
+      "faqId": "faqirnrdic-001",
+      "question": "¿Si una sociedad espanola me paga dividendos, siempre tengo que tributar en Espana?",
+      "answer": "Con caracter general existe fuente espanola, pero el analisis no termina ahi. Debe revisarse si opera una exencion interna y, en su caso, si el CDI limita la imposicion espanola."
+    },
+    {
+      "faqId": "faqirnrdic-002",
+      "question": "¿Los intereses cobrados por un no residente siempre tributan al 19%?",
+      "answer": "No necesariamente. Primero debe revisarse si existe exencion interna; despues, si hay CDI aplicable, puede existir un limite inferior o incluso ausencia de imposicion en origen segun el caso."
+    },
+    {
+      "faqId": "faqirnrdic-003",
+      "question": "¿Canon e interes son lo mismo si el contrato habla de licencia o financiacion?",
+      "answer": "No. La calificacion material del pago es decisiva. Un error al distinguir interes, canon u otra renta arrastra errores en convenio, tipo aplicable y retencion."
+    },
+    {
+      "faqId": "faqirnrdic-004",
+      "question": "¿Si ya me han retenido en Espana, el expediente esta cerrado?",
+      "answer": "No siempre. La retencion es una capa operativa importante, pero no sustituye el analisis de residencia, fuente espanola, exencion interna ni limite convencional."
+    },
+    {
+      "faqId": "faqirnrdic-005",
+      "question": "¿El convenio sustituye a la ley espanola cuando hay un pago internacional?",
+      "answer": "No. Primero se analiza la norma interna espanola y despues se revisa si el convenio limita, reparte o coordina esa potestad tributaria."
+    },
+    {
+      "faqId": "faqirnrdic-006",
+      "question": "¿Este objeto explica todas las casillas del Modelo 210 y del 216?",
+      "answer": "No. El objeto cubre el criterio material y el cierre operativo minimo. La cumplimentacion exhaustiva del formulario pertenece a una capa procedimental derivada."
+    }
+  ]
+}

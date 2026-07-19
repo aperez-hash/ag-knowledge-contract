@@ -24,7 +24,8 @@
     "./examples/convenios-doble-imposicion-cdi.json": "./examples/convenios-doble-imposicion-cdi.json",
     "./examples/modelo-151-regimen-trabajadores-desplazados.json": "./examples/modelo-151-regimen-trabajadores-desplazados.json",
     "./examples/irnr-rendimientos-trabajo.json": "./examples/irnr-rendimientos-trabajo.json",
-    "./examples/irnr-rendimientos-capital-inmobiliario.json": "./examples/irnr-rendimientos-capital-inmobiliario.json"
+    "./examples/irnr-rendimientos-capital-inmobiliario.json": "./examples/irnr-rendimientos-capital-inmobiliario.json",
+    "./examples/irnr-dividendos-intereses-canones.json": "./examples/irnr-dividendos-intereses-canones.json"
   },
   "scripts": {
     "generate": "node scripts/generate-types.mjs",
@@ -48,6 +49,8 @@
     "validate:story-kf-008d": "node scripts/validate-story-kf-008d.mjs",
     "build:story-kf-010a": "node scripts/build-story-kf-010a-artifacts.mjs",
     "validate:story-kf-010a": "node scripts/validate-story-kf-010a.mjs",
+    "build:story-kf-010b": "node scripts/build-story-kf-010b-artifacts.mjs",
+    "validate:story-kf-010b": "node scripts/validate-story-kf-010b.mjs",
     "test": "node --test tests/*.test.mjs",
     "check": "node scripts/check.mjs"
   },

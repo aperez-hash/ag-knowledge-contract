@@ -1,0 +1,823 @@
+{
+  "identity": {
+    "knowledgeObjectId": "ko_es_irnr_dividendos_intereses_canones_001",
+    "stableKey": "irnr-dividendos-intereses-canones",
+    "title": "IRNR - Dividendos, Intereses y Canones",
+    "slug": "irnr-dividendos-intereses-canones",
+    "language": "es",
+    "jurisdiction": "ES"
+  },
+  "governance": {
+    "status": "validado",
+    "version": "1.0.0",
+    "owner": "equipo-fiscal-no-residentes-internacional",
+    "approvedBy": "direccion-tecnica-fiscal",
+    "reviewedAt": "2026-07-18T23:59:00Z",
+    "changeReason": "Knowledge Object canonico de IRNR sobre dividendos, intereses y canones, orientado a tributacion material, CDI, retenciones y cumplimiento operativo minimo"
+  },
+  "classification": {
+    "domain": "fiscal",
+    "topic": "irnr",
+    "subtopic": "dividendos-intereses-canones",
+    "audience": "advisor",
+    "sensitivity": "high",
+    "keywords": [
+      "irnr",
+      "dividendos",
+      "intereses",
+      "canones",
+      "cdi",
+      "retenciones",
+      "modelo 210",
+      "modelo 216",
+      "residencia fiscal",
+      "rentas pasivas"
+    ]
+  },
+  "channelPolicy": {
+    "web": {
+      "access": "derived_only",
+      "notes": "La web solo debe publicar explicaciones derivadas y prudentes."
+    },
+    "planner": {
+      "access": "allowed",
+      "notes": "Planner puede consumir la vista operativa interna del objeto."
+    },
+    "ia": {
+      "access": "allowed",
+      "notes": "La IA interna puede usar este criterio con trazabilidad y restricciones."
+    },
+    "faq": {
+      "access": "derived_only",
+      "notes": "Las FAQ deben derivarse de forma controlada."
+    },
+    "checklist": {
+      "access": "derived_only",
+      "notes": "La checklist puede exponerse como derivacion operativa."
+    },
+    "internal_guide": {
+      "access": "allowed",
+      "notes": "La guia interna puede reutilizar el contenido completo validado."
+    },
+    "client_response": {
+      "access": "derived_only",
+      "notes": "Nunca debe enviarse al cliente el texto bruto del objeto."
+    },
+    "tax_library": {
+      "access": "derived_only",
+      "notes": "La biblioteca fiscal debe consumir salidas derivadas, no el objeto bruto."
+    }
+  },
+  "affectedTaxModels": [
+    {
+      "modelCode": "210",
+      "modelName": "Modelo 210 - IRNR",
+      "relationType": "primary",
+      "notes": "Es el modelo declarativo natural cuando procede declarar dividendos, intereses o canones obtenidos sin establecimiento permanente."
+    },
+    {
+      "modelCode": "216",
+      "modelName": "Modelo 216 - Retenciones e ingresos a cuenta del IRNR",
+      "relationType": "secondary",
+      "notes": "Conecta el analisis material con la capa de retenciones e ingresos a cuenta sobre rentas pasivas de no residentes."
+    }
+  ],
+  "affectedForms": [
+    {
+      "formCode": "210",
+      "formName": "Modelo 210",
+      "relationType": "required",
+      "notes": "Formulario impactado directamente por la conclusion material del objeto."
+    },
+    {
+      "formCode": "216",
+      "formName": "Modelo 216",
+      "relationType": "informative",
+      "notes": "Formulario impactado cuando existe obligacion de retener e ingresar a cuenta."
+    }
+  ],
+  "executiveSummary": {
+    "summary": "Este Knowledge Object fija el criterio operativo del despacho para decidir cuando una persona o entidad no residente tributa en Espana por dividendos, intereses y canones obtenidos sin establecimiento permanente. El objeto separa con claridad cuatro capas que suelen mezclarse en la practica: calificacion material del pago, localizacion en Espana conforme a la normativa interna, modulacion por el convenio para evitar la doble imposicion y cierre operativo de retencion, declaracion o devolucion. Tambien deja trazado que el convenio no crea una obligacion tributaria nueva, sino que limita, reparte o coordina la potestad que la ley interna atribuiria inicialmente; y que el Modelo OCDE y sus Comentarios cumplen una funcion interpretativa, pero no sustituyen nunca el texto concreto del convenio aplicable. La utilidad practica del objeto es evitar errores recurrentes en expedientes de rentas pasivas internacionales: tratar todo pago financiero como dividendo, ignorar exenciones internas de intereses, aplicar automaticamente el convenio sin cerrar antes la fuente espanola, o dar por buena una retencion sin verificar si la carga material, el tipo aplicable o la obligacion declarativa estaban bien resueltos. Su salida debe ser una conclusion unica, trazable y reutilizable para Planner, Web, IA, checklist, FAQ y respuesta al cliente derivada.",
+    "problemSolved": "Evita errores al mezclar calificacion de renta, CDI, exenciones internas, retenciones y declaracion en expedientes IRNR sobre dividendos, intereses y canones.",
+    "scope": "Dividendos, intereses y canones obtenidos por no residentes desde la perspectiva espanola, con foco en fuente espanola, exenciones internas, tributacion compartida bajo CDI, retenciones y cumplimiento operativo minimo asociado a los Modelos 210 y 216.",
+    "practicalImpact": "Permite abrir, revisar y cerrar expedientes de rentas pasivas transfronterizas con un criterio unico antes de bajar al detalle formal completo del perceptor o del retenedor."
+  },
+  "blocks": [
+    {
+      "blockId": "blk-irnrdic-001",
+      "type": "legal_basis",
+      "title": "Base legal del IRNR sobre dividendos, intereses y canones",
+      "order": 10,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": {
+          "access": "blocked"
+        },
+        "planner": {
+          "access": "allowed"
+        },
+        "ia": {
+          "access": "allowed"
+        },
+        "faq": {
+          "access": "blocked"
+        },
+        "checklist": {
+          "access": "blocked"
+        },
+        "internal_guide": {
+          "access": "allowed"
+        },
+        "client_response": {
+          "access": "blocked"
+        },
+        "tax_library": {
+          "access": "allowed"
+        }
+      },
+      "content": {
+        "basis": "La base juridica del objeto descansa en el Texto Refundido de la Ley del IRNR y en su Reglamento, con especial importancia de las reglas sobre contribuyentes no residentes, rentas obtenidas en territorio espanol, exenciones, retenciones e ingresos a cuenta. El articulo 13.1.f) de la Ley IRNR conecta con Espana los dividendos distribuidos por entidades residentes, los intereses satisfechos por residentes o vinculados a capitales utilizados en territorio espanol y los canones satisfechos por residentes o utilizados economicamente en Espana. El orden correcto del analisis es siempre norma interna, posible exencion interna, CDI, retencion y cierre declarativo. Un CDI no crea por si solo una obligacion tributaria nueva, sino que limita, redistribuye o coordina la potestad que la norma interna atribuiria inicialmente. El Modelo OCDE y sus Comentarios cumplen una funcion interpretativa util, pero no sustituyen el texto concreto del convenio bilateral aplicable."
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "srcirnrdic-trlirnr",
+          "type": "law",
+          "label": "Texto Refundido de la Ley del IRNR",
+          "citation": "Real Decreto Legislativo 5/2004, BOE-A-2004-4527",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4527",
+          "notes": "Base legal principal del objeto."
+        },
+        {
+          "referenceId": "srcirnrdic-rirnr",
+          "type": "law",
+          "label": "Reglamento del IRNR",
+          "citation": "Real Decreto 1776/2004, BOE-A-2004-14532",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2004-14532",
+          "notes": "Desarrollo reglamentario clave para declaracion y retenciones."
+        },
+        {
+          "referenceId": "srcirnrdic-aeat-manual",
+          "type": "guidance",
+          "label": "AEAT - Rendimientos del capital mobiliario",
+          "citation": "Manual de Tributacion de No Residentes, pagina actualizada el 01/julio/2026",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-tributacion-no-residentes/capitulo-03-tributacion-rentas-comunes-nr/otros-rendimientos/rendimientos-capital-mobiliario.html",
+          "notes": "Resume la aplicacion material de dividendos, intereses y canones."
+        }
+      ]
+    },
+    {
+      "blockId": "blk-irnrdic-002",
+      "type": "technical_development",
+      "title": "Desarrollo tecnico del criterio material, convencional y operativo",
+      "order": 20,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": {
+          "access": "blocked"
+        },
+        "planner": {
+          "access": "allowed"
+        },
+        "ia": {
+          "access": "allowed"
+        },
+        "faq": {
+          "access": "derived_only"
+        },
+        "checklist": {
+          "access": "derived_only"
+        },
+        "internal_guide": {
+          "access": "allowed"
+        },
+        "client_response": {
+          "access": "blocked"
+        },
+        "tax_library": {
+          "access": "allowed"
+        }
+      },
+      "content": {
+        "development": "1. No residencia fiscal. El punto de partida es confirmar que el perceptor no es residente fiscal en Espana, delegando esa conclusion en el objeto de Residencia Fiscal cuando haga falta. 2. Calificacion correcta del pago. Antes de hablar de convenio, retencion o modelo, debe cerrarse si el pago es dividendo, interes o canon. La mala calificacion del pago arrastra errores posteriores en exenciones, tipos y cumplimiento. 3. Fuente espanola conforme a norma interna. Debe analizarse si la renta queda conectada con Espana por la residencia del pagador, por la utilizacion economica en territorio espanol o por la regla interna especifica aplicable a cada categoria. 4. Exenciones internas. No toda renta pasiva de fuente espanola acaba tributando materialmente. En intereses y en determinados dividendos o canones pueden operar exenciones legales que deben revisarse antes de saltar al convenio. 5. Aplicabilidad del CDI. Solo despues de cerrar la renta interna se comprueba si existe convenio vigente, si el perceptor esta cubierto por su ambito subjetivo y si la renta entra en su ambito objetivo. 6. Tributacion compartida y limite en fuente. En dividendos, intereses y canones, el CDI suele mantener una potestad compartida y limitar la imposicion espanola con porcentajes maximos que dependen del tratado concreto. 7. Modelo OCDE y Comentarios. Cumplen una funcion interpretativa metodologica, pero no sustituyen el texto del convenio suscrito por Espana con el otro Estado. 8. Beneficiario efectivo y documentacion. La aplicacion de tipos reducidos, exenciones o devoluciones exige acreditar residencia y, cuando proceda, la posicion material del perceptor respecto de la renta. 9. Retenciones como dominio nuclear. La retencion no prueba por si sola la correccion material del expediente, pero tampoco puede dejarse para el final como un detalle menor. Debe analizarse como parte central de la conclusion. 10. Modelo 210 y Modelo 216. El Modelo 210 aparece como capa declarativa del perceptor cuando procede autoliquidacion o devolucion. El Modelo 216 pertenece al retenedor, pero su logica operativa debe quedar conectada con el objeto para cerrar bien el expediente.\n\nDecision Gateway\n\nExiste un perceptor no residente?\n        ↓\nLa renta es dividendo, interes o canon?\n        ↓\nExiste fuente espanola conforme a norma interna?\n        ↓\nOpera una exencion interna?\n        ↓\nExiste CDI vigente y aplicable?\n        ↓\nEl convenio limita la imposicion en origen?\n        ↓\nLa retencion practicada es coherente con la conclusion material?\n        ↓\nProcede Modelo 210, devolucion o solo cierre por retencion?\n        ↓\nConclusion unica del expediente"
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "srcirnrdic-aeat-dividendos",
+          "type": "guidance",
+          "label": "AEAT - Disposiciones mas comunes de los Convenios. Dividendos",
+          "citation": "Portal oficial AEAT consultado en julio de 2026",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-sin-establecimiento-permanente/disposiciones-comunes-convenios/convenios-dividendos.html",
+          "notes": "Base practica para la tributacion compartida de dividendos."
+        },
+        {
+          "referenceId": "srcirnrdic-aeat-intereses",
+          "type": "guidance",
+          "label": "AEAT - Disposiciones mas comunes de los Convenios. Intereses",
+          "citation": "Portal oficial AEAT consultado en julio de 2026",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-sin-establecimiento-permanente/disposiciones-comunes-convenios/convenios-intereses.html",
+          "notes": "Base practica para exenciones internas y limites de convenio en intereses."
+        },
+        {
+          "referenceId": "srcirnrdic-aeat-canones",
+          "type": "guidance",
+          "label": "AEAT - Disposiciones mas comunes de los Convenios. Canones",
+          "citation": "Portal oficial AEAT consultado en julio de 2026",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-sin-establecimiento-permanente/disposiciones-comunes-convenios/convenios-canones.html",
+          "notes": "Base practica para la calificacion y la limitacion convencional de canones."
+        }
+      ]
+    },
+    {
+      "blockId": "blk-irnrdic-003",
+      "type": "procedure",
+      "title": "Procedimiento operativo completo",
+      "order": 30,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": {
+          "access": "blocked"
+        },
+        "planner": {
+          "access": "allowed"
+        },
+        "ia": {
+          "access": "allowed"
+        },
+        "faq": {
+          "access": "derived_only"
+        },
+        "checklist": {
+          "access": "derived_only"
+        },
+        "internal_guide": {
+          "access": "allowed"
+        },
+        "client_response": {
+          "access": "blocked"
+        },
+        "tax_library": {
+          "access": "derived_only"
+        }
+      },
+      "content": {
+        "steps": [
+          {
+            "text": "Confirmar si la persona o entidad perceptora es no residente desde la perspectiva espanola y, si no esta cerrado, abrir el objeto de Residencia Fiscal.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Identificar el pago analizado, el pagador, el periodo, la documentacion disponible y la categoria inicialmente atribuida.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Calificar correctamente si la renta es dividendo, interes o canon, evitando resolver el expediente solo por apariencia contractual o contable.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Aplicar la normativa interna para determinar si existe fuente espanola conforme a la regla especifica de esa categoria de renta pasiva.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Comprobar si opera una exencion interna antes de pasar al convenio o a la capa de retenciones.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Verificar si existe CDI vigente, si el perceptor esta cubierto por su ambito subjetivo y si la renta entra en su ambito objetivo.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Resolver si Espana conserva potestad total, parcial o ninguna sobre la renta y si existe un limite maximo de imposicion en origen.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Revisar si la retencion practicada es coherente con la conclusion material y si falta o sobra imposicion en origen.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Cerrar la capa de cumplimiento minimo: existencia o no de Modelo 210, necesidad de devolucion y conexion con el Modelo 216 del retenedor.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Documentar la conclusion final con evidencia suficiente sobre residencia, naturaleza del pago, convenio, retencion y cierre operativo elegido.",
+            "format": "plain_text"
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "srcirnrdic-proc-210",
+          "type": "guidance",
+          "label": "AEAT - Instrucciones Modelo 210",
+          "citation": "Instrucciones oficiales vigentes en julio de 2026",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-210-irnr______a-no-residentes-permanente_/instrucciones.html",
+          "notes": "Base operativa para declaracion, exencion por retencion y devoluciones."
+        },
+        {
+          "referenceId": "srcirnrdic-proc-216",
+          "type": "guidance",
+          "label": "AEAT - Modelo 216 e instrucciones",
+          "citation": "Portal oficial AEAT consultado en julio de 2026",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-sin-establecimiento-permanente/retenciones-irnr-sin-establecimiento-permanente/modelo-216.html",
+          "notes": "Base operativa para conectar la conclusion material con la capa del retenedor."
+        }
+      ]
+    },
+    {
+      "blockId": "blk-irnrdic-004",
+      "type": "checklist",
+      "title": "Checklist operativa reutilizable",
+      "order": 40,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": {
+          "access": "blocked"
+        },
+        "planner": {
+          "access": "allowed"
+        },
+        "ia": {
+          "access": "derived_only"
+        },
+        "faq": {
+          "access": "blocked"
+        },
+        "checklist": {
+          "access": "allowed"
+        },
+        "internal_guide": {
+          "access": "allowed"
+        },
+        "client_response": {
+          "access": "blocked"
+        },
+        "tax_library": {
+          "access": "derived_only"
+        }
+      },
+      "content": {
+        "items": [
+          {
+            "itemId": "chkirnrdic-001",
+            "label": "[Obligatorio] No residencia fiscal confirmada o derivada al objeto transversal antes del cierre."
+          },
+          {
+            "itemId": "chkirnrdic-002",
+            "label": "[Obligatorio] Categoria material de la renta cerrada: dividendo, interes o canon."
+          },
+          {
+            "itemId": "chkirnrdic-003",
+            "label": "[Obligatorio] Fuente espanola conforme a norma interna razonada expresamente."
+          },
+          {
+            "itemId": "chkirnrdic-004",
+            "label": "[Obligatorio] Exencion interna revisada antes del convenio."
+          },
+          {
+            "itemId": "chkirnrdic-005",
+            "label": "[Obligatorio] CDI comprobado y documentado cuando exista elemento internacional."
+          },
+          {
+            "itemId": "chkirnrdic-006",
+            "label": "[Obligatorio] Potestad tributaria espanola total, parcial o nula razonada con apoyo en norma interna y convenio."
+          },
+          {
+            "itemId": "chkirnrdic-007",
+            "label": "[Obligatorio] Retencion practicada revisada frente a la conclusion material y al limite convencional."
+          },
+          {
+            "itemId": "chkirnrdic-008",
+            "label": "[Obligatorio] Necesidad o no de Modelo 210 resuelta con soporte normativo."
+          },
+          {
+            "itemId": "chkirnrdic-009",
+            "label": "[Recomendable] Riesgo de beneficiario efectivo o de documentacion insuficiente analizado por separado."
+          },
+          {
+            "itemId": "chkirnrdic-010",
+            "label": "[Obligatorio] Conclusion final unica emitida con evidencia, convenio y cierre operativo minimo."
+          }
+        ]
+      }
+    },
+    {
+      "blockId": "blk-irnrdic-005",
+      "type": "faq",
+      "title": "Preguntas frecuentes reales de cliente y expediente",
+      "order": 50,
+      "status": "validado",
+      "visibility": "public",
+      "channelPolicy": {
+        "web": {
+          "access": "derived_only"
+        },
+        "planner": {
+          "access": "allowed"
+        },
+        "ia": {
+          "access": "allowed"
+        },
+        "faq": {
+          "access": "allowed"
+        },
+        "checklist": {
+          "access": "blocked"
+        },
+        "internal_guide": {
+          "access": "allowed"
+        },
+        "client_response": {
+          "access": "derived_only"
+        },
+        "tax_library": {
+          "access": "derived_only"
+        }
+      },
+      "content": {
+        "items": [
+          {
+            "faqId": "faqirnrdic-001",
+            "question": "¿Si una sociedad espanola me paga dividendos, siempre tengo que tributar en Espana?",
+            "answer": "Con caracter general existe fuente espanola, pero el analisis no termina ahi. Debe revisarse si opera una exencion interna y, en su caso, si el CDI limita la imposicion espanola."
+          },
+          {
+            "faqId": "faqirnrdic-002",
+            "question": "¿Los intereses cobrados por un no residente siempre tributan al 19%?",
+            "answer": "No necesariamente. Primero debe revisarse si existe exencion interna; despues, si hay CDI aplicable, puede existir un limite inferior o incluso ausencia de imposicion en origen segun el caso."
+          },
+          {
+            "faqId": "faqirnrdic-003",
+            "question": "¿Canon e interes son lo mismo si el contrato habla de licencia o financiacion?",
+            "answer": "No. La calificacion material del pago es decisiva. Un error al distinguir interes, canon u otra renta arrastra errores en convenio, tipo aplicable y retencion."
+          },
+          {
+            "faqId": "faqirnrdic-004",
+            "question": "¿Si ya me han retenido en Espana, el expediente esta cerrado?",
+            "answer": "No siempre. La retencion es una capa operativa importante, pero no sustituye el analisis de residencia, fuente espanola, exencion interna ni limite convencional."
+          },
+          {
+            "faqId": "faqirnrdic-005",
+            "question": "¿El convenio sustituye a la ley espanola cuando hay un pago internacional?",
+            "answer": "No. Primero se analiza la norma interna espanola y despues se revisa si el convenio limita, reparte o coordina esa potestad tributaria."
+          },
+          {
+            "faqId": "faqirnrdic-006",
+            "question": "¿Este objeto explica todas las casillas del Modelo 210 y del 216?",
+            "answer": "No. El objeto cubre el criterio material y el cierre operativo minimo. La cumplimentacion exhaustiva del formulario pertenece a una capa procedimental derivada."
+          }
+        ]
+      }
+    },
+    {
+      "blockId": "blk-irnrdic-006",
+      "type": "risk",
+      "title": "Riesgos materiales y operativos",
+      "order": 60,
+      "status": "validado",
+      "visibility": "internal",
+      "channelPolicy": {
+        "web": {
+          "access": "blocked"
+        },
+        "planner": {
+          "access": "allowed"
+        },
+        "ia": {
+          "access": "allowed"
+        },
+        "faq": {
+          "access": "blocked"
+        },
+        "checklist": {
+          "access": "derived_only"
+        },
+        "internal_guide": {
+          "access": "allowed"
+        },
+        "client_response": {
+          "access": "blocked"
+        },
+        "tax_library": {
+          "access": "derived_only"
+        }
+      },
+      "content": {
+        "items": [
+          {
+            "riskId": "riskirnrdic-001",
+            "description": "Calificar incorrectamente el pago y tratar como dividendo, interes o canon una renta que no encaja en esa categoria.",
+            "severity": "critical",
+            "likelihood": "medium",
+            "mitigation": "Cerrar primero la naturaleza material del pago y no resolver el caso solo por la etiqueta contractual."
+          },
+          {
+            "riskId": "riskirnrdic-002",
+            "description": "Aplicar el CDI antes de verificar si existe fuente espanola o si opera una exencion interna.",
+            "severity": "high",
+            "likelihood": "high",
+            "mitigation": "Seguir siempre la secuencia norma interna, exencion, convenio, retencion y declaracion."
+          },
+          {
+            "riskId": "riskirnrdic-003",
+            "description": "No detectar exenciones internas en intereses, dividendos o canones y practicar o soportar tributacion indebida en origen.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Revisar expresamente las exenciones internas antes de fijar tipo y cierre operativo."
+          },
+          {
+            "riskId": "riskirnrdic-004",
+            "description": "Asumir que una retencion practicada prueba por si sola la correccion material del expediente.",
+            "severity": "high",
+            "likelihood": "high",
+            "mitigation": "Separar conclusion material y operativa del retenedor, y revisar si la retencion coincide con el criterio correcto."
+          },
+          {
+            "riskId": "riskirnrdic-005",
+            "description": "Aplicar tipo convencional reducido sin soporte suficiente de residencia o sin cerrar bien la posicion material del perceptor.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Exigir soporte documental de residencia y revisar si el expediente necesita analisis adicional sobre la titularidad material de la renta."
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "srcirnrdic-risk-manual",
+          "type": "guidance",
+          "label": "AEAT - Rendimientos del capital mobiliario",
+          "citation": "Manual de Tributacion de No Residentes, pagina actualizada el 01/julio/2026",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-tributacion-no-residentes/capitulo-03-tributacion-rentas-comunes-nr/otros-rendimientos/rendimientos-capital-mobiliario.html",
+          "notes": "Base para riesgos sobre exenciones, tipos y tratamiento material."
+        },
+        {
+          "referenceId": "srcirnrdic-risk-210",
+          "type": "guidance",
+          "label": "AEAT - Instrucciones Modelo 210",
+          "citation": "Instrucciones oficiales vigentes en julio de 2026",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-210-irnr______a-no-residentes-permanente_/instrucciones.html",
+          "notes": "Base para riesgos de declaracion, exencion por retencion y devoluciones."
+        }
+      ]
+    },
+    {
+      "blockId": "blk-irnrdic-007",
+      "type": "required_documentation",
+      "title": "Documentacion necesaria y matriz de evidencias",
+      "order": 70,
+      "status": "validado",
+      "visibility": "public",
+      "channelPolicy": {
+        "web": {
+          "access": "derived_only"
+        },
+        "planner": {
+          "access": "allowed"
+        },
+        "ia": {
+          "access": "allowed"
+        },
+        "faq": {
+          "access": "derived_only"
+        },
+        "checklist": {
+          "access": "derived_only"
+        },
+        "internal_guide": {
+          "access": "allowed"
+        },
+        "client_response": {
+          "access": "derived_only"
+        },
+        "tax_library": {
+          "access": "derived_only"
+        }
+      },
+      "content": {
+        "items": [
+          {
+            "documentId": "docirnrdic-001",
+            "label": "Certificado de residencia fiscal del perceptor o soporte equivalente emitido por la administracion competente.",
+            "required": true,
+            "notes": "Fuerza probatoria: muy alta. Uso habitual: acreditar no residencia espanola y sustentar exencion o tipo reducido de convenio."
+          },
+          {
+            "documentId": "docirnrdic-002",
+            "label": "Acuerdo societario, contrato financiero o licencia que permita calificar correctamente la renta como dividendo, interes o canon.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: cerrar la naturaleza material del pago antes de aplicar norma interna o convenio."
+          },
+          {
+            "documentId": "docirnrdic-003",
+            "label": "Justificantes de pago, liquidaciones, certificaciones del pagador o detalle del devengo y de la retencion practicada.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: comprobar importe bruto, tipo aplicado y coherencia entre conclusion material y operativa."
+          },
+          {
+            "documentId": "docirnrdic-004",
+            "label": "Texto del CDI aplicable, certificado o formulario de residencia y, en su caso, documentacion para sostener el trato convencional.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: justificar limitacion de imposicion en origen o devolucion por exceso de retencion."
+          },
+          {
+            "documentId": "docirnrdic-005",
+            "label": "Documentacion adicional sobre estructura del pago, uso economico en Espana o posicion material del perceptor cuando exista duda interpretativa.",
+            "required": false,
+            "notes": "Fuerza probatoria: complementaria. Uso habitual: reforzar supuestos delicados de canones, intereses exentos o rentas con riesgo de mala calificacion."
+          }
+        ]
+      }
+    },
+    {
+      "blockId": "blk-irnrdic-008",
+      "type": "case_study",
+      "title": "Casos practicos reutilizables",
+      "order": 80,
+      "status": "validado",
+      "visibility": "public",
+      "channelPolicy": {
+        "web": {
+          "access": "derived_only"
+        },
+        "planner": {
+          "access": "allowed"
+        },
+        "ia": {
+          "access": "allowed"
+        },
+        "faq": {
+          "access": "derived_only"
+        },
+        "checklist": {
+          "access": "blocked"
+        },
+        "internal_guide": {
+          "access": "allowed"
+        },
+        "client_response": {
+          "access": "derived_only"
+        },
+        "tax_library": {
+          "access": "derived_only"
+        }
+      },
+      "content": {
+        "items": [
+          {
+            "caseId": "caseirnrdic-001",
+            "scenario": "Sociedad residente en Francia percibe dividendos distribuidos por una entidad residente en Espana.",
+            "resolution": "Existe fuente espanola conforme a norma interna. Debe revisarse si opera alguna exencion interna y, si no, aplicar el limite del convenio correspondiente antes de cerrar retencion o devolucion.",
+            "notes": "Aprendizaje: dividendo de fuente espanola no equivale automaticamente a tributacion plena al tipo interno."
+          },
+          {
+            "caseId": "caseirnrdic-002",
+            "scenario": "Entidad no residente percibe intereses de un pagador espanol y alega exencion interna por la naturaleza de la financiacion.",
+            "resolution": "Antes del CDI debe analizarse si la exencion interna desplaza la tributacion material en origen. Solo si no opera la exencion se revisa el eventual limite convencional.",
+            "notes": "Aprendizaje: la exencion interna puede ser mas relevante que el convenio."
+          },
+          {
+            "caseId": "caseirnrdic-003",
+            "scenario": "Empresa espanola satisface cantidades por licencia tecnologica a una entidad de otro Estado y el contrato mezcla uso de intangibles y servicios.",
+            "resolution": "El expediente debe calificar correctamente que parte es canon y que parte puede corresponder a otros servicios o prestaciones. Sin esa calificacion no puede fijarse bien la tributacion en origen.",
+            "notes": "Aprendizaje: los canones son la categoria con mayor riesgo de mala calificacion."
+          },
+          {
+            "caseId": "caseirnrdic-004",
+            "scenario": "No residente soporta una retencion superior al limite del CDI sobre intereses de fuente espanola.",
+            "resolution": "La conclusion material puede ser correcta respecto de la fuente espanola, pero el expediente debe abrir la capa de devolucion o regularizacion porque la imposicion en origen supera el maximo convencional.",
+            "notes": "Aprendizaje: una retencion practicada no siempre cierra bien el expediente."
+          },
+          {
+            "caseId": "caseirnrdic-005",
+            "scenario": "Perceptor no residente presenta certificado de residencia, pero la documentacion sobre la naturaleza del pago es insuficiente y hay dudas entre dividendo y otra distribucion patrimonial.",
+            "resolution": "No debe aplicarse automaticamente un tipo reducido de convenio mientras no se cierre la categoria material de la renta. Primero se resuelve la calificacion y luego el trato convencional.",
+            "notes": "Aprendizaje: la residencia no corrige una mala calificacion del pago."
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "referenceId": "srcirnrdic-case-manual",
+          "type": "guidance",
+          "label": "AEAT - Rendimientos del capital mobiliario",
+          "citation": "Manual de Tributacion de No Residentes, pagina actualizada el 01/julio/2026",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-tributacion-no-residentes/capitulo-03-tributacion-rentas-comunes-nr/otros-rendimientos/rendimientos-capital-mobiliario.html",
+          "notes": "Base de apoyo para casuistica general de rentas pasivas mobiliarias."
+        },
+        {
+          "referenceId": "srcirnrdic-case-convenios",
+          "type": "guidance",
+          "label": "AEAT - Disposiciones comunes de Convenios sobre dividendos, intereses y canones",
+          "citation": "Portal oficial AEAT consultado en julio de 2026",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-sin-establecimiento-permanente/disposiciones-comunes-convenios/convenios-dividendos.html",
+          "notes": "Base general para la logica de imposicion compartida en origen."
+        }
+      ]
+    },
+    {
+      "blockId": "blk-irnrdic-009",
+      "type": "internal_reference",
+      "title": "Referencias internas y relaciones doctrinales",
+      "order": 90,
+      "status": "validado",
+      "visibility": "restricted",
+      "channelPolicy": {
+        "web": {
+          "access": "blocked"
+        },
+        "planner": {
+          "access": "blocked"
+        },
+        "ia": {
+          "access": "blocked"
+        },
+        "faq": {
+          "access": "blocked"
+        },
+        "checklist": {
+          "access": "blocked"
+        },
+        "internal_guide": {
+          "access": "allowed"
+        },
+        "client_response": {
+          "access": "blocked"
+        },
+        "tax_library": {
+          "access": "blocked"
+        }
+      },
+      "content": {
+        "items": [
+          {
+            "referenceId": "intrefirnrdic-001",
+            "label": "Dossier primario de fuentes de IRNR - Dividendos, Intereses y Canones",
+            "notes": "Documento real: docs/research/2026-07-18-irnr-dividendos-intereses-canones-primary-sources.md."
+          },
+          {
+            "referenceId": "intrefirnrdic-002",
+            "label": "Knowledge Factory v1 Certification",
+            "notes": "Documento real: docs/KNOWLEDGE_FACTORY_V1_CERTIFICATION_2026-07-18.md."
+          },
+          {
+            "referenceId": "intrefirnrdic-003",
+            "label": "Knowledge Library v2 Certification",
+            "notes": "Documento real: docs/KNOWLEDGE_LIBRARY_V2_CERTIFICATION.md."
+          },
+          {
+            "referenceId": "intrefirnrdic-004",
+            "label": "IRNR - Rendimientos del Trabajo",
+            "notes": "Relacion doctrinal interna para distinguir rentas del trabajo y rentas pasivas en expedientes internacionales."
+          }
+        ]
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relationId": "rel-irnrdic-consumes-residencia",
+      "type": "depends_on",
+      "targetKnowledgeObjectId": "ko_es_residencia_fiscal_personas_fisicas_001",
+      "rationale": "Consumes Doctrine From: la condicion de no residente debe resolverse con el objeto transversal de residencia fiscal antes de aplicar el criterio material de IRNR.",
+      "order": 10
+    },
+    {
+      "relationId": "rel-irnrdic-consumes-cdi",
+      "type": "depends_on",
+      "targetKnowledgeObjectId": "ko_es_cdi_marco_general_001",
+      "rationale": "Consumes Doctrine From: el marco general de CDI se utiliza para la capa convencional sin recrear doctrina internacional general en este objeto.",
+      "order": 20
+    },
+    {
+      "relationId": "rel-irnrdic-consumes-modelo210",
+      "type": "references",
+      "targetKnowledgeObjectId": "ko_es_irnr_modelo210_imputacion_rentas_001",
+      "rationale": "Consumes Doctrine From: el objeto de Modelo 210 aporta la capa de cumplimiento cuando la conclusion material de IRNR exige declaracion.",
+      "order": 30
+    },
+    {
+      "relationId": "rel-irnrdic-provides-rentas-trabajo",
+      "type": "expands",
+      "targetKnowledgeObjectId": "ko_es_irnr_rendimientos_trabajo_001",
+      "rationale": "Provides Doctrine To: este objeto amplia el dominio IRNR con otra categoria material y puede reutilizarse en comparativas internas entre rentas de no residentes.",
+      "order": 40
+    },
+    {
+      "relationId": "rel-irnrdic-provides-irpf-internacional",
+      "type": "expands",
+      "targetKnowledgeObjectId": "ko_es_irpf_internacional_personas_fisicas_001",
+      "rationale": "Provides Doctrine To: la fiscalidad internacional de personas fisicas puede consumir este criterio como capa de rentas pasivas transfronterizas.",
+      "order": 50
+    }
+  ],
+  "auditMetadata": {
+    "createdAt": "2026-07-18T23:59:00Z",
+    "createdBy": "codex-knowledge-authoring",
+    "updatedAt": "2026-07-18T23:59:00Z",
+    "updatedBy": "codex-knowledge-authoring",
+    "revisionCount": 1,
+    "sourceSystem": "ag-knowledge-contract"
+  }
+}

@@ -15,14 +15,15 @@ Estado: dossier primario para STORY-KF-010B
   - articulo 3 (`Normativa aplicable`);
   - articulo 4 (`Tratados y convenios`);
   - articulo 5 (`Contribuyentes`);
-  - articulo 13.1.f) (`Dividendos, intereses y canones obtenidos en territorio espanol`);
-  - articulos 14, 24, 25, 26, 28, 30 y 31 (exenciones, base imponible,
-    cuota, devengo, declaracion, retenciones y obligacion de retener).
+  - articulo 13.1.f) (`Dividendos, intereses, canones y otros rendimientos de capital mobiliario obtenidos en territorio espanol`);
+  - articulo 14 (`Rentas exentas`);
+  - articulos 24, 25 y 26 (`Base imponible`, `Cuota tributaria` y
+    `Deducciones`);
+  - articulo 31 (`Obligacion de retener e ingresar a cuenta`).
 - Uso en la historia:
-  - determinar cuando existe renta pasiva obtenida en territorio espanol;
-  - separar potestad tributaria interna de modulacion por `CDI`;
-  - ordenar la secuencia `normativa interna -> CDI -> retencion ->
-    obligacion formal`.
+  - fijar la localizacion en Espana de dividendos, intereses y canones;
+  - distinguir potestad tributaria material, exencion, retencion y declaracion;
+  - ordenar la secuencia `norma interna -> CDI -> retencion -> declaracion`.
 
 ### 2. Reglamento del Impuesto sobre la Renta de no Residentes
 
@@ -31,52 +32,51 @@ Estado: dossier primario para STORY-KF-010B
 - Texto consolidado BOE consultado con ultima actualizacion publicada el
   `19/10/2019`.
 - Relevancia principal para el objeto:
-  - articulo 7 (`Obligacion de declarar`);
-  - articulo 10 (`Rentas exceptuadas de la obligacion de retener e ingresar a cuenta`);
-  - resto del desarrollo reglamentario util para declaracion, retencion y
-    cierre operativo de rentas sin establecimiento permanente.
+  - articulo 7 (`Declaracion del Impuesto por las rentas obtenidas en Espana sin mediacion de establecimiento permanente`);
+  - articulos 9 a 13 (`Retenciones e ingresos a cuenta`);
+  - articulo 10 (`Excepciones a la obligacion de retener y de ingresar a cuenta`).
 - Uso en la historia:
-  - aterrizar la capa de cumplimiento minimo;
-  - distinguir sujecion material, retencion y obligacion formal.
+  - aterrizar la frontera entre renta sometida, renta exenta y renta no sujeta a
+    retencion;
+  - sostener el cierre operativo minimo del objeto sin convertirlo en manual del
+    retenedor.
 
 ### 3. Ley General Tributaria
 
 - Norma: `Ley 58/2003`, de 17 de diciembre.
 - Uso en la historia:
-  - soporte general para prueba, asistencia mutua e intercambio de
-    informacion;
-  - marco util para acreditar residencia fiscal y documentacion habilitante
-    para trato convencional o exencion;
-  - no sustituye la normativa especifica del `IRNR`.
+  - soporte general para acreditacion de residencia, prueba de la exencion y
+    asistencia mutua en intercambio de informacion;
+  - base metodologica para no separar el analisis material del soporte
+    documental exigible;
+  - no sustituye la normativa especifica del `IRNR` ni el `CDI` aplicable.
 
-### 4. Orden EHA/3316/2010 y Orden HAC/623/2026
+### 4. Ley del IRPF y normativa de retenciones como referencia auxiliar
 
-- Norma base: `Orden EHA/3316/2010`, de 17 de diciembre.
-- Referencia BOE: `BOE-A-2010-19707`.
-- Ultima actualizacion consolidada revisada en BOE: `23/06/2026`.
-- Norma modificativa reciente: `Orden HAC/623/2026`, de 12 de junio.
-- Referencia BOE: `BOE-A-2026-13573`.
-- Correccion de errores: `BOE-A-2026-14499`, publicada el `04/07/2026`.
-- Relevancia principal:
-  - mantiene el `Modelo 210` como instrumento natural para rentas obtenidas
-    sin mediacion de establecimiento permanente;
-  - coordina la capa de presentacion y procedimiento;
-  - enlaza con el `Modelo 216` en materia de retenciones e ingresos a cuenta.
+- Norma principal: `Ley 35/2006`, de 28 de noviembre.
 - Uso en la historia:
-  - fijar el cierre procedimental minimo del objeto sin convertirlo en un
-    manual de formulario;
-  - evitar mezclar redacciones anteriores y posteriores a junio de `2026`.
+  - solo como apoyo para conceptos compartidos de capital mobiliario,
+    deducibilidad de gastos cuando el `IRNR` remite a ellos y logica general de
+    retenciones;
+  - no sustituye el marco propio del `IRNR`.
 
-### 5. Orden EHA/3290/2008 - Modelo 216
+### 5. Convenios para Evitar la Doble Imposicion suscritos por Espana
 
-- Norma: `Orden EHA/3290/2008`, de 6 de noviembre.
-- Referencia BOE: `BOE-A-2008-18497`.
-- Relevancia principal:
-  - aprueba el `Modelo 216` y la declaracion anual vinculada a retenciones e
-    ingresos a cuenta en `IRNR` sin establecimiento permanente.
+- Fuente oficial: Ministerio de Hacienda - listados de `Convenios de doble imposicion`.
 - Uso en la historia:
-  - sostener la relacion entre conclusion material y capa de retencion;
-  - justificar la presencia de `216` como modelo secundario del objeto.
+  - verificar existencia y vigencia del convenio aplicable;
+  - comprobar protocolos, textos sinteticos y modificaciones posteriores;
+  - evitar el uso de resenas privadas como fuente de partida del criterio.
+
+### 6. Modelo OCDE y Comentarios como referencia interpretativa general
+
+- Fuente institucional: `OECD Model Tax Convention on Income and on Capital`.
+- Uso en la historia:
+  - apoyo metodologico para interpretar estructura comun de dividendos,
+    intereses y canones;
+  - util para explicar tributacion compartida, limites de imposicion y nocion
+    de beneficiario efectivo a nivel introductorio;
+  - no sustituye el texto del convenio bilateral aplicable.
 
 ## Fuentes AEAT
 
@@ -86,79 +86,119 @@ Estado: dossier primario para STORY-KF-010B
   `https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-tributacion-no-residentes/capitulo-03-tributacion-rentas-comunes-nr/otros-rendimientos/rendimientos-capital-mobiliario.html`
 - Pagina actualizada segun AEAT: `01/julio/2026`.
 - Aporta:
-  - confirmacion expresa del anclaje en el articulo `13.1.f)` Ley IRNR;
-  - definicion operativa de `dividendos`, `intereses` y `canones` obtenidos en
-    territorio espanol;
-  - varios supuestos de exencion en intereses, dividendos y canones;
-  - regla general de tributacion compartida bajo `CDI`, con limite de
-    imposicion en fuente;
-  - tributacion separada por cada devengo total o parcial;
-  - base imponible general por importe integro, con excepcion de deducibilidad
-    para residentes `UE/EEE` con asistencia mutua;
-  - tipos: `19%` para dividendos e intereses; `19%` o `24%` para canones
-    segun residencia.
+  - anclaje directo al articulo `13.1.f)` Ley IRNR;
+  - definicion operativa de dividendos, intereses y canones de fuente espanola;
+  - exenciones internas relevantes en intereses, dividendos y canones
+    intracomunitarios;
+  - regla general de base integra sin gastos;
+  - deducibilidad limitada para residentes `UE/EEE` con asistencia mutua;
+  - tipo del `19%` para dividendos e intereses y tipo general para canones, con
+    modulacion por residencia.
 - Uso en la historia:
-  - fijar el mapa material del objeto;
-  - sostener la secuencia `normativa interna -> CDI -> retencion ->
-    declaracion`;
-  - justificar el tratamiento diferente de `canones` frente a dividendos e
-    intereses.
+  - construir el bloque material del objeto;
+  - fijar la diferencia operativa entre categorias de renta pasiva.
 
-### 2. AEAT - Cuestiones especificas sobre tributacion de otras rentas sin convenio
-
-- URL oficial revisada:
-  `https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-sin-establecimiento-permanente/cuestiones-especificas-sobre-tributacion-otras-convenio/rendimientos-capital-mobiliario.html`
-- Relevancia:
-  - ofrece la lectura practica sin convenio para rendimientos del capital
-    mobiliario;
-  - confirma tributacion general al tipo vigente cuando no exista convenio;
-  - recuerda la posibilidad de deducibilidad para determinados residentes
-    `UE/EEE`;
-  - enumera exenciones frecuentes de intereses y otros supuestos relevantes.
-- Uso en la historia:
-  - reforzar la capa de decision cuando no exista `CDI`;
-  - distinguir correctamente ausencia de convenio, exencion interna y limite
-    convencional.
-
-### 3. AEAT - Tipos de gravamen en el IRNR sin establecimiento permanente
+### 2. AEAT - Tipos de gravamen en el IRNR sin establecimiento permanente
 
 - URL oficial revisada:
   `https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-sin-establecimiento-permanente/tipos-gravamen-irnr-sin-establecimiento-permanente.html`
 - Pagina actualizada segun AEAT: `18/junio/2025`.
 - Relevancia:
-  - confirma el tipo del `19%` para `dividendos` e `intereses`;
-  - permite anclar el tratamiento diferencial de `canones` en la logica del
-    tipo general `19%` o `24%` segun residencia.
+  - confirma el `19%` para dividendos e intereses;
+  - confirma que los canones tributan al tipo general vigente, con distincion
+    `UE/EEE/Liechtenstein` frente a resto de contribuyentes.
 - Uso en la historia:
-  - soporte del bloque operativo de cuota y retenciones;
-  - referencia util para `Planner` y `FAQ` derivadas.
+  - fijar la capa minima de tributacion interna sin mezclarla con el limite
+    convencional del `CDI`.
 
-### 4. Portal AEAT - Modelo 210. IRNR sin establecimiento permanente
+### 3. AEAT - Cuestiones especificas sobre tributacion de otras rentas sin convenio - Rendimientos del capital mobiliario
 
 - URL oficial revisada:
-  `https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GF00.shtml`
-- Pagina actualizada segun sede: `24/junio/2026`.
+  `https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-sin-establecimiento-permanente/cuestiones-especificas-sobre-tributacion-otras-convenio/rendimientos-capital-mobiliario.html`
+- Pagina actualizada segun AEAT: `26/septiembre/2024`.
 - Relevancia:
-  - confirma el ecosistema operativo real de `Modelo 210`, `211`, `213`,
-    `216`, `226`, `228` y `247`;
-  - enlaza de forma expresa la `Orden HAC/623/2026` y las instrucciones
-    vigentes del `Modelo 210`.
+  - resume el escenario sin `CDI` para dividendos e intereses;
+  - confirma base imponible general por importe integro percibido;
+  - recoge la deducibilidad de gastos para residentes `UE/EEE` cuando proceda;
+  - destaca exenciones internas especialmente relevantes en intereses.
 - Uso en la historia:
-  - fijar la conexion entre conclusion material y via de cumplimiento;
-  - sostener la capa minima de declaracion sin bajar al nivel de casillas.
+  - reforzar la capa de norma interna pura;
+  - separar bien el analisis sin convenio del analisis con convenio.
 
-### 5. AEAT - Instrucciones oficiales del Modelo 210
+### 4. AEAT - Disposiciones mas comunes de los Convenios. Dividendos
+
+- URL oficial revisada:
+  `https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-sin-establecimiento-permanente/disposiciones-comunes-convenios/convenios-dividendos.html`
+- Relevancia:
+  - sintetiza la regla general de tributacion compartida en dividendos;
+  - recuerda que Espana, como Estado de la fuente, suele quedar limitada por
+    el tipo maximo del convenio, habitualmente en torno al `15%`.
+- Uso en la historia:
+  - apoyar el `Decision Gateway` del objeto;
+  - fijar la idea de limite convencional sin sustituir el tratado concreto.
+
+### 5. AEAT - Disposiciones mas comunes de los Convenios. Intereses
+
+- URL oficial revisada:
+  `https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-sin-establecimiento-permanente/disposiciones-comunes-convenios/convenios-intereses.html`
+- Relevancia:
+  - resume la tributacion compartida general en intereses;
+  - recuerda que el convenio suele fijar un limite de imposicion en origen,
+    frecuentemente en torno al `10%`;
+  - advierte que pueden existir exenciones internas mas beneficiosas que el
+    propio convenio.
+- Uso en la historia:
+  - anclar la prioridad del criterio mas favorable cuando la normativa interna
+    mejore el convenio;
+  - evitar simplificaciones del tipo `siempre aplica el convenio`.
+
+### 6. AEAT - Disposiciones mas comunes de los Convenios. Canones
+
+- URL oficial revisada:
+  `https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-sin-establecimiento-permanente/disposiciones-comunes-convenios/convenios-canones.html`
+- Relevancia:
+  - resume el concepto operativo de canon en clave convencional;
+  - advierte que determinados servicios de asistencia tecnica pueden tratarse
+    como canon en algunos convenios;
+  - confirma la logica general de tributacion compartida y limites
+    convencionales, normalmente entre `5%` y `10%`.
+- Uso en la historia:
+  - sostener la parte mas delicada del objeto, donde la calificacion del pago es
+    decisiva;
+  - justificar que el analisis del convenio no es accesorio, sino nuclear.
+
+### 7. AEAT - Instrucciones del Modelo 210
 
 - URL oficial revisada:
   `https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-210-irnr______a-no-residentes-permanente_/instrucciones.html`
 - Relevancia:
-  - confirma el uso del `Modelo 210` para rentas obtenidas sin
+  - confirma la obligacion general de declarar rentas obtenidas sin
     establecimiento permanente;
-  - sirve de apoyo para el cierre formal minimo del objeto.
+  - aclara que no existe obligacion de autoliquidar cuando ya se ha practicado
+    retencion o ingreso a cuenta o cuando la renta esta exenta por articulo 14
+    o por convenio, con las salvedades previstas;
+  - mantiene la logica de declaracion separada por devengo, salvo agrupaciones
+    permitidas.
 - Uso en la historia:
-  - anclar el paso final `retencion -> declaracion`;
-  - dejar claro que el objeto no pretende sustituir las instrucciones del
-    modelo.
+  - cerrar el bloque de cumplimiento minimo;
+  - evitar que el objeto se convierta en una guia completa del formulario.
+
+### 8. AEAT - Retenciones en el IRNR sin establecimiento permanente - Modelo 216
+
+- URL oficial revisada:
+  `https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-sin-establecimiento-permanente/retenciones-irnr-sin-establecimiento-permanente/modelo-216.html`
+- Instrucciones oficiales complementarias:
+  `https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-216-irnr______sos-cuenta-declaracion-ingreso_/instrucciones-modelo-216-presentacion-ejercicio-siguientes.html`
+- Relevancia:
+  - confirma el papel del `Modelo 216` como declaracion del retenedor;
+  - recoge declaraciones negativas en determinados supuestos de rentas exentas o
+    no sometidas a retencion;
+  - destaca desde `2024` el desglose especifico de dividendos frente al resto de
+    rentas en la propia declaracion.
+- Uso en la historia:
+  - conectar la capa material con la operativa del retenedor sin desplazar el
+    objeto hacia un manual de presentacion;
+  - sostener la frontera entre obligacion del perceptor y obligacion del pagador.
 
 ## Doctrina administrativa relevante
 
@@ -166,30 +206,40 @@ Estado: dossier primario para STORY-KF-010B
 
 La historia debe incorporar doctrina administrativa solo cuando:
 
-- aclare la fuente interna de dividendos, intereses o canones;
-- ayude a distinguir exencion interna de limitacion por `CDI`;
-- resuelva la relacion entre documentacion acreditativa, retencion y
-  declaracion;
-- aporte un criterio util sobre beneficiario efectivo, cuando el problema
-  aparezca de forma operativa en el expediente.
+- aclare la calificacion entre dividendo, interes, canon u otro pago no
+  encajable limpiamente en estas categorias;
+- aterrice la interaccion entre exencion interna y limite de convenio;
+- ayude a resolver retenciones, devoluciones o acreditacion de residencia;
+- aporte criterio util sobre beneficiario efectivo, gasto deducible o
+  documentacion exigible.
 
 ### Lineas doctrinales a priorizar
 
 - consultas vinculantes `DGT` o criterios `INFORMA` sobre:
-  - dividendos pagados a no residentes y aplicacion de `CDI`;
-  - intereses exentos o limitados por norma interna o convenio;
-  - canones sujetos a imposicion en fuente;
-  - acreditacion de residencia fiscal y soporte documental para trato
-    convencional;
-  - conexion entre retencion practicada y obligacion o no de declarar.
+  - dividendos distribuidos a no residentes con posible exencion o limite de
+    convenio;
+  - intereses sujetos o exentos por normativa interna;
+  - canones y pagos mixtos con riesgo de recalificacion;
+  - acreditacion de residencia fiscal y documentacion exigible;
+  - devolucion de retenciones soportadas en exceso por aplicacion de convenio.
+
+### Criterios de seleccion
+
+- solo consultas vinculantes con impacto operativo real sobre fuente,
+  retencion, `CDI`, exencion o declaracion;
+- solo criterios administrativos consolidados;
+- solo jurisprudencia con efecto practico sobre la tributacion de rentas
+  pasivas de no residentes;
+- no usar resenas secundarias como fuente principal del criterio.
 
 ### Regla de uso
 
 La doctrina administrativa no sustituye:
 
 - el criterio legal del `TRLIRNR`;
-- la jerarquia del convenio concreto;
-- ni la necesidad de identificar primero la categoria material de renta.
+- la jerarquia del `CDI` aplicable;
+- ni la necesidad de calificar correctamente el pago antes de hablar de
+  retencion o declaracion.
 
 Solo se utilizara como capa interpretativa o de aterrizaje operativo.
 
@@ -199,18 +249,19 @@ Solo se utilizara como capa interpretativa o de aterrizaje operativo.
 
 Solo se incorporaran resoluciones cuando alteren o confirmen de forma util:
 
-- la fuente de la renta pasiva;
-- la distribucion de potestad bajo `CDI`;
-- la aplicacion de exenciones o limites de imposicion;
-- o la necesidad de acreditar documentalmente el trato convencional.
+- la calificacion de dividendos, intereses o canones;
+- la aplicacion de exenciones internas;
+- la prioridad o limite de los `CDI`;
+- la posibilidad de devolucion de retenciones soportadas en exceso;
+- la exigencia probatoria sobre residencia o sobre la naturaleza del pago.
 
 ### Regla de seleccion
 
 - no convertir este objeto en un repertorio jurisprudencial general de
-  fiscalidad financiera internacional;
-- priorizar resoluciones con efecto practico reutilizable en expedientes,
-  `Planner` y respuestas estandar;
-- no usar resenas secundarias como fuente principal.
+  fiscalidad internacional;
+- priorizar resoluciones con efecto reutilizable en expedientes, `Planner` y
+  respuestas estandar;
+- no incorporar jurisprudencia abstracta sin consecuencia operativa clara.
 
 ## Criterios de uso para el objeto
 
@@ -220,41 +271,47 @@ La historia debe construirse con esta secuencia:
 
 1. no residencia fiscal;
 2. identificacion de la categoria de renta;
-3. fuente en Espana por norma interna;
-4. `CDI` aplicable;
-5. exencion, limite o tributacion compartida;
-6. retencion o ingreso a cuenta;
-7. obligacion formal minima.
+3. fuente espanola conforme a norma interna;
+4. exenciones internas potenciales;
+5. `CDI` aplicable;
+6. limite de imposicion, exencion o tributacion compartida;
+7. retencion o ingreso a cuenta;
+8. declaracion o devolucion cuando proceda.
 
 ### 2. Principio metodologico clave
 
 No se debe mezclar:
 
-- clasificacion material de la renta;
-- aplicacion del convenio;
+- calificacion material de la renta;
+- derecho de imposicion de Espana;
 - retencion;
-- y declaracion.
+- y obligacion formal.
 
-La existencia de una retencion o la ausencia de ella no prueba por si sola la
-potestad tributaria material de Espana.
+Que exista una retencion, una declaracion del pagador o una autoliquidacion del
+perceptor no prueba por si sola la correccion de la calificacion material.
 
 ### 3. Foco del objeto
 
 El objeto priorizara:
 
-- dividendos;
-- intereses;
-- canones;
-- interaccion intensiva con `CDI`;
-- acreditacion documental del trato convencional;
-- conexion operativa con `Modelo 210` y `Modelo 216`.
+- dividendos pagados por entidades residentes en Espana a no residentes;
+- intereses de fuente espanola con especial atencion a exenciones internas y
+  limites convencionales;
+- canones de fuente espanola con riesgo de mala calificacion del pago;
+- acreditacion de residencia y documentacion para aplicar convenio;
+- retenciones y cumplimiento minimo vinculados a `Modelo 210` y `Modelo 216`.
 
 ### 4. Limite estructural
 
-El objeto no debe convertirse en:
+Este objeto no desarrollara:
 
-- un catalogo articulo por articulo de todos los convenios bilaterales;
-- una guia completa de retenciones financieras internas;
-- un manual exhaustivo del `Modelo 210`;
-- ni un sustituto de futuros objetos sobre ganancias patrimoniales o
-  establecimientos permanentes.
+- el catalogo articulo por articulo de todos los `CDI`;
+- la fiscalidad completa del pagador residente;
+- el procedimiento completo de devolucion o gestion de certificados;
+- la guia exhaustiva de `Modelo 210` o `Modelo 216`.
+
+Ese conocimiento solo se consumira como capa de cierre operativo cuando
+proceda, para no romper la frontera entre:
+
+- objeto material de `IRNR` sobre rentas pasivas mobiliarias;
+- y objetos doctrinales o procedimentales especializados.
