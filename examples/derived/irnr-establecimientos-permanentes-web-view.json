@@ -1,0 +1,163 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_establecimientos_permanentes_001",
+    "stableKey": "irnr-establecimientos-permanentes",
+    "title": "IRNR - Establecimientos Permanentes",
+    "slug": "irnr-establecimientos-permanentes",
+    "version": "1.0.0"
+  },
+  "executiveSummary": {
+    "summary": "Este Knowledge Object fija el criterio operativo del despacho para decidir cuando una persona o entidad no residente actua en Espana mediante establecimiento permanente a efectos del IRNR. El objeto parte de una idea clave: no toda presencia economica en Espana equivale a EP, pero cuando concurren lugar fijo de negocios, agente dependiente o una presencia funcionalmente equivalente, el marco tributario cambia de forma material. A partir de ese punto, el expediente deja de moverse en la logica habitual del IRNR sin establecimiento permanente y pasa a una capa mas cercana al regimen general del Impuesto sobre Sociedades, con declaracion en modelo 200, documento 206, pagos fraccionados y otras obligaciones formales propias. El objeto tambien separa expresamente dos planos que en la practica suelen mezclarse: la definicion interna del EP y la revision posterior del convenio para evitar la doble imposicion. El convenio no crea una obligacion tributaria nueva, sino que puede limitar, distribuir o matizar la potestad ya atribuida por la norma interna. La utilidad practica del objeto es cerrar con trazabilidad una pregunta muy frecuente y muy delicada: existe o no existe un establecimiento permanente en Espana, y que consecuencias generales se activan si la respuesta es afirmativa.",
+    "problemSolved": "Evita errores al identificar un EP en Espana, al mezclar analisis interno y convencional, o al cerrar mal las consecuencias operativas del paso de IRNR sin EP a IRNR con EP.",
+    "scope": "Identificacion del establecimiento permanente en Espana, diferencia con presencia sin EP, capa CDI y consecuencias juridicas y operativas generales del IRNR con EP.",
+    "practicalImpact": "Permite abrir, revisar y cerrar expedientes internacionales con una conclusion unica y reutilizable antes de escalar, si procede, a atribucion de beneficios, IS o precios de transferencia."
+  },
+  "affectedTaxModels": [
+    {
+      "modelCode": "200",
+      "modelName": "Modelo 200 - Impuesto sobre Sociedades / IRNR con establecimiento permanente",
+      "relationType": "primary",
+      "notes": "Es el modelo declarativo natural cuando existe IRNR mediante establecimiento permanente."
+    },
+    {
+      "modelCode": "202",
+      "modelName": "Modelo 202 - Pagos fraccionados",
+      "relationType": "secondary",
+      "notes": "Conecta el analisis material del EP con la capa de pagos fraccionados."
+    },
+    {
+      "modelCode": "206",
+      "modelName": "Modelo 206 - Documento de ingreso o devolucion",
+      "relationType": "informative",
+      "notes": "Documento asociado a la declaracion del IRNR mediante establecimiento permanente."
+    }
+  ],
+  "affectedForms": [
+    {
+      "formCode": "200",
+      "formName": "Modelo 200",
+      "relationType": "required",
+      "notes": "Formulario impactado directamente por la conclusion de existencia de EP."
+    },
+    {
+      "formCode": "202",
+      "formName": "Modelo 202",
+      "relationType": "informative",
+      "notes": "Formulario impactado por la obligacion de pagos fraccionados."
+    },
+    {
+      "formCode": "206",
+      "formName": "Modelo 206",
+      "relationType": "required",
+      "notes": "Documento de ingreso o devolucion vinculado al cierre del impuesto."
+    }
+  ],
+  "faq": [
+    {
+      "faqId": "faqirnrep-001",
+      "question": "¿Tener un cliente en Espana significa automaticamente tener un establecimiento permanente?",
+      "answer": "No. La existencia de clientes espanoles por si sola no crea un EP. Debe analizarse si existe lugar fijo de negocios, agente dependiente u otra presencia funcional suficiente en Espana."
+    },
+    {
+      "faqId": "faqirnrep-002",
+      "question": "¿Alquilar una oficina pequena o usar un espacio de coworking en Espana siempre genera EP?",
+      "answer": "No necesariamente. La clave no es solo la existencia fisica del espacio, sino su funcion real en el negocio, su permanencia y si desde alli se desarrolla una parte sustancial de la actividad."
+    },
+    {
+      "faqId": "faqirnrep-003",
+      "question": "¿Un agente o comercial en Espana puede crear EP aunque la empresa no tenga sucursal?",
+      "answer": "Si. Cuando un agente actua habitualmente con poderes relevantes para contratar en nombre y por cuenta del no residente, puede existir EP aunque no haya una sucursal formalmente inscrita."
+    },
+    {
+      "faqId": "faqirnrep-004",
+      "question": "¿Si existe convenio, ya no importa la ley espanola?",
+      "answer": "No. Primero se analiza la ley interna y despues se revisa si el convenio limita, matiza o corrige ese resultado. El convenio no sustituye por completo el analisis interno."
+    },
+    {
+      "faqId": "faqirnrep-005",
+      "question": "¿Este objeto ya resuelve cuanto beneficio debe atribuirse al establecimiento permanente?",
+      "answer": "No. Este objeto identifica si existe EP y ordena sus consecuencias generales. La atribucion detallada de beneficios exige una capa doctrinal adicional."
+    },
+    {
+      "faqId": "faqirnrep-006",
+      "question": "¿Si existe EP se sigue usando la logica habitual del modelo 210?",
+      "answer": "No. La existencia de EP desplaza el expediente a una logica distinta, mas cercana al modelo 200, al documento 206 y a los pagos fraccionados del modelo 202."
+    }
+  ],
+  "requiredDocumentation": [
+    {
+      "documentId": "docirnrep-001",
+      "label": "Descripcion del negocio del no residente y organigrama funcional de la actividad vinculada con Espana.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: fijar que actividad se analiza y donde se integra dentro del negocio global."
+    },
+    {
+      "documentId": "docirnrep-002",
+      "label": "Contratos de arrendamiento, oficina, coworking, obra, almacen, sucursal o cualquier soporte de presencia fisica en Espana.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: acreditar lugar fijo de negocios, duracion y uso real del espacio."
+    },
+    {
+      "documentId": "docirnrep-003",
+      "label": "Poderes, contratos mercantiles, correos operativos o evidencia equivalente sobre agentes en Espana y su capacidad para contratar.",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: determinar si existe agente dependiente con facultades relevantes."
+    },
+    {
+      "documentId": "docirnrep-004",
+      "label": "Cronologia de permanencia, calendario de obra o evidencia temporal de la presencia en Espana.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: cerrar continuidad, habitualidad o umbral temporal de proyectos."
+    },
+    {
+      "documentId": "docirnrep-005",
+      "label": "Texto del CDI aplicable, certificado de residencia fiscal y soporte para la lectura convencional del caso.",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: contrastar la conclusion interna con el convenio y sostener la jerarquia metodologica."
+    },
+    {
+      "documentId": "docirnrep-006",
+      "label": "Soporte de obligaciones formales activadas: modelo 200, 202, 206, representante y documentacion contable basica cuando proceda.",
+      "required": false,
+      "notes": "Fuerza probatoria: complementaria. Uso habitual: documentar las consecuencias operativas generales una vez concluida la existencia del EP."
+    }
+  ],
+  "caseStudies": [
+    {
+      "caseId": "caseirnrep-001",
+      "scenario": "Sociedad no residente opera en Espana desde una oficina estable donde desarrolla parte sustancial de su actividad comercial y de gestion.",
+      "resolution": "La existencia de un lugar fijo de negocios funcionalmente integrado en la actividad permite concluir, con caracter general, que existe establecimiento permanente.",
+      "notes": "Aprendizaje: la oficina solo importa en la medida en que sirve al nucleo del negocio."
+    },
+    {
+      "caseId": "caseirnrep-002",
+      "scenario": "Entidad extranjera mantiene un almacen logistico en Espana utilizado solo para apoyo y preparacion de entregas, sin cierre de ventas ni estructura comercial propia.",
+      "resolution": "El expediente debe revisar con cautela si la actividad es verdaderamente preparatoria o auxiliar. Si lo es, la conclusion puede ser no EP; si el almacen forma parte del nucleo operativo, la respuesta cambia.",
+      "notes": "Aprendizaje: el almacen no se resuelve por etiqueta, sino por funcion economica real."
+    },
+    {
+      "caseId": "caseirnrep-003",
+      "scenario": "Un comercial en Espana negocia y cierra de hecho operaciones en nombre de una empresa no residente, aunque los contratos se formalicen fuera.",
+      "resolution": "La ausencia de sucursal no excluye EP si el agente actua con habitualidad y con capacidad material suficiente para comprometer al no residente.",
+      "notes": "Aprendizaje: el agente dependiente puede ser la puerta de entrada decisiva."
+    },
+    {
+      "caseId": "caseirnrep-004",
+      "scenario": "Empresa extranjera ejecuta una obra o instalacion en Espana con duracion superior al umbral temporal relevante.",
+      "resolution": "La obra debe analizarse como posible establecimiento permanente, sin reducir el examen a una simple prestacion temporal de servicios.",
+      "notes": "Aprendizaje: las obras exigen mirar duracion, presencia y organizacion efectiva."
+    },
+    {
+      "caseId": "caseirnrep-005",
+      "scenario": "Grupo no residente mantiene en Espana una pequena estructura de apoyo administrativo y compras, sin poder de contratacion ni actividad de negocio propia.",
+      "resolution": "La conclusion puede ser no EP si la funcion queda realmente en apoyo auxiliar y no se integra en el nucleo economico del negocio principal.",
+      "notes": "Aprendizaje: la exclusion por actividad preparatoria o auxiliar debe probarse, no presumirse."
+    }
+  ],
+  "excludedByPolicy": [
+    "internal_reference",
+    "risk",
+    "restricted visibility"
+  ],
+  "disclaimer": "Vista derivada para web. Excluye referencias internas, riesgos internos y cualquier contenido restringido o bloqueado para este canal."
+}

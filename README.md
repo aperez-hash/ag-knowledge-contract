@@ -37,6 +37,8 @@ Consumidores
 - `examples/irnr-rendimientos-capital-inmobiliario.json`: cuarto Knowledge Object del segundo ciclo, dedicado al IRNR sobre rendimientos del capital inmobiliario con foco en alquileres, frontera con actividad economica, deducibilidad UE/EEE y cumplimiento minimo.
 - `examples/irnr-dividendos-intereses-canones.json`: quinto Knowledge Object del segundo ciclo, dedicado al IRNR sobre dividendos, intereses y canones con foco en calificacion material, exenciones internas, CDI, retenciones y cierre operativo minimo.
 - `examples/irnr-ganancias-patrimoniales.json`: sexto Knowledge Object del segundo ciclo, dedicado al IRNR sobre ganancias patrimoniales con foco en inmuebles, acciones y participaciones, no sujecion, exencion, CDI, retencion del 3 por ciento y cierre operativo minimo.
+- `examples/irnr-establecimientos-permanentes.json`: sexto Knowledge Object del segundo ciclo, dedicado al IRNR mediante establecimientos permanentes con foco en lugar fijo de negocios, agentes, actividad preparatoria o auxiliar, CDI y consecuencias operativas generales.
+ - `examples/irnr-establecimientos-permanentes.json`: septimo Knowledge Object del segundo ciclo, dedicado al IRNR mediante establecimientos permanentes con foco en lugar fijo de negocios, agentes, actividad preparatoria o auxiliar, CDI y consecuencias operativas generales.
 - `examples/derived/`: salidas derivadas certificadas para Planner, Web e IA.
 - `scripts/generate-types.mjs`: generación reproducible de tipos.
 - `scripts/validate-example.mjs`: validación estricta del ejemplo.
@@ -62,6 +64,8 @@ Consumidores
 - `scripts/validate-story-kf-010b.mjs`: validación consolidada de STORY-KF-010B.
 - `scripts/build-story-kf-010c-artifacts.mjs`: generación reproducible de artefactos derivados de IRNR - Ganancias Patrimoniales.
 - `scripts/validate-story-kf-010c.mjs`: validación consolidada de STORY-KF-010C.
+- `scripts/build-story-kf-010d-artifacts.mjs`: generación reproducible de artefactos derivados de IRNR - Establecimientos Permanentes.
+- `scripts/validate-story-kf-010d.mjs`: validación consolidada de STORY-KF-010D.
 - `tests/knowledge-object.schema.test.mjs`: pruebas del contrato.
 - `tests/modelo-210-story-kf-004a.test.mjs`: pruebas del primer objeto real y de sus derivaciones.
 - `tests/modelo-720-story-kf-005a.test.mjs`: pruebas del segundo objeto real y de sus derivaciones.
@@ -74,6 +78,7 @@ Consumidores
 - `tests/irnr-rendimientos-capital-inmobiliario-story-kf-010a.test.mjs`: pruebas del objeto IRNR sobre rendimientos del capital inmobiliario y de sus derivaciones.
 - `tests/irnr-dividendos-intereses-canones-story-kf-010b.test.mjs`: pruebas del objeto IRNR sobre dividendos, intereses y canones y de sus derivaciones.
 - `tests/irnr-ganancias-patrimoniales-story-kf-010c.test.mjs`: pruebas del objeto IRNR sobre ganancias patrimoniales y de sus derivaciones.
+- `tests/irnr-establecimientos-permanentes-story-kf-010d.test.mjs`: pruebas del objeto IRNR sobre establecimientos permanentes y de sus derivaciones.
 - `docs/SCHEMA_ERROR_2026-07-18.md`: explicación del defecto corregido.
 
 ## Principios
@@ -234,6 +239,18 @@ npm run build:story-kf-010c
 
 ```bash
 npm run validate:story-kf-010c
+```
+
+### Generar artefactos derivados de IRNR - Establecimientos Permanentes
+
+```bash
+npm run build:story-kf-010d
+```
+
+### Validar STORY-KF-010D de extremo a extremo
+
+```bash
+npm run validate:story-kf-010d
 ```
 
 ### Ejecutar pruebas del contrato

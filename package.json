@@ -26,7 +26,8 @@
     "./examples/irnr-rendimientos-trabajo.json": "./examples/irnr-rendimientos-trabajo.json",
     "./examples/irnr-rendimientos-capital-inmobiliario.json": "./examples/irnr-rendimientos-capital-inmobiliario.json",
     "./examples/irnr-dividendos-intereses-canones.json": "./examples/irnr-dividendos-intereses-canones.json",
-    "./examples/irnr-ganancias-patrimoniales.json": "./examples/irnr-ganancias-patrimoniales.json"
+    "./examples/irnr-ganancias-patrimoniales.json": "./examples/irnr-ganancias-patrimoniales.json",
+    "./examples/irnr-establecimientos-permanentes.json": "./examples/irnr-establecimientos-permanentes.json"
   },
   "scripts": {
     "generate": "node scripts/generate-types.mjs",
@@ -54,6 +55,8 @@
     "validate:story-kf-010b": "node scripts/validate-story-kf-010b.mjs",
     "build:story-kf-010c": "node scripts/build-story-kf-010c-artifacts.mjs",
     "validate:story-kf-010c": "node scripts/validate-story-kf-010c.mjs",
+    "build:story-kf-010d": "node scripts/build-story-kf-010d-artifacts.mjs",
+    "validate:story-kf-010d": "node scripts/validate-story-kf-010d.mjs",
     "test": "node --test tests/*.test.mjs",
     "check": "node scripts/check.mjs"
   },

@@ -1,0 +1,66 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_establecimientos_permanentes_001",
+    "stableKey": "irnr-establecimientos-permanentes",
+    "version": "1.0.0"
+  },
+  "responseType": "derived_draft",
+  "humanReviewRequired": true,
+  "summary": "Evita errores al identificar un EP en Espana, al mezclar analisis interno y convencional, o al cerrar mal las consecuencias operativas del paso de IRNR sin EP a IRNR con EP.",
+  "nextSteps": [
+    "Descripcion del negocio del no residente y organigrama funcional de la actividad vinculada con Espana.",
+    "Contratos de arrendamiento, oficina, coworking, obra, almacen, sucursal o cualquier soporte de presencia fisica en Espana.",
+    "Poderes, contratos mercantiles, correos operativos o evidencia equivalente sobre agentes en Espana y su capacidad para contratar.",
+    "Cronologia de permanencia, calendario de obra o evidencia temporal de la presencia en Espana."
+  ],
+  "faqHighlights": [
+    {
+      "faqId": "faqirnrep-001",
+      "question": "¿Tener un cliente en Espana significa automaticamente tener un establecimiento permanente?",
+      "answer": "No. La existencia de clientes espanoles por si sola no crea un EP. Debe analizarse si existe lugar fijo de negocios, agente dependiente u otra presencia funcional suficiente en Espana."
+    },
+    {
+      "faqId": "faqirnrep-002",
+      "question": "¿Alquilar una oficina pequena o usar un espacio de coworking en Espana siempre genera EP?",
+      "answer": "No necesariamente. La clave no es solo la existencia fisica del espacio, sino su funcion real en el negocio, su permanencia y si desde alli se desarrolla una parte sustancial de la actividad."
+    },
+    {
+      "faqId": "faqirnrep-003",
+      "question": "¿Un agente o comercial en Espana puede crear EP aunque la empresa no tenga sucursal?",
+      "answer": "Si. Cuando un agente actua habitualmente con poderes relevantes para contratar en nombre y por cuenta del no residente, puede existir EP aunque no haya una sucursal formalmente inscrita."
+    }
+  ],
+  "documentationHighlights": [
+    {
+      "documentId": "docirnrep-001",
+      "label": "Descripcion del negocio del no residente y organigrama funcional de la actividad vinculada con Espana.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: fijar que actividad se analiza y donde se integra dentro del negocio global."
+    },
+    {
+      "documentId": "docirnrep-002",
+      "label": "Contratos de arrendamiento, oficina, coworking, obra, almacen, sucursal o cualquier soporte de presencia fisica en Espana.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: acreditar lugar fijo de negocios, duracion y uso real del espacio."
+    },
+    {
+      "documentId": "docirnrep-003",
+      "label": "Poderes, contratos mercantiles, correos operativos o evidencia equivalente sobre agentes en Espana y su capacidad para contratar.",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: determinar si existe agente dependiente con facultades relevantes."
+    },
+    {
+      "documentId": "docirnrep-004",
+      "label": "Cronologia de permanencia, calendario de obra o evidencia temporal de la presencia en Espana.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: cerrar continuidad, habitualidad o umbral temporal de proyectos."
+    },
+    {
+      "documentId": "docirnrep-005",
+      "label": "Texto del CDI aplicable, certificado de residencia fiscal y soporte para la lectura convencional del caso.",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: contrastar la conclusion interna con el convenio y sostener la jerarquia metodologica."
+    }
+  ],
+  "caution": "Borrador derivado para apoyo interno. No debe enviarse sin revision humana y sin contrastar la documentacion concreta del cliente."
+}
