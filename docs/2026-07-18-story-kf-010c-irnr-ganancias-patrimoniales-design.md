@@ -125,6 +125,7 @@ patrimoniales en `IRNR`, con foco en:
 
 - localizacion de la ganancia;
 - activos que generan sujecion en Espana;
+- diferencia entre no sujecion y exencion;
 - papel de los `CDI`;
 - exenciones o no sujeciones relevantes en enfoque general;
 - retencion del `3%` en transmisiones inmobiliarias cuando proceda;
@@ -188,11 +189,12 @@ Se adopta un enfoque **material + cumplimiento operativo minimo**.
 Esto significa que el objeto si debe resolver:
 
 - cuando existe una transmision patrimonial relevante;
+- cuando esa transmision genera realmente una ganancia patrimonial;
 - que activos pueden generar tributacion en Espana;
 - como se localiza la ganancia;
 - cuando debe abrirse la capa de `CDI`;
-- cuando existen exenciones o no sujeciones relevantes tratadas a nivel
-  general;
+- cuando existen no sujeciones y exenciones relevantes tratadas a nivel
+  general, pero diferenciadas conceptualmente;
 - cuando aparece la retencion del `3%` en inmuebles;
 - como influye la copropiedad en el analisis material y formal;
 - cuando procede declaracion, retencion, devolucion o archivo de evidencias.
@@ -249,6 +251,10 @@ NO
         ↓
 Existe una transmision patrimonial?
         ↓
+Existe una ganancia patrimonial?
+        ↓
+El activo tiene conexion con Espana?
+        ↓
 Que activo se transmite?
   - inmueble en Espana
   - acciones/participaciones
@@ -256,7 +262,9 @@ Que activo se transmite?
         ↓
 La ganancia se considera obtenida en Espana?
         ↓
-Existe exencion o no sujecion relevante?
+Existe no sujecion relevante?
+        ↓
+Existe exencion relevante?
         ↓
 Existe CDI aplicable?
         ↓
@@ -269,20 +277,40 @@ Tributacion IRNR
 Cumplimiento operativo minimo
 ```
 
+Notas operativas del gateway:
+
+- la bifurcacion por tipo de activo debe evitar analisis innecesarios antes de
+  abrir `CDI`, retencion o cumplimiento;
+- en inmuebles, la rama debe hacer visible desde el principio la posible
+  retencion del `3%`;
+- cuando exista copropiedad y afecte a la determinacion del obligado o de la
+  atribucion de la ganancia, el gateway debe permitir esa lectura transversal.
+
 ## Regla metodologica central
 
 La secuencia obligatoria del analisis sera:
 
 1. residencia fiscal;
-2. identificacion del activo transmitido;
-3. localizacion de la ganancia por norma interna;
-4. exencion o no sujecion relevante, en enfoque general;
-5. modulacion por `CDI`;
-6. retencion cuando proceda;
-7. cierre operativo minimo.
+2. existencia de transmision y de ganancia patrimonial;
+3. identificacion del activo transmitido;
+4. localizacion de la ganancia por norma interna;
+5. distincion entre no sujecion y exencion, en enfoque general;
+6. modulacion por `CDI`;
+7. retencion cuando proceda;
+8. cierre operativo minimo.
+
+La no sujecion y la exencion no deben fundirse en una sola etiqueta
+metodologica:
+
+- **No sujecion**: el hecho imponible no nace conforme a la normativa
+  aplicable.
+- **Exencion**: existe hecho imponible, pero la norma libera de tributacion.
 
 Esto evita errores tipicos como:
 
+- analizar `CDI` o retenciones sin haber confirmado que realmente existe una
+  ganancia patrimonial;
+- confundir no sujecion con exencion;
 - aplicar el `CDI` antes de confirmar la fuente espanola de la ganancia;
 - tratar todas las transmisiones patrimoniales como si fueran equivalentes;
 - reducir la retencion del `3%` a una consecuencia menor en vez de integrarla
@@ -298,10 +326,11 @@ El `TechnicalDevelopmentBlock` seguira este orden:
 1. inmuebles situados en Espana;
 2. acciones y participaciones;
 3. otros activos patrimoniales;
-4. exenciones y no sujeciones relevantes;
-5. `CDI`;
-6. retencion del `3%`;
-7. cumplimiento operativo minimo.
+4. no sujeciones relevantes;
+5. exenciones relevantes;
+6. `CDI`;
+7. retencion del `3%`;
+8. cumplimiento operativo minimo.
 
 La copropiedad no se tratara como una nota lateral ni solo como caso
 practico. Debe aparecer como **regla operativa transversal** dentro del
@@ -371,7 +400,8 @@ Debe desarrollar operativamente:
   en supuestos finos;
 - otros activos patrimoniales sujetos;
 - criterio de localizacion;
-- exenciones o no sujeciones relevantes tratadas a nivel general;
+- no sujeciones relevantes tratadas a nivel general;
+- exenciones relevantes tratadas a nivel general;
 - interaccion con `CDI`;
 - retencion especifica del `3%` en transmisiones inmobiliarias cuando proceda;
 - cumplimiento operativo minimo;
@@ -385,15 +415,17 @@ casuistica societaria.
 El flujo operativo debe reflejar:
 
 1. determinar residencia fiscal;
-2. identificar el activo transmitido;
-3. localizar la ganancia;
-4. verificar la normativa interna;
-5. analizar el `CDI`;
-6. determinar la potestad tributaria;
-7. verificar retenciones cuando procedan;
-8. determinar obligaciones formales;
-9. presentar declaracion cuando corresponda;
-10. archivar evidencias.
+2. confirmar que existe transmision y ganancia patrimonial;
+3. identificar el activo transmitido;
+4. localizar la ganancia;
+5. verificar la normativa interna;
+6. separar no sujecion de exencion cuando proceda;
+7. analizar el `CDI`;
+8. determinar la potestad tributaria;
+9. verificar retenciones cuando procedan;
+10. determinar obligaciones formales;
+11. presentar declaracion cuando corresponda;
+12. archivar evidencias.
 
 La copropiedad debe aparecer expresamente dentro del procedimiento, no solo en
 casos.
