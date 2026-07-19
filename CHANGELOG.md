@@ -27,6 +27,7 @@
 - Derived checklist, FAQ and client response outputs plus focused automated coverage for `STORY-KF-010C`.
 - Derived checklist, FAQ and client response outputs plus focused automated coverage for `STORY-KF-010D`.
 - Official governance certification document for `Knowledge Factory v1.0`.
+- Official domain certification document for `IRNR Domain v1`.
 
 ## 1.0.0 - 2026-07-18
 

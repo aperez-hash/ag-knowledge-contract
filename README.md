@@ -37,8 +37,7 @@ Consumidores
 - `examples/irnr-rendimientos-capital-inmobiliario.json`: cuarto Knowledge Object del segundo ciclo, dedicado al IRNR sobre rendimientos del capital inmobiliario con foco en alquileres, frontera con actividad economica, deducibilidad UE/EEE y cumplimiento minimo.
 - `examples/irnr-dividendos-intereses-canones.json`: quinto Knowledge Object del segundo ciclo, dedicado al IRNR sobre dividendos, intereses y canones con foco en calificacion material, exenciones internas, CDI, retenciones y cierre operativo minimo.
 - `examples/irnr-ganancias-patrimoniales.json`: sexto Knowledge Object del segundo ciclo, dedicado al IRNR sobre ganancias patrimoniales con foco en inmuebles, acciones y participaciones, no sujecion, exencion, CDI, retencion del 3 por ciento y cierre operativo minimo.
-- `examples/irnr-establecimientos-permanentes.json`: sexto Knowledge Object del segundo ciclo, dedicado al IRNR mediante establecimientos permanentes con foco en lugar fijo de negocios, agentes, actividad preparatoria o auxiliar, CDI y consecuencias operativas generales.
- - `examples/irnr-establecimientos-permanentes.json`: septimo Knowledge Object del segundo ciclo, dedicado al IRNR mediante establecimientos permanentes con foco en lugar fijo de negocios, agentes, actividad preparatoria o auxiliar, CDI y consecuencias operativas generales.
+- `examples/irnr-establecimientos-permanentes.json`: septimo Knowledge Object del segundo ciclo, dedicado al IRNR mediante establecimientos permanentes con foco en lugar fijo de negocios, agentes, actividad preparatoria o auxiliar, CDI y consecuencias operativas generales.
 - `examples/derived/`: salidas derivadas certificadas para Planner, Web e IA.
 - `scripts/generate-types.mjs`: generación reproducible de tipos.
 - `scripts/validate-example.mjs`: validación estricta del ejemplo.
