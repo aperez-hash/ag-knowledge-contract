@@ -1,0 +1,145 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_dividendos_intereses_canones_001",
+    "stableKey": "irnr-dividendos-intereses-canones",
+    "title": "IRNR - Dividendos, Intereses y Canones",
+    "slug": "irnr-dividendos-intereses-canones",
+    "version": "1.0.0"
+  },
+  "executiveSummary": {
+    "summary": "Este Knowledge Object fija el criterio operativo del despacho para decidir cuando una persona o entidad no residente tributa en Espana por dividendos, intereses y canones obtenidos sin establecimiento permanente. El objeto separa con claridad cuatro capas que suelen mezclarse en la practica: calificacion material del pago, localizacion en Espana conforme a la normativa interna, modulacion por el convenio para evitar la doble imposicion y cierre operativo de retencion, declaracion o devolucion. Tambien deja trazado que el convenio no crea una obligacion tributaria nueva, sino que limita, reparte o coordina la potestad que la ley interna atribuiria inicialmente; y que el Modelo OCDE y sus Comentarios cumplen una funcion interpretativa, pero no sustituyen nunca el texto concreto del convenio aplicable. La utilidad practica del objeto es evitar errores recurrentes en expedientes de rentas pasivas internacionales: tratar todo pago financiero como dividendo, ignorar exenciones internas de intereses, aplicar automaticamente el convenio sin cerrar antes la fuente espanola, o dar por buena una retencion sin verificar si la carga material, el tipo aplicable o la obligacion declarativa estaban bien resueltos. Su salida debe ser una conclusion unica, trazable y reutilizable para Planner, Web, IA, checklist, FAQ y respuesta al cliente derivada.",
+    "problemSolved": "Evita errores al mezclar calificacion de renta, CDI, exenciones internas, retenciones y declaracion en expedientes IRNR sobre dividendos, intereses y canones.",
+    "scope": "Dividendos, intereses y canones obtenidos por no residentes desde la perspectiva espanola, con foco en fuente espanola, exenciones internas, tributacion compartida bajo CDI, retenciones y cumplimiento operativo minimo asociado a los Modelos 210 y 216.",
+    "practicalImpact": "Permite abrir, revisar y cerrar expedientes de rentas pasivas transfronterizas con un criterio unico antes de bajar al detalle formal completo del perceptor o del retenedor."
+  },
+  "affectedTaxModels": [
+    {
+      "modelCode": "210",
+      "modelName": "Modelo 210 - IRNR",
+      "relationType": "primary",
+      "notes": "Es el modelo declarativo natural cuando procede declarar dividendos, intereses o canones obtenidos sin establecimiento permanente."
+    },
+    {
+      "modelCode": "216",
+      "modelName": "Modelo 216 - Retenciones e ingresos a cuenta del IRNR",
+      "relationType": "secondary",
+      "notes": "Conecta el analisis material con la capa de retenciones e ingresos a cuenta sobre rentas pasivas de no residentes."
+    }
+  ],
+  "affectedForms": [
+    {
+      "formCode": "210",
+      "formName": "Modelo 210",
+      "relationType": "required",
+      "notes": "Formulario impactado directamente por la conclusion material del objeto."
+    },
+    {
+      "formCode": "216",
+      "formName": "Modelo 216",
+      "relationType": "informative",
+      "notes": "Formulario impactado cuando existe obligacion de retener e ingresar a cuenta."
+    }
+  ],
+  "faq": [
+    {
+      "faqId": "faqirnrdic-001",
+      "question": "¿Si una sociedad espanola me paga dividendos, siempre tengo que tributar en Espana?",
+      "answer": "Con caracter general existe fuente espanola, pero el analisis no termina ahi. Debe revisarse si opera una exencion interna y, en su caso, si el CDI limita la imposicion espanola."
+    },
+    {
+      "faqId": "faqirnrdic-002",
+      "question": "¿Los intereses cobrados por un no residente siempre tributan al 19%?",
+      "answer": "No necesariamente. Primero debe revisarse si existe exencion interna; despues, si hay CDI aplicable, puede existir un limite inferior o incluso ausencia de imposicion en origen segun el caso."
+    },
+    {
+      "faqId": "faqirnrdic-003",
+      "question": "¿Canon e interes son lo mismo si el contrato habla de licencia o financiacion?",
+      "answer": "No. La calificacion material del pago es decisiva. Un error al distinguir interes, canon u otra renta arrastra errores en convenio, tipo aplicable y retencion."
+    },
+    {
+      "faqId": "faqirnrdic-004",
+      "question": "¿Si ya me han retenido en Espana, el expediente esta cerrado?",
+      "answer": "No siempre. La retencion es una capa operativa importante, pero no sustituye el analisis de residencia, fuente espanola, exencion interna ni limite convencional."
+    },
+    {
+      "faqId": "faqirnrdic-005",
+      "question": "¿El convenio sustituye a la ley espanola cuando hay un pago internacional?",
+      "answer": "No. Primero se analiza la norma interna espanola y despues se revisa si el convenio limita, reparte o coordina esa potestad tributaria."
+    },
+    {
+      "faqId": "faqirnrdic-006",
+      "question": "¿Este objeto explica todas las casillas del Modelo 210 y del 216?",
+      "answer": "No. El objeto cubre el criterio material y el cierre operativo minimo. La cumplimentacion exhaustiva del formulario pertenece a una capa procedimental derivada."
+    }
+  ],
+  "requiredDocumentation": [
+    {
+      "documentId": "docirnrdic-001",
+      "label": "Certificado de residencia fiscal del perceptor o soporte equivalente emitido por la administracion competente.",
+      "required": true,
+      "notes": "Fuerza probatoria: muy alta. Uso habitual: acreditar no residencia espanola y sustentar exencion o tipo reducido de convenio."
+    },
+    {
+      "documentId": "docirnrdic-002",
+      "label": "Acuerdo societario, contrato financiero o licencia que permita calificar correctamente la renta como dividendo, interes o canon.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: cerrar la naturaleza material del pago antes de aplicar norma interna o convenio."
+    },
+    {
+      "documentId": "docirnrdic-003",
+      "label": "Justificantes de pago, liquidaciones, certificaciones del pagador o detalle del devengo y de la retencion practicada.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: comprobar importe bruto, tipo aplicado y coherencia entre conclusion material y operativa."
+    },
+    {
+      "documentId": "docirnrdic-004",
+      "label": "Texto del CDI aplicable, certificado o formulario de residencia y, en su caso, documentacion para sostener el trato convencional.",
+      "required": true,
+      "notes": "Fuerza probatoria: alta. Uso habitual: justificar limitacion de imposicion en origen o devolucion por exceso de retencion."
+    },
+    {
+      "documentId": "docirnrdic-005",
+      "label": "Documentacion adicional sobre estructura del pago, uso economico en Espana o posicion material del perceptor cuando exista duda interpretativa.",
+      "required": false,
+      "notes": "Fuerza probatoria: complementaria. Uso habitual: reforzar supuestos delicados de canones, intereses exentos o rentas con riesgo de mala calificacion."
+    }
+  ],
+  "caseStudies": [
+    {
+      "caseId": "caseirnrdic-001",
+      "scenario": "Sociedad residente en Francia percibe dividendos distribuidos por una entidad residente en Espana.",
+      "resolution": "Existe fuente espanola conforme a norma interna. Debe revisarse si opera alguna exencion interna y, si no, aplicar el limite del convenio correspondiente antes de cerrar retencion o devolucion.",
+      "notes": "Aprendizaje: dividendo de fuente espanola no equivale automaticamente a tributacion plena al tipo interno."
+    },
+    {
+      "caseId": "caseirnrdic-002",
+      "scenario": "Entidad no residente percibe intereses de un pagador espanol y alega exencion interna por la naturaleza de la financiacion.",
+      "resolution": "Antes del CDI debe analizarse si la exencion interna desplaza la tributacion material en origen. Solo si no opera la exencion se revisa el eventual limite convencional.",
+      "notes": "Aprendizaje: la exencion interna puede ser mas relevante que el convenio."
+    },
+    {
+      "caseId": "caseirnrdic-003",
+      "scenario": "Empresa espanola satisface cantidades por licencia tecnologica a una entidad de otro Estado y el contrato mezcla uso de intangibles y servicios.",
+      "resolution": "El expediente debe calificar correctamente que parte es canon y que parte puede corresponder a otros servicios o prestaciones. Sin esa calificacion no puede fijarse bien la tributacion en origen.",
+      "notes": "Aprendizaje: los canones son la categoria con mayor riesgo de mala calificacion."
+    },
+    {
+      "caseId": "caseirnrdic-004",
+      "scenario": "No residente soporta una retencion superior al limite del CDI sobre intereses de fuente espanola.",
+      "resolution": "La conclusion material puede ser correcta respecto de la fuente espanola, pero el expediente debe abrir la capa de devolucion o regularizacion porque la imposicion en origen supera el maximo convencional.",
+      "notes": "Aprendizaje: una retencion practicada no siempre cierra bien el expediente."
+    },
+    {
+      "caseId": "caseirnrdic-005",
+      "scenario": "Perceptor no residente presenta certificado de residencia, pero la documentacion sobre la naturaleza del pago es insuficiente y hay dudas entre dividendo y otra distribucion patrimonial.",
+      "resolution": "No debe aplicarse automaticamente un tipo reducido de convenio mientras no se cierre la categoria material de la renta. Primero se resuelve la calificacion y luego el trato convencional.",
+      "notes": "Aprendizaje: la residencia no corrige una mala calificacion del pago."
+    }
+  ],
+  "excludedByPolicy": [
+    "internal_reference",
+    "risk",
+    "restricted visibility"
+  ],
+  "disclaimer": "Vista derivada para web. Excluye referencias internas, riesgos internos y cualquier contenido restringido o bloqueado para este canal."
+}

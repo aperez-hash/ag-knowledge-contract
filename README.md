@@ -35,6 +35,7 @@ Consumidores
 - `examples/modelo-151-regimen-trabajadores-desplazados.json`: primer Knowledge Object de regimen especial del segundo ciclo, dedicado al articulo 93 de la LIRPF y a la gestion del Modelo 151.
 - `examples/irnr-rendimientos-trabajo.json`: tercer Knowledge Object del segundo ciclo, dedicado al IRNR sobre rendimientos del trabajo con foco en teletrabajo internacional, modelos hibridos y retenciones.
 - `examples/irnr-rendimientos-capital-inmobiliario.json`: cuarto Knowledge Object del segundo ciclo, dedicado al IRNR sobre rendimientos del capital inmobiliario con foco en alquileres, frontera con actividad economica, deducibilidad UE/EEE y cumplimiento minimo.
+- `examples/irnr-dividendos-intereses-canones.json`: quinto Knowledge Object del segundo ciclo, dedicado al IRNR sobre dividendos, intereses y canones con foco en calificacion material, exenciones internas, CDI, retenciones y cierre operativo minimo.
 - `examples/derived/`: salidas derivadas certificadas para Planner, Web e IA.
 - `scripts/generate-types.mjs`: generación reproducible de tipos.
 - `scripts/validate-example.mjs`: validación estricta del ejemplo.
@@ -56,6 +57,8 @@ Consumidores
 - `scripts/validate-story-kf-008d.mjs`: validación consolidada de STORY-KF-008D.
 - `scripts/build-story-kf-010a-artifacts.mjs`: generación reproducible de artefactos derivados de IRNR - Rendimientos del Capital Inmobiliario.
 - `scripts/validate-story-kf-010a.mjs`: validación consolidada de STORY-KF-010A.
+- `scripts/build-story-kf-010b-artifacts.mjs`: generación reproducible de artefactos derivados de IRNR - Dividendos, Intereses y Canones.
+- `scripts/validate-story-kf-010b.mjs`: validación consolidada de STORY-KF-010B.
 - `tests/knowledge-object.schema.test.mjs`: pruebas del contrato.
 - `tests/modelo-210-story-kf-004a.test.mjs`: pruebas del primer objeto real y de sus derivaciones.
 - `tests/modelo-720-story-kf-005a.test.mjs`: pruebas del segundo objeto real y de sus derivaciones.
@@ -66,6 +69,7 @@ Consumidores
 - `tests/modelo-151-story-kf-008c.test.mjs`: pruebas del primer objeto de regimen especial y de sus derivaciones.
 - `tests/irnr-rendimientos-trabajo-story-kf-008d.test.mjs`: pruebas del objeto IRNR sobre rendimientos del trabajo y de sus derivaciones.
 - `tests/irnr-rendimientos-capital-inmobiliario-story-kf-010a.test.mjs`: pruebas del objeto IRNR sobre rendimientos del capital inmobiliario y de sus derivaciones.
+- `tests/irnr-dividendos-intereses-canones-story-kf-010b.test.mjs`: pruebas del objeto IRNR sobre dividendos, intereses y canones y de sus derivaciones.
 - `docs/SCHEMA_ERROR_2026-07-18.md`: explicación del defecto corregido.
 
 ## Principios
@@ -202,6 +206,18 @@ npm run build:story-kf-010a
 
 ```bash
 npm run validate:story-kf-010a
+```
+
+### Generar artefactos derivados de IRNR - Dividendos, Intereses y Canones
+
+```bash
+npm run build:story-kf-010b
+```
+
+### Validar STORY-KF-010B de extremo a extremo
+
+```bash
+npm run validate:story-kf-010b
 ```
 
 ### Ejecutar pruebas del contrato

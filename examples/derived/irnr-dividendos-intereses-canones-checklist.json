@@ -1,0 +1,50 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_dividendos_intereses_canones_001",
+    "stableKey": "irnr-dividendos-intereses-canones",
+    "version": "1.0.0"
+  },
+  "title": "IRNR - Dividendos, Intereses y Canones - Checklist operativa",
+  "items": [
+    {
+      "itemId": "chkirnrdic-001",
+      "label": "[Obligatorio] No residencia fiscal confirmada o derivada al objeto transversal antes del cierre."
+    },
+    {
+      "itemId": "chkirnrdic-002",
+      "label": "[Obligatorio] Categoria material de la renta cerrada: dividendo, interes o canon."
+    },
+    {
+      "itemId": "chkirnrdic-003",
+      "label": "[Obligatorio] Fuente espanola conforme a norma interna razonada expresamente."
+    },
+    {
+      "itemId": "chkirnrdic-004",
+      "label": "[Obligatorio] Exencion interna revisada antes del convenio."
+    },
+    {
+      "itemId": "chkirnrdic-005",
+      "label": "[Obligatorio] CDI comprobado y documentado cuando exista elemento internacional."
+    },
+    {
+      "itemId": "chkirnrdic-006",
+      "label": "[Obligatorio] Potestad tributaria espanola total, parcial o nula razonada con apoyo en norma interna y convenio."
+    },
+    {
+      "itemId": "chkirnrdic-007",
+      "label": "[Obligatorio] Retencion practicada revisada frente a la conclusion material y al limite convencional."
+    },
+    {
+      "itemId": "chkirnrdic-008",
+      "label": "[Obligatorio] Necesidad o no de Modelo 210 resuelta con soporte normativo."
+    },
+    {
+      "itemId": "chkirnrdic-009",
+      "label": "[Recomendable] Riesgo de beneficiario efectivo o de documentacion insuficiente analizado por separado."
+    },
+    {
+      "itemId": "chkirnrdic-010",
+      "label": "[Obligatorio] Conclusion final unica emitida con evidencia, convenio y cierre operativo minimo."
+    }
+  ]
+}
