@@ -1,0 +1,40 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_establecimientos_permanentes_001",
+    "stableKey": "irnr-establecimientos-permanentes",
+    "version": "1.0.0"
+  },
+  "title": "IRNR - Establecimientos Permanentes - FAQ derivada",
+  "items": [
+    {
+      "faqId": "faqirnrep-001",
+      "question": "¿Tener un cliente en Espana significa automaticamente tener un establecimiento permanente?",
+      "answer": "No. La existencia de clientes espanoles por si sola no crea un EP. Debe analizarse si existe lugar fijo de negocios, agente dependiente u otra presencia funcional suficiente en Espana."
+    },
+    {
+      "faqId": "faqirnrep-002",
+      "question": "¿Alquilar una oficina pequena o usar un espacio de coworking en Espana siempre genera EP?",
+      "answer": "No necesariamente. La clave no es solo la existencia fisica del espacio, sino su funcion real en el negocio, su permanencia y si desde alli se desarrolla una parte sustancial de la actividad."
+    },
+    {
+      "faqId": "faqirnrep-003",
+      "question": "¿Un agente o comercial en Espana puede crear EP aunque la empresa no tenga sucursal?",
+      "answer": "Si. Cuando un agente actua habitualmente con poderes relevantes para contratar en nombre y por cuenta del no residente, puede existir EP aunque no haya una sucursal formalmente inscrita."
+    },
+    {
+      "faqId": "faqirnrep-004",
+      "question": "¿Si existe convenio, ya no importa la ley espanola?",
+      "answer": "No. Primero se analiza la ley interna y despues se revisa si el convenio limita, matiza o corrige ese resultado. El convenio no sustituye por completo el analisis interno."
+    },
+    {
+      "faqId": "faqirnrep-005",
+      "question": "¿Este objeto ya resuelve cuanto beneficio debe atribuirse al establecimiento permanente?",
+      "answer": "No. Este objeto identifica si existe EP y ordena sus consecuencias generales. La atribucion detallada de beneficios exige una capa doctrinal adicional."
+    },
+    {
+      "faqId": "faqirnrep-006",
+      "question": "¿Si existe EP se sigue usando la logica habitual del modelo 210?",
+      "answer": "No. La existencia de EP desplaza el expediente a una logica distinta, mas cercana al modelo 200, al documento 206 y a los pagos fraccionados del modelo 202."
+    }
+  ]
+}

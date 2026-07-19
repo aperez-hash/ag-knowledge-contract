@@ -1,0 +1,50 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_establecimientos_permanentes_001",
+    "stableKey": "irnr-establecimientos-permanentes",
+    "version": "1.0.0"
+  },
+  "title": "IRNR - Establecimientos Permanentes - Checklist operativa",
+  "items": [
+    {
+      "itemId": "chkirnrep-001",
+      "label": "[Obligatorio] Actividad economica en Espana descrita de forma precisa."
+    },
+    {
+      "itemId": "chkirnrep-002",
+      "label": "[Obligatorio] Presencia fisica o estructura operativa en Espana identificada y documentada."
+    },
+    {
+      "itemId": "chkirnrep-003",
+      "label": "[Obligatorio] Analisis expreso de agentes y de sus poderes reales para contratar."
+    },
+    {
+      "itemId": "chkirnrep-004",
+      "label": "[Obligatorio] Continuidad o habitualidad revisada con hechos concretos."
+    },
+    {
+      "itemId": "chkirnrep-005",
+      "label": "[Obligatorio] Actividad preparatoria o auxiliar valorada como frontera de decision propia."
+    },
+    {
+      "itemId": "chkirnrep-006",
+      "label": "[Obligatorio] Resultado interno provisional documentado antes de revisar el CDI."
+    },
+    {
+      "itemId": "chkirnrep-007",
+      "label": "[Obligatorio] CDI comprobado y documentado cuando exista elemento internacional."
+    },
+    {
+      "itemId": "chkirnrep-008",
+      "label": "[Obligatorio] Conclusion final unica: EP o no EP, sin mezclarla con atribucion detallada de beneficios."
+    },
+    {
+      "itemId": "chkirnrep-009",
+      "label": "[Obligatorio] Consecuencias operativas generales activadas si existe EP: modelo 200, 206, 202 y obligaciones formales relevantes."
+    },
+    {
+      "itemId": "chkirnrep-010",
+      "label": "[Recomendable] Escalado a IS o Precios de Transferencia evaluado cuando el caso supere la mera identificacion del EP."
+    }
+  ]
+}

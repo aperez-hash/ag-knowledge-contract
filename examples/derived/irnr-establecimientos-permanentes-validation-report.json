@@ -1,0 +1,17 @@
+{
+  "story": "STORY-KF-010D",
+  "knowledgeObject": "IRNR - Establecimientos Permanentes",
+  "research": "PASS",
+  "schemaValidation": "PASS",
+  "ruleEngine": "PASS",
+  "plannerView": "PASS",
+  "webView": "PASS",
+  "aiContext": "PASS",
+  "checklist": "PASS",
+  "faq": "PASS",
+  "clientResponse": "PASS",
+  "qualityGate": "PASS",
+  "structuralChangesRequired": "NO",
+  "generatedAt": "2026-07-19T23:59:00Z",
+  "incidentCount": 0
+}
