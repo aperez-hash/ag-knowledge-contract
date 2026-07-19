@@ -22,6 +22,8 @@
 - Derived checklist, FAQ and client response outputs plus focused automated coverage for `STORY-KF-010A`.
 - Fifth second-cycle Knowledge Object for `IRNR - Dividendos, Intereses y Canones`.
 - Derived checklist, FAQ and client response outputs plus focused automated coverage for `STORY-KF-010B`.
+- Sixth second-cycle Knowledge Object for `IRNR - Ganancias Patrimoniales`.
+- Derived checklist, FAQ and client response outputs plus focused automated coverage for `STORY-KF-010C`.
 - Official governance certification document for `Knowledge Factory v1.0`.
 
 ## 1.0.0 - 2026-07-18

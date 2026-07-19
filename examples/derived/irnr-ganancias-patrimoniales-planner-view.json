@@ -1,0 +1,602 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_ganancias_patrimoniales_001",
+    "stableKey": "irnr-ganancias-patrimoniales",
+    "title": "IRNR - Ganancias Patrimoniales",
+    "version": "1.0.0",
+    "status": "validado"
+  },
+  "executiveSummary": {
+    "summary": "Este Knowledge Object fija el criterio operativo del despacho para decidir cuando una persona o entidad no residente tributa en Espana por una ganancia patrimonial. El objeto no se limita a la venta de inmuebles: cubre tambien acciones, participaciones y otros activos cuando exista conexion suficiente con Espana conforme a la normativa interna y, en su caso, al convenio aplicable. La secuencia correcta del analisis es estricta: primero se confirma la no residencia; despues se verifica que exista una transmision y una ganancia patrimonial; a continuacion se identifica el activo y su punto de conexion con Espana; solo entonces se separa no sujecion de exencion, se revisa el CDI y se determina si Espana conserva potestad tributaria. En transmisiones inmobiliarias, el objeto incorpora como pieza nuclear la retencion del 3 por ciento y su conexion con el Modelo 211. Tambien eleva la copropiedad a regla transversal, porque puede alterar la identificacion del obligado y la distribucion del cumplimiento. Su valor practico consiste en evitar cierres incorrectos por mezclar de forma desordenada localizacion de la ganancia, beneficios convencionales, exenciones internas, retenciones y obligaciones declarativas del Modelo 210.",
+    "problemSolved": "Evita errores al mezclar sujecion, exencion, CDI, retencion del 3 por ciento, copropiedad y cumplimiento formal en expedientes de ganancias patrimoniales de no residentes.",
+    "scope": "Ganancias patrimoniales obtenidas por no residentes desde la perspectiva espanola, con foco en inmuebles situados en Espana, acciones y participaciones, otros activos con conexion suficiente con Espana, exenciones internas, copropiedad y cumplimiento operativo minimo.",
+    "practicalImpact": "Permite abrir, revisar y cerrar expedientes de transmision de activos por no residentes con un criterio unico antes de bajar al detalle formal completo del Modelo 210 y, cuando proceda, del Modelo 211."
+  },
+  "affectedTaxModels": [
+    {
+      "modelCode": "210",
+      "modelName": "Modelo 210 - IRNR",
+      "relationType": "primary",
+      "notes": "Es el modelo declarativo natural cuando procede autoliquidar una ganancia patrimonial obtenida sin establecimiento permanente."
+    },
+    {
+      "modelCode": "211",
+      "modelName": "Modelo 211 - Retencion en la adquisicion de bienes inmuebles a no residentes",
+      "relationType": "secondary",
+      "notes": "Conecta la parte inmobiliaria del objeto con la retencion del 3 por ciento a cuenta del impuesto del transmitente no residente."
+    }
+  ],
+  "affectedForms": [
+    {
+      "formCode": "210",
+      "formName": "Modelo 210",
+      "relationType": "required",
+      "notes": "Formulario impactado directamente por la conclusion material del objeto."
+    },
+    {
+      "formCode": "211",
+      "formName": "Modelo 211",
+      "relationType": "informative",
+      "notes": "Formulario impactado cuando existe adquisicion de inmueble situado en Espana a un transmitente no residente."
+    }
+  ],
+  "plannerBlocks": [
+    {
+      "blockId": "kbirnrgp-legal-001",
+      "content": {
+        "basis": "La base juridica del objeto descansa en el Texto Refundido de la Ley del IRNR y en su Reglamento, con especial importancia de las reglas sobre contribuyentes no residentes, ganancias patrimoniales obtenidas en territorio espanol, rentas exentas, retenciones y declaracion sin establecimiento permanente. El articulo 13.1.i) de la Ley IRNR fija los puntos de conexion principales para las ganancias patrimoniales: inmuebles situados en Espana, valores emitidos por residentes, otros bienes muebles situados en Espana y derechos que deban cumplirse o ejercitarse en territorio espanol. El articulo 14 obliga a separar con rigor la exencion de la mera ausencia de punto de conexion. El articulo 31 y el desarrollo reglamentario sostienen la retencion, incluida la retencion del 3 por ciento en transmisiones inmobiliarias. El CDI no crea por si solo una obligacion tributaria nueva, sino que limita o coordina la potestad que la norma interna atribuiria inicialmente. La Ley del IRPF entra aqui como norma auxiliar para la cuantificacion general de la ganancia cuando la Ley del IRNR remite a sus reglas."
+      },
+      "order": 10,
+      "status": "validado",
+      "title": "Base legal del IRNR sobre ganancias patrimoniales",
+      "type": "legal_basis",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbirnrgp-tech-001",
+      "content": {
+        "development": "1. No residencia fiscal. El punto de partida es confirmar que el contribuyente no es residente fiscal en Espana, delegando esa conclusion en el objeto de Residencia Fiscal cuando sea necesario. 2. Existencia de transmision y de ganancia patrimonial. Antes de cualquier analisis territorial debe verificarse que existe una alteracion patrimonial y que de ella emerge una ganancia. 3. Identificacion del activo transmitido. El objeto separa tres bloques materiales: inmueble situado en Espana o inmuebles situados en Espana, acciones y participaciones, y otros activos o derechos con posible conexion suficiente con Espana. 4. Inmuebles situados en Espana. La ganancia derivada de la transmision de inmueble situado en Espana o de inmuebles situados en territorio espanol se considera, con caracter general, renta obtenida en Espana. Este tramo exige revisar siempre la retencion del 3 por ciento y su conexion con el Modelo 211. 5. Acciones y participaciones. Debe analizarse si la norma interna situa la ganancia en Espana por derivar de valores emitidos por residentes o por otras reglas especiales que puedan exigir comprobacion fina del activo y del tratado aplicable. 6. Otros activos. El objeto cubre tambien otras ganancias patrimoniales ligadas a bienes muebles situados en Espana, derechos que deban cumplirse en territorio espanol o incorporaciones patrimoniales de bienes o derechos localizados en Espana. 7. No sujecion frente a exencion. No sujecion significa que el hecho imponible no nace conforme al punto de conexion aplicable; exencion significa que la ganancia existe y queda inicialmente dentro del impuesto, pero una norma posterior libera total o parcialmente de tributacion. Esta diferencia debe verse de forma expresa en cada expediente. 8. Exenciones internas relevantes. El objeto incorpora como minimo la exencion parcial del 50 por ciento para determinados inmuebles urbanos adquiridos entre el 12 de mayo de 2012 y el 31 de diciembre de 2012, asi como las exenciones internas relevantes para ciertas ganancias sobre bienes muebles en residentes UE o EEE con asistencia mutua aplicable. 9. CDI. Si existe convenio, se revisa si Espana conserva, comparte o pierde potestad tributaria sobre la ganancia concreta. En inmuebles la regla convencional suele mantener la imposicion en el Estado de situacion del bien; en acciones u otros activos, la respuesta exige leer el tratado concreto. 10. Copropiedad. La copropiedad debe tratarse como principio operativo transversal: puede afectar a la identificacion del obligado, al porcentaje de ganancia imputable, a la retencion y al cierre formal. 11. Cumplimiento operativo minimo. Una vez cerrada la capa material, el expediente desciende al Modelo 210 y, en transmisiones inmobiliarias, al Modelo 211 por la retencion del 3 por ciento. El analisis correcto es siempre normativa interna primero, CDI despues, y consecuencias formales al final.\n\nDecision Gateway\n\nEs residente fiscal en Espana?\n        ↓\nNO\n        ↓\nExiste una transmision patrimonial?\n        ↓\nExiste una ganancia patrimonial?\n        ↓\nEl activo tiene conexion con Espana?\n        ↓\nQue activo se transmite?\n  - inmueble en Espana\n  - acciones o participaciones\n  - otro activo o derecho\n        ↓\nLa ganancia se considera obtenida en Espana segun norma interna?\n        ↓\nExiste no sujecion relevante?\n        ↓\nExiste exencion relevante?\n        ↓\nExiste CDI aplicable?\n        ↓\nEspana conserva la potestad tributaria?\n        ↓\nExiste obligacion de retener?\n        ↓\nTributacion IRNR\n        ↓\nCumplimiento operativo minimo"
+      },
+      "order": 20,
+      "status": "validado",
+      "title": "Desarrollo tecnico del criterio material y operativo",
+      "type": "technical_development",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbirnrgp-proc-001",
+      "content": {
+        "steps": [
+          {
+            "text": "Confirmar si la persona o entidad es no residente desde la perspectiva espanola y, si no esta cerrado, abrir antes el objeto de Residencia Fiscal.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Confirmar que existe una transmision o alteracion patrimonial y que de ella emerge una ganancia patrimonial relevante para IRNR.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Identificar el activo transmitido, la fecha, la titularidad, la cuota de participacion y la documentacion del negocio juridico.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Localizar la ganancia conforme a la normativa interna del IRNR, distinguiendo inmuebles, acciones o participaciones y otros activos o derechos.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Separar expresamente no sujecion de exencion antes de revisar cualquier beneficio de convenio o consecuencia formal.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Comprobar si existe CDI vigente y si el convenio mantiene, limita o desplaza la potestad tributaria espanola sobre la ganancia concreta.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Revisar si la ganancia se encuentra en un supuesto de exencion interna total o parcial y documentar la prueba exigible.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Analizar copropiedad, reparto de la ganancia, obligados independientes y efectos sobre la retencion o la declaracion cuando existan varios titulares.",
+            "format": "plain_text"
+          },
+          {
+            "text": "En transmisiones inmobiliarias, verificar la retencion del 3 por ciento, el papel del adquirente y la existencia del Modelo 211.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Cerrar la capa de cumplimiento minimo del transmitente no residente mediante Modelo 210, devolucion o regularizacion cuando proceda.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Documentar la decision final con evidencia suficiente sobre residencia, activo, cuantificacion, no sujecion o exencion, convenio, retencion y via de cumplimiento elegida.",
+            "format": "plain_text"
+          }
+        ]
+      },
+      "order": 30,
+      "status": "validado",
+      "title": "Procedimiento operativo completo",
+      "type": "procedure",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbirnrgp-check-001",
+      "content": {
+        "items": [
+          {
+            "itemId": "chkirnrgp-001",
+            "label": "[Obligatorio] No residencia fiscal confirmada o derivada al objeto transversal antes del cierre."
+          },
+          {
+            "itemId": "chkirnrgp-002",
+            "label": "[Obligatorio] Existencia de transmision y de ganancia patrimonial acreditadas documentalmente."
+          },
+          {
+            "itemId": "chkirnrgp-003",
+            "label": "[Obligatorio] Activo transmitido identificado y clasificado como inmueble, acciones o participaciones, u otro activo."
+          },
+          {
+            "itemId": "chkirnrgp-004",
+            "label": "[Obligatorio] Punto de conexion con Espana razonado conforme a norma interna."
+          },
+          {
+            "itemId": "chkirnrgp-005",
+            "label": "[Obligatorio] No sujecion y exencion separadas expresamente antes de cerrar el expediente."
+          },
+          {
+            "itemId": "chkirnrgp-006",
+            "label": "[Obligatorio] CDI comprobado y documentado cuando exista elemento internacional."
+          },
+          {
+            "itemId": "chkirnrgp-007",
+            "label": "[Obligatorio] Copropiedad y reparto por cotitular trazados cuando existan varios titulares."
+          },
+          {
+            "itemId": "chkirnrgp-008",
+            "label": "[Obligatorio] Retencion del 3 por ciento revisada expresamente en toda transmision inmobiliaria."
+          },
+          {
+            "itemId": "chkirnrgp-009",
+            "label": "[Recomendable] Cuantificacion de la ganancia contrastada con valores de adquisicion, transmision y gastos o tributos inherentes."
+          },
+          {
+            "itemId": "chkirnrgp-010",
+            "label": "[Obligatorio] Cierre operativo minimo del Modelo 210 documentado con soporte de la retencion o de la exencion cuando proceda."
+          }
+        ]
+      },
+      "order": 40,
+      "status": "validado",
+      "title": "Checklist operativa reutilizable",
+      "type": "checklist",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbirnrgp-faq-001",
+      "content": {
+        "items": [
+          {
+            "faqId": "faqirnrgp-001",
+            "question": "Si vendo un inmueble en Espana siendo no residente, tengo que tributar aqui?",
+            "answer": "Con caracter general, si. La normativa interna del IRNR considera obtenidas en Espana las ganancias patrimoniales procedentes de inmuebles situados en territorio espanol y los CDI suelen mantener tambien la imposicion en el Estado donde esta situado el inmueble."
+          },
+          {
+            "faqId": "faqirnrgp-002",
+            "question": "La retencion del 3 por ciento en la venta del inmueble sustituye a la declaracion?",
+            "answer": "No. La retencion del 3 por ciento es un pago a cuenta del impuesto correspondiente al transmitente no residente. Despues debe revisarse el cierre del Modelo 210 para regularizar el resultado final o solicitar, en su caso, la devolucion que corresponda."
+          },
+          {
+            "faqId": "faqirnrgp-003",
+            "question": "Si vendo acciones, Espana siempre puede gravar la ganancia?",
+            "answer": "No siempre. Depende del punto de conexion de la norma interna y del CDI aplicable. En acciones o participaciones el analisis exige mirar con cuidado emisor, residencia, activo subyacente cuando sea relevante y texto concreto del convenio."
+          },
+          {
+            "faqId": "faqirnrgp-004",
+            "question": "Que diferencia hay entre no sujecion y exencion?",
+            "answer": "La no sujecion significa que la ganancia no entra en el hecho imponible por faltar el punto de conexion aplicable. La exencion significa que la ganancia si entra inicialmente en el impuesto, pero una norma posterior libera total o parcialmente de tributacion."
+          },
+          {
+            "faqId": "faqirnrgp-005",
+            "question": "Si el inmueble pertenece a dos no residentes, se analiza como un solo contribuyente?",
+            "answer": "No. La copropiedad no fusiona a los obligados. Cada cotitular debe analizar su propia parte de la ganancia, su cuota de retencion y su cierre formal correspondiente."
+          },
+          {
+            "faqId": "faqirnrgp-006",
+            "question": "Este objeto explica ya todas las casillas del Modelo 210 y del Modelo 211?",
+            "answer": "No. El objeto cubre el criterio material y el cumplimiento operativo minimo. La cumplimentacion completa de formularios pertenece a una capa operativa derivada o a guias procedimentales especificas."
+          }
+        ]
+      },
+      "order": 50,
+      "status": "validado",
+      "title": "Preguntas frecuentes reales de cliente y expediente",
+      "type": "faq",
+      "visibility": "public"
+    },
+    {
+      "blockId": "kbirnrgp-risk-001",
+      "content": {
+        "items": [
+          {
+            "riskId": "riskirnrgp-001",
+            "description": "Confundir no sujecion con exencion y cerrar indebidamente que la ganancia no tributa en Espana.",
+            "severity": "high",
+            "likelihood": "high",
+            "mitigation": "Separar siempre el punto de conexion de la norma interna y la posible liberacion posterior de tributacion."
+          },
+          {
+            "riskId": "riskirnrgp-002",
+            "description": "Ignorar la retencion del 3 por ciento en transmisiones inmobiliarias o tratarla como impuesto definitivo.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Revisar siempre el papel del adquirente, el Modelo 211 y la regularizacion posterior mediante Modelo 210."
+          },
+          {
+            "riskId": "riskirnrgp-003",
+            "description": "Aplicar de forma automatica el CDI a acciones o participaciones sin revisar el tratado concreto.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Leer el convenio aplicable y evitar trasladar reglas generales de inmuebles a otros activos."
+          },
+          {
+            "riskId": "riskirnrgp-004",
+            "description": "Ignorar la copropiedad y presentar una unica conclusion economica o formal.",
+            "severity": "medium",
+            "likelihood": "medium",
+            "mitigation": "Desglosar desde el inicio porcentaje de participacion, ganancia, retencion y obligaciones formales por titular."
+          },
+          {
+            "riskId": "riskirnrgp-005",
+            "description": "Cuantificar mal la ganancia por no documentar adecuadamente valores de adquisicion, transmision, gastos o mejoras.",
+            "severity": "medium",
+            "likelihood": "medium",
+            "mitigation": "Exigir soporte documental suficiente de cada componente economico antes de cerrar la base imponible."
+          }
+        ]
+      },
+      "order": 60,
+      "status": "validado",
+      "title": "Riesgos materiales y operativos",
+      "type": "risk",
+      "visibility": "internal"
+    },
+    {
+      "blockId": "kbirnrgp-docs-001",
+      "content": {
+        "items": [
+          {
+            "documentId": "docirnrgp-001",
+            "label": "Identificacion del titular o titulares no residentes y certificado de residencia fiscal o soporte equivalente fuera de Espana.",
+            "required": true,
+            "notes": "Fuerza probatoria: muy alta. Uso habitual: confirmar la condicion de no residente y preparar la capa de CDI cuando proceda."
+          },
+          {
+            "documentId": "docirnrgp-002",
+            "label": "Escritura, contrato o documento de transmision del activo con fecha, partes, contraprestacion y detalle del bien o derecho transmitido.",
+            "required": true,
+            "notes": "Fuerza probatoria: muy alta. Uso habitual: acreditar la transmision y el activo concreto."
+          },
+          {
+            "documentId": "docirnrgp-003",
+            "label": "Documentacion de adquisicion original, inversiones, mejoras, gastos y tributos inherentes para cuantificar la ganancia.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: construir valor de adquisicion y contrastar la base imponible."
+          },
+          {
+            "documentId": "docirnrgp-004",
+            "label": "Soporte de titularidad, porcentaje de participacion y pactos internos cuando exista copropiedad o varios transmitentes.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: repartir la ganancia, la retencion y el cumplimiento por cotitular."
+          },
+          {
+            "documentId": "docirnrgp-005",
+            "label": "Justificante de la retencion del 3 por ciento y del Modelo 211 cuando la transmision recaiga sobre inmueble situado en Espana.",
+            "required": false,
+            "notes": "Fuerza probatoria: alta. Uso habitual: conectar pago a cuenta, regularizacion posterior y eventual devolucion."
+          },
+          {
+            "documentId": "docirnrgp-006",
+            "label": "Texto o prueba del CDI aplicable y de la exencion interna invocada, si el expediente se apoya en alguno de esos beneficios.",
+            "required": false,
+            "notes": "Fuerza probatoria: media. Uso habitual: sostener la separacion entre tributacion interna, limite convencional y exencion."
+          }
+        ]
+      },
+      "order": 70,
+      "status": "validado",
+      "title": "Documentacion necesaria y matriz de evidencias",
+      "type": "required_documentation",
+      "visibility": "public"
+    },
+    {
+      "blockId": "kbirnrgp-cases-001",
+      "content": {
+        "items": [
+          {
+            "caseId": "caseirnrgp-001",
+            "scenario": "Residente en Alemania vende un apartamento en Valencia adquirido anos antes y el comprador practica la retencion del 3 por ciento.",
+            "resolution": "La ganancia se considera obtenida en Espana por proceder de inmueble situado en territorio espanol. Debe revisarse el CDI, que normalmente mantiene la imposicion en el Estado de situacion del inmueble. La retencion del 3 por ciento se ingresa mediante Modelo 211 y el transmitente cierra el expediente con Modelo 210.",
+            "notes": "Aprendizaje: la retencion del 3 por ciento es nuclear, pero no sustituye la autoliquidacion final."
+          },
+          {
+            "caseId": "caseirnrgp-002",
+            "scenario": "No residente transmite acciones de una entidad espanola y asume que la ganancia nunca tributa en Espana porque el dinero se cobra fuera.",
+            "resolution": "El lugar de cobro no resuelve por si solo la sujecion. Debe analizarse la norma interna sobre valores emitidos por residentes y, despues, el CDI concreto para comprobar si Espana conserva o no potestad tributaria sobre esa ganancia.",
+            "notes": "Aprendizaje: acciones y participaciones exigen lectura real del tratado, no intuiciones sobre el lugar del pago."
+          },
+          {
+            "caseId": "caseirnrgp-003",
+            "scenario": "Residente en Francia transmite un activo mobiliario sin conexion suficiente con Espana, pero el expediente llega como IRNR por rutina.",
+            "resolution": "Si no existe punto de conexion con Espana conforme a la norma interna aplicable, la conclusion correcta es de no sujecion y el objeto debe cerrarse ahi, sin saltar directamente a exenciones o convenios.",
+            "notes": "Aprendizaje: no sujecion y exencion son preguntas distintas y no deben mezclarse."
+          },
+          {
+            "caseId": "caseirnrgp-004",
+            "scenario": "No residente vende un inmueble urbano adquirido dentro del periodo legal de 2012 y plantea una exencion parcial.",
+            "resolution": "La ganancia entra inicialmente en el IRNR por proceder de inmueble situado en Espana. Solo despues se analiza si concurre la exencion parcial del 50 por ciento y si se cumplen sus limites subjetivos y objetivos.",
+            "notes": "Aprendizaje: primero sujecion, despues exencion."
+          },
+          {
+            "caseId": "caseirnrgp-005",
+            "scenario": "Dos hermanos no residentes transmiten conjuntamente un inmueble en la Costa del Sol.",
+            "resolution": "Cada cotitular debe analizar su parte de la ganancia, su participacion en la retencion del 3 por ciento y su cierre formal posterior. La copropiedad debe reflejarse desde el inicio tanto en la cuantificacion como en el cumplimiento.",
+            "notes": "Aprendizaje: la copropiedad es una regla transversal del objeto, no solo un caso anecdotico."
+          }
+        ]
+      },
+      "order": 80,
+      "status": "validado",
+      "title": "Casos practicos reutilizables",
+      "type": "case_study",
+      "visibility": "public"
+    }
+  ],
+  "procedures": [
+    {
+      "blockId": "kbirnrgp-proc-001",
+      "content": {
+        "steps": [
+          {
+            "text": "Confirmar si la persona o entidad es no residente desde la perspectiva espanola y, si no esta cerrado, abrir antes el objeto de Residencia Fiscal.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Confirmar que existe una transmision o alteracion patrimonial y que de ella emerge una ganancia patrimonial relevante para IRNR.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Identificar el activo transmitido, la fecha, la titularidad, la cuota de participacion y la documentacion del negocio juridico.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Localizar la ganancia conforme a la normativa interna del IRNR, distinguiendo inmuebles, acciones o participaciones y otros activos o derechos.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Separar expresamente no sujecion de exencion antes de revisar cualquier beneficio de convenio o consecuencia formal.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Comprobar si existe CDI vigente y si el convenio mantiene, limita o desplaza la potestad tributaria espanola sobre la ganancia concreta.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Revisar si la ganancia se encuentra en un supuesto de exencion interna total o parcial y documentar la prueba exigible.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Analizar copropiedad, reparto de la ganancia, obligados independientes y efectos sobre la retencion o la declaracion cuando existan varios titulares.",
+            "format": "plain_text"
+          },
+          {
+            "text": "En transmisiones inmobiliarias, verificar la retencion del 3 por ciento, el papel del adquirente y la existencia del Modelo 211.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Cerrar la capa de cumplimiento minimo del transmitente no residente mediante Modelo 210, devolucion o regularizacion cuando proceda.",
+            "format": "plain_text"
+          },
+          {
+            "text": "Documentar la decision final con evidencia suficiente sobre residencia, activo, cuantificacion, no sujecion o exencion, convenio, retencion y via de cumplimiento elegida.",
+            "format": "plain_text"
+          }
+        ]
+      },
+      "order": 30,
+      "status": "validado",
+      "title": "Procedimiento operativo completo",
+      "type": "procedure",
+      "visibility": "internal"
+    }
+  ],
+  "checklists": [
+    {
+      "blockId": "kbirnrgp-check-001",
+      "content": {
+        "items": [
+          {
+            "itemId": "chkirnrgp-001",
+            "label": "[Obligatorio] No residencia fiscal confirmada o derivada al objeto transversal antes del cierre."
+          },
+          {
+            "itemId": "chkirnrgp-002",
+            "label": "[Obligatorio] Existencia de transmision y de ganancia patrimonial acreditadas documentalmente."
+          },
+          {
+            "itemId": "chkirnrgp-003",
+            "label": "[Obligatorio] Activo transmitido identificado y clasificado como inmueble, acciones o participaciones, u otro activo."
+          },
+          {
+            "itemId": "chkirnrgp-004",
+            "label": "[Obligatorio] Punto de conexion con Espana razonado conforme a norma interna."
+          },
+          {
+            "itemId": "chkirnrgp-005",
+            "label": "[Obligatorio] No sujecion y exencion separadas expresamente antes de cerrar el expediente."
+          },
+          {
+            "itemId": "chkirnrgp-006",
+            "label": "[Obligatorio] CDI comprobado y documentado cuando exista elemento internacional."
+          },
+          {
+            "itemId": "chkirnrgp-007",
+            "label": "[Obligatorio] Copropiedad y reparto por cotitular trazados cuando existan varios titulares."
+          },
+          {
+            "itemId": "chkirnrgp-008",
+            "label": "[Obligatorio] Retencion del 3 por ciento revisada expresamente en toda transmision inmobiliaria."
+          },
+          {
+            "itemId": "chkirnrgp-009",
+            "label": "[Recomendable] Cuantificacion de la ganancia contrastada con valores de adquisicion, transmision y gastos o tributos inherentes."
+          },
+          {
+            "itemId": "chkirnrgp-010",
+            "label": "[Obligatorio] Cierre operativo minimo del Modelo 210 documentado con soporte de la retencion o de la exencion cuando proceda."
+          }
+        ]
+      },
+      "order": 40,
+      "status": "validado",
+      "title": "Checklist operativa reutilizable",
+      "type": "checklist",
+      "visibility": "internal"
+    }
+  ],
+  "requiredDocumentation": [
+    {
+      "blockId": "kbirnrgp-docs-001",
+      "content": {
+        "items": [
+          {
+            "documentId": "docirnrgp-001",
+            "label": "Identificacion del titular o titulares no residentes y certificado de residencia fiscal o soporte equivalente fuera de Espana.",
+            "required": true,
+            "notes": "Fuerza probatoria: muy alta. Uso habitual: confirmar la condicion de no residente y preparar la capa de CDI cuando proceda."
+          },
+          {
+            "documentId": "docirnrgp-002",
+            "label": "Escritura, contrato o documento de transmision del activo con fecha, partes, contraprestacion y detalle del bien o derecho transmitido.",
+            "required": true,
+            "notes": "Fuerza probatoria: muy alta. Uso habitual: acreditar la transmision y el activo concreto."
+          },
+          {
+            "documentId": "docirnrgp-003",
+            "label": "Documentacion de adquisicion original, inversiones, mejoras, gastos y tributos inherentes para cuantificar la ganancia.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: construir valor de adquisicion y contrastar la base imponible."
+          },
+          {
+            "documentId": "docirnrgp-004",
+            "label": "Soporte de titularidad, porcentaje de participacion y pactos internos cuando exista copropiedad o varios transmitentes.",
+            "required": true,
+            "notes": "Fuerza probatoria: alta. Uso habitual: repartir la ganancia, la retencion y el cumplimiento por cotitular."
+          },
+          {
+            "documentId": "docirnrgp-005",
+            "label": "Justificante de la retencion del 3 por ciento y del Modelo 211 cuando la transmision recaiga sobre inmueble situado en Espana.",
+            "required": false,
+            "notes": "Fuerza probatoria: alta. Uso habitual: conectar pago a cuenta, regularizacion posterior y eventual devolucion."
+          },
+          {
+            "documentId": "docirnrgp-006",
+            "label": "Texto o prueba del CDI aplicable y de la exencion interna invocada, si el expediente se apoya en alguno de esos beneficios.",
+            "required": false,
+            "notes": "Fuerza probatoria: media. Uso habitual: sostener la separacion entre tributacion interna, limite convencional y exencion."
+          }
+        ]
+      },
+      "order": 70,
+      "status": "validado",
+      "title": "Documentacion necesaria y matriz de evidencias",
+      "type": "required_documentation",
+      "visibility": "public"
+    }
+  ],
+  "risks": [
+    {
+      "blockId": "kbirnrgp-risk-001",
+      "content": {
+        "items": [
+          {
+            "riskId": "riskirnrgp-001",
+            "description": "Confundir no sujecion con exencion y cerrar indebidamente que la ganancia no tributa en Espana.",
+            "severity": "high",
+            "likelihood": "high",
+            "mitigation": "Separar siempre el punto de conexion de la norma interna y la posible liberacion posterior de tributacion."
+          },
+          {
+            "riskId": "riskirnrgp-002",
+            "description": "Ignorar la retencion del 3 por ciento en transmisiones inmobiliarias o tratarla como impuesto definitivo.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Revisar siempre el papel del adquirente, el Modelo 211 y la regularizacion posterior mediante Modelo 210."
+          },
+          {
+            "riskId": "riskirnrgp-003",
+            "description": "Aplicar de forma automatica el CDI a acciones o participaciones sin revisar el tratado concreto.",
+            "severity": "high",
+            "likelihood": "medium",
+            "mitigation": "Leer el convenio aplicable y evitar trasladar reglas generales de inmuebles a otros activos."
+          },
+          {
+            "riskId": "riskirnrgp-004",
+            "description": "Ignorar la copropiedad y presentar una unica conclusion economica o formal.",
+            "severity": "medium",
+            "likelihood": "medium",
+            "mitigation": "Desglosar desde el inicio porcentaje de participacion, ganancia, retencion y obligaciones formales por titular."
+          },
+          {
+            "riskId": "riskirnrgp-005",
+            "description": "Cuantificar mal la ganancia por no documentar adecuadamente valores de adquisicion, transmision, gastos o mejoras.",
+            "severity": "medium",
+            "likelihood": "medium",
+            "mitigation": "Exigir soporte documental suficiente de cada componente economico antes de cerrar la base imponible."
+          }
+        ]
+      },
+      "order": 60,
+      "status": "validado",
+      "title": "Riesgos materiales y operativos",
+      "type": "risk",
+      "visibility": "internal"
+    }
+  ],
+  "relevantRelations": [
+    {
+      "relationId": "rel-irnrgp-consumes-residencia",
+      "type": "depends_on",
+      "targetKnowledgeObjectId": "ko_es_residencia_fiscal_personas_fisicas_001",
+      "rationale": "Consumes Doctrine From: la condicion de no residente debe resolverse con el objeto transversal de residencia fiscal antes de aplicar el criterio material de IRNR.",
+      "order": 10
+    },
+    {
+      "relationId": "rel-irnrgp-consumes-cdi",
+      "type": "depends_on",
+      "targetKnowledgeObjectId": "ko_es_cdi_marco_general_001",
+      "rationale": "Consumes Doctrine From: el marco general de CDI se utiliza para la capa convencional sin recrear doctrina internacional general en este objeto.",
+      "order": 20
+    },
+    {
+      "relationId": "rel-irnrgp-consumes-modelo210-imputada",
+      "type": "references",
+      "targetKnowledgeObjectId": "ko_es_irnr_modelo210_imputacion_rentas_001",
+      "rationale": "Consumes Doctrine From: el objeto de imputacion de rentas completa expedientes mixtos con inmueble no arrendado antes de su transmision.",
+      "order": 30
+    },
+    {
+      "relationId": "rel-irnrgp-provides-irnr-general",
+      "type": "expands",
+      "targetKnowledgeObjectId": "ko_es_irnr_rendimientos_trabajo_001",
+      "rationale": "Provides Doctrine To: este objeto aporta una pieza material del dominio IRNR que ayuda a ordenar otros expedientes de no residentes y sus fronteras con la renta del trabajo o la renta empresarial.",
+      "order": 40
+    },
+    {
+      "relationId": "rel-irnrgp-provides-irpf-internacional",
+      "type": "expands",
+      "targetKnowledgeObjectId": "ko_es_irpf_internacional_personas_fisicas_001",
+      "rationale": "Provides Doctrine To: puede servir de contraste cuando el expediente exige distinguir IRPF e IRNR en transmisiones internacionales de activos.",
+      "order": 50
+    }
+  ]
+}

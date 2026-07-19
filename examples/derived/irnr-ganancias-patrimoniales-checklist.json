@@ -1,0 +1,50 @@
+{
+  "source": {
+    "knowledgeObjectId": "ko_es_irnr_ganancias_patrimoniales_001",
+    "stableKey": "irnr-ganancias-patrimoniales",
+    "version": "1.0.0"
+  },
+  "title": "IRNR - Ganancias Patrimoniales - Checklist operativa",
+  "items": [
+    {
+      "itemId": "chkirnrgp-001",
+      "label": "[Obligatorio] No residencia fiscal confirmada o derivada al objeto transversal antes del cierre."
+    },
+    {
+      "itemId": "chkirnrgp-002",
+      "label": "[Obligatorio] Existencia de transmision y de ganancia patrimonial acreditadas documentalmente."
+    },
+    {
+      "itemId": "chkirnrgp-003",
+      "label": "[Obligatorio] Activo transmitido identificado y clasificado como inmueble, acciones o participaciones, u otro activo."
+    },
+    {
+      "itemId": "chkirnrgp-004",
+      "label": "[Obligatorio] Punto de conexion con Espana razonado conforme a norma interna."
+    },
+    {
+      "itemId": "chkirnrgp-005",
+      "label": "[Obligatorio] No sujecion y exencion separadas expresamente antes de cerrar el expediente."
+    },
+    {
+      "itemId": "chkirnrgp-006",
+      "label": "[Obligatorio] CDI comprobado y documentado cuando exista elemento internacional."
+    },
+    {
+      "itemId": "chkirnrgp-007",
+      "label": "[Obligatorio] Copropiedad y reparto por cotitular trazados cuando existan varios titulares."
+    },
+    {
+      "itemId": "chkirnrgp-008",
+      "label": "[Obligatorio] Retencion del 3 por ciento revisada expresamente en toda transmision inmobiliaria."
+    },
+    {
+      "itemId": "chkirnrgp-009",
+      "label": "[Recomendable] Cuantificacion de la ganancia contrastada con valores de adquisicion, transmision y gastos o tributos inherentes."
+    },
+    {
+      "itemId": "chkirnrgp-010",
+      "label": "[Obligatorio] Cierre operativo minimo del Modelo 210 documentado con soporte de la retencion o de la exencion cuando proceda."
+    }
+  ]
+}
