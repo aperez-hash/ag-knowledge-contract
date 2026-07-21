@@ -2,7 +2,7 @@
   "source": {
     "knowledgeObjectId": "ko_es_modelo721_monedas_virtuales_001",
     "stableKey": "modelo-721-monedas-virtuales-extranjero",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "title": "Modelo 721 - Declaracion informativa sobre monedas virtuales situadas en el extranjero - FAQ derivada",
   "items": [
@@ -30,6 +30,11 @@
       "faqId": "faq721-005",
       "question": "¿Como se determina la localizacion de las monedas virtuales?",
       "answer": "No por la etiqueta comercial del exchange ni por los servidores, sino por si la entidad o establecimiento que custodia las claves en nombre de terceros esta fuera del deber interno de informacion a la Administracion tributaria espanola."
+    },
+    {
+      "faqId": "faq721-006",
+      "question": "¿El dinero fiduciario mantenido en un exchange extranjero se declara en el Modelo 721?",
+      "answer": "No. El Modelo 721 se refiere a monedas virtuales. El dinero fiduciario de curso legal puede exigir un analisis separado del Modelo 720 si existe una cuenta instrumental situada en el extranjero y se superan sus umbrales."
     }
   ]
 }
