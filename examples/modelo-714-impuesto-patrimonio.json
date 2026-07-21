@@ -12,8 +12,8 @@
     "version": "1.0.0",
     "owner": "equipo-fiscal-patrimonio",
     "approvedBy": "direccion-tecnica-fiscal",
-    "reviewedAt": "2026-07-18T21:00:00Z",
-    "changeReason": "Tercer Knowledge Object productivo de Knowledge Factory, dedicado al analisis del Modelo 714 y validado contra el contrato publicado"
+    "reviewedAt": "2026-07-21T18:30:00Z",
+    "changeReason": "Tercer Knowledge Object productivo de Knowledge Factory, dedicado al Impuesto sobre el Patrimonio y validado contra el contrato publicado"
   },
   "classification": {
     "domain": "fiscal",
@@ -27,77 +27,77 @@
       "obligacion personal",
       "obligacion real",
       "minimo exento",
-      "normativa autonomica",
+      "vivienda habitual",
       "itsgf"
     ]
   },
   "channelPolicy": {
     "web": {
       "access": "derived_only",
-      "notes": "La web solo debe recibir salidas derivadas y prudentes."
+      "notes": "La web solo debe publicar salidas derivadas, prudentes y no doctrinales completas."
     },
     "planner": {
       "access": "allowed",
-      "notes": "Planner puede consumir la vista operativa interna del objeto."
+      "notes": "Planner puede consumir la vista operativa derivada del objeto."
     },
     "ia": {
       "access": "allowed",
-      "notes": "La IA interna puede usar el criterio con trazabilidad y restricciones."
+      "notes": "La IA interna puede usar el criterio con trazabilidad y restricciones de canal."
     },
     "faq": {
       "access": "derived_only",
-      "notes": "Las FAQ deben derivarse de forma controlada."
+      "notes": "Las FAQ deben salir de una derivacion controlada."
     },
     "checklist": {
       "access": "derived_only",
-      "notes": "La checklist puede exponerse como derivacion operativa."
+      "notes": "La checklist puede exponerse como derivacion operativa, no como bloque bruto."
     },
     "internal_guide": {
       "access": "allowed",
-      "notes": "La guia interna puede reutilizar el contenido completo validado."
+      "notes": "La guia interna puede reutilizar el contenido validado completo."
     },
     "client_response": {
       "access": "derived_only",
-      "notes": "Nunca debe enviarse al cliente el texto bruto del objeto."
+      "notes": "Nunca debe trasladarse al cliente el texto bruto del objeto."
     },
     "tax_library": {
       "access": "derived_only",
-      "notes": "La biblioteca fiscal debe consumir salidas derivadas, no el objeto bruto."
+      "notes": "La biblioteca fiscal debe consumir salidas derivadas y auditables."
     }
   },
   "executiveSummary": {
-    "summary": "Este Knowledge Object fija el criterio operativo del despacho para decidir cuando una persona fisica debe presentar el Modelo 714 por el Impuesto sobre el Patrimonio y como debe determinarse correctamente su obligacion tributaria. El eje del analisis no es la cumplimentacion del formulario, sino la separacion entre obligacion personal y obligacion real, la identificacion del patrimonio gravado, la aplicacion ordenada de exenciones y la verificacion final de si existe obligacion de declarar aunque no resulte cuota a ingresar. El objeto sirve para evitar errores recurrentes al mezclar patrimonio mundial con patrimonio situado en Espana, al ignorar el umbral de 2.000.000 de euros, al aplicar de forma automatica exenciones empresariales o al perder de vista que la normativa autonomica puede alterar minimo exento, tarifa, deducciones y bonificaciones. Tambien deja conectada, sin mezclarla, la revision del Impuesto Temporal de Solidaridad de las Grandes Fortunas cuando el volumen patrimonial o la cuota obligan a abrir ese segundo analisis. Su uso practico es homogeneizar expedientes reales y derivar contenido consistente para Planner, Web, IA, checklist, FAQ y respuesta al cliente sin duplicar doctrina.",
-    "problemSolved": "Evita errores al decidir si existe obligacion de presentar Patrimonio, al separar obligacion personal y real, al valorar activos con criterio operativo y al abrir correctamente la revision autonómica e ITSGF cuando procede.",
-    "scope": "Personas fisicas sujetas al Impuesto sobre el Patrimonio por obligacion personal o real, exclusivamente para determinar su obligacion material respecto del Modelo 714.",
-    "practicalImpact": "Permite abrir, revisar y cerrar expedientes de Patrimonio con un criterio unico y reutilizable, sin convertir el objeto canonico en un manual de casillas o pantallas AEAT."
+    "summary": "Este Knowledge Object fija el criterio operativo del despacho para determinar cuando una persona fisica debe analizar y, en su caso, presentar el Modelo 714 del Impuesto sobre el Patrimonio. Su finalidad es ordenar de forma reutilizable la secuencia juridica correcta: comprobar si el contribuyente tributa por obligacion personal o por obligacion real, delimitar el patrimonio afectado a 31 de diciembre, aplicar exenciones relevantes, valorar correctamente los activos y verificar si existe obligacion de declarar por cuota a ingresar o por superar el umbral de 2.000.000 de euros en bienes y derechos. El objeto presta especial atencion a la vivienda habitual, al patrimonio empresarial y profesional, a las participaciones potencialmente exentas, a la relevancia practica de la normativa autonómica y a la apertura adicional del analisis de ITSGF cuando proceda. Su uso practico es homogeneizar expedientes de Patrimonio sin convertir el conocimiento canonico en un manual de casillas ni en una tabla volatil de diecisiete regímenes autonómicos.",
+    "problemSolved": "Evita errores al decidir si existe obligacion de declarar, al separar obligacion personal de obligacion real, al valorar activos relevantes y al integrar correctamente el impacto autonómico y la posible conexion con ITSGF.",
+    "scope": "Personas fisicas sujetas al Impuesto sobre el Patrimonio en Espana, tanto por obligacion personal como por obligacion real, exclusivamente en lo relativo al Modelo 714 y a la decision material de presentar o no presentar.",
+    "practicalImpact": "Permite abrir, revisar y cerrar expedientes de Patrimonio con un criterio unico, reutilizable por Planner, Web, IA, checklist, FAQ y respuestas derivadas al cliente sin duplicar doctrina."
   },
   "affectedTaxModels": [
     {
       "modelCode": "714",
       "modelName": "Impuesto sobre el Patrimonio",
       "relationType": "primary",
-      "notes": "Modelo central del objeto y obligacion tributaria directamente desarrollada aqui."
+      "notes": "Modelo central del objeto y unica obligacion desarrollada directamente aqui."
     },
     {
       "modelCode": "718",
       "modelName": "Impuesto Temporal de Solidaridad de las Grandes Fortunas",
       "relationType": "informative",
-      "notes": "Se cita por su relacion practica con Patrimonio, pero no se desarrolla como objeto principal."
+      "notes": "Se cita solo para abrir el analisis adicional cuando el expediente de Patrimonio lo exija."
     }
   ],
   "affectedForms": [
     {
       "formCode": "714",
-      "formName": "Modelo 714 - Impuesto sobre el Patrimonio",
+      "formName": "Modelo 714 - Impuesto sobre el Patrimonio. Declaracion y documento de ingreso",
       "relationType": "required",
-      "notes": "Formulario oficial cuando, una vez hecho el analisis material, existe obligacion de presentar."
+      "notes": "Formulario oficial cuando concurre obligacion de presentar Patrimonio."
     }
   ],
   "blocks": [
     {
       "blockId": "kb714-legal-001",
       "type": "legal_basis",
-      "title": "Base legal y reparto competencial del Impuesto sobre el Patrimonio",
+      "title": "Base legal y encaje vigente del Impuesto sobre el Patrimonio",
       "order": 10,
       "status": "validado",
       "visibility": "internal",
@@ -111,49 +111,41 @@
         "client_response": { "access": "blocked" },
         "tax_library": { "access": "allowed" }
       },
-      "lastReviewedAt": "2026-07-18T21:00:00Z",
+      "lastReviewedAt": "2026-07-21T18:30:00Z",
       "content": {
-        "basis": "La norma troncal del objeto es la Ley 19/1991, de 6 de junio, del Impuesto sobre el Patrimonio, que regula sujetos pasivos, exenciones, valoracion, base imponible, cuota y obligacion de declarar. El impuesto se mantiene vigente y, conforme a la exposicion operativa de la AEAT y a la Orden HAC/277/2026 para la campana 2025, sigue siendo el marco juridico central del Modelo 714. El rendimiento del impuesto esta cedido a las Comunidades Autonomas y la Ley 22/2009 atribuye competencias normativas sobre minimo exento, tipo de gravamen y deducciones o bonificaciones, sin desplazar por ello la estructura estatal del impuesto. El objeto debe leerse, ademas, en convivencia practica con el ITSGF creado por la Ley 38/2022, pero sin confundir ambos tributos: primero se resuelve Patrimonio y despues, cuando proceda, se abre la revision complementaria de grandes fortunas."
+        "basis": "El Impuesto sobre el Patrimonio es un tributo directo y personal que grava el patrimonio neto de las personas fisicas a la fecha de devengo. Su base legal principal es la Ley 19/1991, hoy aplicable en coordinacion con el restablecimiento operado por el Real Decreto-ley 13/2011 y con la normativa formal anual de campaña. El rendimiento del impuesto esta cedido a las Comunidades Autonomas de regimen comun, lo que introduce una capa operativa esencial sobre minimo exento, escala y bonificaciones. El objeto debe leerse distinguiendo con claridad la obligacion personal y la obligacion real, porque de ello dependen el perimetro patrimonial, el punto de conexion territorial y la normativa autonómica utilizable. Este conocimiento canonico no desarrolla el ITSGF como impuesto autonomo, pero debe dejar trazada su relacion material cuando el expediente de Patrimonio obligue a abrir una comprobacion adicional sobre grandes fortunas."
       },
       "sourceRefs": [
         {
-          "referenceId": "src714-ley-19-1991",
+          "referenceId": "src714-ley19",
           "type": "law",
-          "label": "Ley 19/1991, del Impuesto sobre el Patrimonio",
-          "citation": "BOE-A-1991-14392, texto consolidado",
-          "url": "https://www.boe.es/eli/es/l/1991/06/06/19/con",
-          "notes": "Norma central del impuesto. Ultima actualizacion publicada el 28/12/2023."
+          "label": "Ley 19/1991 - Impuesto sobre el Patrimonio",
+          "citation": "Ley 19/1991, de 6 de junio, del Impuesto sobre el Patrimonio",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1991-14392",
+          "notes": "Norma troncal del objeto y fuente primaria principal."
         },
         {
-          "referenceId": "src714-ley-22-2009",
-          "type": "law",
-          "label": "Ley 22/2009, articulo 47",
-          "citation": "BOE-A-2009-20375, articulo 47",
-          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2009-20375",
-          "notes": "Determina el alcance de las competencias normativas autonómicas en Patrimonio."
+          "referenceId": "src714-rdl13",
+          "type": "regulation",
+          "label": "Real Decreto-ley 13/2011",
+          "citation": "BOE-A-2011-14809",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2011-14809",
+          "notes": "Relevante para el restablecimiento y continuidad del impuesto."
         },
         {
-          "referenceId": "src714-orden-2026",
+          "referenceId": "src714-orden2026",
           "type": "regulation",
           "label": "Orden HAC/277/2026",
           "citation": "BOE-A-2026-7041",
-          "url": "https://www.boe.es/eli/es/o/2026/03/25/hac277/con",
-          "notes": "Aprueba los modelos de Patrimonio 2025 y resume su encaje operativo."
-        },
-        {
-          "referenceId": "src714-ley-38-2022",
-          "type": "law",
-          "label": "Ley 38/2022, articulo 3",
-          "citation": "BOE-A-2022-22684, articulo 3",
-          "url": "https://www.boe.es/eli/es/l/2022/12/27/38/con",
-          "notes": "Crea el ITSGF y justifica su relacion operativa con Patrimonio."
+          "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2026-7041",
+          "notes": "Fija el marco formal y recoge el impacto practico de la jurisprudencia reciente sobre no residentes."
         }
       ]
     },
     {
       "blockId": "kb714-tech-001",
       "type": "technical_development",
-      "title": "Desarrollo tecnico de la obligacion tributaria",
+      "title": "Desarrollo tecnico de sujecion, valoracion, exenciones y obligacion de declarar",
       "order": 20,
       "status": "validado",
       "visibility": "internal",
@@ -167,50 +159,50 @@
         "client_response": { "access": "blocked" },
         "tax_library": { "access": "allowed" }
       },
-      "lastReviewedAt": "2026-07-18T21:00:00Z",
-      "summary": "La clave operativa del Modelo 714 no es el formulario, sino decidir si existe obligacion de presentar, con que patrimonio, bajo que normativa territorial y con que interaccion eventual con ITSGF.",
+      "lastReviewedAt": "2026-07-21T18:30:00Z",
+      "summary": "La decision correcta exige unir residencia o no residencia, perimetro patrimonial, exenciones, reglas de valoracion, capa autonómica y obligacion de declarar por cuota o por umbral objetivo de patrimonio.",
       "content": {
-        "development": "El analisis arranca por la residencia fiscal. Los residentes en Espana tributan por obligacion personal y, en principio, por su patrimonio neto mundial a 31 de diciembre. Los no residentes tributan por obligacion real y solo por bienes o derechos situados, ejercitables o exigibles en territorio espanol, con las especialidades autonómicas hoy reconocidas para este carril. Sobre ese perimetro patrimonial deben identificarse activos y pasivos deducibles, aplicar las reglas de valoracion legalmente previstas y depurar despues las exenciones relevantes, entre ellas vivienda habitual, bienes empresariales y participaciones exentas cuando concurren todos sus requisitos materiales. La obligacion de declarar no depende solo de que exista cuota a ingresar: tambien aparece cuando, aun no resultando cuota final positiva, el valor de bienes y derechos supera 2.000.000 de euros en los terminos legales, computando incluso bienes exentos y sin descontar cargas o deudas para ese segundo umbral. La normativa autonómica puede alterar minimo exento, tarifa, deducciones y bonificaciones, por lo que el expediente debe identificar primero la comunidad competente y despues abrir la revision material concreta sin convertir el objeto en un catalogo territorial completo. En valoracion, el objeto debe cubrir de forma operativa inmuebles, valores cotizados, participaciones no cotizadas, seguros, bienes singulares y activos potencialmente exentos. El ITSGF no sustituye este analisis: se activa despues, cuando el volumen patrimonial o la cuota obligan a revisar si, ademas de Patrimonio, procede abrir la tributacion complementaria por grandes fortunas."
+        "development": "El analisis debe empezar por la residencia fiscal del ejercicio. Si existe obligacion personal, el contribuyente declara su patrimonio neto mundial; si existe obligacion real, solo se analiza el patrimonio radicado, ejercitable o exigible en territorio espanol, sin perder de vista la doctrina operativa que hoy permite a no residentes aplicar la normativa autonómica correspondiente segun el mayor valor localizado en una Comunidad Autonoma. El patrimonio gravado se construye sobre bienes y derechos de contenido economico valorados conforme a las reglas de la Ley 19/1991, deduciendo deudas y cargas deducibles. Entre las exenciones con mayor impacto practico estan la vivienda habitual hasta 300.000 euros en los terminos legales, el patrimonio empresarial o profesional y determinadas participaciones en entidades cuando concurren los requisitos materiales. La valoracion debe tratar tipologicamente inmuebles, valores cotizados, participaciones no cotizadas, seguros y rentas, asi como joyas, vehiculos, embarcaciones y otros bienes singulares. La capa autonómica no puede tratarse como nota marginal: puede alterar minimo exento, tarifa, deducciones o bonificaciones y por tanto modificar materialmente la cuota o incluso la obligacion de declarar. El objeto debe fijar expresamente que la obligacion de declarar existe cuando la cuota resulte a ingresar y tambien cuando, aun no dándose esa circunstancia, el valor de bienes y derechos supere 2.000.000 de euros. El limite conjunto con IRPF del articulo 31 debe manejarse con prudencia tambien en expedientes por obligacion real, a la vista del criterio jurisprudencial reciente recogido en la orden de campaña 2026. Una vez resuelta la posicion en Patrimonio, debe abrirse separadamente el analisis de ITSGF cuando el volumen patrimonial y el marco vigente lo exijan."
       },
       "sourceRefs": [
-        {
-          "referenceId": "src714-aeat-sujetos",
-          "type": "guidance",
-          "label": "AEAT - Quienes estan sujetos al Impuesto sobre el Patrimonio",
-          "citation": "Pagina informativa AEAT",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-sobre-patrimonio/quienes-estan-sujetos-impuesto-sobre-patrimonio.html",
-          "notes": "Base operativa para obligacion personal y real."
-        },
         {
           "referenceId": "src714-aeat-obligados",
           "type": "guidance",
           "label": "AEAT - Quienes estan obligados a presentar declaracion",
-          "citation": "Pagina informativa AEAT, actualizada el 24/03/2026",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-sobre-patrimonio/quienes-estan-obligados-presentar-declaracion-ipatrimonio.html",
-          "notes": "Recoge cuota a ingresar y umbral de 2.000.000 euros como ejes de obligacion."
+          "citation": "Manual Patrimonio 2025, obligacion de presentar",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/patrimonio-2025/c-1-campana-declaracion-i-patrimonio/quienes-estan-obligados-presentar-declaracion-ip.html",
+          "notes": "Base operativa del doble criterio de obligacion de declarar."
+        },
+        {
+          "referenceId": "src714-aeat-obligacion-real",
+          "type": "guidance",
+          "label": "AEAT - Sujetos pasivos por obligacion real",
+          "citation": "Manual Patrimonio 2025, sujetos pasivos por obligacion real",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/patrimonio-2025/c-2-cuestiones-generales/quienes-estan-sujetos-i-patrimonio/sujetos-pasivos-obligacion-real.html",
+          "notes": "Respalda el perimetro de no residentes y la aplicacion de normativa autonómica."
+        },
+        {
+          "referenceId": "src714-aeat-exenciones",
+          "type": "guidance",
+          "label": "AEAT - Bienes exentos y vivienda habitual",
+          "citation": "Informacion AEAT sobre exenciones del Impuesto sobre el Patrimonio",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-sobre-patrimonio/que-bienes-estan-exentos-ley-patrimonio.html",
+          "notes": "Apoya la seleccion operativa de exenciones con mayor impacto."
         },
         {
           "referenceId": "src714-aeat-neto",
           "type": "guidance",
           "label": "AEAT - Como se determina el patrimonio neto",
-          "citation": "FAQ operativa AEAT",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-sobre-patrimonio/se-determina-patrimonio-neto.html?faqId=b42f01932a1c9710VgnVCM100000dc381e0aRCRD",
-          "notes": "Base practica para patrimonio bruto, deudas deducibles y base imponible."
-        },
-        {
-          "referenceId": "src714-aeat-itsgf",
-          "type": "guidance",
-          "label": "AEAT - Calculo del ITSGF a efectos practicos de Patrimonio",
-          "citation": "Pagina AEAT de relacion practica con ITSGF",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-sobre-patrimonio/calculo-impuesto-temporal-solidaridad-grandes-fortunas.html",
-          "notes": "Permite conectar Patrimonio con ITSGF sin fusionar ambos objetos."
+          "citation": "Informacion AEAT sobre patrimonio neto y deudas deducibles",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-sobre-patrimonio/se-determina-patrimonio-neto.html",
+          "notes": "Respalda la estructura patrimonial del calculo."
         }
       ]
     },
     {
       "blockId": "kb714-proc-001",
       "type": "procedure",
-      "title": "Procedimiento operativo completo",
+      "title": "Procedimiento operativo completo para expedientes de Patrimonio",
       "order": 30,
       "status": "validado",
       "visibility": "internal",
@@ -224,67 +216,67 @@
         "client_response": { "access": "blocked" },
         "tax_library": { "access": "derived_only" }
       },
-      "lastReviewedAt": "2026-07-18T21:00:00Z",
+      "lastReviewedAt": "2026-07-21T18:30:00Z",
       "content": {
         "steps": [
           {
-            "text": "Confirmar si el contribuyente es residente fiscal en Espana o no residente, y documentar desde el inicio si el expediente se mueve por obligacion personal o por obligacion real.",
+            "text": "Confirmar la residencia fiscal del contribuyente en el ejercicio y clasificar desde el inicio si el expediente debe analizarse por obligacion personal o por obligacion real.",
             "format": "plain_text"
           },
           {
-            "text": "Levantar el inventario patrimonial completo a 31 de diciembre y separar bienes inmuebles, valores cotizados, participaciones no cotizadas, seguros, rentas, bienes singulares y activos potencialmente exentos.",
+            "text": "Abrir un inventario patrimonial completo a 31 de diciembre, separando bienes y derechos por tipologia y dejando identificadas cargas, gravamenes y deudas potencialmente deducibles.",
             "format": "plain_text"
           },
           {
-            "text": "Delimitar el perimetro patrimonial que entra en el impuesto: patrimonio mundial en obligacion personal y patrimonio situado, ejercitable o exigible en Espana en obligacion real.",
+            "text": "Determinar el perimetro patrimonial relevante: patrimonio mundial si hay obligacion personal, o solo bienes y derechos situados, ejercitables o exigibles en Espana si existe obligacion real.",
             "format": "plain_text"
           },
           {
-            "text": "Aplicar las reglas de valoracion legales de cada clase de activo y documentar el criterio utilizado en los casos de mayor juicio tecnico.",
+            "text": "Valorar inmuebles, valores cotizados, participaciones no cotizadas, seguros, rentas y bienes singulares con arreglo a la Ley 19/1991 y con soporte documental suficiente.",
             "format": "plain_text"
           },
           {
-            "text": "Revisar exenciones con especial prudencia en vivienda habitual, bienes empresariales y participaciones exentas, verificando requisitos materiales y no solo etiquetas del cliente.",
+            "text": "Aplicar exenciones relevantes, con especial revision de vivienda habitual, patrimonio empresarial y profesional y participaciones potencialmente exentas, documentando por que se aceptan o se rechazan.",
             "format": "plain_text"
           },
           {
-            "text": "Calcular base imponible, deudas deducibles y base liquidable segun la normativa estatal y, cuando proceda, la autonómica aplicable.",
+            "text": "Calcular la base imponible y despues la base liquidable, incorporando el minimo exento estatal o autonomico que resulte aplicable segun la residencia o la normativa utilizable en obligacion real.",
             "format": "plain_text"
           },
           {
-            "text": "Identificar la Comunidad Autónoma competente y abrir la revision concreta de minimo exento, tarifa, deducciones y bonificaciones sin perder la columna vertebral estatal del impuesto.",
+            "text": "Determinar la cuota integra y revisar deducciones, bonificaciones y, cuando proceda, el limite conjunto del articulo 31 en linea con la doctrina vigente aplicable al expediente.",
             "format": "plain_text"
           },
           {
-            "text": "Determinar la cuota y verificar si existe obligacion de declarar tanto por cuota a ingresar como por superacion del umbral de 2.000.000 de euros, aunque no exista ingreso final.",
+            "text": "Verificar la obligacion de declarar por cualquiera de las dos vias relevantes: cuota a ingresar o superacion de 2.000.000 de euros en bienes y derechos aunque no exista ingreso final.",
             "format": "plain_text"
           },
           {
-            "text": "Solo despues de resolver Patrimonio, revisar si el volumen patrimonial o la cuota obligan a abrir analisis complementario de ITSGF y documentar la relacion entre ambos impuestos.",
+            "text": "Abrir separadamente el analisis de ITSGF cuando el patrimonio neto y el marco vigente indiquen que la revision no puede cerrarse solo con el Modelo 714.",
             "format": "plain_text"
           },
           {
-            "text": "Cerrar el expediente con decision trazada de presentar o no presentar, soporte documental y, si procede, preparacion del Modelo 714 y de la documentacion de respaldo.",
+            "text": "Preparar la declaracion, cerrar el soporte documental del expediente y dejar trazada la razon por la que se presenta, no se presenta o se remite a analisis adicional de ITSGF.",
             "format": "plain_text"
           }
         ]
       },
       "sourceRefs": [
         {
-          "referenceId": "src714-aeat-devengo",
+          "referenceId": "src714-aeat-modelo",
           "type": "guidance",
-          "label": "AEAT - Que grava el impuesto y cuando se devenga",
-          "citation": "Pagina AEAT sobre Patrimonio",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-sobre-patrimonio/que-grava-impuesto-patrimonio-cuando-devenga.html",
-          "notes": "Base operativa para patrimonio neto, devengo y cesion del impuesto."
+          "label": "AEAT - Procedimiento oficial del Modelo 714",
+          "citation": "Ficha oficial del procedimiento 714",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G611.shtml",
+          "notes": "Punto de entrada operativo del expediente."
         },
         {
-          "referenceId": "src714-aeat-plazo",
-          "type": "guidance",
-          "label": "AEAT - Plazo de presentacion Patrimonio 2025",
-          "citation": "Manual de ayuda de presentacion",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-ayuda-presentacion/patrimonio-2025/3-cuestiones-generales-patrimonio/3_8-declaracion-impuesto-sobre-patrimonio/3_8_3-plazo-presentacion.html",
-          "notes": "Fija el plazo operativo de presentacion para la campaña de referencia."
+          "referenceId": "src714-orden2026-plazo",
+          "type": "regulation",
+          "label": "Orden HAC/277/2026 - plazo de presentacion",
+          "citation": "BOE-A-2026-7041, articulo 7",
+          "url": "https://www.boe.es/eli/es/o/2026/03/25/hac277",
+          "notes": "Fija plazo y domiciliacion de la campaña 2025."
         }
       ]
     },
@@ -305,18 +297,18 @@
         "client_response": { "access": "blocked" },
         "tax_library": { "access": "blocked" }
       },
-      "lastReviewedAt": "2026-07-18T21:00:00Z",
+      "lastReviewedAt": "2026-07-21T18:30:00Z",
       "content": {
         "items": [
-          { "itemId": "chk714-001", "label": "Residencia fiscal y tipo de sujecion confirmados." },
-          { "itemId": "chk714-002", "label": "Inventario patrimonial a 31 de diciembre levantado." },
-          { "itemId": "chk714-003", "label": "Perimetro patrimonial delimitado entre obligacion personal o real." },
-          { "itemId": "chk714-004", "label": "Reglas de valoracion aplicadas por tipo de activo." },
-          { "itemId": "chk714-005", "label": "Exenciones revisadas con soporte suficiente." },
-          { "itemId": "chk714-006", "label": "Base imponible y base liquidable determinadas." },
-          { "itemId": "chk714-007", "label": "Normativa autonómica competente identificada." },
-          { "itemId": "chk714-008", "label": "Cuota calculada y obligacion de declarar verificada por ambos umbrales." },
-          { "itemId": "chk714-009", "label": "Necesidad de abrir ITSGF revisada expresamente." },
+          { "itemId": "chk714-001", "label": "Residencia fiscal y tipo de obligacion confirmados." },
+          { "itemId": "chk714-002", "label": "Inventario patrimonial completo abierto a 31 de diciembre." },
+          { "itemId": "chk714-003", "label": "Perimetro del patrimonio delimitado correctamente para obligacion personal o real." },
+          { "itemId": "chk714-004", "label": "Valoracion tipologica de activos documentada." },
+          { "itemId": "chk714-005", "label": "Exenciones relevantes revisadas una por una." },
+          { "itemId": "chk714-006", "label": "Minimo exento estatal o autonomico determinado con trazabilidad." },
+          { "itemId": "chk714-007", "label": "Cuota, bonificaciones y limite conjunto revisados cuando proceda." },
+          { "itemId": "chk714-008", "label": "Regla de los 2.000.000 euros contrastada aunque no haya cuota a ingresar." },
+          { "itemId": "chk714-009", "label": "Necesidad de analisis adicional de ITSGF evaluada expresamente." },
           { "itemId": "chk714-010", "label": "Decision final de presentar o no presentar documentada en el expediente." }
         ]
       }
@@ -324,7 +316,7 @@
     {
       "blockId": "kb714-faq-001",
       "type": "faq",
-      "title": "Preguntas frecuentes reales de expedientes de Patrimonio",
+      "title": "Preguntas frecuentes reales de clientes y expedientes",
       "order": 50,
       "status": "validado",
       "visibility": "public",
@@ -338,33 +330,33 @@
         "client_response": { "access": "derived_only" },
         "tax_library": { "access": "derived_only" }
       },
-      "lastReviewedAt": "2026-07-18T21:00:00Z",
+      "lastReviewedAt": "2026-07-21T18:30:00Z",
       "content": {
         "items": [
           {
             "faqId": "faq714-001",
-            "question": "Si no me sale cuota a ingresar, ¿puedo dejar de presentar Patrimonio automaticamente?",
-            "answer": "No. Aunque no exista cuota a ingresar, puede haber obligacion de declarar si el valor de bienes o derechos supera 2.000.000 de euros en los terminos legales."
+            "question": "Si no me sale cuota a ingresar, ¿puedo aun asi estar obligado a presentar Patrimonio?",
+            "answer": "Si. Debe revisarse tambien si el valor de bienes y derechos supera 2.000.000 de euros, porque esa circunstancia puede obligar a declarar aunque la cuota final no resulte a ingresar."
           },
           {
             "faqId": "faq714-002",
-            "question": "¿La vivienda habitual siempre queda completamente fuera del impuesto?",
-            "answer": "No de forma absoluta. Existe exencion con limite legal y solo para quien cumpla las condiciones materiales de vivienda habitual y titularidad exigidas por la norma."
+            "question": "¿La vivienda habitual siempre tributa completa en el Impuesto sobre el Patrimonio?",
+            "answer": "No. La vivienda habitual puede quedar exenta hasta el limite legal aplicable, siempre que se cumplan los requisitos del impuesto y se trate realmente de vivienda habitual del contribuyente."
           },
           {
             "faqId": "faq714-003",
-            "question": "¿Las acciones cotizadas y las participaciones en sociedades se valoran igual?",
-            "answer": "No. Los valores cotizados y las participaciones no cotizadas siguen reglas de valoracion diferentes, por lo que no deben tratarse como una sola categoria."
+            "question": "¿Un no residente puede quedar afectado por el Impuesto sobre el Patrimonio en Espana?",
+            "answer": "Si. Los no residentes pueden tributar por obligacion real respecto de bienes o derechos situados, ejercitables o exigibles en territorio espanol, con las especialidades normativas que correspondan."
           },
           {
             "faqId": "faq714-004",
-            "question": "¿La normativa de mi Comunidad Autónoma puede cambiar el resultado del impuesto?",
-            "answer": "Si. Puede alterar minimo exento, tarifa, deducciones y bonificaciones, aunque la estructura basica del impuesto siga siendo estatal."
+            "question": "¿La normativa de mi Comunidad Autonoma puede cambiar el resultado del analisis?",
+            "answer": "Si. El minimo exento, la tarifa, algunas deducciones y bonificaciones pueden variar por Comunidad Autonoma y alterar de forma material la cuota o la obligacion de declarar."
           },
           {
             "faqId": "faq714-005",
-            "question": "¿Si tengo mucho patrimonio basta con analizar Patrimonio o hay que mirar tambien ITSGF?",
-            "answer": "Primero se resuelve Patrimonio. Despues, si el volumen patrimonial o la cuota lo exigen, debe abrirse tambien el analisis complementario del ITSGF."
+            "question": "¿Cuando hay que revisar tambien el ITSGF?",
+            "answer": "Cuando el volumen patrimonial y el marco vigente indiquen que el expediente no puede cerrarse solo con Patrimonio. La secuencia correcta es resolver primero el Modelo 714 y despues abrir, si procede, el analisis adicional de ITSGF."
           }
         ]
       }
@@ -386,44 +378,44 @@
         "client_response": { "access": "blocked" },
         "tax_library": { "access": "blocked" }
       },
-      "lastReviewedAt": "2026-07-18T21:00:00Z",
-      "summary": "Los errores mas caros en Patrimonio no suelen estar en el campo final del modelo, sino en residencia, valoracion, exenciones y lectura deficiente de la normativa autonómica o de la obligacion sin cuota.",
+      "lastReviewedAt": "2026-07-21T18:30:00Z",
+      "summary": "Los errores mas costosos suelen aparecer antes del formulario: residencia mal calificada, activos valorados de forma incompleta, exenciones mal aplicadas o lectura insuficiente de la capa autonómica.",
       "content": {
         "items": [
           {
             "riskId": "risk714-001",
-            "description": "Confundir ausencia de cuota con ausencia de obligacion de declarar.",
+            "description": "Calificar mal al contribuyente como obligado personal o real y construir sobre ello un perimetro patrimonial equivocado.",
             "severity": "critical",
-            "likelihood": "high",
-            "mitigation": "Revisar siempre por separado cuota a ingresar y umbral de 2.000.000 de euros, dejando nota expresa del criterio aplicado."
+            "likelihood": "medium",
+            "mitigation": "Verificar residencia fiscal del ejercicio y documentar expresamente el titulo de sujecion antes de valorar activos o abrir normativa autonómica."
           },
           {
             "riskId": "risk714-002",
-            "description": "Valorar incorrectamente inmuebles, participaciones o seguros por aplicar reglas simplificadas no compatibles con la ley.",
+            "description": "Omitir activos o deudas relevantes al formar el patrimonio neto del ejercicio.",
             "severity": "high",
-            "likelihood": "medium",
-            "mitigation": "Separar clases de activos y documentar la regla legal de valoracion utilizada en cada categoria material."
+            "likelihood": "high",
+            "mitigation": "Levantar siempre un inventario estructurado con soporte documental antes de entrar en calculos de cuota."
           },
           {
             "riskId": "risk714-003",
-            "description": "Aplicar de forma automatica exenciones empresariales o de participaciones sin verificar requisitos materiales.",
+            "description": "Aplicar de forma impropia exenciones de vivienda habitual, patrimonio empresarial o participaciones en entidades.",
             "severity": "high",
             "likelihood": "medium",
-            "mitigation": "Exigir soporte de afectacion, funciones de direccion y demas requisitos antes de considerar exento el activo o la participacion."
+            "mitigation": "Revisar requisitos materiales y no limitarse al nombre del activo; dejar nota de criterio cuando la exencion se acepte."
           },
           {
             "riskId": "risk714-004",
-            "description": "Usar normativa autonómica no competente o trasladar a todos los expedientes una bonificacion propia de una sola Comunidad Autónoma.",
+            "description": "Cerrar el expediente sin revisar el impacto de la normativa autonómica o aplicar una Comunidad Autonoma no competente.",
             "severity": "high",
             "likelihood": "medium",
-            "mitigation": "Identificar primero la comunidad competente y abrir despues la revision concreta de minimo exento, tarifa y bonificaciones aplicables."
+            "mitigation": "Determinar siempre el punto de conexion territorial y contrastar minimo exento, tarifa y bonificaciones efectivamente aplicables."
           },
           {
             "riskId": "risk714-005",
-            "description": "No abrir a tiempo el analisis complementario del ITSGF cuando el volumen patrimonial ya lo exige.",
+            "description": "Explicar el limite conjunto del articulo 31 como si fuera ajeno por definicion al no residente, ignorando la doctrina reciente recogida en la orden de campaña 2026.",
             "severity": "medium",
             "likelihood": "medium",
-            "mitigation": "Incorporar un checkpoint expreso al final del analisis de Patrimonio para revisar si tambien debe activarse ITSGF."
+            "mitigation": "Tratar el articulo 31 con prudencia y trazabilidad, distinguiendo entre regla general historica y criterio jurisprudencial operativo vigente."
           }
         ]
       },
@@ -431,18 +423,18 @@
         {
           "referenceId": "src714-risk-obligados",
           "type": "guidance",
-          "label": "AEAT - Obligacion de declarar en Patrimonio",
-          "citation": "Pagina informativa AEAT",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-sobre-patrimonio/quienes-estan-obligados-presentar-declaracion-ipatrimonio.html",
-          "notes": "Base para el riesgo de confundir cuota con obligacion de declarar."
+          "label": "AEAT - Obligacion de declarar y obligacion real",
+          "citation": "Manual Patrimonio 2025",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/Ayuda/25Manual/714.shtml",
+          "notes": "Respalda las zonas de error operativo mas frecuentes."
         },
         {
-          "referenceId": "src714-risk-stc-149-2023",
-          "type": "jurisprudence",
-          "label": "STC 149/2023",
-          "citation": "BOE-A-2023-25631",
-          "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-25631",
-          "notes": "Refuerza la prudencia al tratar la posicion juridica actual del ITSGF."
+          "referenceId": "src714-risk-orden2026",
+          "type": "regulation",
+          "label": "Orden HAC/277/2026 - referencia a jurisprudencia TS",
+          "citation": "BOE-A-2026-7041",
+          "url": "https://www.boe.es/eli/es/o/2026/03/25/hac277",
+          "notes": "Respalda la cautela sobre el articulo 31 en no residentes."
         }
       ]
     },
@@ -463,38 +455,38 @@
         "client_response": { "access": "derived_only" },
         "tax_library": { "access": "derived_only" }
       },
-      "lastReviewedAt": "2026-07-18T21:00:00Z",
+      "lastReviewedAt": "2026-07-21T18:30:00Z",
       "content": {
         "items": [
           {
             "documentId": "doc714-001",
-            "label": "Relacion patrimonial completa a 31 de diciembre con identificacion de cada activo y pasivo relevante.",
+            "label": "Relacion patrimonial completa a 31 de diciembre con identificacion de titularidad, porcentaje y localizacion de cada activo.",
             "required": true,
-            "notes": "Base minima para abrir el expediente de Patrimonio."
+            "notes": "Base minima del expediente de Patrimonio."
           },
           {
             "documentId": "doc714-002",
-            "label": "Soporte de valoracion de inmuebles, valores, participaciones, seguros y demas activos relevantes.",
+            "label": "Documentacion de valoracion de inmuebles, valores, participaciones, seguros y otros activos relevantes.",
             "required": true,
-            "notes": "Necesario para aplicar las reglas de valoracion legales de cada categoria."
+            "notes": "Necesaria para construir la base imponible con trazabilidad."
           },
           {
             "documentId": "doc714-003",
-            "label": "Documentacion de deudas deducibles y cargas reales vinculadas a los bienes declarables.",
+            "label": "Soporte de deudas, cargas y gravamenes deducibles efectivamente vinculados al patrimonio.",
             "required": true,
-            "notes": "Imprescindible para determinar correctamente patrimonio neto y base imponible."
+            "notes": "No basta con alegar deuda; debe existir soporte y criterio de deducibilidad."
           },
           {
             "documentId": "doc714-004",
-            "label": "Soporte especifico de exenciones alegadas: vivienda habitual, actividad economica o participaciones exentas.",
-            "required": false,
-            "notes": "Muy recomendable porque las exenciones no deben aplicarse por mera declaracion del cliente."
+            "label": "Documentacion justificativa de exenciones relevantes, especialmente vivienda habitual, patrimonio empresarial/profesional o participaciones exentas.",
+            "required": true,
+            "notes": "Imprescindible cuando el resultado depende materialmente de la exencion."
           },
           {
             "documentId": "doc714-005",
-            "label": "Documentacion de residencia fiscal y, en no residentes, localizacion del mayor valor patrimonial en Espana para la norma autonómica aplicable.",
+            "label": "Determinacion de la Comunidad Autonoma aplicable y soporte del criterio territorial usado en el expediente.",
             "required": false,
-            "notes": "Especialmente util cuando el expediente se mueve por obligacion real o con elementos internacionales."
+            "notes": "Muy recomendable cuando la capa autonómica altera minimo exento, tarifa o bonificaciones."
           }
         ]
       }
@@ -516,52 +508,52 @@
         "client_response": { "access": "derived_only" },
         "tax_library": { "access": "derived_only" }
       },
-      "lastReviewedAt": "2026-07-18T21:00:00Z",
-      "summary": "Los cuatro supuestos cubren el recorrido minimo del objeto: contribuyente por debajo del minimo practico, patrimonio familiar mixto, patrimonio empresarial potencialmente exento y no residente por obligacion real.",
+      "lastReviewedAt": "2026-07-21T18:30:00Z",
+      "summary": "Los cuatro supuestos cubren los focos mas habituales del despacho: residente con patrimonio elevado sin cuota, residente con exenciones relevantes, no residente por obligacion real y expediente que exige abrir ITSGF.",
       "content": {
         "items": [
           {
             "caseId": "case714-001",
-            "scenario": "Contribuyente residente con patrimonio neto inferior al minimo exento aplicable y valor total de bienes por debajo de 2.000.000 de euros.",
-            "resolution": "No existira obligacion de declarar por ninguno de los dos ejes principales, pero debe dejarse trazado el calculo y la normativa territorial considerada.",
-            "notes": "Caso base para cerrar expedientes sin presentacion."
+            "scenario": "Persona fisica residente en Espana con un patrimonio neto relevante, cuota finalmente bonificada, pero valor total de bienes y derechos superior a 2.000.000 de euros.",
+            "resolution": "Debe revisarse la obligacion de declarar por la via objetiva de los 2.000.000 de euros aunque la cuota final no resulte a ingresar.",
+            "notes": "Caso base para evitar reducir la obligacion de declarar a la existencia de cuota."
           },
           {
             "caseId": "case714-002",
-            "scenario": "Contribuyente residente con vivienda habitual y cartera de inversion relevante, sin actividad empresarial.",
-            "resolution": "Debe valorarse separadamente cada clase de activo, aplicar la exencion de vivienda habitual en su limite legal y verificar despues si existe cuota o superacion del umbral de 2.000.000 de euros.",
-            "notes": "Caso practico para valoracion y exencion de vivienda habitual."
+            "scenario": "Contribuyente residente con vivienda habitual y participaciones en una entidad familiar, cuyo resultado depende materialmente de exenciones discutidas.",
+            "resolution": "La decision no puede cerrarse sin revisar requisitos de la exencion de vivienda habitual y de las participaciones exentas con soporte documental suficiente.",
+            "notes": "Caso centrado en exenciones de alto impacto."
           },
           {
             "caseId": "case714-003",
-            "scenario": "Empresario con bienes afectos y participaciones en entidad familiar que pretende aplicar exencion amplia sobre su patrimonio.",
-            "resolution": "La exencion no puede presumirse. Deben revisarse requisitos materiales de afectacion, funciones de direccion y resto de condiciones antes de excluir activos o participaciones del impuesto.",
-            "notes": "Caso centrado en prudencia sobre exenciones empresariales."
+            "scenario": "Persona fisica no residente sujeta por obligacion real, titular de inmuebles y cartera financiera en Espana, con necesidad de determinar la Comunidad Autonoma utilizable y el eventual limite del articulo 31.",
+            "resolution": "Procede analizar el expediente por obligacion real, delimitar solo los bienes y derechos relevantes en Espana y revisar con trazabilidad la normativa autonómica aplicable y la posible incidencia de la doctrina reciente sobre el articulo 31.",
+            "notes": "Caso especifico de obligacion real."
           },
           {
             "caseId": "case714-004",
-            "scenario": "Persona fisica no residente en obligacion real, con inmuebles y otros derechos en Espana por importe relevante, sin patrimonio mundial sujeto en territorio espanol.",
-            "resolution": "El expediente se analiza por obligacion real, limitado al patrimonio situado, ejercitable o exigible en Espana, y exige revisar ademas la Comunidad Autónoma cuya normativa resulte aplicable segun el mayor valor patrimonial en territorio espanol.",
-            "notes": "Caso expreso de obligacion real y especialidad autonómica de no residente."
+            "scenario": "Expediente de Patrimonio con patrimonio neto muy elevado que obliga a cerrar primero el Modelo 714 y valorar inmediatamente despues la apertura de ITSGF.",
+            "resolution": "Debe resolverse primero la posicion en Patrimonio y, una vez fijada, abrir de forma separada el analisis adicional de ITSGF para no mezclar ambos impuestos como si fueran uno solo.",
+            "notes": "Caso de conexion operativa con grandes fortunas."
           }
         ]
       },
       "sourceRefs": [
         {
-          "referenceId": "src714-case-no-residente",
+          "referenceId": "src714-case-obligados",
           "type": "guidance",
-          "label": "AEAT - Exigibilidad del impuesto a no residentes",
-          "citation": "Pagina AEAT de no residentes",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/no-residentes/impuesto-sobre-patrimonio/exigibilidad-impuesto-sobre-patrimonio-no-residentes.html",
-          "notes": "Respalda el caso de obligacion real."
+          "label": "AEAT - Quienes estan obligados a declarar",
+          "citation": "Manual Patrimonio 2025",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/patrimonio-2025/c-1-campana-declaracion-i-patrimonio/quienes-estan-obligados-presentar-declaracion-ip.html",
+          "notes": "Respalda el caso de obligacion sin cuota a ingresar."
         },
         {
-          "referenceId": "src714-case-vivienda",
-          "type": "guidance",
-          "label": "AEAT - Exencion de vivienda habitual",
-          "citation": "Pagina AEAT de vivienda habitual",
-          "url": "https://sede.agenciatributaria.gob.es/Sede/vivienda-otros-inmuebles/tratamiento-vivienda-habitual-impuesto-sobre-patrimonio/exencion-vivienda-habitual.html",
-          "notes": "Base para el caso de vivienda habitual y patrimonio familiar."
+          "referenceId": "src714-case-itsgf",
+          "type": "law",
+          "label": "Ley 38/2022 - ITSGF",
+          "citation": "BOE-A-2022-22684",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-22684",
+          "notes": "Respalda la apertura separada del analisis adicional de ITSGF."
         }
       ]
     },
@@ -582,7 +574,7 @@
         "client_response": { "access": "blocked" },
         "tax_library": { "access": "blocked" }
       },
-      "lastReviewedAt": "2026-07-18T21:00:00Z",
+      "lastReviewedAt": "2026-07-21T18:30:00Z",
       "content": {
         "items": [
           {
@@ -609,35 +601,35 @@
       "relationId": "rel714-001",
       "type": "related_to",
       "targetKnowledgeObjectId": "ko_es_residencia_fiscal_personas_fisicas_001",
-      "rationale": "La residencia fiscal es la condicion de entrada para separar obligacion personal y real.",
+      "rationale": "La residencia fiscal del ejercicio es la condicion de entrada para separar obligacion personal y obligacion real.",
       "order": 10
     },
     {
       "relationId": "rel714-002",
       "type": "related_to",
       "targetKnowledgeObjectId": "ko_es_modelo720_bienes_extranjero_001",
-      "rationale": "El Modelo 720 puede ser relevante para contextualizar patrimonio exterior y trazabilidad patrimonial, pero no sustituye el analisis de Patrimonio.",
+      "rationale": "Puede ser necesario coordinar ambos expedientes cuando el patrimonio internacional del contribuyente activa tambien obligaciones informativas separadas.",
       "order": 20
     },
     {
       "relationId": "rel714-003",
-      "type": "related_to",
+      "type": "references",
       "targetKnowledgeObjectId": "ko_es_modelo721_monedas_virtuales_001",
-      "rationale": "Las monedas virtuales pueden ser relevantes en patrimonio global, aunque su obligacion informativa especifica discurra por el Modelo 721.",
+      "rationale": "Se mantiene relacion expresa para evitar mezclar Patrimonio con otras obligaciones sobre activos en el exterior que tienen objeto propio.",
       "order": 30
     },
     {
       "relationId": "rel714-004",
-      "type": "references",
+      "type": "related_to",
       "targetKnowledgeObjectId": "ko_es_itsgf_grandes_fortunas_001",
-      "rationale": "El ITSGF debe revisarse como analisis complementario cuando el volumen patrimonial o la cuota de Patrimonio lo exijan.",
+      "rationale": "El objeto debe abrir la puerta a un analisis adicional de ITSGF cuando el expediente de Patrimonio no pueda cerrarse aisladamente.",
       "order": 40
     }
   ],
   "auditMetadata": {
-    "createdAt": "2026-07-18T21:00:00Z",
+    "createdAt": "2026-07-21T18:30:00Z",
     "createdBy": "codex-knowledge-authoring",
-    "updatedAt": "2026-07-18T21:00:00Z",
+    "updatedAt": "2026-07-21T18:30:00Z",
     "updatedBy": "codex-knowledge-authoring",
     "revisionCount": 1,
     "sourceSystem": "ag-knowledge-contract"

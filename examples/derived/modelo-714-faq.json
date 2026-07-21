@@ -8,28 +8,28 @@
   "items": [
     {
       "faqId": "faq714-001",
-      "question": "Si no me sale cuota a ingresar, ¿puedo dejar de presentar Patrimonio automaticamente?",
-      "answer": "No. Aunque no exista cuota a ingresar, puede haber obligacion de declarar si el valor de bienes o derechos supera 2.000.000 de euros en los terminos legales."
+      "question": "Si no me sale cuota a ingresar, ¿puedo aun asi estar obligado a presentar Patrimonio?",
+      "answer": "Si. Debe revisarse tambien si el valor de bienes y derechos supera 2.000.000 de euros, porque esa circunstancia puede obligar a declarar aunque la cuota final no resulte a ingresar."
     },
     {
       "faqId": "faq714-002",
-      "question": "¿La vivienda habitual siempre queda completamente fuera del impuesto?",
-      "answer": "No de forma absoluta. Existe exencion con limite legal y solo para quien cumpla las condiciones materiales de vivienda habitual y titularidad exigidas por la norma."
+      "question": "¿La vivienda habitual siempre tributa completa en el Impuesto sobre el Patrimonio?",
+      "answer": "No. La vivienda habitual puede quedar exenta hasta el limite legal aplicable, siempre que se cumplan los requisitos del impuesto y se trate realmente de vivienda habitual del contribuyente."
     },
     {
       "faqId": "faq714-003",
-      "question": "¿Las acciones cotizadas y las participaciones en sociedades se valoran igual?",
-      "answer": "No. Los valores cotizados y las participaciones no cotizadas siguen reglas de valoracion diferentes, por lo que no deben tratarse como una sola categoria."
+      "question": "¿Un no residente puede quedar afectado por el Impuesto sobre el Patrimonio en Espana?",
+      "answer": "Si. Los no residentes pueden tributar por obligacion real respecto de bienes o derechos situados, ejercitables o exigibles en territorio espanol, con las especialidades normativas que correspondan."
     },
     {
       "faqId": "faq714-004",
-      "question": "¿La normativa de mi Comunidad Autónoma puede cambiar el resultado del impuesto?",
-      "answer": "Si. Puede alterar minimo exento, tarifa, deducciones y bonificaciones, aunque la estructura basica del impuesto siga siendo estatal."
+      "question": "¿La normativa de mi Comunidad Autonoma puede cambiar el resultado del analisis?",
+      "answer": "Si. El minimo exento, la tarifa, algunas deducciones y bonificaciones pueden variar por Comunidad Autonoma y alterar de forma material la cuota o la obligacion de declarar."
     },
     {
       "faqId": "faq714-005",
-      "question": "¿Si tengo mucho patrimonio basta con analizar Patrimonio o hay que mirar tambien ITSGF?",
-      "answer": "Primero se resuelve Patrimonio. Despues, si el volumen patrimonial o la cuota lo exigen, debe abrirse tambien el analisis complementario del ITSGF."
+      "question": "¿Cuando hay que revisar tambien el ITSGF?",
+      "answer": "Cuando el volumen patrimonial y el marco vigente indiquen que el expediente no puede cerrarse solo con Patrimonio. La secuencia correcta es resolver primero el Modelo 714 y despues abrir, si procede, el analisis adicional de ITSGF."
     }
   ]
 }
