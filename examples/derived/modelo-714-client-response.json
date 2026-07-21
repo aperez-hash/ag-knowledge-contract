@@ -6,48 +6,54 @@
   },
   "responseType": "derived_draft",
   "humanReviewRequired": true,
-  "summary": "Evita errores al decidir si existe obligacion de presentar Patrimonio, al separar obligacion personal y real, al valorar activos con criterio operativo y al abrir correctamente la revision autonómica e ITSGF cuando procede.",
+  "summary": "Evita errores al decidir si existe obligacion de declarar, al separar obligacion personal de obligacion real, al valorar activos relevantes y al integrar correctamente el impacto autonómico y la posible conexion con ITSGF.",
   "nextSteps": [
-    "Relacion patrimonial completa a 31 de diciembre con identificacion de cada activo y pasivo relevante.",
-    "Soporte de valoracion de inmuebles, valores, participaciones, seguros y demas activos relevantes.",
-    "Documentacion de deudas deducibles y cargas reales vinculadas a los bienes declarables.",
-    "Soporte especifico de exenciones alegadas: vivienda habitual, actividad economica o participaciones exentas."
+    "Relacion patrimonial completa a 31 de diciembre con identificacion de titularidad, porcentaje y localizacion de cada activo.",
+    "Documentacion de valoracion de inmuebles, valores, participaciones, seguros y otros activos relevantes.",
+    "Soporte de deudas, cargas y gravamenes deducibles efectivamente vinculados al patrimonio.",
+    "Documentacion justificativa de exenciones relevantes, especialmente vivienda habitual, patrimonio empresarial/profesional o participaciones exentas."
   ],
   "faqHighlights": [
     {
       "faqId": "faq714-001",
-      "question": "Si no me sale cuota a ingresar, ¿puedo dejar de presentar Patrimonio automaticamente?",
-      "answer": "No. Aunque no exista cuota a ingresar, puede haber obligacion de declarar si el valor de bienes o derechos supera 2.000.000 de euros en los terminos legales."
+      "question": "Si no me sale cuota a ingresar, ¿puedo aun asi estar obligado a presentar Patrimonio?",
+      "answer": "Si. Debe revisarse tambien si el valor de bienes y derechos supera 2.000.000 de euros, porque esa circunstancia puede obligar a declarar aunque la cuota final no resulte a ingresar."
     },
     {
       "faqId": "faq714-002",
-      "question": "¿La vivienda habitual siempre queda completamente fuera del impuesto?",
-      "answer": "No de forma absoluta. Existe exencion con limite legal y solo para quien cumpla las condiciones materiales de vivienda habitual y titularidad exigidas por la norma."
+      "question": "¿La vivienda habitual siempre tributa completa en el Impuesto sobre el Patrimonio?",
+      "answer": "No. La vivienda habitual puede quedar exenta hasta el limite legal aplicable, siempre que se cumplan los requisitos del impuesto y se trate realmente de vivienda habitual del contribuyente."
     },
     {
       "faqId": "faq714-003",
-      "question": "¿Las acciones cotizadas y las participaciones en sociedades se valoran igual?",
-      "answer": "No. Los valores cotizados y las participaciones no cotizadas siguen reglas de valoracion diferentes, por lo que no deben tratarse como una sola categoria."
+      "question": "¿Un no residente puede quedar afectado por el Impuesto sobre el Patrimonio en Espana?",
+      "answer": "Si. Los no residentes pueden tributar por obligacion real respecto de bienes o derechos situados, ejercitables o exigibles en territorio espanol, con las especialidades normativas que correspondan."
     }
   ],
   "documentationHighlights": [
     {
       "documentId": "doc714-001",
-      "label": "Relacion patrimonial completa a 31 de diciembre con identificacion de cada activo y pasivo relevante.",
+      "label": "Relacion patrimonial completa a 31 de diciembre con identificacion de titularidad, porcentaje y localizacion de cada activo.",
       "required": true,
-      "notes": "Base minima para abrir el expediente de Patrimonio."
+      "notes": "Base minima del expediente de Patrimonio."
     },
     {
       "documentId": "doc714-002",
-      "label": "Soporte de valoracion de inmuebles, valores, participaciones, seguros y demas activos relevantes.",
+      "label": "Documentacion de valoracion de inmuebles, valores, participaciones, seguros y otros activos relevantes.",
       "required": true,
-      "notes": "Necesario para aplicar las reglas de valoracion legales de cada categoria."
+      "notes": "Necesaria para construir la base imponible con trazabilidad."
     },
     {
       "documentId": "doc714-003",
-      "label": "Documentacion de deudas deducibles y cargas reales vinculadas a los bienes declarables.",
+      "label": "Soporte de deudas, cargas y gravamenes deducibles efectivamente vinculados al patrimonio.",
       "required": true,
-      "notes": "Imprescindible para determinar correctamente patrimonio neto y base imponible."
+      "notes": "No basta con alegar deuda; debe existir soporte y criterio de deducibilidad."
+    },
+    {
+      "documentId": "doc714-004",
+      "label": "Documentacion justificativa de exenciones relevantes, especialmente vivienda habitual, patrimonio empresarial/profesional o participaciones exentas.",
+      "required": true,
+      "notes": "Imprescindible cuando el resultado depende materialmente de la exencion."
     }
   ],
   "caution": "Borrador derivado para apoyo interno. No debe enviarse sin revision humana y sin contrastar la documentacion concreta del cliente."

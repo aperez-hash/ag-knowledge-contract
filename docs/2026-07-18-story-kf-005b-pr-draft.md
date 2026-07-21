@@ -2,7 +2,7 @@
 
 Base prevista: `main`
 Head prevista: `story/kf-005b-modelo-714-knowledge-object`
-Fecha: `2026-07-18`
+Fecha: `2026-07-21`
 
 ## Titulo recomendado
 
@@ -33,7 +33,6 @@ The implementation reuses the certified Knowledge Factory v1.0 pipeline without 
 - `validate-story-kf-005b`: PASS
 - Derived artifact build: PASS
 - Focused STORY-KF-005B tests: 10/10 PASS
-- Full package checks: PASS
 - `git diff --check`: PASS
 
 ## Architecture
@@ -50,7 +49,7 @@ This PR does not modify:
 
 ## Scope
 
-This PR only authors the canonical Knowledge Object for Modelo 714 and its derived outputs.
+This PR authors the canonical Knowledge Object for Modelo 714, refreshes its primary-source dossier and leaves the derived outputs synchronized with the validated runtime.
 
 It does not add:
 
