@@ -73,9 +73,9 @@ test("la vista web expone FAQ, documentacion y casos publicos sin riesgos intern
   const result = buildWebView(knowledgeObject);
 
   assert.equal(result.ok, true);
-  assert.equal(result.data.faq.length, 5);
+  assert.equal(result.data.faq.length, 6);
   assert.equal(result.data.requiredDocumentation.length, 5);
-  assert.equal(result.data.caseStudies.length, 4);
+  assert.equal(result.data.caseStudies.length, 5);
   assert.deepEqual(result.data.excludedByPolicy, [
     "internal_reference",
     "risk",
@@ -103,7 +103,7 @@ test("las derivaciones de checklist, FAQ y client response se generan sin duplic
   assert.equal(checklist.ok, true);
   assert.equal(checklist.data.items.length, 10);
   assert.equal(faq.ok, true);
-  assert.equal(faq.data.items.length, 5);
+  assert.equal(faq.data.items.length, 6);
   assert.equal(clientResponse.ok, true);
   assert.equal(clientResponse.data.responseType, "derived_draft");
   assert.equal(clientResponse.data.humanReviewRequired, true);

@@ -4,6 +4,9 @@
 
 ### Added
 
+- Controlled review `STORY-KF-006` for `Modelo 721 - Declaracion informativa sobre monedas virtuales situadas en el extranjero`, versioning the existing Knowledge Object from `1.0.0` to `1.1.0`.
+- Focused validation script and tests for `STORY-KF-006`.
+- 2026 primary-source review for `Modelo 721`, including `Orden HAC/1504/2024`, updated AEAT FAQ and 2026 filing window.
 - First real Knowledge Object for `Modelo 210 - Imputacion de rentas inmobiliarias de no residentes`.
 - Second real Knowledge Object for `Modelo 720 - Declaracion informativa sobre bienes y derechos situados en el extranjero`.
 - Third real Knowledge Object for `Modelo 714 - Impuesto sobre el Patrimonio`.

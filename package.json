@@ -41,6 +41,7 @@
     "validate:story-kf-005b": "node scripts/validate-story-kf-005b.mjs",
     "build:story-kf-005c": "node scripts/build-story-kf-005c-artifacts.mjs",
     "validate:story-kf-005c": "node scripts/validate-story-kf-005c.mjs",
+    "validate:story-kf-006": "node scripts/validate-story-kf-006.mjs",
     "build:story-kf-008a": "node scripts/build-story-kf-008a-artifacts.mjs",
     "validate:story-kf-008a": "node scripts/validate-story-kf-008a.mjs",
     "build:story-kf-008b": "node scripts/build-story-kf-008b-artifacts.mjs",

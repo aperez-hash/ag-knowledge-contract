@@ -4,7 +4,7 @@
     "stableKey": "modelo-721-monedas-virtuales-extranjero",
     "title": "Modelo 721 - Declaracion informativa sobre monedas virtuales situadas en el extranjero",
     "slug": "modelo-721-monedas-virtuales-situadas-extranjero",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "executiveSummary": {
     "summary": "Este Knowledge Object fija el criterio operativo del despacho para decidir cuando existe obligacion de presentar el Modelo 721 por monedas virtuales situadas en el extranjero y como debe documentarse esa decision en el expediente. Su eje no es la tributacion de las operaciones con criptoactivos, sino la obligacion informativa sobre saldos custodiados por terceros fuera del perimetro informativo interno espanol. El objeto sirve para evitar errores recurrentes al confundir autocustodia con custodia por terceros, al tratar cualquier exchange extranjero como si generara obligacion automaticamente, al olvidar el umbral conjunto de 50.000 euros o al repetir la declaracion sin revisar la regla de incremento superior a 20.000 euros. Tambien separa con claridad el Modelo 721 del Modelo 720, del Impuesto sobre el Patrimonio y de la futura tributacion en IRPF o IS de ganancias patrimoniales por criptoactivos. Su utilidad practica es homogeneizar residencia fiscal, localizacion de la custodia, recopilacion documental, decision de presentar o no presentar y trazabilidad del expediente, generando despues derivaciones consistentes para Planner, Web, IA, checklist, FAQ y respuesta al cliente sin duplicar doctrina.",
@@ -65,6 +65,11 @@
       "faqId": "faq721-005",
       "question": "¿Como se determina la localizacion de las monedas virtuales?",
       "answer": "No por la etiqueta comercial del exchange ni por los servidores, sino por si la entidad o establecimiento que custodia las claves en nombre de terceros esta fuera del deber interno de informacion a la Administracion tributaria espanola."
+    },
+    {
+      "faqId": "faq721-006",
+      "question": "¿El dinero fiduciario mantenido en un exchange extranjero se declara en el Modelo 721?",
+      "answer": "No. El Modelo 721 se refiere a monedas virtuales. El dinero fiduciario de curso legal puede exigir un analisis separado del Modelo 720 si existe una cuenta instrumental situada en el extranjero y se superan sus umbrales."
     }
   ],
   "requiredDocumentation": [
@@ -123,6 +128,12 @@
       "scenario": "Persona que cambia de residencia durante el ejercicio y pierde antes del 31 de diciembre la condicion relevante sobre una posicion custodiada en el extranjero.",
       "resolution": "El expediente debe analizar el ejercicio completo y la fecha de perdida de la condicion declarable. Puede subsistir obligacion informativa aunque la posicion ya no exista a cierre si concurren los supuestos reglamentarios y de FAQ AEAT.",
       "notes": "Aprendizaje: la obligacion no siempre desaparece por un simple cambio de residencia o salida de la posicion antes de fin de ano."
+    },
+    {
+      "caseId": "case721-005",
+      "scenario": "Cliente con 65.000 euros en saldo fiduciario y sin monedas virtuales declarables en un exchange extranjero.",
+      "resolution": "No procede declarar ese saldo en el Modelo 721 porque el dinero fiduciario no es moneda virtual. Debe abrirse, si procede, analisis separado de Modelo 720 por cuenta instrumental extranjera.",
+      "notes": "Aprendizaje: el 721 no absorbe dinero fiduciario mantenido en plataformas cripto."
     }
   ],
   "excludedByPolicy": [
